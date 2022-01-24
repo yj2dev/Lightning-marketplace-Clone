@@ -43,7 +43,6 @@ export const ModalContainer = styled.div`
     position: absolute;
     bottom: 0px;
   }
-
   & button {
     width: 270px;
     height: 35px;
@@ -52,10 +51,15 @@ export const ModalContainer = styled.div`
     border-radius: 5px;
     box-shadow: 0px 0px 5px #dadada;
     background-color: #ffffff;
+    position: relative;
+    transition: 0.1s;
   }
-
   & button:hover {
     cursor: pointer;
+    color: #ffffff;
+    font-weight: 800;
+  }
+  & button:hover span {
     color: #ffffff;
   }
 
@@ -67,22 +71,34 @@ export const ModalContainer = styled.div`
   }
 `;
 export const KakaoAuthButton = styled.button`
+  & span {
+    color: #3b1e1e;
+  }
   &:hover {
-    background-color: #fae100;
+    background-color: #3b1e1e;
     color: #000000;
   }
 `;
 export const FacebookAuthButton = styled.button`
+  & span {
+    color: #3a5ca9;
+  }
   &:hover {
     background-color: #3a5ca9;
   }
 `;
 export const NaverAuthButton = styled.button`
+  & span {
+    color: #1ec800;
+  }
   &:hover {
     background-color: #1ec800;
   }
 `;
 export const OriginAuthButton = styled.button`
+  & span {
+    color: #9997a7;
+  }
   &:hover {
     background-color: #9997a7;
   }

@@ -18,6 +18,10 @@ import { FiSmartphone } from "react-icons/fi";
 import Modal from "../Modal";
 
 function LoginInModal({ children, show, close }) {
+  const onSubmitKakaoAuth = () => {
+    console.log("KakaoAuth");
+  };
+
   return (
     <Container>
       <Modal
@@ -40,10 +44,50 @@ function LoginInModal({ children, show, close }) {
           <h1>벼락장터로 중고거래 시작하기</h1>
           <h2>간편하게 가입하고 상품을 확인하세요</h2>
 
-          <KakaoAuthButton>카카오로 이용하기</KakaoAuthButton>
-          <FacebookAuthButton>페이스북으로 이용하기</FacebookAuthButton>
-          <NaverAuthButton>네이버로 이용하기</NaverAuthButton>
-          <OriginAuthButton>본인인증으로 이용하기</OriginAuthButton>
+          <KakaoAuthButton onClick={onSubmitKakaoAuth}>
+            <span>
+              <RiKakaoTalkFill
+                size={18}
+                style={{ position: "absolute", left: "40px", top: "8px" }}
+              />
+            </span>
+            카카오로 이용하기
+          </KakaoAuthButton>
+          <FacebookAuthButton>
+            <span>
+              <AiFillFacebook
+                size={17}
+                style={{
+                  position: "absolute",
+                  left: "41px",
+                  top: "9px",
+                }}
+              />
+            </span>
+            페이스북으로 이용하기
+          </FacebookAuthButton>
+          <NaverAuthButton>
+            <span>
+              <SiNaver
+                size={15}
+                style={{
+                  position: "absolute",
+                  left: "42px",
+                  top: "10px",
+                }}
+              />
+            </span>
+            네이버로 이용하기
+          </NaverAuthButton>
+          <OriginAuthButton>
+            <span>
+              <FiSmartphone
+                size={18}
+                style={{ position: "absolute", left: "40px", top: "9px" }}
+              />
+            </span>
+            본인인증으로 이용하기
+          </OriginAuthButton>
 
           <hr />
           <h3 className="notice">

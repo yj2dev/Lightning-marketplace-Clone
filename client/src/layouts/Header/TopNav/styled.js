@@ -1,26 +1,47 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Header = styled.div`
-  color: #d2dae2;
-  position: fixed;
-  background-color: transparent;
-  font-size: 30px;
-  height: 48px;
-  left: 0px;
-  right: 0;
-  z-index: 1024;
-  padding-left: 200px;
-  transition: 0.2s ease-in-out;
-  //@media screen and (min-width: 768px) and (max-width: 1023px) {
-  //  //tablet
-  //  left: 48px;
-  //}
+export const Container = styled.div`
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 48px 0 64px;
+
+  & .left {
+    float: left;
+  }
+  & .right {
+    float: right;
+  }
+
+  & button {
+    margin: 10px 0;
+    color: #666666;
+    font-size: 13px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+  }
+
+  & button:hover {
+    cursor: pointer;
+  }
+`;
+export const AppDownloadButton = styled.button`
+  border: 1px solid black;
+  position: relative;
+  //padding-left: 0px;
 `;
 
-export const Space = styled.div`
-  height: 48px;
-  .scroll {
-    box-shadow: 0 0 4px 2px #a8b6bd;
-    background-color: #fff;
-  }
+export const MarketIcon = styled.div`
+  top: 3px;
+  left: -16px;
+  position: absolute;
+  border-radius: 4px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #d80c18;
+  color: #ffffff;
 `;
