@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/Main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="front(client) setting using react">
+      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_actions/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/LoginModal/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Modal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,15 +50,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,8 +78,16 @@
       <workItem from="1643030238039" duration="1000" />
       <workItem from="1643030561692" duration="360000" />
       <workItem from="1643034195447" duration="1254000" />
-      <workItem from="1643037929676" duration="382000" />
+      <workItem from="1643037929676" duration="7927000" />
     </task>
+    <task id="LOCAL-00001" summary="front(client) setting using react">
+      <created>1643038386148</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643038386148</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +106,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="front(client) setting using react" />
+    <option name="LAST_COMMIT_MESSAGE" value="front(client) setting using react" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

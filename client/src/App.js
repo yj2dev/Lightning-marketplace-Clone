@@ -1,11 +1,12 @@
+import "./App.css";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import Main from "./views/Main";
+import MainPage from "./layouts";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Route path="/" exact component={Main} />
+        <Route path="/" exact component={MainPage} />
       </BrowserRouter>
     </>
   );
