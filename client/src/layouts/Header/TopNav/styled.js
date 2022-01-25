@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   border-bottom: 1px solid #eeeeee;
-  padding: 0 48px 0 64px;
+  padding: 0 10px 0 32px;
 
   & .left {
     float: left;
@@ -27,7 +27,6 @@ export const Container = styled.div`
 export const AppDownloadButton = styled.button`
   border: 1px solid black;
   position: relative;
-  //padding-left: 0px;
 `;
 
 export const MarketIcon = styled.div`

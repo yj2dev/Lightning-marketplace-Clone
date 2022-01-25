@@ -1,4 +1,9 @@
+/*전체 글꼴*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto&display=swap");
+
+/*로고명 글꼴*/
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
 
 html,
 body {
@@ -7,9 +12,12 @@ body {
   padding: 0px;
   user-select: none;
   height: 100%;
-  /*width: 100%;*/
+  display: flex;
+  justify-content: center;
 }
-
+#logo_title {
+  font-family: 'Do Hyeon', sans-serif;
+}
 ol,
 ul {
   /* -webkit-padding-start: 0px; */
@@ -46,4 +54,7 @@ input:focus {
 }
 textarea:focus {
   outline: none;
+}
+.cursor_pointer:hover {
+  cursor:pointer;
 }

@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="topNav design">
+      <change afterPath="$PROJECT_DIR$/client/src/assets/LighteningTalk_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/MyShop_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/Sell_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,6 +65,7 @@
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\assets" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts\Header" />
     </key>
   </component>
@@ -66,6 +82,7 @@
       <workItem from="1643034195447" duration="1254000" />
       <workItem from="1643037929676" duration="15225000" />
       <workItem from="1643056086232" duration="817000" />
+      <workItem from="1643072619304" duration="9207000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
