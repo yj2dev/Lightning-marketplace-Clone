@@ -7,6 +7,7 @@ function App() {
     <>
       <BrowserRouter>
         <Route path="/" exact component={MainPage} />
+        <Route path="/:page" component={MainPage} />
       </BrowserRouter>
     </>
   );

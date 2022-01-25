@@ -17,15 +17,20 @@ export const SideMenu = styled.div`
   color: #212121;
   bottom: 10px;
   left: 0px;
+  //margin: 10px;
 
   &:hover {
     color: #d80c18;
+  }
+
+  &:hover .product_category {
+    display: inline;
   }
 `;
 
 export const Content1 = styled.div`
   border: 1px solid #eeeeee;
-
+  z-index: 10;
   position: absolute;
   top: 148px;
   & li {

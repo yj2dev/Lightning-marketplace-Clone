@@ -18,6 +18,8 @@ import { BsShop } from "react-icons/bs";
 import { RiMessage3Line } from "react-icons/ri";
 import { useState } from "react";
 import CategoryMenu from "../../../components/CategoryMenu";
+import { Link, Route, Switch } from "react-router-dom";
+import ProductNewPage from "../../../page/ProductNewPage";
 
 const SearchNav = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -32,6 +34,12 @@ const SearchNav = () => {
   const onDeleteSearchValue = () => {
     setSearchValue("");
     setShowDeleteSearch(false);
+  };
+
+  const onClickSell = (e) => {
+    e.preventDefault();
+    console.log("sell");
+    window.location.href = "/product/new";
   };
 
   return (
@@ -80,7 +88,7 @@ const SearchNav = () => {
         )}
         {/* End Search Section */}
         {/* Right Nav Section */}
-        <Sell className="cursor_pointer">
+        <Sell className="cursor_pointer" onClick={onClickSell}>
           <span>
             <MdOutlineSell />
           </span>
@@ -113,6 +121,8 @@ const SearchNav = () => {
           <IoIosArrowForward style={{ position: "absolute", top: "4px" }} />
         </SellerCenter>
       </Content>
+      <Link to="/product/new">sfsdf</Link>
+      <div></div>
     </Container>
   );
 };
