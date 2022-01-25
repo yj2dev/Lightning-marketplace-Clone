@@ -18,10 +18,10 @@ import { BsShop } from "react-icons/bs";
 import { RiMessage3Line } from "react-icons/ri";
 import { useState } from "react";
 import CategoryMenu from "../../../components/CategoryMenu";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
 import ProductNewPage from "../../../page/ProductNewPage";
 
-const SearchNav = () => {
+const SearchNav = ({ history }) => {
   const [searchValue, setSearchValue] = useState("");
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
 
@@ -36,16 +36,23 @@ const SearchNav = () => {
     setShowDeleteSearch(false);
   };
 
+  const onClickHome = (e) => {
+    history.push("/");
+  };
   const onClickSell = (e) => {
-    e.preventDefault();
-    console.log("sell");
-    window.location.href = "/product/new";
+    history.push("/product/new");
+  };
+  const onClickShop = (e) => {
+    history.push("/shop");
+  };
+  const onClickTalk = (e) => {
+    history.push("/talk");
   };
 
   return (
     <Container>
       <Content>
-        <Title id="logo_title">
+        <Title id="logo_title" onClick={onClickHome} className="cursor_pointer">
           <BsFillLightningChargeFill
             size={28}
             style={{
@@ -94,37 +101,27 @@ const SearchNav = () => {
           </span>
           판매하기
         </Sell>
-        <MyShop className="cursor_pointer">
+        <MyShop className="cursor_pointer" onClick={onClickShop}>
           <span>
             <BsShop />
           </span>
           내상점
         </MyShop>
-        <LighteningTalk className="cursor_pointer">
+        <LighteningTalk className="cursor_pointer" onClick={onClickTalk}>
           <span>
             <RiMessage3Line />
           </span>
           번개톡
         </LighteningTalk>
         {/* End Right Nav Section */}
-
-        {/*{showCategoryMenu && (*/}
-        {/*  <CategoryMenu*/}
-        {/*    onMouseEnter={() => {*/}
-        {/*      console.log("category TRUE");*/}
-        {/*    }}*/}
-        {/*  />*/}
-        {/*)}*/}
         <CategoryMenu />
         <SellerCenter>
           번개장터 판매자센터
           <IoIosArrowForward style={{ position: "absolute", top: "4px" }} />
         </SellerCenter>
       </Content>
-      <Link to="/product/new">sfsdf</Link>
-      <div></div>
     </Container>
   );
 };
 
-export default SearchNav;
+export default withRouter(SearchNav);

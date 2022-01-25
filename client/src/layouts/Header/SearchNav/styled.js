@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
 `;
 export const Content = styled.div`
   position: relative;
