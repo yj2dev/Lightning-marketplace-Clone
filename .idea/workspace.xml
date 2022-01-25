@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="topNav design">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/LighteningTalk_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/MyShop_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/Sell_icon.png" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Header(Search, RightNav) Design">
+      <change afterPath="$PROJECT_DIR$/client/src/components/CategoryMenu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/data/ProductCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/LighteningTalk_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/MyShop_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/Sell_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,7 @@
       <workItem from="1643037929676" duration="15225000" />
       <workItem from="1643056086232" duration="817000" />
       <workItem from="1643072619304" duration="9207000" />
+      <workItem from="1643108623870" duration="8381000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>

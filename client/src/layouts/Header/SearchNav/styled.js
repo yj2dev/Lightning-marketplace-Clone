@@ -95,17 +95,6 @@ export const LighteningTalk = styled.div`
   right: 0px;
 `;
 
-export const SideMenu = styled.div`
-  position: absolute;
-  font-size: 28px;
-  color: #212121;
-  bottom: 10px;
-  left: 0px;
-
-  &:hover {
-    color: #d80c18;
-  }
-`;
 export const SellerCenter = styled.div`
   position: absolute;
   font-size: 14px;

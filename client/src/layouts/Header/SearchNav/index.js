@@ -17,6 +17,7 @@ import { MdOutlineSell } from "react-icons/md";
 import { BsShop } from "react-icons/bs";
 import { RiMessage3Line } from "react-icons/ri";
 import { useState } from "react";
+import CategoryMenu from "../../../components/CategoryMenu";
 
 const SearchNav = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -28,8 +29,9 @@ const SearchNav = () => {
 
     setSearchValue(e.target.value);
   };
-  const onDeleteSearchValue = (e) => {
+  const onDeleteSearchValue = () => {
     setSearchValue("");
+    setShowDeleteSearch(false);
   };
 
   return (
@@ -97,9 +99,15 @@ const SearchNav = () => {
           번개톡
         </LighteningTalk>
         {/* End Right Nav Section */}
-        <SideMenu>
-          <GiHamburgerMenu />
-        </SideMenu>
+
+        {/*{showCategoryMenu && (*/}
+        {/*  <CategoryMenu*/}
+        {/*    onMouseEnter={() => {*/}
+        {/*      console.log("category TRUE");*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*)}*/}
+        <CategoryMenu />
         <SellerCenter>
           번개장터 판매자센터
           <IoIosArrowForward style={{ position: "absolute", top: "4px" }} />
