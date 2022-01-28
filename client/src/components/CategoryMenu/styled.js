@@ -29,6 +29,7 @@ export const SideMenu = styled.div`
 `;
 
 export const Content1 = styled.div`
+  background-color: #ffffff;
   border: 1px solid #eeeeee;
   z-index: 10;
   position: absolute;

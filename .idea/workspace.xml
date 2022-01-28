@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Connecting to the sell router">
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Insert temp data on the sales page.">
+      <change afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +78,9 @@
       <workItem from="1643056086232" duration="817000" />
       <workItem from="1643072619304" duration="9207000" />
       <workItem from="1643108623870" duration="8381000" />
+      <workItem from="1643143508032" duration="7000" />
+      <workItem from="1643175967395" duration="6391000" />
+      <workItem from="1643265198538" duration="824000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643126090180</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Insert temp data on the sales page.">
+      <created>1643133296019</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1643133296019</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +141,8 @@
     <MESSAGE value="topNav design" />
     <MESSAGE value="Connecting to the router" />
     <MESSAGE value="Connecting to the sell router" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connecting to the sell router" />
+    <MESSAGE value="Insert temp data on the sales page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert temp data on the sales page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

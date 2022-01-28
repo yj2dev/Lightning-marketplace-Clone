@@ -1,16 +1,21 @@
+import { Container } from "./styled";
+
 const ProductNewPage = () => {
   return (
-    <>
+    <Container>
       <ul>
         <li>상품등록</li>
         <li>상품관리</li>
         <li>구매/판매 내역</li>
       </ul>
-      <h1>기본정보</h1>
-      *필수항목
-      <hr />
+      <h1>
+        기본정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>*필수항목</span>
+      </h1>
+      <hr className="bold_hr" />
       <h2>
-        상품이미지 <span>*</span>{" "}
+        상품이미지<span>*</span>
+        &nbsp;<span className="img_cnt">(0/12)</span>
       </h2>
       <div></div>
       <div>
@@ -31,7 +36,7 @@ const ProductNewPage = () => {
       </div>
       <hr />
       <h2>
-        제목 <span>*</span>
+        제목<span>*</span>
       </h2>
       <hr />
       <h2>
@@ -60,7 +65,7 @@ const ProductNewPage = () => {
       <h2>연관태그</h2>
       <h2>수량</h2>
       <button>등록하기</button>
-    </>
+    </Container>
   );
 };
 
