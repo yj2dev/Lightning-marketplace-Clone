@@ -59,13 +59,27 @@ export class UserController {
 
   @Post('upload/profile')
   @UseGuards(JwtAuthGuard)
-  @UseInterceptors(FilesInterceptor('image', 1, multerOptions('user.profile')))
+  @UseInterceptors(FilesInterceptor('image', 12, multerOptions('user.profile')))
   uploadFile(
     @CurrentUser() currentUser: User,
     @UploadedFiles() files: Array<Express.Multer.File>,
   ) {
+    console.log('files', files);
     // const imgURI = `http://localhost:8000/static/user.profile/${file.filename[0]}`;
     // console.log('imgURI >> ', imgURI);
     return this.userService.uploadImg(currentUser, files);
+  }
+
+  @Get('test')
+  testHi(@Body() body) {
+    console.log(body);
+    return 'res nextJS';
+  }
+
+  @Post('upload/product')
+  @UseInterceptors(FilesInterceptor('image', 12, multerOptions('user.profile')))
+  uploadImgNoUser(@UploadedFiles() files: Array<Express.Multer.File>) {
+    console.log('files', files);
+    return this.userService.uploadImgNoUser(files);
   }
 }

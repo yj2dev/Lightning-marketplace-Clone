@@ -15,6 +15,10 @@ body {
   display: flex;
   justify-content: center;
 }
+input {
+  font-family: "Noto Sans KR", sans-serif;
+
+}
 #logo_title {
   font-family: 'Do Hyeon', sans-serif;
 }
@@ -58,5 +62,6 @@ textarea:focus {
 .cursor_pointer:hover {
   cursor:pointer;
 }
-
-
+.hidden {
+  display: none
+}

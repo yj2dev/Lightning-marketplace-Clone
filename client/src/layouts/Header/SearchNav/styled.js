@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   border-bottom: 1px solid #eeeeee;
   background-color: #ffffff;
+  z-index: 1000;
 `;
 export const Content = styled.div`
   position: relative;

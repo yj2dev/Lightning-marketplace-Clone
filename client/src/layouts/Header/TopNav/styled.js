@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  z-index: 1000;
   border-bottom: 1px solid #eeeeee;
   padding: 0 10px 0 32px;
 

@@ -50,4 +50,10 @@ export class UserService {
     console.log(newUser);
     return newUser.readonlyData;
   }
+
+  async uploadImgNoUser(files: Express.Multer.File[]) {
+    const fileName = `user.profile/${files[0].filename}`;
+
+    return fileName;
+  }
 }
