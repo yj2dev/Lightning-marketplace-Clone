@@ -30,7 +30,7 @@ import {
 import DaumPostcode from "react-daum-postcode";
 
 const ProductNewPage = ({ history }) => {
-  const [rerenderImage, setRerenderImage] = useState(false);
+  const MAX_IMAGE = 12;
   const [productImage, setProductImage] = useState([]);
   const [productImageURL, setProductImageURL] = useState([]);
 
@@ -102,13 +102,21 @@ const ProductNewPage = ({ history }) => {
   const onChangeImage = (e) => {
     console.log(e.target.files);
     const files = e.target.files;
-    const reader = new FileReader();
 
-    const imageDataArray = [];
-    const imageURLArray = [];
+    if (files.length + productImage.length > MAX_IMAGE) {
+      alert("사진 첨부는 최대 12장까지 가능합니다.");
+      return;
+    }
+
+    const imageDataArray = productImage;
+    const imageURLArray = productImageURL;
+    // const imageDataArray = [];
+    // const imageURLArray = [];
+
+    console.log("imageDataArray >> ", imageDataArray);
+    console.log("imageURLArray >> ", imageURLArray);
 
     for (let i = 0; i < files.length; i++) {
-      console.log("for >> ", files[i]);
       imageDataArray.push(e.target.files[i]);
       imageURLArray.push(URL.createObjectURL(e.target.files[i]));
     }
@@ -121,8 +129,10 @@ const ProductNewPage = ({ history }) => {
 
     setProductImage(imageDataArray);
     setProductImageURL(imageURLArray);
+
+    history.push("/product/new");
+
     // imageUpload(imageDataArray);
-    setRerenderImage(true);
   };
 
   const onDeleteProductImage = (e) => {
@@ -179,7 +189,7 @@ const ProductNewPage = ({ history }) => {
   const [address, setAddress] = useState(""); // 주소
   const [addressDetail, setAddressDetail] = useState(""); // 상세주소
 
-  const [isOpenPost, setIsOpenPost] = useState(true);
+  const [isOpenPost, setIsOpenPost] = useState(false);
 
   const onChangeOpenPost = () => {
     setIsOpenPost(!isOpenPost);
@@ -244,7 +254,9 @@ const ProductNewPage = ({ history }) => {
             <h2>
               상품이미지<span>*</span>
               &nbsp;
-              <span className="img_cnt">({productImageURL.length}/12)</span>
+              <span className="img_cnt">
+                ({productImageURL.length}/{MAX_IMAGE})
+              </span>
             </h2>
           </td>
           <td>
@@ -262,8 +274,7 @@ const ProductNewPage = ({ history }) => {
             />
 
             <ProductImgSection>
-              {rerenderImage &&
-                productImageURL &&
+              {productImageURL &&
                 productImageURL.map((imageURL, i) => (
                   <div key={i} className="img_wrapper">
                     <span className={!i && "title_image"}></span>
