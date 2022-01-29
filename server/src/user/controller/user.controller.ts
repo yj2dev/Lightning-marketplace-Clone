@@ -64,6 +64,7 @@ export class UserController {
     @CurrentUser() currentUser: User,
     @UploadedFiles() files: Array<Express.Multer.File>,
   ) {
+    console.log('profile');
     console.log('files', files);
     // const imgURI = `http://localhost:8000/static/user.profile/${file.filename[0]}`;
     // console.log('imgURI >> ', imgURI);
@@ -79,6 +80,7 @@ export class UserController {
   @Post('upload/product')
   @UseInterceptors(FilesInterceptor('image', 12, multerOptions('user.profile')))
   uploadImgNoUser(@UploadedFiles() files: Array<Express.Multer.File>) {
+    console.log('product');
     console.log('files', files);
     return this.userService.uploadImgNoUser(files);
   }

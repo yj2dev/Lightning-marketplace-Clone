@@ -49,26 +49,19 @@ const ProductNewPage = () => {
     };
 
     console.log("payload >> ", payload);
+    console.log("imageArray >> ", imageArray);
+    // console.log(Object.entries(imageArray));
+    const formData = new FormData();
 
+    formData.append("image", imageArray[0]);
     axios
-      .post("http://localhost:8000/user/upload/profile", payload, {
-        "Content-Type": "multipart/form-data",
+      .post("http://localhost:8000/user/upload/product", formData)
+      .then(({ data }) => {
+        console.log("succeed >> ", data);
       })
-      .then(() => {
-        console.log("succeed");
-      })
-      .catch((error) => {
-        console.log("failed");
+      .catch(({ data }) => {
+        console.log("failed >> ", data);
       });
-    //
-    // axios
-    //   .get("http://localhost:8000/user/test")
-    //   .then(() => {
-    //     console.log("succeed");
-    //   })
-    //   .catch((error) => {
-    //     console.log("failed");
-    //   });
   };
 
   const onChangeImage = (e) => {
@@ -76,17 +69,17 @@ const ProductNewPage = () => {
     const files = e.target.files;
     const reader = new FileReader();
 
+    const imageDataArray = [];
     const imageURLArray = [];
 
     for (let i = 0; i < files.length; i++) {
       console.log("for >> ", files[i]);
-
+      imageDataArray.push(e.target.files[i]);
       imageURLArray.push(URL.createObjectURL(e.target.files[i]));
     }
 
     setProductImageURL(imageURLArray);
-
-    imageUpload(e.target.files);
+    imageUpload(imageDataArray);
   };
 
   const onDeleteTitleValue = () => {
