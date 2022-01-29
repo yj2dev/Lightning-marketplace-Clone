@@ -1,4 +1,4 @@
-import { ProductCategory1 } from "../../data/ProductCategory";
+import { ProductLargeCategory } from "../../data/ProductCategory";
 import { Container, Content1, SideMenu } from "./styled";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useRef, useState } from "react";
@@ -37,7 +37,8 @@ const CategoryMenu = () => {
         >
           <ui>
             <li>전체 카테고리</li>
-            {ProductCategory1 && ProductCategory1.map((v) => <li>{v}</li>)}
+            {ProductLargeCategory &&
+              ProductLargeCategory.map((v) => <li>{v}</li>)}
           </ui>
         </Content1>
       )}

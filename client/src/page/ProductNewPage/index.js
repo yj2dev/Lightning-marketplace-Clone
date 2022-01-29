@@ -22,23 +22,33 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import UploadProductImage from "./Section/UploadProductImage";
 import { withRouter } from "react-router-dom";
+import {
+  ProductLargeCategory,
+  ProductMediumCategory,
+  ProductSmallCategory,
+} from "../../data/ProductCategory";
+import DaumPostcode from "react-daum-postcode";
 
 const ProductNewPage = ({ history }) => {
   const [rerenderImage, setRerenderImage] = useState(false);
   const [productImage, setProductImage] = useState([]);
   const [productImageURL, setProductImageURL] = useState([]);
-  const [productImageCount, setProductImageCount] = useState(0);
 
   const [titleError, setTitleError] = useState(false);
   const [title, setTitle] = useState("");
   const [titleLength, setTitleLength] = useState(0);
   const [showDeleteTitleButton, setShowDeleteTitleButton] = useState(false);
 
-  const [smallCategory, setSmallCategory] = useState("");
-  const [mediumCategory, setMediumCategory] = useState("");
   const [largeCateogry, setLargeCategory] = useState("");
+  const [mediumCategory, setMediumCategory] = useState("");
+  const [smallCategory, setSmallCategory] = useState("");
+  const [selectCategory, setSelectCategory] = useState({
+    large: null,
+    medium: null,
+    small: null,
+  });
 
-  const [address, setAddress] = useState("");
+  // const [address, setAddress] = useState("");
   const [status, setStatus] = useState("");
   const [exchange, setExchange] = useState("");
   const [price, setPrice] = useState("");
@@ -46,13 +56,37 @@ const ProductNewPage = ({ history }) => {
   const [tag, setTag] = useState("");
   const [quantity, setQuantity] = useState("");
 
-  const imageRender = useRef();
+  const onSelectLargeCategory = (e) => {
+    const value = e.target.valueOf(e).innerText;
+    setSelectCategory({
+      large: value,
+    });
+    setMediumCategory(ProductMediumCategory[value]);
+  };
 
-  const imageUpload = (imageArray) => {
+  const onSelectMediumCategory = (e) => {
+    const value = e.target.valueOf(e).innerText;
+    setSelectCategory({
+      large: selectCategory.large,
+      medium: value,
+    });
+    setSmallCategory(ProductSmallCategory[`${selectCategory.large}-${value}`]);
+  };
+
+  const onSelectSmallCategory = (e) => {
+    const value = e.target.valueOf(e).innerText;
+    setSelectCategory({
+      large: selectCategory.large,
+      medium: selectCategory.medium,
+      small: value,
+    });
+  };
+
+  const imageUpload = () => {
     const formData = new FormData();
 
-    for (let i = 0; i < imageArray.length; i++) {
-      formData.append("image", imageArray[i]);
+    for (let i = 0; i < productImage.length; i++) {
+      formData.append("image", productImage[i]);
     }
 
     axios
@@ -113,13 +147,10 @@ const ProductNewPage = ({ history }) => {
   };
 
   const onClickProductInfo = () => {
-    console.log("상품 정보");
-    console.log(imageRender);
-    console.log(productImage);
-    console.log(productImageURL);
+    console.log("도로명 API 호출 정보");
 
-    setRerenderImage(false);
-    setRerenderImage(true);
+    console.log("address >> ", address);
+    console.log("addressDetail >> ", addressDetail);
   };
 
   const onDeleteTitleValue = () => {
@@ -144,8 +175,55 @@ const ProductNewPage = ({ history }) => {
     else setTitleError(false);
   };
 
+  // --- demo code ---
+  const [address, setAddress] = useState(""); // 주소
+  const [addressDetail, setAddressDetail] = useState(""); // 상세주소
+
+  const [isOpenPost, setIsOpenPost] = useState(true);
+
+  const onChangeOpenPost = () => {
+    setIsOpenPost(!isOpenPost);
+  };
+
+  const onCompletePost = (data) => {
+    let fullAddr = data.address;
+    let extraAddr = "";
+
+    if (data.addressType === "R") {
+      if (data.bname !== "") {
+        extraAddr += data.bname;
+      }
+      if (data.buildingName !== "") {
+        extraAddr +=
+          extraAddr !== "" ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddr += extraAddr !== "" ? ` (${extraAddr})` : "";
+    }
+
+    setAddress(data.zonecode);
+    setAddressDetail(fullAddr);
+    setIsOpenPost(false);
+  };
+
+  const postCodeStyle = {
+    display: "block",
+    position: "relative",
+    top: "0%",
+    width: "400px",
+    height: "400px",
+    padding: "7px",
+  };
+
   return (
     <Container>
+      {isOpenPost ? (
+        <DaumPostcode
+          style={postCodeStyle}
+          autoClose
+          onComplete={onCompletePost}
+        />
+      ) : null}
+
       <ul>
         <li>상품등록</li>
         <li>상품관리</li>
@@ -165,7 +243,8 @@ const ProductNewPage = ({ history }) => {
           <td>
             <h2>
               상품이미지<span>*</span>
-              &nbsp;<span className="img_cnt">({productImageCount}/12)</span>
+              &nbsp;
+              <span className="img_cnt">({productImageURL.length}/12)</span>
             </h2>
           </td>
           <td>
@@ -182,7 +261,7 @@ const ProductNewPage = ({ history }) => {
               onChange={onChangeImage}
             />
 
-            <ProductImgSection ref={imageRender}>
+            <ProductImgSection>
               {rerenderImage &&
                 productImageURL &&
                 productImageURL.map((imageURL, i) => (
@@ -270,38 +349,54 @@ const ProductNewPage = ({ history }) => {
               <table>
                 <tr>
                   <td>
-                    <ul>
-                      <div className="category_scroll">
-                        <li>item1</li>
-                        <li>item2</li>
-                        <li>item3</li>
-                        <li>item4</li>
-                        <li>item5</li>
-                        <li>item6</li>
-                        <li>item7</li>
-                        <li>item8</li>
-                        <li>item9</li>
-                        <li>item10</li>
-                        <li>item11</li>
-                        <li>item12</li>
-                        <li>item13</li>
-                        <li>item14</li>
-                        <li>item15</li>
-                        <li>item16</li>
-                        <li>item17</li>
-                        <li>item18</li>
-                        <li>item19</li>
-                        <li>item20</li>
-                      </div>
-                    </ul>
+                    <div className="category_scroll">
+                      {ProductLargeCategory &&
+                        ProductLargeCategory.map((v) => (
+                          <li
+                            onClick={onSelectLargeCategory}
+                            className={v === selectCategory.large && "active"}
+                          >
+                            {v}
+                          </li>
+                        ))}
+                    </div>
                   </td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td>
+                    <div className="category_scroll">
+                      {mediumCategory &&
+                        mediumCategory.map((v) => (
+                          <li
+                            onClick={onSelectMediumCategory}
+                            className={v === selectCategory.medium && "active"}
+                          >
+                            {v}
+                          </li>
+                        ))}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="category_scroll">
+                      {smallCategory &&
+                        smallCategory.map((v) => (
+                          <li
+                            onClick={onSelectSmallCategory}
+                            className={v === selectCategory.small && "active"}
+                          >
+                            {v}
+                          </li>
+                        ))}
+                    </div>
+                  </td>
                 </tr>
               </table>
             </div>
             <div className="selected_category">
-              선택한 카테고리 : <strong>NULL</strong>
+              선택한 카테고리 :&nbsp;
+              <strong>
+                {selectCategory.large && selectCategory.large}
+                {selectCategory.medium && <> > {selectCategory.medium}</>}
+                {selectCategory.small && <> > {selectCategory.small}</>}
+              </strong>
             </div>
           </Category>
         </tr>

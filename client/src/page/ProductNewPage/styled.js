@@ -124,7 +124,8 @@ export const Title = styled.td`
     border: 1px solid orange;
   }
 `;
-export const ProductImgSection = styled.td`
+export const ProductImgSection = styled.div`
+  padding: 12px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -173,16 +174,26 @@ export const ProductImgSection = styled.td`
 export const Category = styled.td`
   color: #000000;
 
+  .active {
+    color: red;
+    font-weight: 800;
+  }
+
+  li:first-child {
+    float: none;
+    margin-top: 5px;
+  }
+
   li {
     float: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     margin: 0;
+    font-size: 16px;
   }
 
   li:last-child {
     float: none;
-    padding: 12px 24px;
-    margin: 0;
+    margin-bottom: 5px;
   }
 
   li:hover {
@@ -191,18 +202,19 @@ export const Category = styled.td`
 
   .category_scroll {
     height: 250px;
-    border: 1px solid red;
+    //border: 1px solid red;
     overflow-y: scroll;
     //padding: 12px;
   }
 
   td {
-    border: 1px solid #a4a4a4;
+    border: 1px solid #c4c4c4;
     height: 250px;
     padding: 0;
     margin: 0;
     //padding: 24px;
   }
+
   tr {
     padding: 0;
     margin: 0;
@@ -219,6 +231,7 @@ export const Category = styled.td`
   td:nth-child(3) {
     width: 250px;
   }
+
   .selected_category {
     color: red;
     margin-top: 16px;
