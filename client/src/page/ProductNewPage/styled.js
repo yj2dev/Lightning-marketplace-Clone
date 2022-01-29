@@ -130,11 +130,20 @@ export const ProductImgSection = styled.td`
   flex-wrap: wrap;
   gap: 12px;
 
-  .delete_image_button{
-    position: relative;
-    width:50px;
-    height:50px;
+  .product_image_index {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: black;
+    border: none;
+    color: #ffffff;
+    border-radius: 25px;
+    font-size: 10px;
+    width: 22px;
+    height: 22px;
+    opacity: 0.4;
   }
+
   .title_image::before {
     content: "대표이미지";
     position: absolute;

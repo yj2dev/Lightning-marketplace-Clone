@@ -18,10 +18,13 @@ import {
 import { AiFillCamera } from "react-icons/ai";
 import { HiOutlineBan } from "react-icons/hi";
 import { IoMdCloseCircle } from "react-icons/io";
-import { useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
+import UploadProductImage from "./Section/UploadProductImage";
+import { withRouter } from "react-router-dom";
 
-const ProductNewPage = () => {
+const ProductNewPage = ({ history }) => {
+  const [rerenderImage, setRerenderImage] = useState(false);
   const [productImage, setProductImage] = useState([]);
   const [productImageURL, setProductImageURL] = useState([]);
   const [productImageCount, setProductImageCount] = useState(0);
@@ -42,6 +45,8 @@ const ProductNewPage = () => {
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
   const [quantity, setQuantity] = useState("");
+
+  const imageRender = useRef();
 
   const imageUpload = (imageArray) => {
     const formData = new FormData();
@@ -80,20 +85,41 @@ const ProductNewPage = () => {
     // 동작확인 불가
     // URL.revokeObjectURL(e.target.files[index]);
 
-      // imageURLArray.pop(2);
+    setProductImage(imageDataArray);
     setProductImageURL(imageURLArray);
-
-    imageUpload(imageDataArray);
+    // imageUpload(imageDataArray);
+    setRerenderImage(true);
   };
 
   const onDeleteProductImage = (e) => {
-    console.log(e.target.value)
-    console.log("del ... ")
-  }
+    if (productImage.length === 0 || productImageURL.length === 0) {
+      alert("삭제할 이미지가 존재하지 않습니다.");
+      return;
+    }
+
+    const imageDataArray = productImage;
+    const imageURLArray = productImageURL;
+
+    imageDataArray.splice(parseInt(e.target.value), 1);
+    imageURLArray.splice(parseInt(e.target.value), 1);
+
+    setProductImage(imageDataArray);
+    setProductImageURL(imageURLArray);
+
+    console.log(productImage);
+    console.log(productImageURL);
+    console.log("del ... ");
+    history.push("/product/new");
+  };
 
   const onClickProductInfo = () => {
     console.log("상품 정보");
+    console.log(imageRender);
     console.log(productImage);
+    console.log(productImageURL);
+
+    setRerenderImage(false);
+    setRerenderImage(true);
   };
 
   const onDeleteTitleValue = () => {
@@ -156,27 +182,23 @@ const ProductNewPage = () => {
               onChange={onChangeImage}
             />
 
-            <ProductImgSection>
-              {productImageURL.map((v, i) => (
-                <div key={i} className="img_wrapper">
-                  <span className={!i && "title_image"}></span>
-                    <button value={i} id="image_id" onClick={onDeleteProductImage}>삭제</button>
-                  <label  className="delete_image" for="image_id" >
-                    <IoMdCloseCircle
-                      className="cursor_pointer"
-                      size={24}
-                      style={{
-                        color: "lightgray",
-                        opacity: "0.8",
-                        position: "absolute",
-                        top: "8px",
-                        right: "8px",
-                      }}
-                    />
-                  </label>
-                  <img src={v} />
-                </div>
-              ))}
+            <ProductImgSection ref={imageRender}>
+              {rerenderImage &&
+                productImageURL &&
+                productImageURL.map((imageURL, i) => (
+                  <div key={i} className="img_wrapper">
+                    <span className={!i && "title_image"}></span>
+                    <button
+                      className="product_image_index cursor_pointer"
+                      value={i}
+                      id="image_id"
+                      onClick={onDeleteProductImage}
+                    >
+                      &times;
+                    </button>
+                    <img src={imageURL} />
+                  </div>
+                ))}
             </ProductImgSection>
 
             <div className="img_description">
@@ -368,4 +390,4 @@ const ProductNewPage = () => {
   );
 };
 
-export default ProductNewPage;
+export default withRouter(ProductNewPage);
