@@ -4,6 +4,8 @@
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Save a single image file from the client to the server successfully.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +83,7 @@
       <workItem from="1643175967395" duration="6391000" />
       <workItem from="1643265198538" duration="824000" />
       <workItem from="1643333708357" duration="31886000" />
+      <workItem from="1643455533491" duration="5063000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -165,7 +168,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

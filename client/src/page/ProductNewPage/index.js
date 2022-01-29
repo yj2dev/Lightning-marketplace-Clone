@@ -77,10 +77,19 @@ const ProductNewPage = () => {
     console.log("imageDataArray >> ", imageDataArray);
     console.log("imageURLArray >> ", imageURLArray);
 
-    setProductImageURL(productImageURL);
+    // 동작확인 불가
+    // URL.revokeObjectURL(e.target.files[index]);
+
+      // imageURLArray.pop(2);
+    setProductImageURL(imageURLArray);
 
     imageUpload(imageDataArray);
   };
+
+  const onDeleteProductImage = (e) => {
+    console.log(e.target.value)
+    console.log("del ... ")
+  }
 
   const onClickProductInfo = () => {
     console.log("상품 정보");
@@ -149,9 +158,10 @@ const ProductNewPage = () => {
 
             <ProductImgSection>
               {productImageURL.map((v, i) => (
-                <div className="img_wrapper">
+                <div key={i} className="img_wrapper">
                   <span className={!i && "title_image"}></span>
-                  <span className="delete_image">
+                    <button value={i} id="image_id" onClick={onDeleteProductImage}>삭제</button>
+                  <label  className="delete_image" for="image_id" >
                     <IoMdCloseCircle
                       className="cursor_pointer"
                       size={24}
@@ -163,7 +173,7 @@ const ProductNewPage = () => {
                         right: "8px",
                       }}
                     />
-                  </span>
+                  </label>
                   <img src={v} />
                 </div>
               ))}
