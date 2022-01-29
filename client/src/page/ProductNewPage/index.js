@@ -44,16 +44,12 @@ const ProductNewPage = () => {
   const [quantity, setQuantity] = useState("");
 
   const imageUpload = (imageArray) => {
-    const payload = {
-      image: imageArray,
-    };
-
-    console.log("payload >> ", payload);
-    console.log("imageArray >> ", imageArray);
-    // console.log(Object.entries(imageArray));
     const formData = new FormData();
 
-    formData.append("image", imageArray[0]);
+    for (let i = 0; i < imageArray.length; i++) {
+      formData.append("image", imageArray[i]);
+    }
+
     axios
       .post("http://localhost:8000/user/upload/product", formData)
       .then(({ data }) => {
@@ -78,8 +74,17 @@ const ProductNewPage = () => {
       imageURLArray.push(URL.createObjectURL(e.target.files[i]));
     }
 
-    setProductImageURL(imageURLArray);
+    console.log("imageDataArray >> ", imageDataArray);
+    console.log("imageURLArray >> ", imageURLArray);
+
+    setProductImageURL(productImageURL);
+
     imageUpload(imageDataArray);
+  };
+
+  const onClickProductInfo = () => {
+    console.log("상품 정보");
+    console.log(productImage);
   };
 
   const onDeleteTitleValue = () => {
@@ -111,6 +116,9 @@ const ProductNewPage = () => {
         <li>상품관리</li>
         <li>구매/판매 내역</li>
       </ul>
+
+      <button onClick={onClickProductInfo}>상품 정보</button>
+
       <h1>
         기본정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span>*필수항목</span>
