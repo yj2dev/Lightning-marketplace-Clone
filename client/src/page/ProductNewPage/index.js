@@ -90,42 +90,24 @@ const ProductNewPage = ({ history }) => {
 
   const onKeySpace = (e) => {
     const tagList = tag;
-
-    console.log("tagList >> ", tagList);
-    console.log("e.target.value >> ", e.target.value, ":::");
-    console.log(tag.includes(e.target.value));
-
+    const value = "#" + e.target.value.trim();
     if (e.key === " ") {
-      // if (e.target.value === " ") return;
-
-      // console.log(tagList.includes(e.target.value));
-
-      for (let i = 0; i < tagList.length; i++) {
-        console.log("for tag[i] >> ", tag[i], typeof tag[i]);
-        console.log(
-          "for e.target.value >> ",
-          e.target.value,
-          typeof e.target.value
-        );
-
-        if (tag[i] === e.target.value) {
-          console.log("for TRUE");
-        } else {
-          console.log("for FALSE");
-        }
+      if (value === "") {
+        setTagValue("");
+        return;
       }
 
-      tag.forEach((v) => {
-        if (v === e.target.value) console.log("forEach TRUE");
-        else console.log("forEach FALSE");
-      });
+      // 태그에 중복된 값이 있으면 아무 작업도 수행안함
+      if (tagList.includes(value)) {
+        setTagValue("");
+        return;
+      }
 
-      tagList.push(e.target.value);
-
+      tagList.push(value);
       setTag(tagList);
       setTagValue("");
-      history.push("/product/new");
     }
+    history.push("/product/new");
   };
 
   const onSubmitNewProduct = () => {
@@ -203,17 +185,26 @@ const ProductNewPage = ({ history }) => {
   };
 
   const onChangePrice = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.replaceAll(",", "");
+
+    console.log("e.target.value >> ", e.target.value);
+    console.log("value >> ", value);
     const regex = /^[0-9]+$/;
     if (value !== "" && !regex.test(value)) {
       alert("숫자만 입력해 주세요.");
       return;
     }
 
+    // 최소 가격 제한 ( 100 ~ )
     if (parseInt(value) < 100) setPriceError({ minPrice: true });
     else setPriceError({ minPrice: false });
 
-    setPrice(value);
+    // 최대 가격 제한 ( ~ 999,999,999 )
+    if (value.length > 9) {
+      return;
+    }
+    const KRValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    setPrice(KRValue);
   };
 
   const onSelectLargeCategory = (e) => {
