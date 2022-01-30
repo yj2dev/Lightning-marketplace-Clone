@@ -19,6 +19,7 @@ import {
 import { AiFillCamera } from "react-icons/ai";
 import { HiOutlineBan } from "react-icons/hi";
 import { IoMdCloseCircle } from "react-icons/io";
+import { BsCheck } from "react-icons/bs";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import UploadProductImage from "./Section/UploadProductImage";
@@ -54,12 +55,46 @@ const ProductNewPage = ({ history }) => {
   const [address, setAddress] = useState("지역설정안함");
   const [showPostcodeModal, setShowPostcodeModal] = useState(false);
 
-  const [status, setStatus] = useState("");
-  const [exchange, setExchange] = useState("");
+  const [status, setStatus] = useState("중고상품");
+
+  const [exchange, setExchange] = useState("교환불가");
+
   const [price, setPrice] = useState("");
+  const [priceError, setPriceError] = useState({
+    minPrice: false,
+  });
+  const [checkedDeliveryCharge, setCheckedDeliveryCharge] = useState(false);
+
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
   const [quantity, setQuantity] = useState("");
+
+  const onClickDeliveryCharge = () => {
+    // true(배송비 포함), false(배송비 미포함)
+    setCheckedDeliveryCharge((prev) => !prev);
+    console.log(checkedDeliveryCharge);
+  };
+
+  const onClickStatus = (e) => {
+    setStatus(e.target.value);
+  };
+  const onClickExchange = (e) => {
+    setExchange(e.target.value);
+  };
+
+  const onChangePrice = (e) => {
+    const value = e.target.value;
+    const regex = /^[0-9]+$/;
+    if (value !== "" && !regex.test(value)) {
+      alert("숫자만 입력해 주세요.");
+      return;
+    }
+
+    if (parseInt(value) < 100) setPriceError({ minPrice: true });
+    else setPriceError({ minPrice: false });
+
+    setPrice(value);
+  };
 
   const onSelectLargeCategory = (e) => {
     const value = e.target.valueOf(e).innerText;
@@ -307,7 +342,7 @@ const ProductNewPage = ({ history }) => {
               placeholder="상품 제목을 입력해주세요."
               value={title}
               onChange={onChangeTitle}
-              className={titleError && "error"}
+              id={titleError && "error"}
             />
             {showDeleteTitleButton && (
               <IoMdCloseCircle
@@ -427,9 +462,23 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <Status>
-            <input type="radio" id="used_product" name="product_status" />
+            <input
+              type="radio"
+              id="used_product"
+              name="product_status"
+              onClick={onClickStatus}
+              value="중고상품"
+              checked={status === "중고상품" && true}
+            />
             <label htmlFor="used_product">중고상품</label>
-            <input type="radio" id="new_product" name="product_status" />
+            <input
+              type="radio"
+              id="new_product"
+              name="product_status"
+              onClick={onClickStatus}
+              value="새상품"
+              checked={status === "새상품" && true}
+            />
             <label htmlFor="new_product">새상품</label>
           </Status>
         </tr>
@@ -441,7 +490,24 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <Exchange>
-            <input type="text" />
+            <input
+              type="radio"
+              id="exchange_disable"
+              name="product_exchange"
+              onClick={onClickExchange}
+              value="교환불가"
+              checked={exchange === "교환불가" && true}
+            />
+            <label htmlFor="exchange_disable">교환불가</label>
+            <input
+              type="radio"
+              id="exchange_enable"
+              name="product_exchange"
+              onClick={onClickExchange}
+              value="교환가능"
+              checked={exchange === "교환가능" && true}
+            />
+            <label htmlFor="exchange_enable">교환가능</label>
           </Exchange>
         </tr>
 
@@ -452,7 +518,30 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <Price>
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="숫자만 입력해주세요."
+              value={price}
+              onChange={onChangePrice}
+              id={priceError.minPrice && "error"}
+            />
+            &nbsp;&nbsp;&nbsp;원
+            {priceError.minPrice && (
+              <ErrorMessage>
+                <HiOutlineBan />
+                &nbsp;&nbsp;100원 이상 입력해주세요.
+              </ErrorMessage>
+            )}
+            <br />
+            <div className="delivery_charge_wrapper">
+              <input
+                type="checkbox"
+                id="delivery_charge_include"
+                checked={checkedDeliveryCharge}
+                onClick={onClickDeliveryCharge}
+              />
+              <label htmlFor="delivery_charge_include">배송비 포함</label>
+            </div>
           </Price>
         </tr>
 
@@ -474,7 +563,24 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <Tag>
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="연관태그를 입력해주세요. (최대 5개)"
+            />
+            <ul>
+              <li>
+                태그는 띄어쓰기로 구분되며 최대 9자까지 입력할 수 있습니다.
+              </li>
+              <li>
+                태그는 검색의 부가정보로 사용 되지만, 검색 결과 노출을
+                보장하지는 않습니다.
+              </li>
+              <li>검색 광고는 태그정보를 기준으로 노출됩니다.</li>
+              <li>
+                상품과 직접 관련이 없는 다른 상품명, 브랜드, 스팸성 키워드 등을
+                입력하면 노출이 중단되거나 상품이 삭제될 수 있습니다.
+              </li>
+            </ul>
           </Tag>
         </tr>
 

@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  #error {
+    border: 1px solid orange;
+  }
+
+  & input[type="text"]:hover {
+    border: 1px solid black;
+  }
+  & input[type="text"]:focus {
+    border: 1px solid black;
+  }
+
   & ul {
     height: 60px;
     border-bottom: 1px solid #eeeeee;
@@ -60,6 +71,51 @@ export const Container = styled.div`
     font-size: 14px;
     color: gray;
   }
+
+  //  라디오 버튼
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 3px solid #c3c2cc;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    position: relative;
+  }
+
+  input[type="radio"]:hover::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.1;
+    top: -8px;
+    left: -8px;
+  }
+
+  input[type="radio"]:checked {
+    border: 3px solid #ff5058;
+  }
+
+  input[type="radio"]:checked::after {
+    background-color: #ff5058;
+    border-radius: 100%;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+  }
+
+  label {
+    margin: 0px 40px 0 6px;
+  }
 `;
 
 export const ImgUploadLabel = styled.label`
@@ -118,10 +174,6 @@ export const Title = styled.td`
   input {
     width: 750px;
     margin-bottom: 12px;
-  }
-
-  .error {
-    border: 1px solid orange;
   }
 `;
 export const ProductImgSection = styled.div`
@@ -249,7 +301,7 @@ export const TrandingArea = styled.td`
     border-radius: 2px;
   }
 
-  input {
+  & input[type="text"] {
     font-size: 16px;
     width: 810px;
     border: 1px solid #c4c4c4;
@@ -258,9 +310,22 @@ export const TrandingArea = styled.td`
 `;
 
 export const Status = styled.td`
-  //color: blue;
   font-size: 16px;
-  input[type="radio"] {
+  display: flex;
+  align-items: center;
+`;
+export const Exchange = styled.td`
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+`;
+export const Price = styled.td`
+  & input[type="text"] {
+    width: 200px;
+  }
+
+  & input[type="checkbox"] {
+    //display: block;
     -webkit-appearance: none;
     -moz-appearance: none;
     height: 20px;
@@ -273,7 +338,20 @@ export const Status = styled.td`
     position: relative;
   }
 
-  input[type="radio"]:hover::before {
+  & input[type="checkbox"]::after {
+    content: "";
+    width: 6px;
+    height: 3px;
+    top: 2px;
+    left: 2px;
+    border-bottom: 3px solid #c3c2cc;
+    border-left: 3px solid #c3c2cc;
+    position: absolute;
+    transform: rotate(-45deg);
+  }
+
+  & input[type="checkbox"]:hover::before {
+    cursor: pointer;
     content: "";
     width: 30px;
     height: 30px;
@@ -285,38 +363,34 @@ export const Status = styled.td`
     left: -8px;
   }
 
-  input[type="radio"]:checked {
+  & input[type="checkbox"]:checked {
     border: 3px solid #ff5058;
-  }
-
-  input[type="radio"]:checked::after {
     background-color: #ff5058;
-    border-radius: 100%;
-    top: 2px;
-    left: 2px;
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
   }
 
-  label {
-    margin: 0px 40px 0 6px;
+  & input[type="checkbox"]:checked::after {
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
   }
 
-  display: flex;
-  align-items: center;
-`;
-export const Exchange = styled.td`
-  color: blue;
-`;
-export const Price = styled.td`
-  color: blue;
+  label:hover {
+    cursor: pointer;
+  }
+
+  .delivery_charge_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
 `;
 export const ProductDescription = styled.td`
-  color: blue;
+  & input[type="text"] {
+
 `;
 export const Tag = styled.td`
-  color: blue;
+  & input[type="text"] {
+    width: 810px;
+  }
 `;
 export const ProductQuantity = styled.td``;
