@@ -4,7 +4,6 @@ export const Container = styled.div`
   #error {
     border: 1px solid orange;
   }
-
   & input[type="text"]:hover {
     border: 1px solid black;
   }
@@ -407,9 +406,57 @@ export const ProductDescription = styled.td`
 `;
 
 export const Tag = styled.td`
-  & input[type="text"] {
-    width: 810px;
+  & .input_wrapper {
+    border: 1px solid #a4a4a4;
+    height: 50px;
+    width: 839px;
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-bottom: 8px;
+    padding: 0px 3px;
+  }
+
+  & .tag_item {
+    white-space: nowrap;
+    background-color: #f4f4fa;
+    padding: 5px 12px;
+    margin: 0 5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .tag_del {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    background-color: #c3c2cc;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    color: #f4f4fa;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  & .tag_del:hover {
+    cursor: pointer;
+  }
+
+  & input[type="text"] {
+    border: none;
+    margin-left: 3px;
+    width: 100%;
+  }
+  & input[type="text"]:hover {
+    border: none;
+  }
+  & input[type="text"]:focus {
+    border: none;
   }
   & ul {
     margin: 0px;

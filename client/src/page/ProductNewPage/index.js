@@ -70,8 +70,63 @@ const ProductNewPage = ({ history }) => {
   const [descriptionError, setDescriptionError] = useState({
     minLength: false,
   });
-  const [tag, setTag] = useState("");
+  const [tagValue, setTagValue] = useState("");
+  const [tag, setTag] = useState([]);
   const [quantity, setQuantity] = useState(1);
+
+  const onClickDeleteTag = (e) => {
+    const tagList = tag;
+    tagList.splice(parseInt(e.target.value), 1);
+    console.log(e.target.value);
+    history.push("/product/new");
+  };
+  const onChangeTagValue = (e) => {
+    const value = e.target.value;
+
+    if (value.length > 9) return;
+
+    setTagValue(e.target.value);
+  };
+
+  const onKeySpace = (e) => {
+    const tagList = tag;
+
+    console.log("tagList >> ", tagList);
+    console.log("e.target.value >> ", e.target.value, ":::");
+    console.log(tag.includes(e.target.value));
+
+    if (e.key === " ") {
+      // if (e.target.value === " ") return;
+
+      // console.log(tagList.includes(e.target.value));
+
+      for (let i = 0; i < tagList.length; i++) {
+        console.log("for tag[i] >> ", tag[i], typeof tag[i]);
+        console.log(
+          "for e.target.value >> ",
+          e.target.value,
+          typeof e.target.value
+        );
+
+        if (tag[i] === e.target.value) {
+          console.log("for TRUE");
+        } else {
+          console.log("for FALSE");
+        }
+      }
+
+      tag.forEach((v) => {
+        if (v === e.target.value) console.log("forEach TRUE");
+        else console.log("forEach FALSE");
+      });
+
+      tagList.push(e.target.value);
+
+      setTag(tagList);
+      setTagValue("");
+      history.push("/product/new");
+    }
+  };
 
   const onSubmitNewProduct = () => {
     onValidataQuantity();
@@ -639,15 +694,33 @@ const ProductNewPage = ({ history }) => {
 
         <tr>
           <td>
-            <h2>
-              연관태그<span>*</span>
-            </h2>
+            <h2>연관태그</h2>
           </td>
           <Tag>
-            <input
-              type="text"
-              placeholder="연관태그를 입력해주세요. (최대 5개)"
-            />
+            <div className="input_wrapper">
+              {tag &&
+                tag.map((v, i) => (
+                  <div className="tag_item">
+                    {v}
+                    <button
+                      value={i}
+                      onClick={onClickDeleteTag}
+                      className="tag_del"
+                    >
+                      &times;
+                    </button>
+                  </div>
+                ))}
+              {tag.length < 5 && (
+                <input
+                  type="text"
+                  placeholder="연관태그를 입력해주세요. (최대 5개)"
+                  value={tagValue}
+                  onChange={onChangeTagValue}
+                  onKeyPress={onKeySpace}
+                />
+              )}
+            </div>
             <ul>
               <li>
                 - 태그는 띄어쓰기로 구분되며 최대 9자까지 입력할 수 있습니다.
@@ -667,9 +740,7 @@ const ProductNewPage = ({ history }) => {
 
         <tr>
           <td>
-            <h2>
-              수량<span>*</span>
-            </h2>
+            <h2>수량</h2>
           </td>
           <ProductQuantity>
             <input
