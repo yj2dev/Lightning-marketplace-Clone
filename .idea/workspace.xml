@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="checkbox design">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Apply validation to all items except tags.">
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/Footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
     </list>
@@ -85,7 +87,7 @@
       <workItem from="1643333708357" duration="31886000" />
       <workItem from="1643455533491" duration="5063000" />
       <workItem from="1643465701077" duration="17433000" />
-      <workItem from="1643516923763" duration="17671000" />
+      <workItem from="1643516923763" duration="18908000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -171,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643531415616</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Apply validation to all items except tags.">
+      <created>1643535637462</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1643535637462</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +212,8 @@
     <MESSAGE value="You can limit the number of images and add more images." />
     <MESSAGE value="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design." />
     <MESSAGE value="checkbox design" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkbox design" />
+    <MESSAGE value="Apply validation to all items except tags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply validation to all items except tags." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

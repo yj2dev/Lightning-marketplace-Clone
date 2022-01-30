@@ -14,6 +14,7 @@ import {
   ErrorMessage,
   ProductImgSection,
   DaumPostcodeWrapper,
+  SubmitSection,
 } from "./styled";
 
 import { AiFillCamera } from "react-icons/ai";
@@ -683,7 +684,9 @@ const ProductNewPage = ({ history }) => {
         </tr>
       </InputSection>
 
-      <button onClick={onSubmitNewProduct}>등록하기</button>
+      <SubmitSection>
+        <button onClick={onSubmitNewProduct}>등록하기</button>
+      </SubmitSection>
     </Container>
   );
 };

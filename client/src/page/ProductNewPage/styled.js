@@ -426,4 +426,28 @@ export const Tag = styled.td`
     color: #a4a4a4;
   }
 `;
+
 export const ProductQuantity = styled.td``;
+export const SubmitSection = styled.div`
+  position: sticky;
+  background-color: #fafafd;
+  height: 90px;
+  bottom: 0px;
+  border-top: 1px solid #a4a4a4;
+  & button {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    float: right;
+    width: 160px;
+    height: 55px;
+    border-radius: 4px;
+    background-color: #ff5058;
+    border: none;
+    margin: 16px 0;
+  }
+  & button:hover {
+    cursor: pointer;
+    background-color: #ed4c54;
+  }
+`;

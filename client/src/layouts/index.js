@@ -6,6 +6,7 @@ import SearchNav from "./Header/SearchNav";
 import ProductNewPage from "../page/ProductNewPage";
 import MyShopPage from "../page/MyShopPage";
 import TalkPage from "../page/TalkPage";
+import Footer from "./Footer";
 
 function MainPage() {
   return (
@@ -17,6 +18,7 @@ function MainPage() {
         <Route path="/shop" component={MyShopPage} />
         <Route path="/talk" component={TalkPage} />
       </Switch>
+      <Footer></Footer>
     </Container>
   );
 }
