@@ -66,9 +66,73 @@ const ProductNewPage = ({ history }) => {
   const [checkedDeliveryCharge, setCheckedDeliveryCharge] = useState(false);
 
   const [description, setDescription] = useState("");
+  const [descriptionError, setDescriptionError] = useState({
+    minLength: false,
+  });
   const [tag, setTag] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
+  const onSubmitNewProduct = () => {
+    onValidataQuantity();
+    const payload = {
+      productImage,
+      title,
+      largeCateogry: selectCategory.large,
+      mediumCategory: selectCategory.medium,
+      smallCategory: selectCategory.small,
+      address,
+      status,
+      exchange,
+      price,
+      checkedDeliveryCharge,
+      description,
+      tag,
+      quantity,
+    };
+
+    console.log("submit payload >> ", payload);
+    console.log("submit");
+  };
+
+  const onValidataQuantity = () => {
+    if (quantity === "" || parseInt(quantity) === 0) {
+      setQuantity(1);
+      return;
+    }
+    setQuantity(parseInt(quantity));
+  };
+  const onFocusQuantity = (e) => {
+    // 사용안함
+    console.log("Focus");
+    console.log(e.target.value);
+  };
+
+  const onChangeQuantity = (e) => {
+    const value = e.target.value;
+    const regex = /^[0-9]+$/;
+    if (value !== "" && !regex.test(value)) {
+      alert("숫자만 입력해 주세요.");
+      return;
+    }
+
+    if (value.length > 3) return;
+    setQuantity(e.target.value);
+  };
+
+  const onChangeDescription = (e) => {
+    const value = e.target.value;
+    if (value !== "" && value.length < 10) {
+      setDescriptionError({ minLength: true });
+    } else {
+      setDescriptionError({ minLength: false });
+    }
+
+    if (value.length > 2000) {
+      return;
+    }
+
+    setDescription(value);
+  };
   const onClickDeliveryCharge = () => {
     // true(배송비 포함), false(배송비 미포함)
     setCheckedDeliveryCharge((prev) => !prev);
@@ -552,7 +616,23 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <ProductDescription>
-            <input type="text" />
+            <textarea
+              placeholder="상품 설명을 입력해주세요. (10글자 이상)"
+              value={description}
+              onChange={onChangeDescription}
+            />
+            {descriptionError.minLength && (
+              <ErrorMessage>
+                <HiOutlineBan />
+                &nbsp;&nbsp;상품 설명을 10글자 이상 입력해주세요.
+              </ErrorMessage>
+            )}
+            <span className="description_length">
+              {description.length}/2000
+            </span>
+            <span className="warning">
+              혹시 <u>카카오톡 ID</u>를 적으셨나요?
+            </span>
           </ProductDescription>
         </tr>
 
@@ -569,16 +649,16 @@ const ProductNewPage = ({ history }) => {
             />
             <ul>
               <li>
-                태그는 띄어쓰기로 구분되며 최대 9자까지 입력할 수 있습니다.
+                - 태그는 띄어쓰기로 구분되며 최대 9자까지 입력할 수 있습니다.
               </li>
               <li>
-                태그는 검색의 부가정보로 사용 되지만, 검색 결과 노출을
+                - 태그는 검색의 부가정보로 사용 되지만, 검색 결과 노출을
                 보장하지는 않습니다.
               </li>
-              <li>검색 광고는 태그정보를 기준으로 노출됩니다.</li>
+              <li>- 검색 광고는 태그정보를 기준으로 노출됩니다.</li>
               <li>
-                상품과 직접 관련이 없는 다른 상품명, 브랜드, 스팸성 키워드 등을
-                입력하면 노출이 중단되거나 상품이 삭제될 수 있습니다.
+                - 상품과 직접 관련이 없는 다른 상품명, 브랜드, 스팸성 키워드
+                등을 입력하면 노출이 중단되거나 상품이 삭제될 수 있습니다.
               </li>
             </ul>
           </Tag>
@@ -591,13 +671,19 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <ProductQuantity>
-            <input type="text" className="quantity" value="1" />
+            <input
+              type="text"
+              className="quantity"
+              value={quantity}
+              onChange={onChangeQuantity}
+              onFocus={onFocusQuantity}
+            />
             &nbsp;&nbsp;&nbsp;개
           </ProductQuantity>
         </tr>
       </InputSection>
 
-      <button>등록하기</button>
+      <button onClick={onSubmitNewProduct}>등록하기</button>
     </Container>
   );
 };

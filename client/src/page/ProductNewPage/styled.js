@@ -171,7 +171,7 @@ export const ErrorMessage = styled.div`
 
 export const Title = styled.td`
   position: relative;
-  input {
+  input[type="text"] {
     width: 750px;
     margin-bottom: 12px;
   }
@@ -385,12 +385,45 @@ export const Price = styled.td`
   }
 `;
 export const ProductDescription = styled.td`
-  & input[type="text"] {
+  position: relative;
+  & textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 810px;
+    height: 130px;
+    border: 1px solid #a4a4a4;
+    resize: none;
+  }
 
+  & .description_length {
+    position: absolute;
+    top: 195px;
+    right: 0px;
+  }
+  & .warning {
+    color: #a4a4a4;
+  }
 `;
+
 export const Tag = styled.td`
   & input[type="text"] {
     width: 810px;
+    margin-bottom: 8px;
+  }
+  & ul {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+  }
+
+  & li {
+    border: none;
+    float: none;
+    margin: 0px;
+    padding: 4px 0;
+    font-size: 16px;
+    color: #a4a4a4;
   }
 `;
 export const ProductQuantity = styled.td``;

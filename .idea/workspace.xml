@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design.">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="checkbox design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
     </list>
@@ -84,7 +85,7 @@
       <workItem from="1643333708357" duration="31886000" />
       <workItem from="1643455533491" duration="5063000" />
       <workItem from="1643465701077" duration="17433000" />
-      <workItem from="1643516923763" duration="13665000" />
+      <workItem from="1643516923763" duration="17671000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643524313856</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="checkbox design">
+      <created>1643531415616</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1643531415616</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +202,8 @@
     <MESSAGE value="Daum Road Name API Demo Applied" />
     <MESSAGE value="You can limit the number of images and add more images." />
     <MESSAGE value="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design." />
-    <option name="LAST_COMMIT_MESSAGE" value="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design." />
+    <MESSAGE value="checkbox design" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkbox design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

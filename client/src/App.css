@@ -17,7 +17,9 @@ body {
 }
 input {
   font-family: "Noto Sans KR", sans-serif;
-
+}
+textarea {
+  font-family: "Noto Sans KR", sans-serif;
 }
 #logo_title {
   font-family: 'Do Hyeon', sans-serif;
