@@ -38,10 +38,12 @@ const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
   const [productImage, setProductImage] = useState([]);
   const [productImageURL, setProductImageURL] = useState([]);
+  const [productImageError, setProductImageError] = useState({
+    required: false,
+  });
 
-  const [titleError, setTitleError] = useState(false);
   const [title, setTitle] = useState("");
-  const [titleLength, setTitleLength] = useState(0);
+  const [titleError, setTitleError] = useState({ minLength: false });
   const [showDeleteTitleButton, setShowDeleteTitleButton] = useState(false);
 
   const [largeCateogry, setLargeCategory] = useState("");
@@ -51,6 +53,9 @@ const ProductNewPage = ({ history }) => {
     large: null,
     medium: null,
     small: null,
+  });
+  const [selectCategoryError, setSelectCategoryError] = useState({
+    required: false,
   });
 
   const [address, setAddress] = useState("지역설정안함");
@@ -110,8 +115,54 @@ const ProductNewPage = ({ history }) => {
     history.push("/product/new");
   };
 
+  const onValidateTotal = () => {
+    let validateResult = false;
+
+    // 이미지
+    if (productImage.length < 1) {
+      setProductImageError({ minLength: true });
+      validateResult = true;
+    } else {
+      setProductImageError({ minLength: false });
+    }
+    // 제목
+    if (title.length < 1) {
+      setTitleError({ minLength: true });
+      validateResult = true;
+    } else {
+      setTitleError({ minLength: false });
+    }
+    // 카테고리
+    if (selectCategory.large === null) {
+      setSelectCategoryError({ required: true });
+      validateResult = true;
+    } else {
+      setSelectCategoryError({ required: false });
+    }
+    // 가격
+    if (price < 100) {
+      setPriceError({ minPrice: true });
+      validateResult = true;
+    } else {
+      setPriceError({ minPrice: false });
+    }
+    // 설명
+    if (description.length < 10) {
+      setDescriptionError({ minLength: true });
+      validateResult = true;
+    } else {
+      setDescriptionError({ minLength: false });
+    }
+    return validateResult;
+  };
+
   const onSubmitNewProduct = () => {
-    onValidataQuantity();
+    // 수량란에 잘못된 값이 들어있으면 변환
+    onValidateQuantity();
+
+    // 공란 체크 (에러 발생시 true 반환)
+    if (onValidateTotal()) return;
+
     const payload = {
       productImage,
       title,
@@ -132,7 +183,7 @@ const ProductNewPage = ({ history }) => {
     console.log("submit");
   };
 
-  const onValidataQuantity = () => {
+  const onValidateQuantity = () => {
     if (quantity === "" || parseInt(quantity) === 0) {
       setQuantity(1);
       return;
@@ -208,6 +259,8 @@ const ProductNewPage = ({ history }) => {
   };
 
   const onSelectLargeCategory = (e) => {
+    setSelectCategoryError({ required: false });
+
     const value = e.target.valueOf(e).innerText;
     setSelectCategory({
       large: value,
@@ -263,6 +316,11 @@ const ProductNewPage = ({ history }) => {
   const onChangeImage = (e) => {
     console.log(e.target.files);
     const files = e.target.files;
+    if (productImage.length < 1) {
+      setProductImageError({ required: true });
+    } else {
+      setProductImageError({ required: false });
+    }
 
     if (files.length + productImage.length > MAX_IMAGE) {
       alert("사진 첨부는 최대 12장까지 가능합니다.");
@@ -317,14 +375,8 @@ const ProductNewPage = ({ history }) => {
     history.push("/product/new");
   };
 
-  const onClickProductInfo = () => {
-    console.log("도로명 API 호출 정보");
-    console.log(address);
-  };
-
   const onDeleteTitleValue = () => {
     setTitle("");
-    setTitleLength(0);
     setShowDeleteTitleButton(false);
   };
   const onChangeTitle = (e) => {
@@ -337,11 +389,10 @@ const ProductNewPage = ({ history }) => {
     if (value === "") setShowDeleteTitleButton(false);
     else setShowDeleteTitleButton(true);
 
-    setTitleLength(value.length);
     setTitle(value);
 
-    if (value.length <= 2) setTitleError(true);
-    else setTitleError(false);
+    if (value.length <= 2) setTitleError({ minLength: true });
+    else setTitleError({ minLength: false });
   };
 
   const handleComplete = (data) => {
@@ -370,8 +421,6 @@ const ProductNewPage = ({ history }) => {
         <li>구매/판매 내역</li>
       </ul>
 
-      <button onClick={onClickProductInfo}>상품 정보</button>
-
       <h1>
         기본정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span>*필수항목</span>
@@ -390,7 +439,12 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <td>
-            <ImgUploadLabel className="cursor_pointer" for="product_image">
+            <ImgUploadLabel
+              className={`cursor_pointer img_upload_label ${
+                productImageError.minLength && "error"
+              }`}
+              for="product_image"
+            >
               <AiFillCamera size={42} style={{ color: "d7d7d7" }} />
               이미지 등록
             </ImgUploadLabel>
@@ -402,7 +456,12 @@ const ProductNewPage = ({ history }) => {
               multiple
               onChange={onChangeImage}
             />
-
+            {productImageError.minLength && (
+              <ErrorMessage>
+                <HiOutlineBan />
+                &nbsp;&nbsp;상품 사진을 등록해주세요.
+              </ErrorMessage>
+            )}
             <ProductImgSection>
               {productImageURL &&
                 productImageURL.map((imageURL, i) => (
@@ -453,7 +512,7 @@ const ProductNewPage = ({ history }) => {
               placeholder="상품 제목을 입력해주세요."
               value={title}
               onChange={onChangeTitle}
-              id={titleError && "error"}
+              id={titleError.minLength && "error"}
             />
             {showDeleteTitleButton && (
               <IoMdCloseCircle
@@ -469,8 +528,8 @@ const ProductNewPage = ({ history }) => {
               />
             )}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {titleLength}/40
-            {titleError && (
+            {title.length}/40
+            {titleError.minLength && (
               <ErrorMessage>
                 <HiOutlineBan />
                 &nbsp;&nbsp;상품명을 2자 이상 입력해주세요.
@@ -489,7 +548,7 @@ const ProductNewPage = ({ history }) => {
             <div>
               <table>
                 <tr>
-                  <td>
+                  <td id={selectCategoryError.required && "error"}>
                     <div className="category_scroll">
                       {ProductLargeCategory &&
                         ProductLargeCategory.map((v) => (
@@ -502,7 +561,7 @@ const ProductNewPage = ({ history }) => {
                         ))}
                     </div>
                   </td>
-                  <td>
+                  <td id={selectCategoryError.required && "error"}>
                     <div className="category_scroll">
                       {mediumCategory &&
                         mediumCategory.map((v) => (
@@ -515,7 +574,7 @@ const ProductNewPage = ({ history }) => {
                         ))}
                     </div>
                   </td>
-                  <td>
+                  <td id={selectCategoryError.required && "error"}>
                     <div className="category_scroll">
                       {smallCategory &&
                         smallCategory.map((v) => (
@@ -531,6 +590,12 @@ const ProductNewPage = ({ history }) => {
                 </tr>
               </table>
             </div>
+            {selectCategoryError.required && (
+              <ErrorMessage>
+                <HiOutlineBan />
+                &nbsp;&nbsp;대분류 카테고리를 선택해주세요.
+              </ErrorMessage>
+            )}
             <div className="selected_category">
               선택한 카테고리 :&nbsp;
               <strong>

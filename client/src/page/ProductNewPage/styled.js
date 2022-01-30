@@ -4,6 +4,9 @@ export const Container = styled.div`
   #error {
     border: 1px solid orange;
   }
+  .error {
+    border: 1px solid orange;
+  }
   & input[type="text"]:hover {
     border: 1px solid black;
   }
@@ -114,6 +117,10 @@ export const Container = styled.div`
 
   label {
     margin: 0px 40px 0 6px;
+  }
+
+  . img_upload_label {
+    margin: 0px;
   }
 `;
 

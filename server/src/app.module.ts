@@ -11,6 +11,7 @@ import * as mongoose from 'mongoose';
 import { User, UserSchema } from './user/model/user.model';
 import { UserRepository } from './user/user.repository';
 import { AuthModule } from './auth/auth.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
     ),
     UserModule,
     AuthModule,
+    ProductModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

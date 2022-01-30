@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Duplicate value check (find application failed),&#10;For applied.">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643559755655</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency.">
+      <created>1643566185000</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1643566185000</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +225,8 @@
     <MESSAGE value="checkbox design" />
     <MESSAGE value="Apply validation to all items except tags." />
     <MESSAGE value="Duplicate value check (find application failed),&#10;For applied." />
-    <option name="LAST_COMMIT_MESSAGE" value="Duplicate value check (find application failed),&#10;For applied." />
+    <MESSAGE value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
