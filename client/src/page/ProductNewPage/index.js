@@ -13,6 +13,7 @@ import {
   ProductQuantity,
   ErrorMessage,
   ProductImgSection,
+  DaumPostcodeWrapper,
 } from "./styled";
 
 import { AiFillCamera } from "react-icons/ai";
@@ -28,6 +29,8 @@ import {
   ProductSmallCategory,
 } from "../../data/ProductCategory";
 import DaumPostcode from "react-daum-postcode";
+import Postcode from "../../components/Postcode";
+import Modal from "../../components/Modal";
 
 const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
@@ -48,7 +51,9 @@ const ProductNewPage = ({ history }) => {
     small: null,
   });
 
-  // const [address, setAddress] = useState("");
+  const [address, setAddress] = useState("지역설정안함");
+  const [showPostcodeModal, setShowPostcodeModal] = useState(false);
+
   const [status, setStatus] = useState("");
   const [exchange, setExchange] = useState("");
   const [price, setPrice] = useState("");
@@ -62,6 +67,16 @@ const ProductNewPage = ({ history }) => {
       large: value,
     });
     setMediumCategory(ProductMediumCategory[value]);
+  };
+
+  const onClosePostcodeModal = () => {
+    setShowPostcodeModal(false);
+  };
+  const onTogglePostcodeModal = () => {
+    setShowPostcodeModal((prev) => !prev);
+  };
+  const onClickNoneAddress = () => {
+    setAddress("지역설정안함");
   };
 
   const onSelectMediumCategory = (e) => {
@@ -158,9 +173,7 @@ const ProductNewPage = ({ history }) => {
 
   const onClickProductInfo = () => {
     console.log("도로명 API 호출 정보");
-
-    console.log("address >> ", address);
-    console.log("addressDetail >> ", addressDetail);
+    console.log(address);
   };
 
   const onDeleteTitleValue = () => {
@@ -185,55 +198,26 @@ const ProductNewPage = ({ history }) => {
     else setTitleError(false);
   };
 
-  // --- demo code ---
-  const [address, setAddress] = useState(""); // 주소
-  const [addressDetail, setAddressDetail] = useState(""); // 상세주소
-
-  const [isOpenPost, setIsOpenPost] = useState(false);
-
-  const onChangeOpenPost = () => {
-    setIsOpenPost(!isOpenPost);
-  };
-
-  const onCompletePost = (data) => {
-    let fullAddr = data.address;
-    let extraAddr = "";
+  const handleComplete = (data) => {
+    let fullAddress = data.address;
+    let extraAddress = "";
 
     if (data.addressType === "R") {
       if (data.bname !== "") {
-        extraAddr += data.bname;
+        extraAddress += data.bname;
       }
       if (data.buildingName !== "") {
-        extraAddr +=
-          extraAddr !== "" ? `, ${data.buildingName}` : data.buildingName;
+        extraAddress +=
+          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
       }
-      fullAddr += extraAddr !== "" ? ` (${extraAddr})` : "";
+      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
-
-    setAddress(data.zonecode);
-    setAddressDetail(fullAddr);
-    setIsOpenPost(false);
-  };
-
-  const postCodeStyle = {
-    display: "block",
-    position: "relative",
-    top: "0%",
-    width: "400px",
-    height: "400px",
-    padding: "7px",
+    onClosePostcodeModal();
+    setAddress(fullAddress);
   };
 
   return (
     <Container>
-      {isOpenPost ? (
-        <DaumPostcode
-          style={postCodeStyle}
-          autoClose
-          onComplete={onCompletePost}
-        />
-      ) : null}
-
       <ul>
         <li>상품등록</li>
         <li>상품관리</li>
@@ -419,7 +403,20 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <TrandingArea>
-            <input type="text" />
+            <button onClick={onTogglePostcodeModal} className="cursor_pointer">
+              주소 검색
+            </button>
+            <button onClick={onClickNoneAddress} className="cursor_pointer">
+              지역설정안함
+            </button>
+            <input type="text" disabled={true} value={address} />
+            <Modal
+              show={showPostcodeModal}
+              close={onClosePostcodeModal}
+              style={{ width: "450px" }}
+            >
+              <DaumPostcode onComplete={handleComplete} />
+            </Modal>
           </TrandingArea>
         </tr>
 
@@ -430,7 +427,10 @@ const ProductNewPage = ({ history }) => {
             </h2>
           </td>
           <Status>
-            <input type="text" />
+            <input type="radio" id="used_product" name="product_status" />
+            <label htmlFor="used_product">중고상품</label>
+            <input type="radio" id="new_product" name="product_status" />
+            <label htmlFor="new_product">새상품</label>
           </Status>
         </tr>
 

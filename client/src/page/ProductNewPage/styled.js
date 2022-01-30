@@ -238,10 +238,74 @@ export const Category = styled.td`
   }
 `;
 export const TrandingArea = styled.td`
-  color: blue;
+  button {
+    font-size: 16px;
+    width: 110px;
+    height: 50px;
+    padding: 0;
+    margin: 0 16px 16px 0;
+    background-color: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+  }
+
+  input {
+    font-size: 16px;
+    width: 810px;
+    border: 1px solid #c4c4c4;
+    background-color: #f4f4fa;
+  }
 `;
+
 export const Status = styled.td`
-  color: blue;
+  //color: blue;
+  font-size: 16px;
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 3px solid #c3c2cc;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    position: relative;
+  }
+
+  input[type="radio"]:hover::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.1;
+    top: -8px;
+    left: -8px;
+  }
+
+  input[type="radio"]:checked {
+    border: 3px solid #ff5058;
+  }
+
+  input[type="radio"]:checked::after {
+    background-color: #ff5058;
+    border-radius: 100%;
+    top: 2px;
+    left: 2px;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+  }
+
+  label {
+    margin: 0px 40px 0 6px;
+  }
+
+  display: flex;
+  align-items: center;
 `;
 export const Exchange = styled.td`
   color: blue;

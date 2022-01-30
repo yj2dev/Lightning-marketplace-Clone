@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Daum Road Name API Demo Applied">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="You can limit the number of images and add more images.">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Postcode/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/Section/UploadProductImage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/Section/UploadProductImage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,8 @@
       <workItem from="1643265198538" duration="824000" />
       <workItem from="1643333708357" duration="31886000" />
       <workItem from="1643455533491" duration="5063000" />
-      <workItem from="1643465701077" duration="16499000" />
+      <workItem from="1643465701077" duration="17433000" />
+      <workItem from="1643516923763" duration="6536000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -147,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643483514620</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="You can limit the number of images and add more images.">
+      <created>1643484799486</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643484799486</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +188,8 @@
     <MESSAGE value="Save a single image file from the client to the server successfully." />
     <MESSAGE value="Image preview removal implementation." />
     <MESSAGE value="Daum Road Name API Demo Applied" />
-    <option name="LAST_COMMIT_MESSAGE" value="Daum Road Name API Demo Applied" />
+    <MESSAGE value="You can limit the number of images and add more images." />
+    <option name="LAST_COMMIT_MESSAGE" value="You can limit the number of images and add more images." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

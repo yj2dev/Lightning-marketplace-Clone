@@ -1,5 +1,5 @@
 const UploadProductImage = () => {
-  return <>gi</>;
+  return <>UploadProductImage</>;
 };
 
 export default UploadProductImage;
