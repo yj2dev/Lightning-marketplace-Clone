@@ -12,6 +12,7 @@ import { User, UserSchema } from './user/model/user.model';
 import { UserRepository } from './user/user.repository';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
+import { OauthModule } from './oauth/oauth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ProductModule } from './product/product.module';
     UserModule,
     AuthModule,
     ProductModule,
+    OauthModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

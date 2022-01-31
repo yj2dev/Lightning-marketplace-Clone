@@ -37,7 +37,7 @@ async function bootstrap() {
 
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({
-    origin: MODE || process.env.ORIGIN_URL,
+    // origin: MODE || process.env.ORIGIN_URL,
     credentials: true,
   });
 

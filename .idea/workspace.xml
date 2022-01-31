@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="create product model">
-      <change afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Waiting for the mobile phone identification code to connect to the merchant identification code.">
+      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,7 @@
       <workItem from="1643465701077" duration="17433000" />
       <workItem from="1643516923763" duration="18908000" />
       <workItem from="1643625649892" duration="7867000" />
-      <workItem from="1643645815866" duration="2909000" />
+      <workItem from="1643645815866" duration="11375000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -203,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643570747124</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Waiting for the mobile phone identification code to connect to the merchant identification code.">
+      <created>1643649012075</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1643649012075</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +249,8 @@
     <MESSAGE value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
     <MESSAGE value="NewProductPage Completion" />
     <MESSAGE value="NewProductPage validate Completion" />
-    <option name="LAST_COMMIT_MESSAGE" value="NewProductPage validate Completion" />
+    <MESSAGE value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
