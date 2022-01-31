@@ -17,9 +17,20 @@ import { FiSmartphone } from "react-icons/fi";
 
 import Modal from "../Modal";
 
-function LoginInModal({ children, show, close }) {
+function LoginInModal({ children, show, close, history }) {
   const onSubmitKakaoAuth = () => {
     console.log("KakaoAuth");
+  };
+  const onSubmitFacebookAuth = () => {
+    console.log("FacebookAuth");
+  };
+  const onSubmitNaverAuth = () => {
+    console.log("NaverAuth");
+  };
+  const onSubmitPhoneCertification = () => {
+    history.push("/certification");
+
+    console.log("PhoneCertification");
   };
 
   return (
@@ -53,7 +64,7 @@ function LoginInModal({ children, show, close }) {
             </span>
             카카오로 이용하기
           </KakaoAuthButton>
-          <FacebookAuthButton>
+          <FacebookAuthButton onClick={onSubmitFacebookAuth}>
             <span>
               <AiFillFacebook
                 size={17}
@@ -66,7 +77,7 @@ function LoginInModal({ children, show, close }) {
             </span>
             페이스북으로 이용하기
           </FacebookAuthButton>
-          <NaverAuthButton>
+          <NaverAuthButton onClick={onSubmitNaverAuth}>
             <span>
               <SiNaver
                 size={15}
@@ -79,7 +90,7 @@ function LoginInModal({ children, show, close }) {
             </span>
             네이버로 이용하기
           </NaverAuthButton>
-          <OriginAuthButton>
+          <OriginAuthButton onClick={onSubmitPhoneCertification}>
             <span>
               <FiSmartphone
                 size={18}

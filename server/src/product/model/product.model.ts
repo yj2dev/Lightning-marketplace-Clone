@@ -1,7 +1,8 @@
-import { Document, SchemaOptions } from 'mongoose';
+import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { User } from '../../user/model/user.model';
 
 const options: SchemaOptions = {
   timestamps: true,
@@ -10,10 +11,10 @@ const options: SchemaOptions = {
 
 @Schema(options)
 export class Product extends Document {
-  @Prop({ required: true })
+  @Prop({ type: Types.ObjectId, required: true, ref: 'users' })
   @IsString()
   @IsNotEmpty()
-  seller: string;
+  seller: User;
 
   @Prop({ required: true })
   @IsString()
