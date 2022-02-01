@@ -64,40 +64,52 @@ const CertificationPage = ({ history }) => {
 
   const onClickKakaoAuth = () => {
     console.log("[ OAuth Info ]");
-    console.log(REST_API_KEY);
-    console.log(REDIRECT_URI);
-    console.log(CLIENT_SECRET);
+    console.log("[REST_API_KEY]  ", REST_API_KEY);
+    console.log("[REDIRECT_URI]  ", REDIRECT_URI);
+    console.log("[CLIENT_SECRET] ", CLIENT_SECRET);
+    console.log("[JAVASCRIPT_KEY]", JAVASCRIPT_KEY);
   };
 
   const getKakaoToken = () => {
     console.log("[ getKakaoToken ]");
     const code = new URL(window.location.href).searchParams.get("code");
-    console.log(code);
+    console.log("code >> ", code);
 
+    // grant_type: "authorization_code",
     const payload = {
-      grant_type: "authorization_code",
       client_id: REST_API_KEY,
       redirect_uri: REDIRECT_URI,
-      code,
+      response_type: code,
       client_secret: CLIENT_SECRET,
     };
 
     const queryStringPayload = queryString.stringify(payload);
 
-    console.log(payload);
-    console.log(queryStringPayload);
+    console.log("payload >> ", payload);
+    console.log("queryStringPayload >> ", queryStringPayload);
 
     axios
-      .post("https://kauth.kakao.com/oauth/token", payload, {
-        withCredentials: false,
+      .post("https://kauth.kakao.com/oauth/token", queryStringPayload, {
+        // withCredentials: false,
+        // withCredentials: true,
       })
       .then((res) => {
         console.log("succeed");
         // access token 설정
 
-        window.Kakao.init(REST_API_KEY);
+        window.Kakao.init(JAVASCRIPT_KEY);
         window.Kakao.Auth.setAccessToken(res.data.access_token);
         console.log("res >> ", res);
+
+        window.Kakao.API.request({
+          url: "/v1/api/talk/profile",
+          success: function (response) {
+            console.log(response);
+          },
+          fail: function (error) {
+            console.log(error);
+          },
+        });
       })
       .catch((err) => {
         console.log("failed");

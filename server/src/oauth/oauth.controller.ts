@@ -1,16 +1,22 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('oauth')
 export class OauthController {
   @Get()
-  test() {
+  testGet() {
+    console.log('oauth get');
     return 'test';
   }
 
-  @Get('/:type')
-  OAuth(@Param('type') param: string): string {
-    console.log('OAuth');
-    console.log(param);
-    return 'OAuth';
+  @Post()
+  testPost() {
+    console.log('oauth post');
+    return 'test';
   }
+
+  // @Get('/:type')
+  // OAuth(@Param('type') param: string): {
+  //   console.log(param);
+  //   return 'OAuth';
+  // }
 }

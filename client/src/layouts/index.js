@@ -12,10 +12,10 @@ import CertificationPage from "../page/CertificationPage";
 function MainPage({ history }) {
   const { pathname } = useLocation();
 
-  if (pathname === "/certification") {
+  if (pathname === "/oauth") {
     return (
       <>
-        <Route exact path="/certification" component={CertificationPage} />
+        <Route exact path="/oauth" component={CertificationPage} />
       </>
     );
   } else {

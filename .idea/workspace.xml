@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Waiting for the mobile phone identification code to connect to the merchant identification code.">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Kakao OAuth failed to get the token.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +91,7 @@
       <workItem from="1643516923763" duration="18908000" />
       <workItem from="1643625649892" duration="7867000" />
       <workItem from="1643645815866" duration="11375000" />
+      <workItem from="1643716326654" duration="3882000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -209,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643649012075</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Kakao OAuth failed to get the token.">
+      <created>1643684393462</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1643684393462</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +257,8 @@
     <MESSAGE value="NewProductPage Completion" />
     <MESSAGE value="NewProductPage validate Completion" />
     <MESSAGE value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
+    <MESSAGE value="Kakao OAuth failed to get the token." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kakao OAuth failed to get the token." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
