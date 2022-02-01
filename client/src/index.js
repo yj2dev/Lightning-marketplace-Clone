@@ -11,11 +11,13 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// axios.defaults.withCredentials = true;
-axios.defaults.baseURL =
-  process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_SERVER_URI
-    : "http://localhost:5050";
+// 동작안함
+// axios.defaults.withCredentials = false;
+
+// axios.defaults.baseURL =
+//   process.env.NODE_ENV === "production"
+//     ? process.env.REACT_APP_SERVER_URI
+//     : "http://localhost:5050";
 
 const createStoreWithMiddleware = applyMiddleware(
   promiseMiddleware,

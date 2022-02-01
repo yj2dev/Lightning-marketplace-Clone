@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Kakao OAuth failed to get the token.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

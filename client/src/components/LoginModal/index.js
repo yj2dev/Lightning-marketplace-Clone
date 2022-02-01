@@ -28,7 +28,7 @@ function LoginInModal({ children, show, close, history }) {
     console.log("NaverAuth");
   };
   const onSubmitPhoneCertification = () => {
-    history.push("/certification");
+    history.push("/oauth");
 
     console.log("PhoneCertification");
   };

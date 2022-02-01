@@ -60,7 +60,8 @@ const CertificationPage = ({ history }) => {
   const JAVASCRIPT_KEY = process.env.REACT_APP_KAKAO_AUTH_JAVASCRIPT_KEY;
   const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
   const CLIENT_SECRET = process.env.REACT_APP_KAKAO_AUTH_CLIENT_SECRET;
-  axios.defaults.withCredentials = true;
+
+  // axios.defaults.withCredentials = true;
 
   const onClickKakaoAuth = () => {
     console.log("[ OAuth Info ]");
@@ -89,37 +90,50 @@ const CertificationPage = ({ history }) => {
     console.log("queryStringPayload >> ", queryStringPayload);
 
     axios
-      .post("https://kauth.kakao.com/oauth/token", queryStringPayload, {
-        // withCredentials: false,
-        // withCredentials: true,
-      })
+      .get(`http://localhost:8000/`, { withCredentials: false })
       .then((res) => {
         console.log("succeed");
-        // access token 설정
-
-        window.Kakao.init(JAVASCRIPT_KEY);
-        window.Kakao.Auth.setAccessToken(res.data.access_token);
         console.log("res >> ", res);
-
-        window.Kakao.API.request({
-          url: "/v1/api/talk/profile",
-          success: function (response) {
-            console.log(response);
-          },
-          fail: function (error) {
-            console.log(error);
-          },
-        });
       })
       .catch((err) => {
         console.log("failed");
         console.log("err > ", err);
       });
+    //
+    axios
+      .get(`http://localhost:8000/oauth?code=${code}`, {
+        withCredentials: false,
+      })
+      .then((res) => {
+        console.log("succeed");
+        console.log("res >> ", res);
+
+        // access token 설정
+
+        // window.Kakao.init(JAVASCRIPT_KEY);
+        // window.Kakao.Auth.setAccessToken(res.data.access_token);
+        //
+        // window.Kakao.API.request({
+        //   url: "/v1/api/talk/profile",
+        //   success: function (response) {
+        //     console.log(response);
+        //   },
+        //   fail: function (error) {
+        //     console.log(error);
+        //   },
+        // });
+      })
+      .catch((err) => {
+        console.log("failed");
+        console.log("err > ", err);
+      });
+
     // console.log(window.Kakao);
   };
 
   return (
     <Container>
+      <Link to="/">HOME</Link>
       <button onClick={onClickKakaoAuth}>Kakao OAuth Info</button>
       <br />
       <a
