@@ -4,9 +4,12 @@ import { Container, Form } from "./styled";
 import axios from "axios";
 import * as queryString from "querystring";
 
-const CertificationPage = ({ history }) => {
+const OAuthPage = ({ history }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+
+  const [userName, setUserName] = useState("");
+  const [userProfileURI, setUserProfileURI] = useState("");
 
   const onChangeName = (e) => {
     setName(e.target.value);
@@ -76,30 +79,6 @@ const CertificationPage = ({ history }) => {
     const code = new URL(window.location.href).searchParams.get("code");
     console.log("code >> ", code);
 
-    // grant_type: "authorization_code",
-    const payload = {
-      client_id: REST_API_KEY,
-      redirect_uri: REDIRECT_URI,
-      response_type: code,
-      client_secret: CLIENT_SECRET,
-    };
-
-    const queryStringPayload = queryString.stringify(payload);
-
-    console.log("payload >> ", payload);
-    console.log("queryStringPayload >> ", queryStringPayload);
-
-    axios
-      .get(`http://localhost:8000/`, { withCredentials: false })
-      .then((res) => {
-        console.log("succeed");
-        console.log("res >> ", res);
-      })
-      .catch((err) => {
-        console.log("failed");
-        console.log("err > ", err);
-      });
-    //
     axios
       .get(`http://localhost:8000/oauth?code=${code}`, {
         withCredentials: false,
@@ -108,27 +87,13 @@ const CertificationPage = ({ history }) => {
         console.log("succeed");
         console.log("res >> ", res);
 
-        // access token 설정
-
-        // window.Kakao.init(JAVASCRIPT_KEY);
-        // window.Kakao.Auth.setAccessToken(res.data.access_token);
-        //
-        // window.Kakao.API.request({
-        //   url: "/v1/api/talk/profile",
-        //   success: function (response) {
-        //     console.log(response);
-        //   },
-        //   fail: function (error) {
-        //     console.log(error);
-        //   },
-        // });
+        setUserName(res.data.properties.nickname);
+        setUserProfileURI(res.data.properties.thumbnail_image);
       })
       .catch((err) => {
         console.log("failed");
         console.log("err > ", err);
       });
-
-    // console.log(window.Kakao);
   };
 
   return (
@@ -145,6 +110,10 @@ const CertificationPage = ({ history }) => {
       <br />
       <button onClick={getKakaoToken}>getToken</button>
 
+      <hr />
+
+      <h2>{userName}</h2>
+      <img src={userProfileURI} />
       <Form onSubmit={onSubmit}>
         <input
           type="text"
@@ -164,4 +133,4 @@ const CertificationPage = ({ history }) => {
   );
 };
 
-export default withRouter(CertificationPage);
+export default withRouter(OAuthPage);

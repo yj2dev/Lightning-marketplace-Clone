@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Kakao OAuth failed to get the token.">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Successfully received Kakao Token.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/OAuthPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643684393462</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Successfully received Kakao Token.">
+      <created>1643741359989</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1643741359989</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +266,8 @@
     <MESSAGE value="NewProductPage validate Completion" />
     <MESSAGE value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
     <MESSAGE value="Kakao OAuth failed to get the token." />
-    <option name="LAST_COMMIT_MESSAGE" value="Kakao OAuth failed to get the token." />
+    <MESSAGE value="Successfully received Kakao Token." />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully received Kakao Token." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

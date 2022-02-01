@@ -7,7 +7,7 @@ import ProductNewPage from "../page/ProductNewPage";
 import MyShopPage from "../page/MyShopPage";
 import TalkPage from "../page/TalkPage";
 import Footer from "./Footer";
-import CertificationPage from "../page/CertificationPage";
+import CertificationPage from "../page/OAuthPage";
 
 function MainPage({ history }) {
   const { pathname } = useLocation();

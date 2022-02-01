@@ -9,7 +9,7 @@ export class OauthController {
   private readonly CLIENT_SECRET = process.env.KAKAO_AUTH_CLIENT_SECRET;
 
   @Get('/')
-  testGet(@Query('code') code: string) {
+  async testGet(@Query('code') code: string) {
     console.log('oauth get');
     console.log('code >> ', code);
 
@@ -26,20 +26,48 @@ export class OauthController {
     console.log('payload >> ', payload);
     console.log('queryStringPayload >> ', queryStringPayload);
 
-    axios
-      .post('https://kauth.kakao.com/oauth/token', queryStringPayload, {
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-        },
-      })
-      .then((res) => {
-        console.log('succeed');
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log('failed...');
-        console.log(err.data);
-      });
+    const getToken = async () => {
+      try {
+        const res = await axios.post(
+          'https://kauth.kakao.com/oauth/token',
+          queryStringPayload,
+          {
+            headers: {
+              'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+            },
+          },
+        );
+        console.log('getToken res data >> ', res.data);
+        return res.data;
+      } catch (err) {
+        console.log('getToken err >> ', err);
+      }
+    };
+
+    const getUser = async (access_token) => {
+      if (!access_token) return;
+      try {
+        const res = await axios.get('https://kapi.kakao.com/v2/user/me', {
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+            authorization: `Bearer ${access_token}`,
+          },
+        });
+
+        console.log('getUser res data >> ', res.data);
+        return res.data;
+      } catch (err) {
+        console.log('getUser err >> ', err);
+      }
+    };
+
+    const token = await getToken();
+
+    const user = await getUser(token.access_token);
+    // console.log('token >> ', token);
+    // console.log('user >> ', user);
+    // console.log(qs.stringify(user));
+    return user;
   }
 
   @Get('/kakao')
