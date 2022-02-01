@@ -90,6 +90,7 @@ function LoginInModal({ children, show, close, history }) {
             </span>
             네이버로 이용하기
           </NaverAuthButton>
+
           <OriginAuthButton onClick={onSubmitPhoneCertification}>
             <span>
               <FiSmartphone

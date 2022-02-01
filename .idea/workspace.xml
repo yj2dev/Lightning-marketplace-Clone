@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Waiting for the mobile phone identification code to connect to the merchant identification code.">
-      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +60,7 @@
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\assets" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts\Header" />
     </key>

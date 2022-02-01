@@ -1,10 +1,8 @@
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { useState } from "react";
 import { Container, Form } from "./styled";
 import axios from "axios";
-
-import dotenv from "dotenv";
-dotenv.config();
+import * as queryString from "querystring";
 
 const CertificationPage = ({ history }) => {
   const [name, setName] = useState("");
@@ -56,36 +54,70 @@ const CertificationPage = ({ history }) => {
       console.log("본인인증 실패 ", merchant_uid);
     }
   }
-  const REST_API_KEY = process.env.KAKAO_AUTH_REST_API_KEY;
-  const REDIRECT_URI = "http://localhost:3000/certification";
-  const onClickKakaoAuth = () => {
-    // axios.defaults.withCredentials = true;
 
+  // Kakao OAuth
+  const REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
+  const JAVASCRIPT_KEY = process.env.REACT_APP_KAKAO_AUTH_JAVASCRIPT_KEY;
+  const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
+  const CLIENT_SECRET = process.env.REACT_APP_KAKAO_AUTH_CLIENT_SECRET;
+  axios.defaults.withCredentials = true;
+
+  const onClickKakaoAuth = () => {
+    console.log("[ OAuth Info ]");
     console.log(REST_API_KEY);
     console.log(REDIRECT_URI);
+    console.log(CLIENT_SECRET);
+  };
+
+  const getKakaoToken = () => {
+    console.log("[ getKakaoToken ]");
+    const code = new URL(window.location.href).searchParams.get("code");
+    console.log(code);
+
+    const payload = {
+      grant_type: "authorization_code",
+      client_id: REST_API_KEY,
+      redirect_uri: REDIRECT_URI,
+      code,
+      client_secret: CLIENT_SECRET,
+    };
+
+    const queryStringPayload = queryString.stringify(payload);
+
+    console.log(payload);
+    console.log(queryStringPayload);
 
     axios
-      .get(
-        `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`,
-        {}
-      )
+      .post("https://kauth.kakao.com/oauth/token", payload, {
+        withCredentials: false,
+      })
       .then((res) => {
-        console.log(res);
+        console.log("succeed");
+        // access token 설정
+
+        window.Kakao.init(REST_API_KEY);
+        window.Kakao.Auth.setAccessToken(res.data.access_token);
+        console.log("res >> ", res);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("failed");
+        console.log("err > ", err);
       });
+    // console.log(window.Kakao);
   };
 
   return (
     <Container>
-      <button onClick={onClickKakaoAuth}>카카오 로그인 REST API</button>
-
+      <button onClick={onClickKakaoAuth}>Kakao OAuth Info</button>
+      <br />
       <a
         href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`}
       >
-        카카오 로그인
+        카카오 로그인(Anchor)
       </a>
+
+      <br />
+      <button onClick={getKakaoToken}>getToken</button>
 
       <Form onSubmit={onSubmit}>
         <input
