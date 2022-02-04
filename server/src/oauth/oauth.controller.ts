@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Post, Query } from '@nestjs/common';
 import axios from 'axios';
 import * as qs from 'qs';
+import * as cache from 'memory-cache';
 
 @Controller('oauth')
 export class OauthController {
@@ -69,23 +70,38 @@ export class OauthController {
     // console.log(qs.stringify(user));
     return user;
   }
-  //
-  // @Get('/kakao231')
-  // testGet2(@Param() param) {
-  //   console.log('oauth get2');
-  //   console.log('param2 >> ', param);
-  //   return 'test_KAKAO';
-  // }
-  //
-  // @Post()
-  // testPost() {
-  //   console.log('oauth post');
-  //   return 'test';
-  // }
 
-  // @Get('/:type')
-  // OAuth(@Param('type') param: string): {
-  //   console.log(param);
-  //   return 'OAuth';
-  // }
+  @Get('/cache')
+  createCache23() {
+    return 'succeed';
+  }
+  @Get('/cache/good')
+  createCache233() {
+    return 'suc3213ceed';
+  }
+
+  @Get('/cache/create')
+  createCache() {
+    cache.put('undefined102', 'value102');
+    cache.put('undefined106', 'value106', 1000, (key, value) => {
+      console.log(`[${key}]: ${value} 등록!`);
+
+      return 'succeed';
+    });
+    return 'succeed';
+  }
+
+  @Get('/cache/show/:key')
+  showCache(@Param('key') key) {
+    console.log(key);
+    console.log(cache.size());
+    console.log(cache.get(key));
+    return 'succeed';
+  }
+
+  @Get('/cache/delete')
+  deleteCache() {
+    cache.put('undefined102', 'value102');
+    return 'succeed';
+  }
 }
