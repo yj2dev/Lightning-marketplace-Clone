@@ -1,5 +1,5 @@
-import { Link, withRouter } from "react-router-dom";
-import { useState } from "react";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
+import React, { useState } from "react";
 import { Container, Form } from "./styled";
 import axios from "axios";
 import { useCookies } from "react-cookie";
@@ -10,6 +10,8 @@ const OAuthPage = ({ history }) => {
 
   const [userName, setUserName] = useState("");
   const [userProfileURI, setUserProfileURI] = useState("");
+
+  const [cookie, setCookie, removeCookie] = useCookies(["using-cookie"]);
 
   const onChangeName = (e) => {
     setName(e.target.value);
@@ -58,89 +60,9 @@ const OAuthPage = ({ history }) => {
     }
   }
 
-  // Kakao OAuth
-  const REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
-  const JAVASCRIPT_KEY = process.env.REACT_APP_KAKAO_AUTH_JAVASCRIPT_KEY;
-  const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
-  const CLIENT_SECRET = process.env.REACT_APP_KAKAO_AUTH_CLIENT_SECRET;
-
-  // axios.defaults.withCredentials = true;
-
-  const onClickKakaoAuth = () => {
-    console.log("[ OAuth Info ]");
-    console.log("[REST_API_KEY]  ", REST_API_KEY);
-    console.log("[REDIRECT_URI]  ", REDIRECT_URI);
-    console.log("[CLIENT_SECRET] ", CLIENT_SECRET);
-    console.log("[JAVASCRIPT_KEY]", JAVASCRIPT_KEY);
-  };
-
-  const getKakaoToken = () => {
-    console.log("[ getKakaoToken ]");
-    const code = new URL(window.location.href).searchParams.get("code");
-    console.log("code >> ", code);
-
-    axios
-      .get(`http://localhost:8000/oauth?code=${code}`, {
-        withCredentials: false,
-      })
-      .then((res) => {
-        console.log("succeed");
-        console.log("res >> ", res);
-
-        setUserName(res.data.properties.nickname);
-        setUserProfileURI(res.data.properties.thumbnail_image);
-      })
-      .catch((err) => {
-        console.log("failed");
-        console.log("err > ", err);
-      });
-  };
-
-  const [cookie, setCookie, removeCookie] = useCookies(["using-cookie"]);
-
-  const getKakaoUserInfo = () => {
-    console.log("[ getKakaoUserInfo ]");
-  };
-
-  const onClickSetCookie = () => {
-    console.log("[ setCookie ]");
-    let date = new Date();
-    console.log("date >> ", date);
-    console.log(date.getSeconds());
-    date.setSeconds(date.getSeconds() + 10);
-
-    console.log("after date >> ", date);
-    setCookie("testCookie012", "dummy012", {});
-  };
-
-  const onClickRemoveCookie = () => {
-    console.log("[ removeCookie ]");
-
-    removeCookie("testCookie012");
-  };
-
   return (
     <Container>
       <Link to="/">HOME</Link>
-      <button onClick={onClickKakaoAuth}>Kakao OAuth Info</button>
-      <br />
-      <a
-        href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`}
-      >
-        카카오 로그인(Anchor)
-      </a>
-
-      <br />
-      <button onClick={getKakaoToken}>getToken</button>
-      <br />
-      <button onClick={getKakaoUserInfo}>카카오 로그인 정보 확인</button>
-      <br />
-      <button onClick={onClickSetCookie}>쿠키 생성</button>
-      <br />
-      <button onClick={onClickRemoveCookie}>쿠키 제거 </button>
-
-      <hr />
-
       <h2>{userName}</h2>
       <img src={userProfileURI} />
       <Form onSubmit={onSubmit}>

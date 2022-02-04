@@ -18,14 +18,22 @@ import { FiSmartphone } from "react-icons/fi";
 import Modal from "../Modal";
 
 function LoginInModal({ children, show, close, history }) {
+  // Kakao OAuth
+  const REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
+  const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
+
   const onSubmitKakaoAuth = () => {
     console.log("KakaoAuth");
+
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`;
   };
   const onSubmitFacebookAuth = () => {
     console.log("FacebookAuth");
+    history.push("/oauth/facebook");
   };
   const onSubmitNaverAuth = () => {
     console.log("NaverAuth");
+    history.push("/oauth/naver");
   };
   const onSubmitPhoneCertification = () => {
     history.push("/oauth");

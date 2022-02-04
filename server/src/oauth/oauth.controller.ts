@@ -8,7 +8,7 @@ export class OauthController {
   private readonly REDIRECT_URI = process.env.KAKAO_AUTH_REDIRECT_URI;
   private readonly CLIENT_SECRET = process.env.KAKAO_AUTH_CLIENT_SECRET;
 
-  @Get('/')
+  @Get('/kakao')
   async testGet(@Query('code') code: string) {
     console.log('oauth get');
     console.log('code >> ', code);
@@ -69,19 +69,19 @@ export class OauthController {
     // console.log(qs.stringify(user));
     return user;
   }
-
-  @Get('/kakao')
-  testGet2(@Param() param) {
-    console.log('oauth get2');
-    console.log('param2 >> ', param);
-    return 'test_KAKAO';
-  }
-
-  @Post()
-  testPost() {
-    console.log('oauth post');
-    return 'test';
-  }
+  //
+  // @Get('/kakao231')
+  // testGet2(@Param() param) {
+  //   console.log('oauth get2');
+  //   console.log('param2 >> ', param);
+  //   return 'test_KAKAO';
+  // }
+  //
+  // @Post()
+  // testPost() {
+  //   console.log('oauth post');
+  //   return 'test';
+  // }
 
   // @Get('/:type')
   // OAuth(@Param('type') param: string): {

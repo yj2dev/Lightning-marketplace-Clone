@@ -1,6 +1,20 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  & a {
+    text-decoration: none;
+    color: #000000;
+    border: 2px solid red;
+    padding: 5px 75px;
+    //margin: 5px 75px;
+  }
+
+  & a:hover {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 800;
+  }
+`;
 
 export const MarketIcon = styled.div`
   margin-top: 30px;
