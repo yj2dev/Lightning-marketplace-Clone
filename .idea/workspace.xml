@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Successfully received Kakao Token.">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Kakao OAuth route modification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/CertificationPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/OAuthPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +92,11 @@
       <workItem from="1643625649892" duration="7867000" />
       <workItem from="1643645815866" duration="11375000" />
       <workItem from="1643716326654" duration="3882000" />
+      <workItem from="1643832438836" duration="982000" />
+      <workItem from="1643842713588" duration="2586000" />
+      <workItem from="1643857467542" duration="597000" />
+      <workItem from="1643899662257" duration="722000" />
+      <workItem from="1643935683934" duration="5980000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>

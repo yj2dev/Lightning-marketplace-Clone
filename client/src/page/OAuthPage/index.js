@@ -2,7 +2,7 @@ import { Link, withRouter } from "react-router-dom";
 import { useState } from "react";
 import { Container, Form } from "./styled";
 import axios from "axios";
-import * as queryString from "querystring";
+import { useCookies } from "react-cookie";
 
 const OAuthPage = ({ history }) => {
   const [name, setName] = useState("");
@@ -96,6 +96,29 @@ const OAuthPage = ({ history }) => {
       });
   };
 
+  const [cookie, setCookie, removeCookie] = useCookies(["using-cookie"]);
+
+  const getKakaoUserInfo = () => {
+    console.log("[ getKakaoUserInfo ]");
+  };
+
+  const onClickSetCookie = () => {
+    console.log("[ setCookie ]");
+    let date = new Date();
+    console.log("date >> ", date);
+    console.log(date.getSeconds());
+    date.setSeconds(date.getSeconds() + 10);
+
+    console.log("after date >> ", date);
+    setCookie("testCookie012", "dummy012", {});
+  };
+
+  const onClickRemoveCookie = () => {
+    console.log("[ removeCookie ]");
+
+    removeCookie("testCookie012");
+  };
+
   return (
     <Container>
       <Link to="/">HOME</Link>
@@ -109,6 +132,12 @@ const OAuthPage = ({ history }) => {
 
       <br />
       <button onClick={getKakaoToken}>getToken</button>
+      <br />
+      <button onClick={getKakaoUserInfo}>카카오 로그인 정보 확인</button>
+      <br />
+      <button onClick={onClickSetCookie}>쿠키 생성</button>
+      <br />
+      <button onClick={onClickRemoveCookie}>쿠키 제거 </button>
 
       <hr />
 
