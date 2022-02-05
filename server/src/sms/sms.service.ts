@@ -13,8 +13,7 @@ export class SmsService {
   private readonly NAVER_SMS_SEND_NUMBER = process.env.NAVER_SMS_SEND_NUMBER;
 
   async showCache(key: string, value: string) {
-    await this.redisCacheService.setKey(key, value);
-    return 'succeed';
+    return await this.redisCacheService.setKey(key, value, 300);
   }
 
   // 휴대폰 인증번호 확인
@@ -26,12 +25,11 @@ export class SmsService {
       phoneNumber.toString(),
     );
 
-    // 캐시메모리에 유저가 입력한 휴대번호가 없을 때
-    if (!cacheValue) return false;
+    // 인증번호 값이 유저가 입력한 인증번호와 일치할때
+    if (cacheValue && cacheValue === code) return true;
 
-    // 캐시메모리에 유저가 입력한 휴대번호의 코드가 일치할 때
-    if (cacheValue === code) return true;
-    else return false;
+    // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
+    return false;
   }
 
   async sendAuthenticationCode(userPhoneNumber: number) {
@@ -84,25 +82,6 @@ export class SmsService {
 
     console.log('payload >> ', payload);
 
-    // axios({
-    //   method,
-    //   url: `${host}${url}`,
-    //   headers: {
-    //     'Contenc-type': 'application/json; charset=utf-8',
-    //     'x-ncp-iam-access-key': this.NAVER_ACCESS_KEY,
-    //     'x-ncp-apigw-timestamp': timestamp,
-    //     'x-ncp-apigw-signature-v2': signature,
-    //   },
-    //   data: payload,
-    // })
-    //   .then((res) => {
-    //     console.log('res >> ', res);
-    //   })
-    //   .catch((err) => {
-    //     console.log('err >> ', err);
-    //     console.log('err >> ', err.data);
-    //   });
-
     const resultSendMessage = async () => {
       try {
         const res = await axios.post(`${host}${url}`, payload, {
@@ -113,7 +92,13 @@ export class SmsService {
             'x-ncp-apigw-signature-v2': signature,
           },
         });
-        cache.put(userPhoneNumber, stringRandom6Number);
+
+        // 레디스 캐시메모리에 3분간 저장
+        await this.redisCacheService.setKey(
+          userPhoneNumber.toString(),
+          random6Number.toString(),
+          300,
+        );
 
         return res;
       } catch (err) {

@@ -5,10 +5,10 @@ import * as redisStore from 'cache-manager-redis-store';
 export const cacheModule = CacheModule.registerAsync({
   useFactory: async () => ({
     store: redisStore,
-    host: 'localhost',
-    port: '6379',
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
     ttl: 0,
-    auth_pass: 'password',
+    auth_pass: process.env.REDIS_PASSWORD,
   }),
 });
 

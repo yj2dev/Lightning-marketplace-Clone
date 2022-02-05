@@ -5,15 +5,19 @@ import { Cache } from 'cache-manager';
 export class RedisCacheService {
   constructor(@Inject(CACHE_MANAGER) private readonly cacheManager: Cache) {}
 
-  async setKey(key: string, value: string): Promise<boolean> {
-    return await this.cacheManager.set(key, value, 10);
+  async setKey(key: string, value: string, ttl: number): Promise<boolean> {
+    await this.cacheManager.set(key, value, { ttl });
+    return true;
   }
 
   async getKey(key: string): Promise<string> {
-    const value = (await this.cacheManager.get(key)) as string;
+    const value = await this.cacheManager.get(key);
     console.log('redis value >> ', value);
-    // return value;
+    return value;
+  }
 
-    return await this.cacheManager.get(key);
+  async delKey(key: string): Promise<boolean> {
+    await this.cacheManager.del(key);
+    return true;
   }
 }
