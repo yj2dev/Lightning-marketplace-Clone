@@ -13,6 +13,7 @@ import { UserRepository } from './user/user.repository';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { OauthModule } from './oauth/oauth.module';
+import { SmsModule } from './sms/sms.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { OauthModule } from './oauth/oauth.module';
     AuthModule,
     ProductModule,
     OauthModule,
+    SmsModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
