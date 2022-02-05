@@ -17,6 +17,23 @@ export class SmsService {
     return 'succeed';
   }
 
+  // 휴대폰 인증번호 확인
+  async checkAuthenticationCode(
+    phoneNumber: number,
+    code: string,
+  ): Promise<boolean> {
+    const cacheValue = await this.redisCacheService.getKey(
+      phoneNumber.toString(),
+    );
+
+    // 캐시메모리에 유저가 입력한 휴대번호가 없을 때
+    if (!cacheValue) return false;
+
+    // 캐시메모리에 유저가 입력한 휴대번호의 코드가 일치할 때
+    if (cacheValue === code) return true;
+    else return false;
+  }
+
   async sendAuthenticationCode(userPhoneNumber: number) {
     const host = 'https://sens.apigw.ntruss.com';
 

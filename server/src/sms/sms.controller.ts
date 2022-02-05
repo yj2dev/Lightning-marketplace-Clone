@@ -10,9 +10,16 @@ export class SmsController {
     return await this.smsService.sendAuthenticationCode(phoneNumber);
   }
 
+  @Post('/code/check')
+  async codeCheck(
+    @Body('phoneNumber') phoneNumber: number,
+    @Body('code') code: string,
+  ) {
+    return await this.smsService.checkAuthenticationCode(phoneNumber, code);
+  }
+
   @Get('/redis/test')
   async showCache(@Query('value') value: string, @Query('key') key: string) {
     return await this.smsService.showCache(value, key);
   }
 }
-s;
