@@ -7,7 +7,7 @@ import ProductNewPage from "../page/ProductNewPage";
 import MyShopPage from "../page/MyShopPage";
 import TalkPage from "../page/TalkPage";
 import Footer from "./Footer";
-import CertificationPage from "../page/OAuthPage";
+import CertificationPage from "../page/SignupPage";
 import KakaoOAuthPage from "../page/KakaoOAuthPage";
 import FacebookOAuthPage from "../page/FacebookOAuthPage";
 import NaverOAuthPage from "../page/NaverOAuthPage";

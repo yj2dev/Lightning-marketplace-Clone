@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="add checkAuthenticationCode Router">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="RedisLabs Conntection, add logic to verify your phone number">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/OAuthPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,7 @@
       <workItem from="1643899662257" duration="722000" />
       <workItem from="1643935683934" duration="22821000" />
       <workItem from="1644015735209" duration="21029000" />
-      <workItem from="1644070297205" duration="3691000" />
+      <workItem from="1644070297205" duration="12968000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -273,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644054185486</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="RedisLabs Conntection, add logic to verify your phone number">
+      <created>1644074173356</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1644074173356</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +300,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="topNav design" />
     <MESSAGE value="Connecting to the router" />
     <MESSAGE value="Connecting to the sell router" />
     <MESSAGE value="Insert temp data on the sales page." />
@@ -317,7 +324,8 @@
     <MESSAGE value="Naver SMS API connection success" />
     <MESSAGE value="Successfully saved to Redis local memory." />
     <MESSAGE value="add checkAuthenticationCode Router" />
-    <option name="LAST_COMMIT_MESSAGE" value="add checkAuthenticationCode Router" />
+    <MESSAGE value="RedisLabs Conntection, add logic to verify your phone number" />
+    <option name="LAST_COMMIT_MESSAGE" value="RedisLabs Conntection, add logic to verify your phone number" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

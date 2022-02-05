@@ -18,6 +18,9 @@ body {
 input {
   font-family: "Noto Sans KR", sans-serif;
 }
+label {
+  font-family: "Noto Sans KR", sans-serif;
+}
 textarea {
   font-family: "Noto Sans KR", sans-serif;
 }
