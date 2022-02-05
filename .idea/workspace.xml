@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="memory-cache sample">
-      <change afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/sms/sms.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/sms/sms.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Naver SMS API connection success">
+      <change afterPath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/sms/RedisOption.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +103,7 @@
       <workItem from="1643857467542" duration="597000" />
       <workItem from="1643899662257" duration="722000" />
       <workItem from="1643935683934" duration="22821000" />
-      <workItem from="1644015735209" duration="9043000" />
+      <workItem from="1644015735209" duration="18948000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -256,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643981697565</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Naver SMS API connection success">
+      <created>1644027445995</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1644027445995</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +309,8 @@
     <MESSAGE value="Example of create Cookie and remove Cookie" />
     <MESSAGE value="KakaoOAuthPage distribute" />
     <MESSAGE value="memory-cache sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="memory-cache sample" />
+    <MESSAGE value="Naver SMS API connection success" />
+    <option name="LAST_COMMIT_MESSAGE" value="Naver SMS API connection success" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

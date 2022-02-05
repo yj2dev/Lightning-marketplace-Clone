@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { OauthModule } from './oauth/oauth.module';
 import { SmsModule } from './sms/sms.module';
+import { RedisCacheModule } from './redis-cache/redis-cache.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { SmsModule } from './sms/sms.module';
     ProductModule,
     OauthModule,
     SmsModule,
+    RedisCacheModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

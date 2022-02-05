@@ -1,19 +1,19 @@
-import { Get, Injectable, Param } from '@nestjs/common';
+import { CACHE_MANAGER, Get, Inject, Injectable, Param } from '@nestjs/common';
 import axios from 'axios';
 import * as CryptoJS from 'crypto-js';
 import * as cache from 'memory-cache';
+import { RedisCacheService } from '../redis-cache/redis-cache.service';
 
 @Injectable()
 export class SmsService {
+  constructor(private readonly redisCacheService: RedisCacheService) {}
   private readonly NAVER_ACCESS_KEY = process.env.NAVER_ACCESS_KEY;
   private readonly NAVER_SECRET_KEY = process.env.NAVER_SECRET_KEY;
   private readonly NAVER_SERVICE_ID = process.env.NAVER_SERVICE_ID;
   private readonly NAVER_SMS_SEND_NUMBER = process.env.NAVER_SMS_SEND_NUMBER;
 
-  showCache(key) {
-    console.log(key);
-    console.log(cache.size());
-    console.log(cache.get(key));
+  async showCache(key: string, value: string) {
+    await this.redisCacheService.setKey(key, value);
     return 'succeed';
   }
 
@@ -67,43 +67,42 @@ export class SmsService {
 
     console.log('payload >> ', payload);
 
-    axios({
-      method,
-      url: `${host}${url}`,
-      headers: {
-        'Contenc-type': 'application/json; charset=utf-8',
-        'x-ncp-iam-access-key': this.NAVER_ACCESS_KEY,
-        'x-ncp-apigw-timestamp': timestamp,
-        'x-ncp-apigw-signature-v2': signature,
-      },
-      data: payload,
-    })
-      .then((res) => {
-        console.log('res >> ', res);
-      })
-      .catch((err) => {
-        console.log('err >> ', err);
-        console.log('err >> ', err.data);
-      });
+    // axios({
+    //   method,
+    //   url: `${host}${url}`,
+    //   headers: {
+    //     'Contenc-type': 'application/json; charset=utf-8',
+    //     'x-ncp-iam-access-key': this.NAVER_ACCESS_KEY,
+    //     'x-ncp-apigw-timestamp': timestamp,
+    //     'x-ncp-apigw-signature-v2': signature,
+    //   },
+    //   data: payload,
+    // })
+    //   .then((res) => {
+    //     console.log('res >> ', res);
+    //   })
+    //   .catch((err) => {
+    //     console.log('err >> ', err);
+    //     console.log('err >> ', err.data);
+    //   });
 
-    // const resultSendMessage = async () => {
-    //   try {
-    //     const res = await axios.post(`${host}${url}`, payload, {
-    //       headers: {
-    //         'Contenc-type': 'application/json; charset=utf-8',
-    //         'x-ncp-iam-access-key': this.NAVER_ACCESS_KEY,
-    //         'x-ncp-apigw-timestamp': timestamp,
-    //         'x-ncp-apigw-signature-v2': signature,
-    //       },
-    //     });
-    //     cache.put(userPhoneNumber, stringRandom6Number);
-    //
-    //     return res;
-    //   } catch (err) {
-    //     console.log('resultSendMessage err >> ', err);
-    //   }
-    // };
-    // console.log('resultSendMessage >> ', resultSendMessage());
-    //
+    const resultSendMessage = async () => {
+      try {
+        const res = await axios.post(`${host}${url}`, payload, {
+          headers: {
+            'Contenc-type': 'application/json; charset=utf-8',
+            'x-ncp-iam-access-key': this.NAVER_ACCESS_KEY,
+            'x-ncp-apigw-timestamp': timestamp,
+            'x-ncp-apigw-signature-v2': signature,
+          },
+        });
+        cache.put(userPhoneNumber, stringRandom6Number);
+
+        return res;
+      } catch (err) {
+        console.log('resultSendMessage err >> ', err);
+      }
+    };
+    console.log('resultSendMessage >> ', await resultSendMessage());
   }
 }
