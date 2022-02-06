@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="RedisLabs Conntection, add logic to verify your phone number">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="signup page design and validation">
+      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/OAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/OAuthPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\SignupPage\Sections\AuthNumberPage" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client" />
@@ -97,7 +105,8 @@
       <workItem from="1643899662257" duration="722000" />
       <workItem from="1643935683934" duration="22821000" />
       <workItem from="1644015735209" duration="21029000" />
-      <workItem from="1644070297205" duration="12968000" />
+      <workItem from="1644070297205" duration="13019000" />
+      <workItem from="1644116816682" duration="15397000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -281,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644074173356</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="signup page design and validation">
+      <created>1644083774958</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1644083774958</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,8 +316,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Connecting to the router" />
-    <MESSAGE value="Connecting to the sell router" />
     <MESSAGE value="Insert temp data on the sales page." />
     <MESSAGE value="Uploading multiple images successfully/backend (server)" />
     <MESSAGE value="Save a single image file from the client to the server successfully." />
@@ -325,7 +339,9 @@
     <MESSAGE value="Successfully saved to Redis local memory." />
     <MESSAGE value="add checkAuthenticationCode Router" />
     <MESSAGE value="RedisLabs Conntection, add logic to verify your phone number" />
-    <option name="LAST_COMMIT_MESSAGE" value="RedisLabs Conntection, add logic to verify your phone number" />
+    <MESSAGE value="signup page design" />
+    <MESSAGE value="signup page design and validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="signup page design and validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

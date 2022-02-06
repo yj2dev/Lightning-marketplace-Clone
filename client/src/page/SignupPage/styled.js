@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #f9f9f9;
+  .error {
+    color: #d80c18;
+  }
 `;
 
 export const Form = styled.form`
@@ -11,14 +14,17 @@ export const Form = styled.form`
   transform: translate(-50%, -50%);
   padding: 50px;
   width: 400px;
-  height: 400px;
-  box-shadow: 0px 4px 7px #dadada;
+  //height: 400px;
+  box-shadow: 0px 4px 7px #bbbbbb;
   border-radius: 5px;
+
   h1 {
     color: #3f3f3f;
     font-size: 28px;
   }
+
   button {
+    margin-top: 20px;
     font-size: 16px;
     font-weight: bold;
     color: #ffffff;
@@ -32,6 +38,7 @@ export const Form = styled.form`
     opacity: 0.4;
     transition: 0.2s;
   }
+
   #active {
     opacity: 1;
     cursor: pointer;
@@ -40,7 +47,7 @@ export const Form = styled.form`
 
 export const InputWrapper = styled.div`
   position: relative;
-  margin: 30px 0;
+  margin: 30px 0 20px 0;
   border-bottom: 1px solid #adadad;
 
   & input {

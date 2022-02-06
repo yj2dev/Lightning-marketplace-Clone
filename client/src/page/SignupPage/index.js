@@ -1,15 +1,24 @@
 import { Link, Route, Switch, withRouter } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Container, Form, InputWrapper } from "./styled";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import BeatLoader from "react-spinners/BeatLoader";
+import AuthNumberPage from "./Sections/AuthNumberPage";
 
 const SignupPage = ({ history }) => {
+  const nameInput = useRef();
+  const phoneNumberInput = useRef();
+
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState({ validate: false });
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
+
   const [submitButton, setSubmitButton] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const [nextPage, setNextPage] = useState(true);
 
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
@@ -22,6 +31,7 @@ const SignupPage = ({ history }) => {
     const value = e.target.value.replace(regex, "");
     setName(value);
   };
+
   const onChangePhone = (e) => {
     const regex = /[^0-9]/g;
     const value = e.target.value.replace(regex, "");
@@ -54,7 +64,9 @@ const SignupPage = ({ history }) => {
 
     return result;
   };
-  const onSubmit = (e) => {
+
+  // 휴대폰번호로 인증코드를 보내는 로직
+  const onSubmitSendCode = (e) => {
     e.preventDefault();
 
     // 유효성 검사를 통과하지 못했을 때
@@ -66,59 +78,87 @@ const SignupPage = ({ history }) => {
     };
 
     console.log("payload >> ", payload);
+    setLoading(true);
 
-    axios
-      .post("http://localhost:8000/sms/code/send", payload)
-      .then((res) => {
-        console.log("succeed >> ", res);
-      })
-      .catch((err) => {
-        console.log("failed >> ", err);
-      });
+    //임시 ====================
+    setLoading(false);
+    setNextPage(true);
+    history.push("/signup");
+    //========================
+
+    // axios
+    //   .post("http://localhost:8000/sms/code/send", payload)
+    //   .then((res) => {
+    //     if (res.success) {
+    //       setLoading(false);
+    //       setNextPage(true);
+    //       history.push("/signup");
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error("err >> ", err);
+    //     setLoading(false);
+    //   });
   };
 
   return (
     <Container>
-      {/*<Link to="/">HOME</Link>*/}
-      <Form onSubmit={onSubmit}>
-        <h1>본인 정보를 입력해주세요</h1>
+      {!nextPage ? (
+        <Form onSubmit={onSubmitSendCode}>
+          <h1>본인 정보를 입력해주세요</h1>
+          <InputWrapper>
+            <input
+              type="text"
+              value={name}
+              onChange={onChangeName}
+              required={true}
+              autoFocus={true}
+              ref={nameInput}
+            />
+            <span></span>
+            <label onClick={() => nameInput.current.focus()}>
+              {nameError.validate ? (
+                <div className="error">이름을 다시 확인해주세요</div>
+              ) : (
+                "이름"
+              )}
+            </label>
+          </InputWrapper>
 
-        <InputWrapper>
-          <input
-            type="text"
-            value={name}
-            onChange={onChangeName}
-            required={true}
-            autoFocus={true}
-          />
-          <span></span>
-          <label>
-            {nameError.validate ? "이름을 다시 확인해주세요." : "이름"}
-          </label>
-        </InputWrapper>
-
-        <InputWrapper>
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={onChangePhone}
-            required={true}
-          />
-          <span></span>
-          <label>
-            {phoneNumberError.validate
-              ? "휴대폰번호를 다시 확인해주세요."
-              : "이름"}
-          </label>
-        </InputWrapper>
-        <button
-          type="submit"
-          id={submitButton && "active"}
-          disabled={!submitButton && true}
-        >
-          다음
-        </button>
-      </Form>
+          <InputWrapper>
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={onChangePhone}
+              required={true}
+              ref={phoneNumberInput}
+            />
+            <span></span>
+            <label onClick={() => phoneNumberInput.current.focus()}>
+              {phoneNumberError.validate ? (
+                <div className="error">휴대폰번호를 다시 확인해주세요</div>
+              ) : (
+                "휴대폰번호"
+              )}
+            </label>
+          </InputWrapper>
+          <button
+            type="submit"
+            id={submitButton && "active"}
+            disabled={!submitButton && true}
+          >
+            {!loading && "다음"}
+            <BeatLoader
+              color="#ffffff"
+              size={10}
+              margin={5}
+              loading={loading}
+            />
+          </button>
+        </Form>
+      ) : (
+        <AuthNumberPage name={name} phoneNumber={phoneNumber} />
+      )}
     </Container>
   );
 };

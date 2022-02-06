@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 input {
   font-family: "Noto Sans KR", sans-serif;
 }

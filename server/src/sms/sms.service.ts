@@ -1,4 +1,11 @@
-import { CACHE_MANAGER, Get, Inject, Injectable, Param } from '@nestjs/common';
+import {
+  CACHE_MANAGER,
+  Get,
+  HttpException,
+  Inject,
+  Injectable,
+  Param,
+} from '@nestjs/common';
 import axios from 'axios';
 import * as CryptoJS from 'crypto-js';
 import * as cache from 'memory-cache';
@@ -29,7 +36,8 @@ export class SmsService {
     if (cacheValue && cacheValue === code) return true;
 
     // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
-    return false;
+    // return false;
+    throw new HttpException('인증코드가 일치하지 않습니다.', 400);
   }
 
   async sendAuthenticationCode(userPhoneNumber: number) {
@@ -72,7 +80,7 @@ export class SmsService {
       type: 'SMS',
       countryCode: '82',
       from: this.NAVER_SMS_SEND_NUMBER,
-      content: `[벼락장터] 인증번호는 ${stringRandom6Number}입니다.`,
+      content: `[벼락장터] 인증번호는 (${stringRandom6Number})입니다.`,
       messages: [
         {
           to: userPhoneNumber,
@@ -96,15 +104,20 @@ export class SmsService {
         // 레디스 캐시메모리에 3분간 저장
         await this.redisCacheService.setKey(
           userPhoneNumber.toString(),
-          random6Number.toString(),
+          stringRandom6Number,
           300,
         );
 
         return res;
       } catch (err) {
+        throw new HttpException('인증문자 발송에 실패했습니다.', 500);
         console.log('resultSendMessage err >> ', err);
       }
     };
-    console.log('resultSendMessage >> ', await resultSendMessage());
+
+    const result = await resultSendMessage();
+    console.log('result.data >> ', result.data);
+
+    if (result.data.statusName === 'success') return true;
   }
 }

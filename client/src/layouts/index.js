@@ -7,7 +7,7 @@ import ProductNewPage from "../page/ProductNewPage";
 import MyShopPage from "../page/MyShopPage";
 import TalkPage from "../page/TalkPage";
 import Footer from "./Footer";
-import CertificationPage from "../page/SignupPage";
+import SignupPage from "../page/SignupPage";
 import KakaoOAuthPage from "../page/KakaoOAuthPage";
 import FacebookOAuthPage from "../page/FacebookOAuthPage";
 import NaverOAuthPage from "../page/NaverOAuthPage";
@@ -15,13 +15,13 @@ import NaverOAuthPage from "../page/NaverOAuthPage";
 function MainPage({ history }) {
   const { pathname } = useLocation();
 
-  if (pathname.includes("/oauth")) {
+  if (pathname.includes("/oauth") || pathname.includes("/signup")) {
     return (
       <>
         <Route exact path="/oauth/kakao" component={KakaoOAuthPage} />
         <Route exact path="/oauth/facebook" component={FacebookOAuthPage} />
         <Route exact path="/oauth/naver" component={NaverOAuthPage} />
-        <Route exact path="/oauth" component={CertificationPage} />
+        <Route exact path="/signup" component={SignupPage} />
       </>
     );
   } else {

@@ -36,7 +36,7 @@ function LoginInModal({ children, show, close, history }) {
     history.push("/oauth/naver");
   };
   const onSubmitPhoneCertification = () => {
-    history.push("/oauth");
+    history.push("/signup");
 
     console.log("PhoneCertification");
   };

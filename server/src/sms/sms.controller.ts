@@ -1,7 +1,20 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+  UseFilters,
+  UseInterceptors,
+} from '@nestjs/common';
 import { SmsService } from './sms.service';
+import { SuccessInterceptor } from '../common/interceptor/success.interceptor';
+import { HttpExceptionFilter } from '../common/exception/http-exception.filter';
 
 @Controller('sms')
+@UseInterceptors(SuccessInterceptor)
+@UseFilters(HttpExceptionFilter)
 export class SmsController {
   constructor(private smsService: SmsService) {}
 
