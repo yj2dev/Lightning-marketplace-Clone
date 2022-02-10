@@ -33,7 +33,11 @@ export class SmsService {
     );
 
     // 인증번호 값이 유저가 입력한 인증번호와 일치할때
-    if (cacheValue && cacheValue === code) return true;
+    if (cacheValue && cacheValue === code) {
+      // 유저 저장
+
+      return true;
+    }
 
     // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
     // return false;

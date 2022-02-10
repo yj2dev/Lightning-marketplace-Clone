@@ -3,7 +3,7 @@ import { UserController } from './controller/user.controller';
 import { UserService } from './service/user.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from './model/user.model';
-import { UserRepository } from './user.repository';
+import { UserRepository } from './repository/user.repository';
 import { AuthModule } from '../auth/auth.module';
 import { MulterModule } from '@nestjs/platform-express';
 

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Add AuthNumberPage design and verification, Timer applied">
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useInterval.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대폰 인증 로직 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/dto/login.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/login.request.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.readonly.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/dto/user.readonly.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +70,7 @@
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\user\repository" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\assets" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\layouts\Header" />
@@ -101,7 +111,7 @@
       <workItem from="1644116816682" duration="15424000" />
       <workItem from="1644144876201" duration="5283000" />
       <workItem from="1644323994308" duration="1707000" />
-      <workItem from="1644432539802" duration="8789000" />
+      <workItem from="1644432539802" duration="15263000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -299,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644132432676</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="휴대폰 인증 로직 구현">
+      <created>1644451690006</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1644451690006</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +335,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Uploading multiple images successfully/backend (server)" />
     <MESSAGE value="Save a single image file from the client to the server successfully." />
     <MESSAGE value="Image preview removal implementation." />
     <MESSAGE value="Daum Road Name API Demo Applied" />
@@ -343,7 +359,8 @@
     <MESSAGE value="signup page design" />
     <MESSAGE value="signup page design and validation" />
     <MESSAGE value="Add AuthNumberPage design and verification, Timer applied" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AuthNumberPage design and verification, Timer applied" />
+    <MESSAGE value="휴대폰 인증 로직 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="휴대폰 인증 로직 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

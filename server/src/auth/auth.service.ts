@@ -1,5 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UserRepository } from '../user/user.repository';
+import { UserRepository } from '../user/repository/user.repository';
 import { LoginRequestDto } from './dto/login.request.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
@@ -12,24 +12,15 @@ export class AuthService {
   ) {}
 
   async jwtLogin(loginRequestDto: LoginRequestDto) {
-    const { email, password } = loginRequestDto;
+    const { name, phoneNumber } = loginRequestDto;
 
-    const user = await this.userRepository.findUserByEmail(email);
+    const user = await this.userRepository.findUserByEmail(phoneNumber);
 
     if (!user) {
-      throw new UnauthorizedException('이메일과 비밀번호를 확인해주세요.');
+      throw new UnauthorizedException('전화번호와 일치하는 유저가 없습니다.');
     }
 
-    const isPasswordValidate: boolean = await bcrypt.compare(
-      password,
-      user.password,
-    );
-
-    if (!isPasswordValidate) {
-      throw new UnauthorizedException('이메일과 비밀번호를 확인해주세요.');
-    }
-
-    const payload = { email, sub: user._id };
+    const payload = { storeName: user.storeName, sub: user._id };
 
     return {
       token: this.jwtService.sign(payload, { secret: process.env.JWT_SECRET }),

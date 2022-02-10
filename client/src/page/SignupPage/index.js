@@ -82,12 +82,6 @@ const SignupPage = ({ history }) => {
     console.log("payload >> ", payload);
     setLoading(true);
 
-    //임시 ====================
-    setLoading(false);
-    setNextPage(true);
-    history.push("/signup");
-    //========================
-
     axios
       .post("http://localhost:8000/sms/code/send", payload)
       .then((res) => {

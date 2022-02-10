@@ -9,7 +9,7 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { UserModule } from './user/user.module';
 import * as mongoose from 'mongoose';
 import { User, UserSchema } from './user/model/user.model';
-import { UserRepository } from './user/user.repository';
+import { UserRepository } from './user/repository/user.repository';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { OauthModule } from './oauth/oauth.module';

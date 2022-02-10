@@ -8,28 +8,27 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../model/user.model';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { UserRepository } from '../user.repository';
+import { UserRepository } from '../repository/user.repository';
 
 @Injectable()
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   async signUp(userRequestDto: UserRequestDto) {
-    const { name, email, password } = userRequestDto;
-    const isEmailExist: boolean = await this.userRepository.existsByEmail(
-      email,
+    const { name, phoneNumber } = userRequestDto;
+    const isPhoneNumberExist: boolean = await this.userRepository.existsByEmail(
+      phoneNumber,
     );
 
-    if (isEmailExist) {
-      throw new UnauthorizedException('입력된 이메일은 이미 존재합니다.');
+    if (isPhoneNumberExist) {
+      throw new UnauthorizedException(
+        '인증된 휴대폰 번호는 이미 가입이 완료되었습니다.',
+      );
     }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await this.userRepository.createUser({
       name,
-      email,
-      password: hashedPassword,
+      phoneNumber,
     });
 
     return newUser.readonlyData;

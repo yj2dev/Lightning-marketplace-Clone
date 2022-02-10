@@ -11,8 +11,8 @@ const options: SchemaOptions = {
 @Schema(options)
 export class User extends Document {
   @ApiProperty({
-    example: 'InputYourName',
-    description: 'name',
+    example: '장벼락',
+    description: '유저가 가입시 입력한 이름',
     required: true,
   })
   @Prop({ required: true })
@@ -21,31 +21,34 @@ export class User extends Document {
   name: string;
 
   @ApiProperty({
-    example: 'example@gmail.com',
-    description: 'email',
+    example: '상점1004호',
+    description: '상점명',
     required: true,
   })
   @Prop({ required: true, unique: true })
-  @IsEmail()
-  @IsNotEmpty()
-  email: string;
-
-  @ApiProperty({
-    example: '5342uL7rxMrWVm6b',
-    description: 'password',
-    required: true,
-  })
-  @Prop({ required: true })
   @IsString()
   @IsNotEmpty()
-  @MinLength(8)
-  password: string;
+  storeName: string;
 
   @Prop({ default: 'http://placehold.it/250x250' })
   @IsString()
   profileURL: string;
 
-  readonly readonlyData: { name: string; email: string; profileURL };
+  @ApiProperty({
+    example: '010-1234-5678',
+    description: '유저가 가입시 인증한 전화번호',
+    required: true,
+  })
+  @Prop({ required: true })
+  @IsString()
+  @IsNotEmpty()
+  phoneNumber: string;
+
+  readonly readonlyData: {
+    name: string;
+    storeName: string;
+    profileURL: string;
+  };
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
@@ -54,7 +57,7 @@ export const UserSchema = SchemaFactory.createForClass(User);
 UserSchema.virtual('readonlyData').get(function (this: User) {
   return {
     name: this.name,
-    email: this.email,
+    storeName: this.storeName,
     profileURL: this.profileURL,
   };
 });
