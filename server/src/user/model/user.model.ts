@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, SchemaOptions } from 'mongoose';
+import { Document, SchemaOptions, Types } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 
@@ -30,12 +30,20 @@ export class User extends Document {
   @IsNotEmpty()
   storeName: string;
 
-  @Prop({ default: 'http://placehold.it/250x250' })
+  @ApiProperty({
+    example: '이미지 파일',
+    description: '상점 프로필 이미지',
+    required: true,
+  })
+  @Prop({
+    default:
+      'http://localhost:8000/static/user.profile/__default_store_profile__.png',
+  })
   @IsString()
   profileURL: string;
 
   @ApiProperty({
-    example: '010-1234-5678',
+    example: '01012345678',
     description: '유저가 가입시 인증한 전화번호',
     required: true,
   })
@@ -43,6 +51,42 @@ export class User extends Document {
   @IsString()
   @IsNotEmpty()
   phoneNumber: string;
+
+  @ApiProperty({
+    example: '상품',
+    description: '유저가 등록한 상품들',
+    required: true,
+  })
+  @Prop({ type: Types.ObjectId, ref: 'products' })
+  @IsString()
+  product: string;
+
+  @ApiProperty({
+    example: '카카오 아이디',
+    description: '소셜 로그인 계정 통합',
+    required: true,
+  })
+  @Prop({ unique: true })
+  @IsString()
+  kakaoId: string;
+
+  @ApiProperty({
+    example: '페이스북 아이디',
+    description: '소셜 로그인 계정 통합',
+    required: true,
+  })
+  @Prop({ unique: true })
+  @IsString()
+  facebookId: string;
+
+  @ApiProperty({
+    example: '네이버 아이디',
+    description: '소셜 로그인 계정 통합',
+    required: true,
+  })
+  @Prop({ unique: true })
+  @IsString()
+  naverId: string;
 
   readonly readonlyData: {
     name: string;

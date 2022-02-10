@@ -8,12 +8,15 @@ import {
 } from '@nestjs/common';
 import axios from 'axios';
 import * as CryptoJS from 'crypto-js';
-import * as cache from 'memory-cache';
 import { RedisCacheService } from '../redis-cache/redis-cache.service';
+import { UserRepository } from '../user/repository/user.repository';
 
 @Injectable()
 export class SmsService {
-  constructor(private readonly redisCacheService: RedisCacheService) {}
+  constructor(
+    private readonly redisCacheService: RedisCacheService,
+    private readonly userRepository: UserRepository,
+  ) {}
   private readonly NAVER_ACCESS_KEY = process.env.NAVER_ACCESS_KEY;
   private readonly NAVER_SECRET_KEY = process.env.NAVER_SECRET_KEY;
   private readonly NAVER_SERVICE_ID = process.env.NAVER_SERVICE_ID;
@@ -25,7 +28,8 @@ export class SmsService {
 
   // 휴대폰 인증번호 확인
   async checkAuthenticationCode(
-    phoneNumber: number,
+    name: string,
+    phoneNumber: string,
     code: string,
   ): Promise<boolean> {
     const cacheValue = await this.redisCacheService.getKey(
@@ -35,8 +39,31 @@ export class SmsService {
     // 인증번호 값이 유저가 입력한 인증번호와 일치할때
     if (cacheValue && cacheValue === code) {
       // 유저 저장
+      console.log('유저 저장');
 
-      return true;
+      // 돋일한 번호로 가입된 유저가 있는지 확인
+      const isPhoneNumber = await this.userRepository.existsByPhoneNumber(
+        phoneNumber,
+      );
+
+      console.log('isPhoneNumber >> ', isPhoneNumber);
+
+      // 현재까지 생성된 번호 가져오기
+      const storeName = `상점203013호`;
+
+      // 중복 가입된 휴대번호가 없으면 유저 저장
+      if (!isPhoneNumber) {
+        const user = await this.userRepository.createUser({
+          name,
+          storeName,
+          phoneNumber,
+        });
+        console.log('user >> ', user);
+
+        return true;
+      } else {
+        throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 400);
+      }
     }
 
     // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때

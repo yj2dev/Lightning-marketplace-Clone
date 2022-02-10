@@ -14,35 +14,16 @@ import { UserRepository } from '../repository/user.repository';
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async signUp(userRequestDto: UserRequestDto) {
-    const { name, phoneNumber } = userRequestDto;
-    const isPhoneNumberExist: boolean = await this.userRepository.existsByEmail(
-      phoneNumber,
-    );
-
-    if (isPhoneNumberExist) {
-      throw new UnauthorizedException(
-        '인증된 휴대폰 번호는 이미 가입이 완료되었습니다.',
-      );
-    }
-
-    const newUser = await this.userRepository.createUser({
-      name,
-      phoneNumber,
-    });
-
-    return newUser.readonlyData;
-  }
-
   async signOut() {
     return 'signOut: The client processes it';
   }
 
   async uploadImg(user: User, files: Express.Multer.File[]) {
     const fileName = `user.profile/${files[0].filename}`;
+    // example URL: http://localhost:8000/static/user.profile/ad061644514995652.png
 
     console.log(fileName);
-    const newUser = await this.userRepository.findByIdAndUpdateImg(
+    const newUser = await this.userRepository.findByIdAndUpdateImg1(
       user.id,
       fileName,
     );

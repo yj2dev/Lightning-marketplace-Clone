@@ -90,6 +90,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const payload = {
+      name,
       phoneNumber,
       code: authNumber,
     };

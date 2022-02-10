@@ -37,13 +37,13 @@ export class UserController {
     return currentUser.readonlyData;
   }
 
-  @ApiOperation({ summary: '회원가입' })
-  @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
-  @ApiResponse({ status: 500, description: '서버 에러' })
-  @Post('signup')
-  async signUp(@Body() userRequestDto: UserRequestDto) {
-    return await this.userService.signUp(userRequestDto);
-  }
+  // @ApiOperation({ summary: '회원가입' })
+  // @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
+  // @ApiResponse({ status: 500, description: '서버 에러' })
+  // @Post('signup')
+  // async signUp(@Body() userRequestDto: UserRequestDto) {
+  //   return await this.userService.signUp(userRequestDto);
+  // }
 
   @ApiOperation({ summary: '로그인' })
   @Post('login')

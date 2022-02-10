@@ -8,6 +8,18 @@ import { UserRequestDto } from '../dto/user.request.dto';
 export class UserRepository {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
 
+  // 중복 가입된 휴대번호인지 확인
+  async existsByPhoneNumber(phoneNumber: string): Promise<boolean> {
+    const result = await this.user.exists({ phoneNumber });
+    return result;
+  }
+
+  // 유저 생성
+  async createUser(userRequestDto: UserRequestDto): Promise<User> {
+    return await this.user.create(userRequestDto);
+  }
+
+  //------------- [ 사용안함 ] -----------------------------------
   // 중복 이메일인지 확인
   async existsByEmail(email: string): Promise<boolean> {
     const result = await this.user.exists({ email });
@@ -15,7 +27,7 @@ export class UserRepository {
   }
 
   // 유저 생성
-  async createUser(userRequestDto: UserRequestDto): Promise<User> {
+  async createUser1(userRequestDto: UserRequestDto): Promise<User> {
     return await this.user.create(userRequestDto);
   }
 
@@ -32,7 +44,7 @@ export class UserRepository {
   }
 
   // 해당하는 아이디에 이미지 URI 업데이트
-  async findByIdAndUpdateImg(
+  async findByIdAndUpdateImg1(
     userId: string,
     fileName: string,
   ): Promise<User | null> {

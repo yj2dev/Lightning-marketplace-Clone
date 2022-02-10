@@ -85,7 +85,8 @@ const SignupPage = ({ history }) => {
     axios
       .post("http://localhost:8000/sms/code/send", payload)
       .then((res) => {
-        if (res.success) {
+        console.log("res >> ", res);
+        if (res.data.success) {
           setLoading(false);
           setNextPage(true);
           history.push("/signup");
