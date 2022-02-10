@@ -18,7 +18,7 @@ const SignupPage = ({ history }) => {
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const [nextPage, setNextPage] = useState(true);
+  const [nextPage, setNextPage] = useState(false);
 
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
@@ -43,6 +43,7 @@ const SignupPage = ({ history }) => {
     let result = true;
 
     const nameRegex = /[^가-힣]$/g;
+    const phoneNumberRegex = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 
     // 온전한 이름이 완성되지 않았을 때
     if (nameRegex.test(name)) {
@@ -53,12 +54,13 @@ const SignupPage = ({ history }) => {
       setNameError({ validate: false });
     }
 
-    // 휴대폰번호 길이가 부족할 때
-    if (phoneNumber.length < 11) {
+    // 휴대폰번호 양식에 맞게 작성되었는지 확인(길이도 같이 체크가능)
+    if (!phoneNumberRegex.test(phoneNumber)) {
+      // 휴대폰번호 양식과 일치하지 않을 때
       result = false;
       setPhoneNumberError({ validate: true });
     } else {
-      // 휴대폰번호 길이가 충분할 때
+      // 휴대폰번호 양식과 일치할 때
       setPhoneNumberError({ validate: false });
     }
 
@@ -86,19 +88,19 @@ const SignupPage = ({ history }) => {
     history.push("/signup");
     //========================
 
-    // axios
-    //   .post("http://localhost:8000/sms/code/send", payload)
-    //   .then((res) => {
-    //     if (res.success) {
-    //       setLoading(false);
-    //       setNextPage(true);
-    //       history.push("/signup");
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.error("err >> ", err);
-    //     setLoading(false);
-    //   });
+    axios
+      .post("http://localhost:8000/sms/code/send", payload)
+      .then((res) => {
+        if (res.success) {
+          setLoading(false);
+          setNextPage(true);
+          history.push("/signup");
+        }
+      })
+      .catch((err) => {
+        console.error("err >> ", err);
+        setLoading(false);
+      });
   };
 
   return (

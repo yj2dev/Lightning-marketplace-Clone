@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   & .active {
-    left: 0;
+    top: 0;
   }
 `;
 
@@ -20,8 +20,11 @@ export const ResendMessage = styled.div`
   color: #ffffff;
   font-size: 16px;
   position: absolute;
-  bottom: 0px;
-  left: -4096px;
+  top: -40px;
+  left: 0;
+
+  //bottom: 0px;
+  //left: -4096px;
   height: 40px;
   width: 100%;
   display: flex;

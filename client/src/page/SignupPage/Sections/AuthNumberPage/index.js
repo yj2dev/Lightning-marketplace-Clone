@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Container, Timer, ResendMessage } from "./styled";
 import { withRouter } from "react-router-dom";
+import useInterval from "../../../../hooks/useInterval";
 
 const AuthNumberPage = ({ name, phoneNumber, history }) => {
   const authNumberInput = useRef();
@@ -15,12 +16,34 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   const [submitButton, setSubmitButton] = useState(true);
 
   const [timer, setTimer] = useState(300);
+  const [stopTimer, setStopTimer] = useState(false);
   const [showResendMessage, setShowResendMessage] = useState(false);
   const [showResendAlert, setShowResendAlert] = useState(false);
   const [showEndMessage, setShowEndMessage] = useState(false);
 
-  let runTimer;
   const initTimer = useRef(180);
+
+  useInterval(() => {
+    initTimer.current -= 1;
+    setTimer(timeFormat(initTimer.current));
+
+    // 타이머가 2분 남았을 때
+    if (initTimer.current <= 120) {
+      setShowResendMessage(true);
+    }
+
+    // 타이머가 종료되었을 때
+    if (initTimer.current <= 0) {
+      setShowResendMessage(false);
+      setShowEndMessage(true);
+      disableForm();
+    }
+    console.log(initTimer.current);
+  }, 1000);
+
+  useEffect(() => {
+    setTimer(timeFormat(initTimer.current));
+  }, []);
 
   useEffect(() => {
     // 입력란이 비어있지 않으면 확인 버튼 활성화
@@ -28,34 +51,25 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
     else setSubmitButton(false);
   }, [authNumber]);
 
-  useEffect(() => {
+  function resetForm() {
+    setStopTimer(false);
+    initTimer.current = 180;
     setTimer(timeFormat(initTimer.current));
-    let runTimer = setInterval(() => {
-      initTimer.current -= 1;
-      setTimer(timeFormat(initTimer.current));
+    setShowResendMessage(false);
+    setShowEndMessage(false);
+    setAuthNumber("");
+    setAuthNumberError({ validate: false });
 
-      // 타이머가 2분 남았을 때
-      if (initTimer.current < 170) {
-        setShowResendMessage(true);
-      }
-
-      // 타이머가 종료되었을 때
-      if (initTimer.current === 0) {
-        setShowResendMessage(false);
-        setShowEndMessage(true);
-        clearInterval(runTimer);
-      }
-      console.log(initTimer.current);
-    }, 1000);
-  }, []);
-
-  function refresh() {
-    clearInterval(runTimer);
-
-    history.push("/signup");
-    console.log("초기화");
+    console.log("인증번호 재전송");
     console.log("name >> ", name, "\nphoneNumber >> ", phoneNumber);
   }
+
+  const disableForm = () => {
+    initTimer.current = 0;
+    setTimer(timeFormat(initTimer.current));
+    setSubmitButton(false);
+    setAuthNumber("");
+  };
 
   const timeFormat = (value) => {
     // 초를 분, 초 포맷으로 변경
@@ -89,6 +103,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
         if (data.success) {
           console.log("휴대폰 인증 성공!");
           setAuthNumberError({ validate: false });
+          history.push("/");
         } else {
           console.log("휴대폰 인증 실패..");
           setAuthNumberError({ validate: true });
@@ -103,39 +118,34 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   };
 
   const onClickResendCode = () => {
-    const payload = { phoneNumber };
+    // 폼 초기상태 초기화
+    resetForm();
 
+    setLoading(true);
+
+    const payload = { phoneNumber };
     console.log("payload >> ", payload);
 
-    //임시 ====================
-
-    setShowResendAlert(true);
-    setTimeout(() => {
-      setShowResendAlert(false);
-    }, 2000);
-    //========================
-
-    // axios
-    //   .post("http://localhost:8000/sms/code/send", payload)
-    //   .then((res) => {
-    //     if (res.success) {
-    //       setLoading(false);
-    //       setNextPage(true);
-    //       history.push("/signup");
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.error("err >> ", err);
-    //     setLoading(false);
-    //   });
+    axios
+      .post("http://localhost:8000/sms/code/send", payload)
+      .then(({ data }) => {
+        if (data.success) {
+          setLoading(false);
+          setShowResendAlert(true);
+          setTimeout(() => {
+            setShowResendAlert(false);
+          }, 2000);
+        }
+      })
+      .catch((err) => {
+        console.error("err >> ", err);
+        setLoading(false);
+      });
   };
 
   return (
     <Container>
       <Form onSubmit={onSubmit}>
-        <div onClick={refresh} id="active">
-          dsd
-        </div>
         <h1>인증번호를 입력해주세요</h1>
         <InputWrapper>
           <input
@@ -145,6 +155,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
             required={true}
             autoFocus={true}
             ref={authNumberInput}
+            disabled={showEndMessage}
           />
           <span></span>
           <Timer>{timer}</Timer>
