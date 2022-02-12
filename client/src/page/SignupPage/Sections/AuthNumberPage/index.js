@@ -11,7 +11,7 @@ import userPasswordPage from "../UserPasswordPage";
 const AuthNumberPage = ({ phoneNumber, history }) => {
   const authNumberInput = useRef();
 
-  const [userPasswordPage, setUserPasswordPage] = useState(true);
+  const [userPasswordPage, setUserPasswordPage] = useState(false);
   const [authNumber, setAuthNumber] = useState("");
   const [authNumberError, setAuthNumberError] = useState({ validate: false });
 
@@ -19,7 +19,6 @@ const AuthNumberPage = ({ phoneNumber, history }) => {
   const [submitButton, setSubmitButton] = useState(true);
 
   const [timer, setTimer] = useState(300);
-  // const [stopTimer, setStopTimer] = useState(false);
   const [showResendMessage, setShowResendMessage] = useState(false);
   const [showResendAlert, setShowResendAlert] = useState(false);
   const [showEndMessage, setShowEndMessage] = useState(false);
@@ -41,7 +40,7 @@ const AuthNumberPage = ({ phoneNumber, history }) => {
       setShowEndMessage(true);
       disableForm();
     }
-    console.log(initTimer.current);
+    // console.log(initTimer.current);
   }, 1000);
 
   useEffect(() => {
@@ -55,7 +54,6 @@ const AuthNumberPage = ({ phoneNumber, history }) => {
   }, [authNumber]);
 
   function resetForm() {
-    // setStopTimer(false);
     initTimer.current = 180;
     setTimer(timeFormat(initTimer.current));
     setShowResendMessage(false);

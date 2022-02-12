@@ -32,7 +32,10 @@ export const Form = styled.form`
     color: #3f3f3f;
     font-size: 28px;
   }
-
+  h3 {
+    color: #adadad;
+    font-size: 18px;
+  }
   button {
     margin-top: 20px;
     font-size: 16px;

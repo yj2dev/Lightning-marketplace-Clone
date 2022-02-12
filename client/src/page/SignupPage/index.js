@@ -12,7 +12,7 @@ const SignupPage = ({ history }) => {
 
   const phoneNumberInput = useRef();
 
-  const [authNumberPage, setAuthNumberPage] = useState(true);
+  const [authNumberPage, setAuthNumberPage] = useState(false);
 
   const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
@@ -82,6 +82,7 @@ const SignupPage = ({ history }) => {
           <h1>
             나만의 상점을 <br /> 만들어 볼까요?
           </h1>
+          <h3>본인의 휴대번호가 맞는지 확인해주세요.</h3>
 
           <InputWrapper>
             <input

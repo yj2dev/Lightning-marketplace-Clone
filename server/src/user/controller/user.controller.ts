@@ -39,25 +39,19 @@ export class UserController {
     return currentUser.readonlyData;
   }
 
-  // @ApiOperation({ summary: '회원가입' })
-  // @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
-  // @ApiResponse({ status: 500, description: '서버 에러' })
-  // @Post('signup')
-  // async signUp(@Body() userRequestDto: UserRequestDto) {
-  //   return await this.userService.signUp(userRequestDto);
-  // }
+  @ApiOperation({ summary: '회원가입' })
+  @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Post('signup')
+  async signUp(@Body() userRequestDto: UserRequestDto) {
+    return await this.userService.signup(userRequestDto);
+  }
 
   @ApiOperation({ summary: '로그인' })
   @Post('login')
   signin(@Body() loginRequestDto: LoginRequestDto) {
     return 'login';
     // return this.authService.jwtLogin(loginRequestDto);
-  }
-
-  @ApiOperation({ summary: '회원가입' })
-  @Post('signup')
-  signup(@Body('phoneNumber') phoneNumber: string) {
-    return this.userService.isPhoneNumber(phoneNumber);
   }
 
   @ApiOperation({ summary: '로그아웃' })

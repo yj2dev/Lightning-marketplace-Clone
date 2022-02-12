@@ -1,5 +1,4 @@
 import { Form, InputWrapper, PasswordCreateRules } from "../../styled";
-import { Timer } from "../AuthNumberPage/styled";
 import BeatLoader from "react-spinners/BeatLoader";
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
@@ -7,12 +6,16 @@ import axios from "axios";
 
 import { BiHide, BiShow } from "react-icons/bi";
 import { PasswordBadge } from "./styled";
+import { useHistory, withRouter } from "react-router-dom";
 
 const UserPasswordPage = () => {
+  const history = useHistory();
   const user = useSelector((state) => state.user);
 
   const passwordInput = useRef();
   const passwordCheckInput = useRef();
+
+  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState({ validate: false });
@@ -27,6 +30,14 @@ const UserPasswordPage = () => {
 
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // 유저 정보(휴대번호)가 없으면 해당페이지 접근 불가능
+    if (!user.phoneNumber) {
+      alert("접근 불가능");
+      history.push("/");
+    }
+  }, []);
 
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
@@ -96,20 +107,27 @@ const UserPasswordPage = () => {
     // 유효성 검사를 통과하지 못했을 때
     if (!totalValidate()) return;
 
-    // setLoading(true);
-    //
-    // axios
-    //   .post("http://localhost:8000/sms/code/send", { password })
-    //   .then((res) => {
-    //     setLoading(false);
-    //     console.log("res >> ", res);
-    //     if (res.data.success) {
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     setLoading(false);
-    //     console.error("err >> ", err);
-    //   });
+    const payload = {
+      phoneNumber: user.phoneNumber,
+      password,
+    };
+
+    setLoading(true);
+
+    console.log(payload);
+    axios
+      .post("http://localhost:8000/user/signup", payload)
+      .then((res) => {
+        setLoading(false);
+        if (res.data.success && res.data.data) {
+          // 회원가입 성공
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.error("err >> ", err);
+      });
   };
 
   return (
@@ -119,7 +137,7 @@ const UserPasswordPage = () => {
           나만의 상점을 <br /> 만들어 볼까요?
         </h1>
         <InputWrapper>
-          <input type="text" value={user.phoneNumber} />
+          <input type="text" value={phoneNumber} />
           <span></span>
           <label>휴대폰번호</label>
         </InputWrapper>

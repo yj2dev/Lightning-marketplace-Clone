@@ -6,6 +6,7 @@ import {
   Injectable,
   Logger,
   Param,
+  UnauthorizedException,
   UseFilters,
   UseInterceptors,
 } from '@nestjs/common';
@@ -50,7 +51,9 @@ export class SmsService {
 
     // 가입이 되어 있다면 결과 반환
     if (isPhoneNumber) {
-      throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 409);
+      throw new UnauthorizedException(
+        '동일한 번호로 가입된 유저가 존재합니다.',
+      );
     }
 
     // 인증번호 값이 유저가 입력한 인증번호와 일치할때

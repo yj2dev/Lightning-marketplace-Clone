@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대번호 리덕스 저장">
-      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="비밀번호 생성규칙 적용">
+      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.create.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/user/dto" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -60,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\user\dto" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\user.profile" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\SignupPage\Sections\AuthNumberPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -112,7 +112,7 @@
       <workItem from="1644432539802" duration="15308000" />
       <workItem from="1644509514593" duration="18467000" />
       <workItem from="1644558021425" duration="2194000" />
-      <workItem from="1644659316757" duration="20752000" />
+      <workItem from="1644659316757" duration="26010000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -352,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644684360160</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="비밀번호 생성규칙 적용">
+      <created>1644692791057</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1644692791057</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +378,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="checkbox design" />
     <MESSAGE value="Apply validation to all items except tags." />
     <MESSAGE value="Duplicate value check (find application failed),&#10;For applied." />
     <MESSAGE value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
@@ -396,7 +402,8 @@
     <MESSAGE value="passport 기존에 휴대전화로만 인증했던 로직 비밀번호 추가" />
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
     <MESSAGE value="휴대번호 리덕스 저장" />
-    <option name="LAST_COMMIT_MESSAGE" value="휴대번호 리덕스 저장" />
+    <MESSAGE value="비밀번호 생성규칙 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 생성규칙 적용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

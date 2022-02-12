@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../model/user.model';
 import { Model } from 'mongoose';
 import { UserRequestDto } from '../dto/user.request.dto';
+import { UserCreateDto } from '../dto/user.create.dto';
 
 @Injectable()
 export class UserRepository {
@@ -21,8 +22,8 @@ export class UserRepository {
   }
 
   // 유저 생성
-  async createUser(userRequestDto: UserRequestDto): Promise<User> {
-    return await this.user.create(userRequestDto);
+  async createUser(userCreateDto: UserCreateDto): Promise<User> {
+    return await this.user.create(userCreateDto);
   }
 
   // 휴대번호로 유저 찾기
