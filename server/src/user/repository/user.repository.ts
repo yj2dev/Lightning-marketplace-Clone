@@ -25,7 +25,7 @@ export class UserRepository {
     return await this.user.create(userRequestDto);
   }
 
-  // 이메일로 유저 찾기
+  // 휴대번호로 유저 찾기
   async findUserByPhoneNumber(phoneNumber: string): Promise<User | null> {
     const user = await this.user.findOne({ phoneNumber });
     return user;

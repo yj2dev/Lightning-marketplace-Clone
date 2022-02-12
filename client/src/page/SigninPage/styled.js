@@ -7,6 +7,14 @@ export const Container = styled.div`
   }
 `;
 
+export const Footer = styled.div`
+  color: #adadad;
+
+  & a {
+    color: #adadad;
+  }
+`;
+
 export const Form = styled.form`
   position: absolute;
   top: 50%;

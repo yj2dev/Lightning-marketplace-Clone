@@ -47,15 +47,21 @@ export class UserController {
 
   @ApiOperation({ summary: '로그인' })
   @Post('login')
-  signIn(@Body() loginRequestDto: LoginRequestDto) {
+  signin(@Body() loginRequestDto: LoginRequestDto) {
     return 'login';
     // return this.authService.jwtLogin(loginRequestDto);
   }
 
+  @ApiOperation({ summary: '회원가입' })
+  @Post('signup')
+  signup(@Body('phoneNumber') phoneNumber: string) {
+    return this.userService.isPhoneNumber(phoneNumber);
+  }
+
   @ApiOperation({ summary: '로그아웃' })
   @Get('signout')
-  signOut() {
-    return this.userService.signOut();
+  signout() {
+    return this.userService.signout();
   }
 
   @Post('upload/profile')

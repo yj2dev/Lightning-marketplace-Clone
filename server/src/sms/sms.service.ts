@@ -87,7 +87,6 @@ export class SmsService {
       // 중복 가입된 휴대번호가 없으면 유저 저장
       if (!isPhoneNumber) {
         const user = await this.userRepository.createUser({
-          name,
           storeName,
           phoneNumber,
         });

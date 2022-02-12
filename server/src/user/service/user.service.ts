@@ -14,7 +14,11 @@ import { UserRepository } from '../repository/user.repository';
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async signOut() {
+  async isPhoneNumber(phoneNumber: string) {
+    return await this.userRepository.findUserByPhoneNumber(phoneNumber);
+  }
+
+  async signout() {
     return 'signOut: The client processes it';
   }
 

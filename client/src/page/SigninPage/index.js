@@ -1,17 +1,17 @@
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Form, InputWrapper } from "./styled";
+import { Container, Form, InputWrapper, Footer } from "./styled";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import BeatLoader from "react-spinners/BeatLoader";
 import AuthNumberPage from "./Sections/AuthNumberPage";
 
 const SignupPage = ({ history }) => {
-  const nameInput = useRef();
+  const storeNameInput = useRef();
   const phoneNumberInput = useRef();
 
-  const [name, setName] = useState("");
-  const [nameError, setNameError] = useState({ validate: false });
+  const [storeName, setStoreName] = useState("");
+  const [storeNameError, setStoreNameError] = useState({ validate: false });
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
 
@@ -22,14 +22,14 @@ const SignupPage = ({ history }) => {
 
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
-    if (name !== "" && phoneNumber !== "") setSubmitButton(true);
+    if (storeName !== "" && phoneNumber !== "") setSubmitButton(true);
     else setSubmitButton(false);
-  }, [name, phoneNumber]);
+  }, [storeName, phoneNumber]);
 
-  const onChangeName = (e) => {
+  const onChangeStoreName = (e) => {
     const regex = /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
     const value = e.target.value.replace(regex, "");
-    setName(value);
+    setStoreName(value);
   };
 
   const onChangePhone = (e) => {
@@ -42,16 +42,16 @@ const SignupPage = ({ history }) => {
     // 모든 유효성 검사에 이상 없으면 true 반환
     let result = true;
 
-    const nameRegex = /[^가-힣]$/g;
+    const storeNameRegex = /[^가-힣]$/g;
     const phoneNumberRegex = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 
     // 온전한 이름이 완성되지 않았을 때
-    if (nameRegex.test(name)) {
-      setNameError({ validate: true });
+    if (storeNameRegex.test(storeName)) {
+      setStoreNameError({ validate: true });
       result = false;
     } else {
       // 온전한 이름이 완성되었을 때
-      setNameError({ validate: false });
+      setStoreNameError({ validate: false });
     }
 
     // 휴대폰번호 양식에 맞게 작성되었는지 확인(길이도 같이 체크가능)
@@ -68,7 +68,7 @@ const SignupPage = ({ history }) => {
   };
 
   // 휴대폰번호로 인증코드를 보내는 로직
-  const onSubmitSendCode = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
 
     // 유효성 검사를 통과하지 못했을 때
@@ -100,27 +100,8 @@ const SignupPage = ({ history }) => {
   return (
     <Container>
       {!nextPage ? (
-        <Form onSubmit={onSubmitSendCode}>
+        <Form onSubmit={onSubmit}>
           <h1>로그인</h1>
-          <InputWrapper>
-            <input
-              type="text"
-              value={name}
-              onChange={onChangeName}
-              required={true}
-              autoFocus={true}
-              ref={nameInput}
-            />
-            <span></span>
-            <label onClick={() => nameInput.current.focus()}>
-              {nameError.validate ? (
-                <div className="error">이름을 다시 확인해주세요</div>
-              ) : (
-                "이름"
-              )}
-            </label>
-          </InputWrapper>
-
           <InputWrapper>
             <input
               type="text"
@@ -138,6 +119,28 @@ const SignupPage = ({ history }) => {
               )}
             </label>
           </InputWrapper>
+          <InputWrapper>
+            <input
+              type="text"
+              value={storeName}
+              onChange={onChangeStoreName}
+              required={true}
+              autoFocus={true}
+              ref={storeNameInput}
+            />
+            <span></span>
+            <label onClick={() => storeNameInput.current.focus()}>
+              {storeNameError.validate ? (
+                <div className="error">비밀번호를 다시 확인해주세요</div>
+              ) : (
+                "비밀번호"
+              )}
+            </label>
+          </InputWrapper>
+          <Footer>
+            <Link to="/signup">비밀번호 찾기</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <Link to="/signup">회원가입</Link>
+          </Footer>
           <button
             type="submit"
             id={submitButton && "active"}
@@ -153,7 +156,7 @@ const SignupPage = ({ history }) => {
           </button>
         </Form>
       ) : (
-        <AuthNumberPage name={name} phoneNumber={phoneNumber} />
+        <AuthNumberPage storeName={storeName} phoneNumber={phoneNumber} />
       )}
     </Container>
   );

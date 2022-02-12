@@ -32,7 +32,7 @@ function LoginInModal({ children, show, close, history }) {
     history.push("/oauth/naver");
   };
   const onSubmitPhoneCertification = () => {
-    history.push("/signup");
+    history.push("/signin");
   };
 
   return (
