@@ -1,9 +1,21 @@
-import axios from 'axios';
-import { SIGNIN_USER, SIGNUP_USER, AUTH_USER } from './types';
+import axios from "axios";
+import {
+  SIGNUP_USER,
+  SIGNUP_PROCESS_USER,
+  SIGNIN_USER,
+  AUTH_USER,
+} from "./types";
+
+export function signupProcessUser(data) {
+  return {
+    type: SIGNUP_PROCESS_USER,
+    payload: data,
+  };
+}
 
 export function signupUser(onSubmitData) {
   const request = axios
-    .post('/api/users/signup', onSubmitData, { withCredentials: true })
+    .post("/api/users/signup", onSubmitData, { withCredentials: true })
     .then((res) => res.data);
 
   return {
@@ -14,7 +26,7 @@ export function signupUser(onSubmitData) {
 
 export function signinUser(onSubmitData) {
   const request = axios
-    .post('/api/users/signin', onSubmitData, { withCredentials: true })
+    .post("/api/users/signin", onSubmitData, { withCredentials: true })
     .then((res) => res.data);
 
   return {
@@ -25,7 +37,7 @@ export function signinUser(onSubmitData) {
 
 export function auth() {
   const request = axios
-    .get('/api/users/auth', { withCredentials: true })
+    .get("/api/users/auth", { withCredentials: true })
     .then(({ data }) => {
       // console.log("[Redux] auth data >> ", data);
       return data;

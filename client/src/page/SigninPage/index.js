@@ -101,7 +101,10 @@ const SignupPage = ({ history }) => {
     <Container>
       {!nextPage ? (
         <Form onSubmit={onSubmit}>
-          <h1>로그인</h1>
+          <h1>
+            벼락장터 회원님 <br /> 반갑습니다 :D
+          </h1>
+          <h3>비밀번호를 입력해주세요.</h3>
           <InputWrapper>
             <input
               type="text"
@@ -133,14 +136,11 @@ const SignupPage = ({ history }) => {
               {storeNameError.validate ? (
                 <div className="error">비밀번호를 다시 확인해주세요</div>
               ) : (
-                "비밀번호"
+                "비밀번호를 입력해주세요"
               )}
             </label>
           </InputWrapper>
-          <Footer>
-            <Link to="/signup">비밀번호 찾기</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <Link to="/signup">회원가입</Link>
-          </Footer>
+
           <button
             type="submit"
             id={submitButton && "active"}

@@ -2,6 +2,8 @@ import {
   Body,
   Controller,
   Get,
+  Param,
+  Query,
   Post,
   UploadedFiles,
   UseFilters,
@@ -62,6 +64,18 @@ export class UserController {
   @Get('signout')
   signout() {
     return this.userService.signout();
+  }
+
+  @ApiOperation({ summary: '유저 회원가입 여부 조회' })
+  @ApiResponse({
+    status: 200,
+    description: '유저가 존재함',
+    type: UserReadonlyDto,
+  })
+  @ApiResponse({ status: 409, description: '유저가 존재하지 않음' })
+  @Get('/check')
+  async isUser(@Query('phoneNumber') phoneNumber: string) {
+    return await this.userService.isPhoneNumber(phoneNumber);
   }
 
   @Post('upload/profile')

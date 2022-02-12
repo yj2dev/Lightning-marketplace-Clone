@@ -15,7 +15,11 @@ export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   async isPhoneNumber(phoneNumber: string) {
-    return await this.userRepository.findUserByPhoneNumber(phoneNumber);
+    const isUser = await this.userRepository.findUserByPhoneNumber(phoneNumber);
+    // if (!isUser) {
+    //   throw new HttpException('유저가 존재하지 않습니다.', 409);
+    // }
+    return isUser;
   }
 
   async signout() {

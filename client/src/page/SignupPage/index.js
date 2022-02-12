@@ -101,25 +101,27 @@ const SignupPage = ({ history }) => {
     <Container>
       {!nextPage ? (
         <Form onSubmit={onSubmitSendCode}>
-          <h1>본인 정보를 입력해주세요</h1>
-          <InputWrapper>
-            <input
-              type="text"
-              value={name}
-              onChange={onChangeName}
-              required={true}
-              autoFocus={true}
-              ref={nameInput}
-            />
-            <span></span>
-            <label onClick={() => nameInput.current.focus()}>
-              {nameError.validate ? (
-                <div className="error">이름을 다시 확인해주세요</div>
-              ) : (
-                "이름"
-              )}
-            </label>
-          </InputWrapper>
+          <h1>
+            나만의 상점을 <br /> 만들어 볼까요?
+          </h1>
+          {/*<InputWrapper>*/}
+          {/*  <input*/}
+          {/*    type="text"*/}
+          {/*    value={name}*/}
+          {/*    onChange={onChangeName}*/}
+          {/*    required={true}*/}
+          {/*    autoFocus={true}*/}
+          {/*    ref={nameInput}*/}
+          {/*  />*/}
+          {/*  <span></span>*/}
+          {/*  <label onClick={() => nameInput.current.focus()}>*/}
+          {/*    {nameError.validate ? (*/}
+          {/*      <div className="error">이름을 다시 확인해주세요</div>*/}
+          {/*    ) : (*/}
+          {/*      "이름"*/}
+          {/*    )}*/}
+          {/*  </label>*/}
+          {/*</InputWrapper>*/}
 
           <InputWrapper>
             <input
