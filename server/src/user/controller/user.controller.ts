@@ -9,7 +9,9 @@ import {
   UseFilters,
   UseGuards,
   UseInterceptors,
+  Res,
 } from '@nestjs/common';
+import { Response } from 'express';
 import { UserService } from '../service/user.service';
 import { HttpExceptionFilter } from '../../common/exception/http-exception.filter';
 import { SuccessInterceptor } from '../../common/interceptor/success.interceptor';
@@ -48,16 +50,21 @@ export class UserController {
   }
 
   @ApiOperation({ summary: '로그인' })
-  @Post('login')
-  signin(@Body() userSigninDto: UserSigninDto) {
-    return 'login';
-    // return this.authService.jwtLogin(loginRequestDto);
+  @Post('signin')
+  async signin(
+    @Body() userSigninDto: UserSigninDto,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const { jwt, user } = await this.authService.jwtSignin(userSigninDto);
+
+    res.cookie('jwt', jwt, { httpOnly: true });
+    return user.readonlyData;
   }
 
   @ApiOperation({ summary: '로그아웃' })
   @Get('signout')
-  signout() {
-    return this.userService.signout();
+  async signout(@Res({ passthrough: true }) res: Response) {
+    res.clearCookie('jwt');
   }
 
   @ApiOperation({ summary: '유저 회원가입 여부 조회' })

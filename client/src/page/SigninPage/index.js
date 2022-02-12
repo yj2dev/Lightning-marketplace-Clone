@@ -1,10 +1,10 @@
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Form, InputWrapper, Footer } from "./styled";
+import { Container, Form, InputWrapper, PasswordBadge } from "./styled";
 import axios from "axios";
 import BeatLoader from "react-spinners/BeatLoader";
-import AuthNumberPage from "./Sections/AuthNumberPage";
 import { useSelector } from "react-redux";
+import { BiHide, BiShow } from "react-icons/bi";
 
 const SigninPage = ({ history }) => {
   const user = useSelector((state) => state.user);
@@ -16,6 +16,7 @@ const SigninPage = ({ history }) => {
   const [passwordError, setPasswordError] = useState({ validate: false });
   const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
+  const [showPassword, setShowPassword] = useState(false);
 
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -29,6 +30,10 @@ const SigninPage = ({ history }) => {
   const onChangePassword = (e) => {
     // 최대 24글자 길이 제한
     if (e.target.value.length < 24) setPassword(e.target.value);
+  };
+
+  const onShowPassword = () => {
+    setShowPassword((prev) => !prev);
   };
 
   const onChangePhone = (e) => {
@@ -114,7 +119,7 @@ const SigninPage = ({ history }) => {
         </InputWrapper>
         <InputWrapper>
           <input
-            type="text"
+            type={showPassword ? "text" : "password"}
             value={password}
             onChange={onChangePassword}
             required={true}
@@ -129,6 +134,9 @@ const SigninPage = ({ history }) => {
               "비밀번호를 입력해주세요"
             )}
           </label>
+          <PasswordBadge onClick={onShowPassword} className="cursor_pointer">
+            {showPassword ? <BiHide /> : <BiShow />}
+          </PasswordBadge>
         </InputWrapper>
 
         <button

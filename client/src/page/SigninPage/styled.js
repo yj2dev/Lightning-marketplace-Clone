@@ -58,6 +58,15 @@ export const Form = styled.form`
   }
 `;
 
+export const PasswordBadge = styled.div`
+  height: 38px;
+  color: #adadad;
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
 export const InputWrapper = styled.div`
   position: relative;
   margin: 30px 0 20px 0;
