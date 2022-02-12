@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대폰 기반 시스템 DB 설계">
-      <change afterPath="$PROJECT_DIR$/server/src/_static/__default_store_profile__.png" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="신규 유저 가입 정보 DB 저장">
+      <change afterPath="$PROJECT_DIR$/client/src/page/SigninPage/Sections/AuthNumberPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SigninPage/Sections/AuthNumberPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SigninPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/dto/login.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/login.request.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.payload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.payload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist/common/uploads/user.profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -61,10 +68,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\user.profile" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\SignupPage\Sections\AuthNumberPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -111,7 +118,9 @@
       <workItem from="1644144876201" duration="5283000" />
       <workItem from="1644323994308" duration="1707000" />
       <workItem from="1644432539802" duration="15308000" />
-      <workItem from="1644509514593" duration="8546000" />
+      <workItem from="1644509514593" duration="18467000" />
+      <workItem from="1644558021425" duration="2194000" />
+      <workItem from="1644659316757" duration="3263000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -323,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644494263067</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="신규 유저 가입 정보 DB 저장">
+      <created>1644521072933</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644521072933</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +358,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Image preview removal implementation." />
     <MESSAGE value="Daum Road Name API Demo Applied" />
     <MESSAGE value="You can limit the number of images and add more images." />
     <MESSAGE value="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design." />
@@ -367,7 +382,8 @@
     <MESSAGE value="Add AuthNumberPage design and verification, Timer applied" />
     <MESSAGE value="휴대폰 인증 로직 구현" />
     <MESSAGE value="휴대폰 기반 시스템 DB 설계" />
-    <option name="LAST_COMMIT_MESSAGE" value="휴대폰 기반 시스템 DB 설계" />
+    <MESSAGE value="신규 유저 가입 정보 DB 저장" />
+    <option name="LAST_COMMIT_MESSAGE" value="신규 유저 가입 정보 DB 저장" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

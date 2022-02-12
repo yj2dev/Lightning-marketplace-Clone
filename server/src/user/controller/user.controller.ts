@@ -48,7 +48,8 @@ export class UserController {
   @ApiOperation({ summary: '로그인' })
   @Post('login')
   signIn(@Body() loginRequestDto: LoginRequestDto) {
-    return this.authService.jwtLogin(loginRequestDto);
+    return 'login';
+    // return this.authService.jwtLogin(loginRequestDto);
   }
 
   @ApiOperation({ summary: '로그아웃' })

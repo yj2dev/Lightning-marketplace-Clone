@@ -1,4 +1,4 @@
 export type Payload = {
-  email: string;
+  phoneNumber: string;
   sub: string;
 };

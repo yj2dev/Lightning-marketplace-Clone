@@ -11,6 +11,26 @@ const options: SchemaOptions = {
 @Schema(options)
 export class User extends Document {
   @ApiProperty({
+    example: '01012345678',
+    description: '유저 인증된 전화번호',
+    required: true,
+  })
+  @Prop({ required: true })
+  @IsString()
+  @IsNotEmpty()
+  phoneNumber: string;
+
+  @ApiProperty({
+    example: 'Encrypted password',
+    description: '유저 비밀번호',
+    required: true,
+  })
+  @Prop({ required: true })
+  @IsString()
+  @IsNotEmpty()
+  password: string;
+
+  @ApiProperty({
     example: '장벼락',
     description: '유저가 가입시 입력한 이름',
     required: true,
@@ -41,16 +61,6 @@ export class User extends Document {
   })
   @IsString()
   profileURL: string;
-
-  @ApiProperty({
-    example: '01012345678',
-    description: '유저가 가입시 인증한 전화번호',
-    required: true,
-  })
-  @Prop({ required: true })
-  @IsString()
-  @IsNotEmpty()
-  phoneNumber: string;
 
   @ApiProperty({
     example: '상품',

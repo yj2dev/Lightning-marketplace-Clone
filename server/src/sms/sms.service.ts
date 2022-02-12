@@ -4,14 +4,21 @@ import {
   HttpException,
   Inject,
   Injectable,
+  Logger,
   Param,
+  UseFilters,
+  UseInterceptors,
 } from '@nestjs/common';
 import axios from 'axios';
 import * as CryptoJS from 'crypto-js';
 import { RedisCacheService } from '../redis-cache/redis-cache.service';
 import { UserRepository } from '../user/repository/user.repository';
+import { SuccessInterceptor } from '../common/interceptor/success.interceptor';
+import { HttpExceptionFilter } from '../common/exception/http-exception.filter';
 
 @Injectable()
+@UseInterceptors(SuccessInterceptor)
+@UseFilters(HttpExceptionFilter)
 export class SmsService {
   constructor(
     private readonly redisCacheService: RedisCacheService,
@@ -22,6 +29,8 @@ export class SmsService {
   private readonly NAVER_SERVICE_ID = process.env.NAVER_SERVICE_ID;
   private readonly NAVER_SMS_SEND_NUMBER = process.env.NAVER_SMS_SEND_NUMBER;
 
+  logger = new Logger('SMS');
+
   async showCache(key: string, value: string) {
     return await this.redisCacheService.setKey(key, value, 300);
   }
@@ -31,7 +40,7 @@ export class SmsService {
     name: string,
     phoneNumber: string,
     code: string,
-  ): Promise<boolean> {
+  ): Promise<any> {
     const cacheValue = await this.redisCacheService.getKey(
       phoneNumber.toString(),
     );
@@ -46,10 +55,34 @@ export class SmsService {
         phoneNumber,
       );
 
-      console.log('isPhoneNumber >> ', isPhoneNumber);
+      // 상점명 생성
+      let storeName;
+      while (true) {
+        // 랜덤 8자리 생성(0 ~ 99999999)
+        let random8Number = '';
+        for (let i = 0; i < 8; i++) {
+          const random = Math.floor(Math.random() * 10);
+          random8Number = random8Number + random;
+        }
 
-      // 현재까지 생성된 번호 가져오기
-      const storeName = `상점203013호`;
+        storeName = `상점${random8Number}호`;
+
+        // 중복된 상점명이 있으면 확인
+        const isStoreName = await this.userRepository.existsByStoreName(
+          storeName,
+        );
+
+        console.log('storeName >> ', storeName);
+        console.log('isStoreName >> ', isStoreName);
+        console.log('isPhoneNumber >> ', isPhoneNumber);
+
+        // 중복된 상점명이 없으면 진행
+        if (!isStoreName) {
+          break;
+        } else {
+          this.logger.log('기본 상점명 재생성');
+        }
+      }
 
       // 중복 가입된 휴대번호가 없으면 유저 저장
       if (!isPhoneNumber) {
@@ -62,13 +95,15 @@ export class SmsService {
 
         return true;
       } else {
-        throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 400);
+        // 로그인 진행
+        // throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 409);
+        // return { success: false, message: '동일한 번호' };
       }
+    } else {
+      // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
+      throw new HttpException('인증코드가 일치하지 않습니다.', 400);
+      return false;
     }
-
-    // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
-    // return false;
-    throw new HttpException('인증코드가 일치하지 않습니다.', 400);
   }
 
   async sendAuthenticationCode(userPhoneNumber: number) {

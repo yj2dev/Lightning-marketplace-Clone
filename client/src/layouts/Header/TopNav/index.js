@@ -55,6 +55,7 @@ function TopNav() {
         <div className="right">
           <button onClick={onToggleLogin} style={{ marginRight: "16px" }}>
             로그인/회원가입
+            {/*로그아웃*/}
           </button>
           <button onClick={onToggleLogin}>내상점</button>
         </div>

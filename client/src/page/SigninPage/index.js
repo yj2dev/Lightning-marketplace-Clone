@@ -101,7 +101,7 @@ const SignupPage = ({ history }) => {
     <Container>
       {!nextPage ? (
         <Form onSubmit={onSubmitSendCode}>
-          <h1>본인 정보를 입력해주세요</h1>
+          <h1>로그인</h1>
           <InputWrapper>
             <input
               type="text"

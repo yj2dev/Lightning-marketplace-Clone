@@ -27,8 +27,6 @@ function MainPage({ history }) {
   } else {
     return (
       <Container>
-        <Switch></Switch>
-
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>

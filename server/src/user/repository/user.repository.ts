@@ -8,15 +8,27 @@ import { UserRequestDto } from '../dto/user.request.dto';
 export class UserRepository {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
 
-  // 중복 가입된 휴대번호인지 확인
+  // 중복된 휴대번호인지 확인
   async existsByPhoneNumber(phoneNumber: string): Promise<boolean> {
     const result = await this.user.exists({ phoneNumber });
+    return result;
+  }
+
+  // 중복된 상점명인지 확인
+  async existsByStoreName(storeName: string): Promise<boolean> {
+    const result = await this.user.exists({ storeName });
     return result;
   }
 
   // 유저 생성
   async createUser(userRequestDto: UserRequestDto): Promise<User> {
     return await this.user.create(userRequestDto);
+  }
+
+  // 이메일로 유저 찾기
+  async findUserByPhoneNumber(phoneNumber: string): Promise<User | null> {
+    const user = await this.user.findOne({ phoneNumber });
+    return user;
   }
 
   //------------- [ 사용안함 ] -----------------------------------
