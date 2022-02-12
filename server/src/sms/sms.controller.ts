@@ -25,15 +25,10 @@ export class SmsController {
 
   @Post('/code/check')
   async codeCheck(
-    @Body('name') name: string,
     @Body('phoneNumber') phoneNumber: string,
     @Body('code') code: string,
   ) {
-    return await this.smsService.checkAuthenticationCode(
-      name,
-      phoneNumber,
-      code,
-    );
+    return await this.smsService.checkAuthenticationCode(phoneNumber, code);
   }
 
   @Get('/redis/test')

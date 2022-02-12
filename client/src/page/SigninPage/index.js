@@ -2,17 +2,19 @@ import { Link, Route, Switch, withRouter } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { Container, Form, InputWrapper, Footer } from "./styled";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import BeatLoader from "react-spinners/BeatLoader";
 import AuthNumberPage from "./Sections/AuthNumberPage";
+import { useSelector } from "react-redux";
 
 const SignupPage = ({ history }) => {
+  const user = useSelector((state) => state.user);
+
   const storeNameInput = useRef();
   const phoneNumberInput = useRef();
 
   const [storeName, setStoreName] = useState("");
   const [storeNameError, setStoreNameError] = useState({ validate: false });
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
 
   const [submitButton, setSubmitButton] = useState(true);

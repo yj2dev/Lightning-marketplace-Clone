@@ -5,10 +5,13 @@ import axios from "axios";
 import { Container, Timer, ResendMessage } from "./styled";
 import { withRouter } from "react-router-dom";
 import useInterval from "../../../../hooks/useInterval";
+import UserPasswordPage from "../UserPasswordPage";
+import userPasswordPage from "../UserPasswordPage";
 
-const AuthNumberPage = ({ name, phoneNumber, history }) => {
+const AuthNumberPage = ({ phoneNumber, history }) => {
   const authNumberInput = useRef();
 
+  const [userPasswordPage, setUserPasswordPage] = useState(true);
   const [authNumber, setAuthNumber] = useState("");
   const [authNumberError, setAuthNumberError] = useState({ validate: false });
 
@@ -16,7 +19,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   const [submitButton, setSubmitButton] = useState(true);
 
   const [timer, setTimer] = useState(300);
-  const [stopTimer, setStopTimer] = useState(false);
+  // const [stopTimer, setStopTimer] = useState(false);
   const [showResendMessage, setShowResendMessage] = useState(false);
   const [showResendAlert, setShowResendAlert] = useState(false);
   const [showEndMessage, setShowEndMessage] = useState(false);
@@ -52,7 +55,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   }, [authNumber]);
 
   function resetForm() {
-    setStopTimer(false);
+    // setStopTimer(false);
     initTimer.current = 180;
     setTimer(timeFormat(initTimer.current));
     setShowResendMessage(false);
@@ -61,7 +64,7 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
     setAuthNumberError({ validate: false });
 
     console.log("인증번호 재전송");
-    console.log("name >> ", name, "\nphoneNumber >> ", phoneNumber);
+    console.log("phoneNumber >> ", phoneNumber);
   }
 
   const disableForm = () => {
@@ -90,7 +93,6 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const payload = {
-      name,
       phoneNumber,
       code: authNumber,
     };
@@ -100,22 +102,22 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
     axios
       .post("http://localhost:8000/sms/code/check", payload)
       .then((res) => {
+        setLoading(false);
         console.log("res >> ", res);
-        if (res.data.success) {
+        if (res.data.success && res.data.data) {
           console.log("휴대폰 인증 성공!");
           setAuthNumberError({ validate: false });
-          // history.push("/");
+          setUserPasswordPage(true);
         } else {
           console.log("휴대폰 인증 실패..");
           setAuthNumberError({ validate: true });
         }
-        setLoading(false);
       })
       .catch((err) => {
+        setLoading(false);
         console.error("err >> ", err);
         console.log(toString(err));
         setAuthNumberError({ validate: true });
-        setLoading(false);
       });
   };
 
@@ -142,71 +144,81 @@ const AuthNumberPage = ({ name, phoneNumber, history }) => {
         setLoading(false);
       });
   };
-
   return (
     <Container>
-      <Form onSubmit={onSubmit}>
-        <h1>인증번호를 입력해주세요</h1>
-        <InputWrapper>
-          <input
-            type="text"
-            value={authNumber}
-            onChange={onChangeAuthNumber}
-            required={true}
-            autoFocus={true}
-            ref={authNumberInput}
-            disabled={showEndMessage}
-          />
-          <span></span>
-          <Timer>{timer}</Timer>
-          <label onClick={() => authNumberInput.current.focus()}>
-            {authNumberError.validate ? (
-              <div className="error">인증번호를 다시 확인해주세요</div>
-            ) : (
-              "인증번호 입력"
+      {!userPasswordPage ? (
+        <>
+          <Form onSubmit={onSubmit}>
+            <h1>인증번호를 입력해주세요</h1>
+            <InputWrapper>
+              <input
+                type="text"
+                value={authNumber}
+                onChange={onChangeAuthNumber}
+                required={true}
+                autoFocus={true}
+                ref={authNumberInput}
+                disabled={showEndMessage}
+              />
+              <span></span>
+              <Timer>{timer}</Timer>
+              <label onClick={() => authNumberInput.current.focus()}>
+                {authNumberError.validate ? (
+                  <div className="error">인증번호를 다시 확인해주세요</div>
+                ) : (
+                  "인증번호 입력"
+                )}
+              </label>
+            </InputWrapper>
+            {showResendMessage && (
+              <div style={{ fontSize: "14px", color: "#adadad" }}>
+                <strong>
+                  인증문자가 오지 않나요? &nbsp;
+                  <u
+                    style={{ color: "#000000" }}
+                    className="cursor_pointer"
+                    onClick={onClickResendCode}
+                  >
+                    인증번호 재전송
+                  </u>
+                </strong>
+              </div>
             )}
-          </label>
-        </InputWrapper>
-        {showResendMessage && (
-          <div style={{ fontSize: "14px", color: "#adadad" }}>
-            <strong>
-              인증문자가 오지 않나요? &nbsp;
-              <u
-                style={{ color: "#000000" }}
-                className="cursor_pointer"
-                onClick={onClickResendCode}
-              >
-                인증번호 재전송
-              </u>
-            </strong>
-          </div>
-        )}
-        {showEndMessage && (
-          <div style={{ fontSize: "14px", color: "#adadad" }}>
-            <strong>
-              인증문자가 만료되었습니다.&nbsp;
-              <u
-                style={{ color: "#000000" }}
-                className="cursor_pointer"
-                onClick={onClickResendCode}
-              >
-                인증번호 재전송
-              </u>
-            </strong>
-          </div>
-        )}
-        <button
-          type="submit"
-          id={submitButton && "active"}
-          disabled={!submitButton && true}
-        >
-          {!loading && "확인"}
-          <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
-        </button>
-      </Form>
-      <ResendMessage className={showResendAlert && "active"}>
-        인증번호를 다시 보냈어요
-      </ResendMessage>
+            {showEndMessage && (
+              <div style={{ fontSize: "14px", color: "#adadad" }}>
+                <strong>
+                  인증문자가 만료되었습니다.&nbsp;
+                  <u
+                    style={{ color: "#000000" }}
+                    className="cursor_pointer"
+                    onClick={onClickResendCode}
+                  >
+                    인증번호 재전송
+                  </u>
+                </strong>
+              </div>
+            )}
+            <button
+              type="submit"
+              id={submitButton && "active"}
+              disabled={!submitButton && true}
+            >
+              {!loading && "확인"}
+              <BeatLoader
+                color="#ffffff"
+                size={10}
+                margin={5}
+                loading={loading}
+              />
+            </button>
+          </Form>
+          <ResendMessage className={showResendAlert && "active"}>
+            인증번호를 다시 보냈어요
+          </ResendMessage>
+        </>
+      ) : (
+        <UserPasswordPage />
+      )}
     </Container>
   );
 };

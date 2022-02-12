@@ -7,6 +7,16 @@ export const Container = styled.div`
   }
 `;
 
+export const PasswordCreateRules = styled.div`
+  color: #adadad;
+  font-weight: 400;
+  font-size: 14px;
+
+  & span {
+    color: red;
+  }
+`;
+
 export const Form = styled.form`
   position: absolute;
   top: 50%;
@@ -50,6 +60,11 @@ export const InputWrapper = styled.div`
   margin: 30px 0 20px 0;
   border-bottom: 1px solid #adadad;
 
+  & input[type="password"] {
+    font-size: 18px;
+    font-family: "Do Hyeon", sans-serif;
+    letter-spacing: 1px;
+  }
   & input {
     font-weight: bold;
     width: 100%;

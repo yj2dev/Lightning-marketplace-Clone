@@ -69,10 +69,10 @@ const PhoneNumberAuthPage = ({ history }) => {
 
         if (data.success && data.data) {
           // 로그인 페이지로 이동
-          // history.push("/signin");
+          history.push("/signin");
         } else {
           // 회원가입 페이지로 이동
-          // history.push("/signup");
+          history.push("/signup");
         }
       })
       .catch((err) => {
@@ -85,7 +85,7 @@ const PhoneNumberAuthPage = ({ history }) => {
     <Container>
       <Form onSubmit={onSubmit}>
         <h1>
-          나만의 상점을 <br /> 만들어 볼까요?
+          나만의 상점을 <br /> 사용해 볼까요?
         </h1>
         <h3>로그인 또는 회원가입에 필요합니다.</h3>
         <InputWrapper>

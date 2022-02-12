@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그인 UI/UX 구조 변경전 저장">
-      <change afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대번호 리덕스 저장">
+      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_actions/user_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +112,7 @@
       <workItem from="1644432539802" duration="15308000" />
       <workItem from="1644509514593" duration="18467000" />
       <workItem from="1644558021425" duration="2194000" />
-      <workItem from="1644659316757" duration="12366000" />
+      <workItem from="1644659316757" duration="20752000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -347,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644677631422</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="휴대번호 리덕스 저장">
+      <created>1644684360160</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1644684360160</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +371,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design." />
     <MESSAGE value="checkbox design" />
     <MESSAGE value="Apply validation to all items except tags." />
     <MESSAGE value="Duplicate value check (find application failed),&#10;For applied." />
@@ -391,7 +395,8 @@
     <MESSAGE value="신규 유저 가입 정보 DB 저장" />
     <MESSAGE value="passport 기존에 휴대전화로만 인증했던 로직 비밀번호 추가" />
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인 UI/UX 구조 변경전 저장" />
+    <MESSAGE value="휴대번호 리덕스 저장" />
+    <option name="LAST_COMMIT_MESSAGE" value="휴대번호 리덕스 저장" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

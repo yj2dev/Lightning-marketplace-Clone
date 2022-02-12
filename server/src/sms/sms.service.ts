@@ -37,70 +37,27 @@ export class SmsService {
 
   // 휴대폰 인증번호 확인
   async checkAuthenticationCode(
-    name: string,
     phoneNumber: string,
     code: string,
-  ): Promise<any> {
+  ): Promise<boolean> {
     const cacheValue = await this.redisCacheService.getKey(
       phoneNumber.toString(),
     );
+    // 가입된 유저인지 확인 (앞에서 확인했지만 한번더 확인)
+    const isPhoneNumber = await this.userRepository.existsByPhoneNumber(
+      phoneNumber,
+    );
+
+    // 가입이 되어 있다면 결과 반환
+    if (isPhoneNumber) {
+      throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 409);
+    }
 
     // 인증번호 값이 유저가 입력한 인증번호와 일치할때
     if (cacheValue && cacheValue === code) {
-      // 유저 저장
-      console.log('유저 저장');
-
-      // 돋일한 번호로 가입된 유저가 있는지 확인
-      const isPhoneNumber = await this.userRepository.existsByPhoneNumber(
-        phoneNumber,
-      );
-
-      // 상점명 생성
-      let storeName;
-      while (true) {
-        // 랜덤 8자리 생성(0 ~ 99999999)
-        let random8Number = '';
-        for (let i = 0; i < 8; i++) {
-          const random = Math.floor(Math.random() * 10);
-          random8Number = random8Number + random;
-        }
-
-        storeName = `상점${random8Number}호`;
-
-        // 중복된 상점명이 있으면 확인
-        const isStoreName = await this.userRepository.existsByStoreName(
-          storeName,
-        );
-
-        console.log('storeName >> ', storeName);
-        console.log('isStoreName >> ', isStoreName);
-        console.log('isPhoneNumber >> ', isPhoneNumber);
-
-        // 중복된 상점명이 없으면 진행
-        if (!isStoreName) {
-          break;
-        } else {
-          this.logger.log('기본 상점명 재생성');
-        }
-      }
-
-      // 중복 가입된 휴대번호가 없으면 유저 저장
-      if (!isPhoneNumber) {
-        const user = await this.userRepository.createUser({
-          storeName,
-          phoneNumber,
-        });
-        console.log('user >> ', user);
-
-        return true;
-      } else {
-        // 로그인 진행
-        // throw new HttpException('동일한 번호로 가입된 유저가 존재합니다.', 409);
-        // return { success: false, message: '동일한 번호' };
-      }
+      return true;
     } else {
-      // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 없을 때
-      throw new HttpException('인증코드가 일치하지 않습니다.', 400);
+      // 캐시메모리에 휴대번호가 없거나 휴대번호의 코드가 일치하지 않을 때
       return false;
     }
   }
