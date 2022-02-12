@@ -137,7 +137,7 @@ const UserPasswordPage = () => {
           나만의 상점을 <br /> 만들어 볼까요?
         </h1>
         <InputWrapper>
-          <input type="text" value={phoneNumber} />
+          <input type="text" value={phoneNumber} style={{ color: "#adadad" }} />
           <span></span>
           <label>휴대폰번호</label>
         </InputWrapper>
@@ -197,7 +197,7 @@ const UserPasswordPage = () => {
           id={submitButton && "active"}
           disabled={!submitButton && true}
         >
-          {!loading && "확인"}
+          {!loading && "회원가입"}
           <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
         </button>
       </Form>

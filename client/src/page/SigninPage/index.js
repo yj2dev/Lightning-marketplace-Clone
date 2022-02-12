@@ -6,32 +6,29 @@ import BeatLoader from "react-spinners/BeatLoader";
 import AuthNumberPage from "./Sections/AuthNumberPage";
 import { useSelector } from "react-redux";
 
-const SignupPage = ({ history }) => {
+const SigninPage = ({ history }) => {
   const user = useSelector((state) => state.user);
 
-  const storeNameInput = useRef();
+  const passwordInput = useRef();
   const phoneNumberInput = useRef();
 
-  const [storeName, setStoreName] = useState("");
-  const [storeNameError, setStoreNameError] = useState({ validate: false });
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState({ validate: false });
   const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
 
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const [nextPage, setNextPage] = useState(false);
-
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
-    if (storeName !== "" && phoneNumber !== "") setSubmitButton(true);
+    if (password !== "" && phoneNumber !== "") setSubmitButton(true);
     else setSubmitButton(false);
-  }, [storeName, phoneNumber]);
+  }, [password, phoneNumber]);
 
-  const onChangeStoreName = (e) => {
-    const regex = /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-    const value = e.target.value.replace(regex, "");
-    setStoreName(value);
+  const onChangePassword = (e) => {
+    // 최대 24글자 길이 제한
+    if (e.target.value.length < 24) setPassword(e.target.value);
   };
 
   const onChangePhone = (e) => {
@@ -44,17 +41,7 @@ const SignupPage = ({ history }) => {
     // 모든 유효성 검사에 이상 없으면 true 반환
     let result = true;
 
-    const storeNameRegex = /[^가-힣]$/g;
     const phoneNumberRegex = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-
-    // 온전한 이름이 완성되지 않았을 때
-    if (storeNameRegex.test(storeName)) {
-      setStoreNameError({ validate: true });
-      result = false;
-    } else {
-      // 온전한 이름이 완성되었을 때
-      setStoreNameError({ validate: false });
-    }
 
     // 휴대폰번호 양식에 맞게 작성되었는지 확인(길이도 같이 체크가능)
     if (!phoneNumberRegex.test(phoneNumber)) {
@@ -69,7 +56,7 @@ const SignupPage = ({ history }) => {
     return result;
   };
 
-  // 휴대폰번호로 인증코드를 보내는 로직
+  // 로그인 확인
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -77,91 +64,84 @@ const SignupPage = ({ history }) => {
     if (!totalValidate()) return;
 
     const payload = {
-      // 휴대폰 번호만 넣을지 유저 이름과 같이 보낼지 고려중
       phoneNumber,
+      password,
     };
 
     console.log("payload >> ", payload);
+
     setLoading(true);
 
     axios
-      .post("http://localhost:8000/sms/code/send", payload)
+      .post("http://localhost:8000/user/signin", payload)
       .then((res) => {
+        setLoading(false);
         console.log("res >> ", res);
         if (res.data.success) {
-          setLoading(false);
-          setNextPage(true);
         }
       })
       .catch((err) => {
-        console.error("err >> ", err);
         setLoading(false);
+        console.error("err >> ", err);
       });
   };
 
   return (
     <Container>
-      {!nextPage ? (
-        <Form onSubmit={onSubmit}>
-          <h1>
-            벼락장터 회원님 <br /> 반갑습니다 :D
-          </h1>
-          <h3>비밀번호를 입력해주세요.</h3>
-          <InputWrapper>
-            <input
-              type="text"
-              value={phoneNumber}
-              onChange={onChangePhone}
-              required={true}
-              ref={phoneNumberInput}
-            />
-            <span></span>
-            <label onClick={() => phoneNumberInput.current.focus()}>
-              {phoneNumberError.validate ? (
-                <div className="error">휴대폰번호를 다시 확인해주세요</div>
-              ) : (
-                "휴대폰번호"
-              )}
-            </label>
-          </InputWrapper>
-          <InputWrapper>
-            <input
-              type="text"
-              value={storeName}
-              onChange={onChangeStoreName}
-              required={true}
-              autoFocus={true}
-              ref={storeNameInput}
-            />
-            <span></span>
-            <label onClick={() => storeNameInput.current.focus()}>
-              {storeNameError.validate ? (
-                <div className="error">비밀번호를 다시 확인해주세요</div>
-              ) : (
-                "비밀번호를 입력해주세요"
-              )}
-            </label>
-          </InputWrapper>
+      <Form onSubmit={onSubmit}>
+        <h1>
+          벼락장터 회원님 <br /> 반갑습니다 :D
+        </h1>
+        <h3>비밀번호를 입력해주세요.</h3>
+        <InputWrapper>
+          <input
+            type="text"
+            value={phoneNumber}
+            // onChange={onChangePhone}
+            required={true}
+            ref={phoneNumberInput}
+            style={{ color: "#adadad" }}
+            autoFocus={true}
+          />
+          <span></span>
+          <label onClick={() => phoneNumberInput.current.focus()}>
+            {phoneNumberError.validate ? (
+              <div className="error">휴대폰번호를 다시 확인해주세요</div>
+            ) : (
+              "휴대폰번호"
+            )}
+          </label>
+        </InputWrapper>
+        <InputWrapper>
+          <input
+            type="text"
+            value={password}
+            onChange={onChangePassword}
+            required={true}
+            autoFocus={true}
+            ref={passwordInput}
+          />
+          <span></span>
+          <label onClick={() => passwordInput.current.focus()}>
+            {passwordError.validate ? (
+              <div className="error">비밀번호를 다시 확인해주세요</div>
+            ) : (
+              "비밀번호를 입력해주세요"
+            )}
+          </label>
+        </InputWrapper>
 
-          <button
-            type="submit"
-            id={submitButton && "active"}
-            disabled={!submitButton && true}
-          >
-            {!loading && "다음"}
-            <BeatLoader
-              color="#ffffff"
-              size={10}
-              margin={5}
-              loading={loading}
-            />
-          </button>
-        </Form>
-      ) : (
-        <AuthNumberPage storeName={storeName} phoneNumber={phoneNumber} />
-      )}
+        <button
+          type="submit"
+          id={submitButton && "active"}
+          disabled={!submitButton && true}
+        >
+          {!loading && "로그인"}
+          <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
+        </button>
+      </Form>
     </Container>
   );
 };
 
-export default withRouter(SignupPage);
+export default withRouter(SigninPage);

@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserRepository } from '../user/repository/user.repository';
-import { LoginRequestDto } from './dto/login.request.dto';
+import { UserSigninDto } from './dto/user.signin.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
@@ -11,7 +11,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async jwtLogin(loginRequestDto: LoginRequestDto) {
+  async jwtLogin(loginRequestDto: UserSigninDto) {
     const { phoneNumber, password } = loginRequestDto;
 
     // 해당하는 휴대폰번호가 존재하는지 확인

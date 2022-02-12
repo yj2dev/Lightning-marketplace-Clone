@@ -17,7 +17,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserReadonlyDto } from '../dto/user.readonly.dto';
 import { UserRequestDto } from '../dto/user.request.dto';
 import { AuthService } from '../../auth/auth.service';
-import { LoginRequestDto } from '../../auth/dto/login.request.dto';
+import { UserSigninDto } from '../../auth/dto/user.signin.dto';
 import { JwtAuthGuard } from '../../auth/jwt/jwt.guard';
 import { CurrentUser } from '../../common/decorators/user.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express';
@@ -49,7 +49,7 @@ export class UserController {
 
   @ApiOperation({ summary: '로그인' })
   @Post('login')
-  signin(@Body() loginRequestDto: LoginRequestDto) {
+  signin(@Body() userSigninDto: UserSigninDto) {
     return 'login';
     // return this.authService.jwtLogin(loginRequestDto);
   }

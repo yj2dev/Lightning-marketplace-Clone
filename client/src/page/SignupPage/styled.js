@@ -17,6 +17,72 @@ export const PasswordCreateRules = styled.div`
   }
 `;
 
+export const AgreeMyPhoneSection = styled.div`
+  color: #adadad;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & label:hover {
+    cursor: pointer;
+    color: #6c6c6c;
+  }
+
+  & label {
+    margin-left: 4px;
+  }
+
+  & input[type="checkbox"] {
+    //display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 3px solid #c3c2cc;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    position: relative;
+  }
+
+  & input[type="checkbox"]::after {
+    content: "";
+    width: 6px;
+    height: 3px;
+    top: 2px;
+    left: 2px;
+    border-bottom: 3px solid #c3c2cc;
+    border-left: 3px solid #c3c2cc;
+    position: absolute;
+    transform: rotate(-45deg);
+  }
+
+  & input[type="checkbox"]:hover::before {
+    cursor: pointer;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.1;
+    top: -8px;
+    left: -8px;
+  }
+
+  & input[type="checkbox"]:checked {
+    border: 3px solid #ff5058;
+    background-color: #ff5058;
+  }
+
+  & input[type="checkbox"]:checked::after {
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+  }
+`;
+
 export const Form = styled.form`
   position: absolute;
   top: 50%;

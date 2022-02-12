@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="비밀번호 생성규칙 적용">
-      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.create.dto.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대폰 회원가입 로직 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/dto/login.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/user.signin.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +109,7 @@
       <workItem from="1644432539802" duration="15308000" />
       <workItem from="1644509514593" duration="18467000" />
       <workItem from="1644558021425" duration="2194000" />
-      <workItem from="1644659316757" duration="26010000" />
+      <workItem from="1644659316757" duration="29040000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -359,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644692791057</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="휴대폰 회원가입 로직 구현">
+      <created>1644698600319</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1644698600319</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +382,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Apply validation to all items except tags." />
     <MESSAGE value="Duplicate value check (find application failed),&#10;For applied." />
     <MESSAGE value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
     <MESSAGE value="NewProductPage Completion" />
@@ -403,7 +406,8 @@
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
     <MESSAGE value="휴대번호 리덕스 저장" />
     <MESSAGE value="비밀번호 생성규칙 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 생성규칙 적용" />
+    <MESSAGE value="휴대폰 회원가입 로직 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="휴대폰 회원가입 로직 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

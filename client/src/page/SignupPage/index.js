@@ -1,6 +1,6 @@
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Form, InputWrapper } from "./styled";
+import { Container, Form, InputWrapper, AgreeMyPhoneSection } from "./styled";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -17,14 +17,16 @@ const SignupPage = ({ history }) => {
   const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
 
+  const [agreeMyPhone, setAgreeMyPhone] = useState(false);
+
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // 각각의 입력란이 비어있지 않으면 확인(다음) 버튼 활성화
-    if (phoneNumber !== "") setSubmitButton(true);
+    if (phoneNumber !== "" && agreeMyPhone) setSubmitButton(true);
     else setSubmitButton(false);
-  }, [phoneNumber]);
+  }, [phoneNumber, agreeMyPhone]);
 
   const onChangePhone = (e) => {
     const regex = /[^0-9]/g;
@@ -83,14 +85,14 @@ const SignupPage = ({ history }) => {
             나만의 상점을 <br /> 만들어 볼까요?
           </h1>
           <h3>본인의 휴대번호가 맞는지 확인해주세요.</h3>
-
           <InputWrapper>
             <input
               type="text"
               value={phoneNumber}
-              onChange={onChangePhone}
+              // onChange={onChangePhone}
               required={true}
               ref={phoneNumberInput}
+              style={{ color: "#adadad" }}
             />
             <span></span>
             <label onClick={() => phoneNumberInput.current.focus()}>
@@ -101,6 +103,15 @@ const SignupPage = ({ history }) => {
               )}
             </label>
           </InputWrapper>
+          <AgreeMyPhoneSection>
+            <input type="checkbox" id="AgreeMyPhone" checked={agreeMyPhone} />
+            <label
+              for="AgreeMyPhone"
+              onClick={() => setAgreeMyPhone((prev) => !prev)}
+            >
+              내 휴대번호가 맞습니다.
+            </label>
+          </AgreeMyPhoneSection>
           <button
             type="submit"
             id={submitButton && "active"}
