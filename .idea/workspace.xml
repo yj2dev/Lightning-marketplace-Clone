@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="SSL(HTTPS) 적용">
-      <change afterPath="$PROJECT_DIR$/client/localhost-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/localhost.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/sample/cert.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/sample/key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/certificate/rootca.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/certificate/rootca.csr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/certificate/rootca.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/ca.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/ca.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/cert.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/cert.key" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="client도 SSL(HTTPS) 적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lesstif-rootca.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sample/cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sample/key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.csr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/ca.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cert.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cert.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.csr" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.csr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.key" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.key" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -66,18 +63,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\user\dto" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\user.profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\sample" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\secret" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -123,7 +120,7 @@
       <workItem from="1644744837581" duration="5243000" />
       <workItem from="1644752016250" duration="4099000" />
       <workItem from="1644756159904" duration="1545000" />
-      <workItem from="1644757734985" duration="178000" />
+      <workItem from="1644757734985" duration="1781000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -405,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644754999906</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="client도 SSL(HTTPS) 적용">
+      <created>1644757946460</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1644757946460</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +428,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
     <MESSAGE value="Kakao OAuth failed to get the token." />
     <MESSAGE value="Successfully received Kakao Token." />
     <MESSAGE value="Example of create Cookie and remove Cookie" />
@@ -449,7 +452,8 @@
     <MESSAGE value="로그인, 로그아웃(쿠키 생성 및 제거)" />
     <MESSAGE value="쿠키는 생성되나 CORS 에러 미해결" />
     <MESSAGE value="SSL(HTTPS) 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="SSL(HTTPS) 적용" />
+    <MESSAGE value="client도 SSL(HTTPS) 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="client도 SSL(HTTPS) 적용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

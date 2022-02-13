@@ -14,13 +14,15 @@ async function bootstrap() {
   const keyFile = fs.readFileSync(
     path.join(__dirname + '/certificate/rootca.key'),
   );
-  const crtFile = fs.readFileSync(
+  const certFile = fs.readFileSync(
     path.join(__dirname + '/certificate/rootca.crt'),
   );
+  console.log('keyFile >> ', keyFile);
+  console.log('certFile >> ', certFile);
 
   const httpsOptions = {
     key: keyFile,
-    cert: crtFile,
+    cert: certFile,
   };
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
