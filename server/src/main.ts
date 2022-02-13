@@ -6,11 +6,26 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import * as expressBasicAuth from 'express-basic-auth';
 import * as path from 'path';
+import * as fs from 'fs';
 
 async function bootstrap() {
   const MODE: boolean = process.env.NODE_ENV === 'development' ? true : false;
+
+  console.log(path.join(__dirname + './certificate/rootca.key'));
+  const keyFile = fs.readFileSync(
+    path.join(__dirname + '/certificate/rootca.key'),
+  );
+  const crtFile = fs.readFileSync(
+    path.join(__dirname + '/certificate/rootca.crt'),
+  );
+
+  const httpsOptions = {
+    key: keyFile,
+    cert: crtFile,
+  };
+
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    cors: true,
+    httpsOptions,
   });
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({

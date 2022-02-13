@@ -13,7 +13,7 @@ dotenv.config();
 
 // 동작안함
 // axios.defaults.withCredentials = false;
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 // axios.defaults.baseURL =
 //   process.env.NODE_ENV === "production"

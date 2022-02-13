@@ -4,12 +4,12 @@ import { AppService } from './app.service';
 @Controller()
 export class AppController {
   @Get()
-  rootGet() {
-    return 'rootGet';
+  CONNECT_ROOT_API_GET_TEST() {
+    return '[ROOT API] GET: succeed';
   }
 
   @Post()
-  rootPost() {
-    return 'rootPost';
+  CONNECT_ROOT_API_POST_TEST() {
+    return '[ROOT API] POST: succeed';
   }
 }

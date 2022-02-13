@@ -5,6 +5,8 @@ import axios from "axios";
 import BeatLoader from "react-spinners/BeatLoader";
 import { useSelector } from "react-redux";
 import { BiHide, BiShow } from "react-icons/bi";
+import { useCookies } from "react-cookie";
+import Cookies from "universal-cookie";
 
 const SigninPage = ({ history }) => {
   const user = useSelector((state) => state.user);
@@ -94,13 +96,29 @@ const SigninPage = ({ history }) => {
       });
   };
 
+  const [cookie, setCookie, removeCookie] = useCookies(["testCookie"]);
+
   const onClickJWT = () => {
+    // console.log(Cookies.getAll());
+    // console.log(document.cookie);
+    // Cookies.getAll();
+    // setCookie("fdsfe", "ssss");
+    // console.log(Cookies.get("fdsfe"));
+    // axios
+    //   .post(
+    //     "http://localhost:8000/user/tokentest",
+    //     {},
+    //     { withCredentials: true }
+    //   )
+    //   .then((res) => {
+    //     console.log("res >> ", res);
+    //   })
+    //   .catch((err) => {
+    //     console.error("err >> ", err);
+    //   });
+    //
     axios
-      .post(
-        "http://localhost:8000/user/tokentest",
-        {},
-        { withCredentials: true }
-      )
+      .get("http://localhost:8000/user/signout", {}, { withCredentials: true })
       .then((res) => {
         console.log("res >> ", res);
       })
