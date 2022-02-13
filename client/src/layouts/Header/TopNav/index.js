@@ -1,24 +1,52 @@
 import React, { useState, useEffect } from "react";
 
-import LoginModal from "../../../components/LoginModal";
+import SigninModal from "../../../components/SigninModal";
 import { Container, MarketIcon, AppDownloadButton } from "./styled";
 import { AiFillStar } from "react-icons/ai";
 import { BsFillLightningChargeFill } from "react-icons/bs";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-function TopNav() {
-  useEffect(() => {}, []);
-  const [showLoginModal, setShowLoginModal] = useState(false);
+function TopNav({ history }) {
+  const [isUser, setIsUser] = useState(false);
+  useEffect(() => {
+    axios
+      .post("/user/auth", {}, { withCredentials: true })
+      .then(({ data }) => {
+        console.log("data >> ", data);
+        if (data.success && data.data) {
+          console.log("로그인 상태: 성공");
+          setIsUser(true);
+        }
+      })
+      .catch((err) => {
+        console.error("err >> ", err);
+      });
+  }, []);
+  const [showSigninModal, setShowSigninModal] = useState(false);
 
-  const onCloseLoginModal = () => {
-    setShowLoginModal(false);
+  // 로그아웃
+  const onClickSignout = () => {
+    axios
+      .get("/user/signout", { withCredentials: true })
+      .then(({ data }) => {
+        if (data.success) {
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        console.error("err >> ", err);
+      });
   };
 
-  const onToggleLogin = () => {
-    setShowLoginModal((prev) => !prev);
+  const onCloseSigninModal = () => {
+    setShowSigninModal(false);
   };
-  const onSubmitLogin = () => {
-    console.log("submit");
+
+  const onToggleSignin = () => {
+    setShowSigninModal((prev) => !prev);
   };
+
   const onClickAppDownload = () => {
     alert("벼락장터는 앱으로 출시하지 않았습니다.");
   };
@@ -53,16 +81,24 @@ function TopNav() {
           </button>
         </div>
         <div className="right">
-          <button onClick={onToggleLogin} style={{ marginRight: "16px" }}>
-            로그인/회원가입
-            {/*로그아웃*/}
-          </button>
-          <button onClick={onToggleLogin}>내상점</button>
+          {isUser ? (
+            <button onClick={onClickSignout} style={{ marginRight: "16px" }}>
+              로그아웃
+            </button>
+          ) : (
+            <button onClick={onToggleSignin} style={{ marginRight: "16px" }}>
+              로그인/회원가입
+            </button>
+          )}
+          <button onClick={onToggleSignin}>내상점</button>
         </div>
       </Container>
-      <LoginModal show={showLoginModal} close={onCloseLoginModal}></LoginModal>
+      <SigninModal
+        show={showSigninModal}
+        close={onCloseSigninModal}
+      ></SigninModal>
     </>
   );
 }
 
-export default TopNav;
+export default withRouter(TopNav);

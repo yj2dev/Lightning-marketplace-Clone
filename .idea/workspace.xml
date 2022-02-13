@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="client도 SSL(HTTPS) 적용">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="백엔드서버 인증서 변경">
+      <change afterPath="$PROJECT_DIR$/server/src/certificate/localhost-key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/certificate/localhost.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sample/cert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/sample/key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.csr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/certificate/rootca.key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/ca.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/ca.key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cert.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cert.key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.crt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.csr" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.csr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.key" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate/rootca.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.payload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.payload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate2/rootca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.csr" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate2/rootca.csr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/certificate/rootca.key" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/certificate2/rootca.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/utils/jwtExtractorFromCookies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/jwtExtractorFromCookies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/certificate2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -63,18 +70,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate2" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\auth\certificate" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\user\dto" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\sample" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\secret" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -120,7 +127,8 @@
       <workItem from="1644744837581" duration="5243000" />
       <workItem from="1644752016250" duration="4099000" />
       <workItem from="1644756159904" duration="1545000" />
-      <workItem from="1644757734985" duration="1781000" />
+      <workItem from="1644757734985" duration="2996000" />
+      <workItem from="1644775313461" duration="7122000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -409,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644757946460</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="백엔드서버 인증서 변경">
+      <created>1644759653864</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1644759653864</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Kakao OAuth failed to get the token." />
     <MESSAGE value="Successfully received Kakao Token." />
     <MESSAGE value="Example of create Cookie and remove Cookie" />
     <MESSAGE value="KakaoOAuthPage distribute" />
@@ -453,7 +467,8 @@
     <MESSAGE value="쿠키는 생성되나 CORS 에러 미해결" />
     <MESSAGE value="SSL(HTTPS) 적용" />
     <MESSAGE value="client도 SSL(HTTPS) 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="client도 SSL(HTTPS) 적용" />
+    <MESSAGE value="백엔드서버 인증서 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="백엔드서버 인증서 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

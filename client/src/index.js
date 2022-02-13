@@ -11,14 +11,8 @@ import { CookiesProvider } from "react-cookie";
 import axios from "axios";
 dotenv.config();
 
-// 동작안함
-// axios.defaults.withCredentials = false;
 axios.defaults.withCredentials = true;
-
-// axios.defaults.baseURL =
-//   process.env.NODE_ENV === "production"
-//     ? process.env.REACT_APP_SERVER_URI
-//     : "http://localhost:5050";
+axios.defaults.baseURL = "https://localhost:8000";
 
 const createStoreWithMiddleware = applyMiddleware(
   promiseMiddleware,

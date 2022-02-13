@@ -7,15 +7,16 @@ import { ValidationPipe } from '@nestjs/common';
 import * as expressBasicAuth from 'express-basic-auth';
 import * as path from 'path';
 import * as fs from 'fs';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const MODE: boolean = process.env.NODE_ENV === 'development' ? true : false;
 
   const keyFile = fs.readFileSync(
-    path.join(__dirname + '/certificate/rootca.key'),
+    path.join(__dirname + '/certificate/localhost-key.pem'),
   );
   const certFile = fs.readFileSync(
-    path.join(__dirname + '/certificate/rootca.crt'),
+    path.join(__dirname + '/certificate/localhost.pem'),
   );
   console.log('keyFile >> ', keyFile);
   console.log('certFile >> ', certFile);
@@ -30,7 +31,7 @@ async function bootstrap() {
   });
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'https://localhost:3000',
     credentials: true,
   });
   const PORT = process.env.PORT || 8000;
@@ -57,6 +58,9 @@ async function bootstrap() {
   app.useStaticAssets(path.join(__dirname, './common', 'uploads'), {
     prefix: '/static',
   });
+
+  // 쿠키를 다루기 쉽게해줌
+  app.use(cookieParser());
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);

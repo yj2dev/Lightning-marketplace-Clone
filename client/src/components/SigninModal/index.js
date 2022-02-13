@@ -17,7 +17,7 @@ import { FiSmartphone } from "react-icons/fi";
 
 import Modal from "../Modal";
 
-function LoginInModal({ children, show, close, history }) {
+function SigninModal({ children, show, close, history }) {
   // Kakao OAuth
   const REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
   const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
@@ -115,4 +115,4 @@ function LoginInModal({ children, show, close, history }) {
   );
 }
 
-export default withRouter(LoginInModal);
+export default withRouter(SigninModal);

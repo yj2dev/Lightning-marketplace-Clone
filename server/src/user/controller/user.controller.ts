@@ -10,6 +10,7 @@ import {
   UseGuards,
   UseInterceptors,
   Res,
+  Req,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from '../service/user.service';
@@ -35,20 +36,17 @@ export class UserController {
     private readonly authService: AuthService,
   ) {}
 
+  @ApiOperation({ summary: '유저인증' })
+  @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
+  @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
-  @Get()
-  allUser(@CurrentUser() currentUser) {
-    return currentUser.readonlyData;
-  }
-
-  @UseGuards(JwtAuthGuard)
-  @Post('tokentest')
-  tokentest() {
-    return 'who r u?';
+  @Post('auth')
+  async authUser(@CurrentUser() currentUser) {
+    return currentUser;
   }
 
   @ApiOperation({ summary: '회원가입' })
-  @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
+  @ApiResponse({ status: 200, description: '성공', type: UserRequestDto })
   @ApiResponse({ status: 500, description: '서버 에러' })
   @Post('signup')
   async signUp(@Body() userRequestDto: UserRequestDto) {
@@ -56,6 +54,8 @@ export class UserController {
   }
 
   @ApiOperation({ summary: '로그인' })
+  @ApiResponse({ status: 200, description: '성공', type: UserSigninDto })
+  @ApiResponse({ status: 500, description: '서버 에러' })
   @Post('signin')
   async signin(
     @Body() userSigninDto: UserSigninDto,

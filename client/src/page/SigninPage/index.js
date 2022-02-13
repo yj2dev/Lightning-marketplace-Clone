@@ -38,6 +38,7 @@ const SigninPage = ({ history }) => {
     setShowPassword((prev) => !prev);
   };
 
+  // 변경사항으로 유저가 해당 페이지에서 직접 핸드폰 번호를 입력하게 될까봐 남겨둠
   const onChangePhone = (e) => {
     const regex = /[^0-9]/g;
     const value = e.target.value.replace(regex, "");
@@ -75,19 +76,17 @@ const SigninPage = ({ history }) => {
       password,
     };
 
-    console.log("payload >> ", payload);
-
     setLoading(true);
 
     axios
-      .post("http://localhost:8000/user/signin", payload, {
+      .post("/user/signin", payload, {
         withCredentials: true,
       })
       .then((res) => {
         setLoading(false);
-        console.log("res >> ", res);
-        console.log("res.cookie >> ", res.cookie);
+
         if (res.data.success) {
+          history.push("/");
         }
       })
       .catch((err) => {
@@ -96,40 +95,8 @@ const SigninPage = ({ history }) => {
       });
   };
 
-  const [cookie, setCookie, removeCookie] = useCookies(["testCookie"]);
-
-  const onClickJWT = () => {
-    // console.log(Cookies.getAll());
-    // console.log(document.cookie);
-    // Cookies.getAll();
-    // setCookie("fdsfe", "ssss");
-    // console.log(Cookies.get("fdsfe"));
-    // axios
-    //   .post(
-    //     "http://localhost:8000/user/tokentest",
-    //     {},
-    //     { withCredentials: true }
-    //   )
-    //   .then((res) => {
-    //     console.log("res >> ", res);
-    //   })
-    //   .catch((err) => {
-    //     console.error("err >> ", err);
-    //   });
-    //
-    axios
-      .get("http://localhost:8000/user/signout", {}, { withCredentials: true })
-      .then((res) => {
-        console.log("res >> ", res);
-      })
-      .catch((err) => {
-        console.error("err >> ", err);
-      });
-  };
-
   return (
     <Container>
-      <button onClick={onClickJWT}>JWT POST</button>
       <Form onSubmit={onSubmit}>
         <h1>
           벼락장터 회원님 <br /> 반갑습니다 :D

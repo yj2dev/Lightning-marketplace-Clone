@@ -63,7 +63,7 @@ const PhoneNumberAuthPage = ({ history }) => {
     dispatch(signupProcessUser(phoneNumber));
 
     axios
-      .get(`http://localhost:8000/user/check?phoneNumber=${phoneNumber}`)
+      .get(`/user/check?phoneNumber=${phoneNumber}`)
       .then(({ data }) => {
         setLoading(false);
 
