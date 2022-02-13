@@ -11,7 +11,6 @@ import * as fs from 'fs';
 async function bootstrap() {
   const MODE: boolean = process.env.NODE_ENV === 'development' ? true : false;
 
-  console.log(path.join(__dirname + './certificate/rootca.key'));
   const keyFile = fs.readFileSync(
     path.join(__dirname + '/certificate/rootca.key'),
   );
