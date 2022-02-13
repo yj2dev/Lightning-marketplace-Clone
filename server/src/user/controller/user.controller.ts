@@ -41,6 +41,12 @@ export class UserController {
     return currentUser.readonlyData;
   }
 
+  @UseGuards(JwtAuthGuard)
+  @Post('tokentest')
+  tokentest() {
+    return 'who r u?';
+  }
+
   @ApiOperation({ summary: '회원가입' })
   @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
   @ApiResponse({ status: 500, description: '서버 에러' })
@@ -56,7 +62,6 @@ export class UserController {
     @Res({ passthrough: true }) res: Response,
   ) {
     const { jwt, user } = await this.authService.jwtSignin(userSigninDto);
-
     res.cookie('jwt', jwt, { httpOnly: true });
     return user.readonlyData;
   }

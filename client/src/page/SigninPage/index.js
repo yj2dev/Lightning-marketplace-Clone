@@ -78,10 +78,13 @@ const SigninPage = ({ history }) => {
     setLoading(true);
 
     axios
-      .post("http://localhost:8000/user/signin", payload)
+      .post("http://localhost:8000/user/signin", payload, {
+        withCredentials: true,
+      })
       .then((res) => {
         setLoading(false);
         console.log("res >> ", res);
+        console.log("res.cookie >> ", res.cookie);
         if (res.data.success) {
         }
       })
@@ -91,8 +94,24 @@ const SigninPage = ({ history }) => {
       });
   };
 
+  const onClickJWT = () => {
+    axios
+      .post(
+        "http://localhost:8000/user/tokentest",
+        {},
+        { withCredentials: true }
+      )
+      .then((res) => {
+        console.log("res >> ", res);
+      })
+      .catch((err) => {
+        console.error("err >> ", err);
+      });
+  };
+
   return (
     <Container>
+      <button onClick={onClickJWT}>JWT POST</button>
       <Form onSubmit={onSubmit}>
         <h1>
           벼락장터 회원님 <br /> 반갑습니다 :D

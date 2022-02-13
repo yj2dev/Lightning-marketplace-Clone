@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="휴대폰 회원가입 문자인증 사용자 동의버튼 추가">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그인, 로그아웃(쿠키 생성 및 제거)">
+      <change afterPath="$PROJECT_DIR$/server/src/common/utils/jwtExtractorFromCookies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +110,8 @@
       <workItem from="1644432539802" duration="15308000" />
       <workItem from="1644509514593" duration="18467000" />
       <workItem from="1644558021425" duration="2194000" />
-      <workItem from="1644659316757" duration="32713000" />
+      <workItem from="1644659316757" duration="36762000" />
+      <workItem from="1644710740802" duration="1836000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -367,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644703023668</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="로그인, 로그아웃(쿠키 생성 및 제거)">
+      <created>1644706706805</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1644706706805</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +398,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency." />
     <MESSAGE value="NewProductPage Completion" />
     <MESSAGE value="NewProductPage validate Completion" />
     <MESSAGE value="Waiting for the mobile phone identification code to connect to the merchant identification code." />
@@ -411,7 +422,8 @@
     <MESSAGE value="비밀번호 생성규칙 적용" />
     <MESSAGE value="휴대폰 회원가입 로직 구현" />
     <MESSAGE value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
+    <MESSAGE value="로그인, 로그아웃(쿠키 생성 및 제거)" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인, 로그아웃(쿠키 생성 및 제거)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

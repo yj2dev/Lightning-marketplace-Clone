@@ -8,11 +8,12 @@ import ReduxThunk from "redux-thunk";
 import Reducer from "./_reducers";
 import dotenv from "dotenv";
 import { CookiesProvider } from "react-cookie";
-
+import axios from "axios";
 dotenv.config();
 
 // 동작안함
 // axios.defaults.withCredentials = false;
+// axios.defaults.withCredentials = true;
 
 // axios.defaults.baseURL =
 //   process.env.NODE_ENV === "production"
