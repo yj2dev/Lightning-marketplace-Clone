@@ -61,6 +61,11 @@ export class Product extends Document {
   @IsNotEmpty()
   description: string;
 
+  @Prop({ required: true })
+  @IsString()
+  @IsNotEmpty()
+  address: string;
+
   @Prop({})
   @IsString()
   @IsNotEmpty()

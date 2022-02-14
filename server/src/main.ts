@@ -18,8 +18,6 @@ async function bootstrap() {
   const certFile = fs.readFileSync(
     path.join(__dirname + '/certificate/localhost.pem'),
   );
-  console.log('keyFile >> ', keyFile);
-  console.log('certFile >> ', certFile);
 
   const httpsOptions = {
     key: keyFile,

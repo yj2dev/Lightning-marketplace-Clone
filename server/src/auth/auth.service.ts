@@ -19,7 +19,7 @@ export class AuthService {
     const { phoneNumber, password } = userSigninDto;
 
     // 해당하는 휴대폰번호가 존재하는지 확인
-    const user = await this.userRepository.findUserByEmail(phoneNumber);
+    const user = await this.userRepository.findUserByPhoneNumber(phoneNumber);
 
     if (!user) {
       throw new UnauthorizedException('휴대폰번호와 비밀번호를 확인해주세요.');

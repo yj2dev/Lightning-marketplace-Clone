@@ -163,8 +163,16 @@ const ProductNewPage = ({ history }) => {
     // 공란 체크 (에러 발생시 true 반환)
     if (onValidateTotal()) return;
 
+    // 이미지 전송 폼
+    const formData = new FormData();
+
+    // 이미지 폼에 등록
+    for (let i = 0; i < productImage.length; i++) {
+      formData.append("image", productImage[i]);
+    }
+
+    // 전송할 데이터
     const payload = {
-      productImage,
       title,
       largeCateogry: selectCategory.large,
       mediumCategory: selectCategory.medium,
@@ -180,7 +188,20 @@ const ProductNewPage = ({ history }) => {
     };
 
     console.log("submit payload >> ", payload);
-    console.log("submit");
+    const stringPayload = JSON.stringify(payload);
+    console.log("submit stringPayload >> ", stringPayload);
+    console.log();
+    // 전송할 데이터 폼에 등록
+    formData.append("data", stringPayload);
+
+    axios
+      .post("/product/upload", formData)
+      .then((res) => {
+        console.log("product res >> ", res);
+      })
+      .catch((err) => {
+        console.log("product err >> ", err);
+      });
   };
 
   const onValidateQuantity = () => {
@@ -349,8 +370,6 @@ const ProductNewPage = ({ history }) => {
     setProductImage(imageDataArray);
     setProductImageURL(imageURLArray);
 
-    history.push("/product/new");
-
     // imageUpload(imageDataArray);
   };
 
@@ -372,8 +391,14 @@ const ProductNewPage = ({ history }) => {
     console.log(productImage);
     console.log(productImageURL);
     console.log("del ... ");
-    history.push("/product/new");
+    // imageList.current.v;
   };
+
+  const imageList = useRef();
+
+  useEffect(() => {
+    console.log(" image list :::", imageList);
+  }, [productImage, productImageURL]);
 
   const onDeleteTitleValue = () => {
     setTitle("");
@@ -462,7 +487,7 @@ const ProductNewPage = ({ history }) => {
                 &nbsp;&nbsp;상품 사진을 등록해주세요.
               </ErrorMessage>
             )}
-            <ProductImgSection>
+            <ProductImgSection ref={imageList}>
               {productImageURL &&
                 productImageURL.map((imageURL, i) => (
                   <div key={i} className="img_wrapper">
