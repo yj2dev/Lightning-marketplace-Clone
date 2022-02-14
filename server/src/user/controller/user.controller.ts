@@ -21,7 +21,7 @@ import { UserReadonlyDto } from '../dto/user.readonly.dto';
 import { UserRequestDto } from '../dto/user.request.dto';
 import { AuthService } from '../../auth/auth.service';
 import { UserSigninDto } from '../../auth/dto/user.signin.dto';
-import { JwtAuthGuard } from '../../auth/jwt/jwt.guard';
+import { JwtAuthGuard } from '../../auth/guard/jwt.guard';
 import { CurrentUser } from '../../common/decorators/user.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';

@@ -19,7 +19,7 @@ const KakaoOAuthPage = ({ history }) => {
     if (!code) history.push("/");
 
     axios
-      .get(`http://localhost:8000/oauth/kakao/?code=${code}`, {
+      .get(`/oauth/kakao/?code=${code}`, {
         withCredentials: false,
       })
       .then((res) => {
@@ -28,9 +28,6 @@ const KakaoOAuthPage = ({ history }) => {
 
         setUserName(res.data.properties.nickname);
         setUserProfileURI(res.data.properties.thumbnail_image);
-
-        // 카카오 유저 아이디 쿠키에 저장
-        setCookie("uid", res.data.id);
       })
       .catch((err) => {
         console.log("failed");
@@ -45,11 +42,12 @@ const KakaoOAuthPage = ({ history }) => {
   return (
     <Container>
       <Link to="/">HOME</Link>
-      <a
-        href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`}
-      >
-        카카오로 이용하기
-      </a>
+      <h1>KAKAO LOGIN TEST</h1>
+      {/*<a*/}
+      {/*  href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`}*/}
+      {/*>*/}
+      {/*  카카오로 이용하기*/}
+      {/*</a>*/}
       <button onClick={getUserInfo}>TEST</button>
       KakaoOAuthPage
       <h2>{userName}</h2>

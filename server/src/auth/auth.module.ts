@@ -5,6 +5,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt/jwt.strategy';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from '../user/user.module';
+import { NaverStrategy } from './jwt/naver.strategy';
+import { KakaoStrategy } from './jwt/kakao.strategy';
 
 @Module({
   imports: [
@@ -18,7 +20,7 @@ import { UserModule } from '../user/user.module';
 
     forwardRef(() => UserModule),
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, NaverStrategy, KakaoStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

@@ -12,6 +12,7 @@ import { authUser } from "../../../_actions/user_actions";
 function TopNav({ history }) {
   const [showSigninModal, setShowSigninModal] = useState(false);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   // 로그아웃
   const onClickSignout = () => {
@@ -19,8 +20,7 @@ function TopNav({ history }) {
       .get("/user/signout", { withCredentials: true })
       .then(({ data }) => {
         if (data.success) {
-          console.log("로그아웃 성공");
-          history.push("/");
+          dispatch(authUser());
         }
       })
       .catch((err) => {
@@ -42,8 +42,6 @@ function TopNav({ history }) {
   const onClickAddFavorite = () => {
     alert("Ctrl + D 키를 누르면 즐겨찾기에 추가하실 수 있습니다.");
   };
-
-  console.log("topnav user >> ", user);
 
   return (
     <>

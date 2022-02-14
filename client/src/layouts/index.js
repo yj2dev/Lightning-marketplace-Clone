@@ -31,7 +31,11 @@ function MainPage({ history }) {
   ) {
     return (
       <>
-        <Route exact path="/oauth/kakao" component={Auth(KakaoOAuthPage, 2)} />
+        <Route
+          exact
+          path="/oauth/kakao/callback"
+          component={Auth(KakaoOAuthPage, 2)}
+        />
         <Route
           exact
           path="/oauth/facebook"
@@ -51,7 +55,7 @@ function MainPage({ history }) {
         <Switch>
           <Route path="/product/new" component={Auth(ProductNewPage, 1)} />
           <Route path="/shop" component={Auth(MyShopPage, 1)} />
-          <Route path="/talk" component={Auth(TalkPage, 1)} />
+          <Route path="/talk" component={Auth(TalkPage, 2)} />
         </Switch>
         <Footer></Footer>
       </Container>

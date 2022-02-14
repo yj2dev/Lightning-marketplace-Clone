@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="유저 로그인, 로그아웃 구현">
-      <change afterPath="$PROJECT_DIR$/client/src/hoc/Auth.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="페이지 권한 분기처리(로그인 여부)">
+      <change afterPath="$PROJECT_DIR$/client/src/_actions/signin_modal_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_reducers/signin_modal_reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/guard/kakao-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/guard/naver-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/jwt/kakao.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/jwt/naver.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/_actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_actions/user_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/_reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hoc/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hoc/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/KakaoOAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/KakaoOAuthPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/guard/jwt.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/certificate2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/auth/guard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -64,18 +69,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\auth\guard" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\_actions" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\_reducers" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate2" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\auth\certificate" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\auth\guard" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\sample" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -122,7 +127,8 @@
       <workItem from="1644752016250" duration="4099000" />
       <workItem from="1644756159904" duration="1545000" />
       <workItem from="1644757734985" duration="2996000" />
-      <workItem from="1644775313461" duration="19826000" />
+      <workItem from="1644775313461" duration="24860000" />
+      <workItem from="1644833092516" duration="13252000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -425,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644784068575</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="페이지 권한 분기처리(로그인 여부)">
+      <created>1644797031773</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1644797031773</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +457,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Example of create Cookie and remove Cookie" />
     <MESSAGE value="KakaoOAuthPage distribute" />
     <MESSAGE value="memory-cache sample" />
     <MESSAGE value="Naver SMS API connection success" />
@@ -469,7 +481,8 @@
     <MESSAGE value="client도 SSL(HTTPS) 적용" />
     <MESSAGE value="백엔드서버 인증서 변경" />
     <MESSAGE value="유저 로그인, 로그아웃 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="유저 로그인, 로그아웃 구현" />
+    <MESSAGE value="페이지 권한 분기처리(로그인 여부)" />
+    <option name="LAST_COMMIT_MESSAGE" value="페이지 권한 분기처리(로그인 여부)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

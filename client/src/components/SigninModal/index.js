@@ -16,20 +16,48 @@ import { SiNaver } from "react-icons/si";
 import { FiSmartphone } from "react-icons/fi";
 
 import Modal from "../Modal";
+import axios from "axios";
 
 function SigninModal({ children, show, close, history }) {
   // Kakao OAuth
-  const REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
-  const REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
+  const KAKAO_REST_API_KEY = process.env.REACT_APP_KAKAO_AUTH_REST_API_KEY;
+  const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_AUTH_REDIRECT_URI;
+
+  const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_AUTH_CLIENT_ID;
+  const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_AUTH_REDIRECT_URI;
+
+  // Naver OAuth
 
   const onSubmitKakaoAuth = () => {
-    window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`;
+    // axios
+    //   .get("/oauth/kakao")
+    //   .then((res) => {
+    //     console.log("kakao res >> ", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("kakao err >> ", err);
+    //   });
+
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${KAKAO_REST_API_KEY}&redirect_uri=${KAKAO_REDIRECT_URI}`;
   };
   const onSubmitFacebookAuth = () => {
     history.push("/oauth/facebook");
   };
   const onSubmitNaverAuth = () => {
-    history.push("/oauth/naver");
+    const state = "404";
+    window.location.href = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&state=${state}`;
+
+    //
+    // axios
+    //   .get("/oauth/naver")
+    //   .then((res) => {
+    //     console.log("naver res >> ", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("naver err >> ", err);
+    //   });
+
+    //history.push("/oauth/naver");
   };
   const onSubmitPhoneCertification = () => {
     history.push("/auth");
