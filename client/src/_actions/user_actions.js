@@ -1,11 +1,7 @@
 import axios from "axios";
-import {
-  SIGNUP_USER,
-  SIGNUP_PROCESS_USER,
-  SIGNIN_USER,
-  AUTH_USER,
-} from "./types";
+import { SIGNUP_PROCESS_USER, AUTH_USER } from "./types";
 
+// 로그인, 회원가입 중 입력 데이터 임시 저장
 export function signupProcessUser(data) {
   return {
     type: SIGNUP_PROCESS_USER,
@@ -13,34 +9,16 @@ export function signupProcessUser(data) {
   };
 }
 
-export function signupUser(onSubmitData) {
+// 로그인 후 유저 인증 정보 불러오기
+export function authUser() {
   const request = axios
-    .post("/api/users/signup", onSubmitData, { withCredentials: true })
-    .then((res) => res.data);
-
-  return {
-    type: SIGNUP_USER,
-    payload: request,
-  };
-}
-
-export function signinUser(onSubmitData) {
-  const request = axios
-    .post("/api/users/signin", onSubmitData, { withCredentials: true })
-    .then((res) => res.data);
-
-  return {
-    type: SIGNIN_USER,
-    payload: request,
-  };
-}
-
-export function auth() {
-  const request = axios
-    .get("/api/users/auth", { withCredentials: true })
+    .get("/user/auth", { withCredentials: true })
     .then(({ data }) => {
-      // console.log("[Redux] auth data >> ", data);
+      // console.log("authUser data >> ", data);
       return data;
+    })
+    .catch((err) => {
+      // console.log("authUser err >> ", err);
     });
 
   return {

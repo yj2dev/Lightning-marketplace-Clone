@@ -40,7 +40,7 @@ export class UserController {
   @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
   @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
-  @Post('auth')
+  @Get('auth')
   async authUser(@CurrentUser() currentUser) {
     return currentUser;
   }

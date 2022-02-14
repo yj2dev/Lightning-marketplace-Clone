@@ -50,9 +50,14 @@ export class UserRepository {
     return user;
   }
 
-  // 유저 아이디로 유저찾기 (비밀번호 제외)
-  async findUserByIdWithoutPassword(userId: string): Promise<User | null> {
-    const user = await this.user.findById(userId).select('-password');
+  // 유저 아이디로 유저찾기 (비밀번호, 휴대번호 제외)
+  async findUserByIdWithoutPasswordAndPhoneNumber(
+    userId: string,
+  ): Promise<User | null> {
+    const user = await this.user
+      .findById(userId)
+      .select('-password')
+      .select('-phoneNumber');
     return user;
   }
 

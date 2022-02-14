@@ -13,7 +13,12 @@ import NaverOAuthPage from "../page/NaverOAuthPage";
 import PhoneNumberAuthPage from "../page/PhoneNumberAuthPage";
 import SignupPage from "../page/SignupPage";
 import SigninPage from "../page/SigninPage";
+import Auth from "../hoc/Auth";
 
+// Auth(Component, option)
+// - option: (0)로그인 여부 상관없음 - 기본값
+//           (1)로그인 한 유저만 허용
+//           (2)로그인 안한 유저만 허용
 function MainPage({ history }) {
   const { pathname } = useLocation();
 
@@ -26,12 +31,16 @@ function MainPage({ history }) {
   ) {
     return (
       <>
-        <Route exact path="/oauth/kakao" component={KakaoOAuthPage} />
-        <Route exact path="/oauth/facebook" component={FacebookOAuthPage} />
-        <Route exact path="/oauth/naver" component={NaverOAuthPage} />
-        <Route exact path="/auth" component={PhoneNumberAuthPage} />
-        <Route exact path="/signin" component={SigninPage} />
-        <Route exact path="/signup" component={SignupPage} />
+        <Route exact path="/oauth/kakao" component={Auth(KakaoOAuthPage, 2)} />
+        <Route
+          exact
+          path="/oauth/facebook"
+          component={Auth(FacebookOAuthPage, 2)}
+        />
+        <Route exact path="/oauth/naver" component={Auth(NaverOAuthPage, 2)} />
+        <Route exact path="/auth" component={Auth(PhoneNumberAuthPage, 2)} />
+        <Route exact path="/signin" component={Auth(SigninPage, 2)} />
+        <Route exact path="/signup" component={Auth(SignupPage, 2)} />
       </>
     );
   } else {
@@ -40,9 +49,9 @@ function MainPage({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
-          <Route path="/product/new" component={ProductNewPage} />
-          <Route path="/shop" component={MyShopPage} />
-          <Route path="/talk" component={TalkPage} />
+          <Route path="/product/new" component={Auth(ProductNewPage, 1)} />
+          <Route path="/shop" component={Auth(MyShopPage, 1)} />
+          <Route path="/talk" component={Auth(TalkPage, 1)} />
         </Switch>
         <Footer></Footer>
       </Container>

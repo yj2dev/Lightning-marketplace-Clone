@@ -6,24 +6,12 @@ import { AiFillStar } from "react-icons/ai";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authUser } from "../../../_actions/user_actions";
 
 function TopNav({ history }) {
-  const [isUser, setIsUser] = useState(false);
-  useEffect(() => {
-    axios
-      .post("/user/auth", {}, { withCredentials: true })
-      .then(({ data }) => {
-        console.log("data >> ", data);
-        if (data.success && data.data) {
-          console.log("로그인 상태: 성공");
-          setIsUser(true);
-        }
-      })
-      .catch((err) => {
-        console.error("err >> ", err);
-      });
-  }, []);
   const [showSigninModal, setShowSigninModal] = useState(false);
+  const user = useSelector((state) => state.user);
 
   // 로그아웃
   const onClickSignout = () => {
@@ -31,6 +19,7 @@ function TopNav({ history }) {
       .get("/user/signout", { withCredentials: true })
       .then(({ data }) => {
         if (data.success) {
+          console.log("로그아웃 성공");
           history.push("/");
         }
       })
@@ -53,6 +42,8 @@ function TopNav({ history }) {
   const onClickAddFavorite = () => {
     alert("Ctrl + D 키를 누르면 즐겨찾기에 추가하실 수 있습니다.");
   };
+
+  console.log("topnav user >> ", user);
 
   return (
     <>
@@ -81,7 +72,7 @@ function TopNav({ history }) {
           </button>
         </div>
         <div className="right">
-          {isUser ? (
+          {user.isSignin ? (
             <button onClick={onClickSignout} style={{ marginRight: "16px" }}>
               로그아웃
             </button>

@@ -38,7 +38,6 @@ export class AuthService {
         { sub: user._id },
         { secret: process.env.JWT_SECRET },
       );
-
       return { jwt, user };
     } catch (err) {
       throw new BadRequestException(err);
