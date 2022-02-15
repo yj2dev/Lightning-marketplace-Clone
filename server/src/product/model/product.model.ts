@@ -145,4 +145,15 @@ export class Product extends Document {
   smallCategory: string;
 }
 
-export const ProductSchema = SchemaFactory.createForClass(Product);
+const _ProductSchema = SchemaFactory.createForClass(Product);
+
+_ProductSchema.virtual('productimages', {
+  ref: 'productimages',
+  localField: '_id',
+  foreignField: 'productId',
+});
+
+_ProductSchema.set('toObject', { virtuals: true });
+_ProductSchema.set('toJSON', { virtuals: true });
+
+export const ProductSchema = _ProductSchema;

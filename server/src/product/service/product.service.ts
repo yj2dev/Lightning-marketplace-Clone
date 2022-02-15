@@ -1,9 +1,14 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { ProductRepository } from '../repository/product.repository';
+import { Product } from '../model/product.model';
 
 @Injectable()
 export class ProductService {
   constructor(private readonly productRepository: ProductRepository) {}
+
+  async getOneProduct(productId: string): Promise<Product> {
+    return await this.productRepository.findByIdAndPopulate(productId);
+  }
 
   async getAllProduct() {
     return await this.productRepository.getAllProduct();

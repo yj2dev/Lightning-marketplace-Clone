@@ -2,8 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Product } from '../model/product.model';
-import { ProductImage } from '../../product-image/model/product-image.model';
+import {
+  ProductImage,
+  ProductImageSchema,
+} from '../../product-image/model/product-image.model';
 import { CreateProductDto } from '../dto/create.product.dto';
+import * as mongoose from 'mongoose';
 
 @Injectable()
 export class ProductRepository {
@@ -13,8 +17,22 @@ export class ProductRepository {
     private readonly productImage: Model<ProductImage>,
   ) {}
 
+  async findByIdAndPopulate(id: string): Promise<Product> {
+    const ProductImageModel = mongoose.model(
+      'productimages',
+      ProductImageSchema,
+    );
+
+    const result = await this.product
+      .findById(id)
+      .populate('productimages', ProductImageModel);
+
+    console.log('result >> ', result);
+    return result;
+  }
+
   async getAllProduct() {
-    return await this.product.find();
+    return this.product.find();
   }
 
   // 상품 정보 저장

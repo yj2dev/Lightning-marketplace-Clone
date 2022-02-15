@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Post,
   UploadedFiles,
   UseGuards,
@@ -13,13 +14,20 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { ProductService } from '../service/product.service';
 import { User } from '../../user/model/user.model';
+import { Product } from '../model/product.model';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
-  @Get('all')
+  @Get('/all')
   async getAllProduct() {
     return this.productService.getAllProduct();
+  }
+
+  @Get('/detail/:productId')
+  async getOneProduct(@Param('productId') productId: string): Promise<Product> {
+    console.log('productId >> ', productId);
+    return await this.productService.getOneProduct(productId);
   }
 
   @Post('/upload')
