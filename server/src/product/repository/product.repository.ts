@@ -8,6 +8,7 @@ import {
 } from '../../product-image/model/product-image.model';
 import { CreateProductDto } from '../dto/create.product.dto';
 import * as mongoose from 'mongoose';
+import { UserSchema } from '../../user/model/user.model';
 
 @Injectable()
 export class ProductRepository {
@@ -23,9 +24,12 @@ export class ProductRepository {
       ProductImageSchema,
     );
 
+    const UserModel = mongoose.model('users', UserSchema);
+
     const result = await this.product
       .findById(id)
-      .populate('productimages', ProductImageModel);
+      .populate('productImgURLs', ProductImageModel)
+      .populate('userInfo', UserModel);
 
     console.log('result >> ', result);
     return result;

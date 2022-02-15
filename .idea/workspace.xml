@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품과 상품이미지 populate 성공">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-image/product-image.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-image/product-image.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +114,7 @@
       <workItem from="1644757734985" duration="2996000" />
       <workItem from="1644775313461" duration="24860000" />
       <workItem from="1644833092516" duration="46911000" />
-      <workItem from="1644916143658" duration="18666000" />
+      <workItem from="1644916143658" duration="24004000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -458,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644928770235</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="상품과 상품이미지 populate 성공">
+      <created>1644950846609</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1644950846609</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +478,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add checkAuthenticationCode Router" />
     <MESSAGE value="RedisLabs Conntection, add logic to verify your phone number" />
     <MESSAGE value="signup page design" />
     <MESSAGE value="signup page design and validation" />
@@ -502,7 +502,8 @@
     <MESSAGE value="상품 이미지 저장" />
     <MESSAGE value="상품 등록, 상품 이미지 등록, 해시태그 미완성" />
     <MESSAGE value="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용" />
+    <MESSAGE value="상품과 상품이미지 populate 성공" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품과 상품이미지 populate 성공" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
