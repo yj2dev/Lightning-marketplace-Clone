@@ -14,12 +14,14 @@ import PhoneNumberAuthPage from "../page/PhoneNumberAuthPage";
 import SignupPage from "../page/SignupPage";
 import SigninPage from "../page/SigninPage";
 import Auth from "../hoc/Auth";
+import LandingPage from "../page/LandingPage";
+import ProductDetailPage from "../page/ProductDetailPage";
 
 // Auth(Component, option)
 // - option: (0)로그인 여부 상관없음 - 기본값
 //           (1)로그인 한 유저만 허용
 //           (2)로그인 안한 유저만 허용
-function MainPage({ history }) {
+function Layout({ history }) {
   const { pathname } = useLocation();
 
   // 기존의 만들어둔 레이아웃을 적용하지 않고 새롭게 구성하기 위해 조건문처리
@@ -54,8 +56,13 @@ function MainPage({ history }) {
         <SearchNav></SearchNav>
         <Switch>
           <Route path="/product/new" component={Auth(ProductNewPage, 1)} />
+          <Route
+            path="/product/:productId"
+            component={Auth(ProductDetailPage, 3)}
+          />
           <Route path="/shop" component={Auth(MyShopPage, 1)} />
-          <Route path="/talk" component={Auth(TalkPage, 2)} />
+          <Route path="/talk" component={Auth(TalkPage, 1)} />
+          <Route exact path="/" component={Auth(LandingPage, 3)} />
         </Switch>
         <Footer></Footer>
       </Container>
@@ -63,4 +70,4 @@ function MainPage({ history }) {
   }
 }
 
-export default withRouter(MainPage);
+export default withRouter(Layout);

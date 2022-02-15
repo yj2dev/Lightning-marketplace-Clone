@@ -1,9 +1,13 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { ProductRepository } from './product.repository';
+import { ProductRepository } from '../repository/product.repository';
 
 @Injectable()
 export class ProductService {
   constructor(private readonly productRepository: ProductRepository) {}
+
+  async getAllProduct() {
+    return await this.productRepository.getAllProduct();
+  }
 
   async uploadProduct(currentUser, files, productInfo) {
     // 태그만 따로 추출 후 DB 저장

@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Product } from './model/product.model';
-import { ProductImage } from '../product-image/model/product-image.model';
-import { CreateProductDto } from './dto/create.product.dto';
+import { Product } from '../model/product.model';
+import { ProductImage } from '../../product-image/model/product-image.model';
+import { CreateProductDto } from '../dto/create.product.dto';
 
 @Injectable()
 export class ProductRepository {
@@ -12,6 +12,10 @@ export class ProductRepository {
     @InjectModel(ProductImage.name)
     private readonly productImage: Model<ProductImage>,
   ) {}
+
+  async getAllProduct() {
+    return await this.product.find();
+  }
 
   // 상품 정보 저장
   async uploadProduct(

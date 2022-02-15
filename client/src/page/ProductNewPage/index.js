@@ -185,8 +185,8 @@ const ProductNewPage = ({ history }) => {
 
     const stringPayload = JSON.stringify(payload);
 
-    console.log("submit payload >> ", payload);
-    console.log("submit stringPayload >> ", stringPayload);
+    // console.log("submit payload >> ", payload);
+    // console.log("submit stringPayload >> ", stringPayload);
 
     // 전송할 데이터 폼에 등록
     formData.append("data", stringPayload);
@@ -195,6 +195,7 @@ const ProductNewPage = ({ history }) => {
       .post("/product/upload", formData)
       .then((res) => {
         console.log("product res >> ", res);
+        history.push("/");
       })
       .catch((err) => {
         console.log("product err >> ", err);

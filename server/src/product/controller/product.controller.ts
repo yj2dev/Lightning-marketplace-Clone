@@ -1,21 +1,26 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   UploadedFiles,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { JwtAuthGuard } from '../auth/guard/jwt.guard';
-import { CurrentUser } from '../common/decorators/user.decorator';
+import { JwtAuthGuard } from '../../auth/guard/jwt.guard';
+import { CurrentUser } from '../../common/decorators/user.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express';
-import { multerOptions } from '../common/utils/multer.options';
-import { ProductService } from './product.service';
-import { User } from '../user/model/user.model';
+import { multerOptions } from '../../common/utils/multer.options';
+import { ProductService } from '../service/product.service';
+import { User } from '../../user/model/user.model';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
+  @Get('all')
+  async getAllProduct() {
+    return this.productService.getAllProduct();
+  }
 
   @Post('/upload')
   @UseGuards(JwtAuthGuard)
