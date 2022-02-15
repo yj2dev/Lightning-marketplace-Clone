@@ -17,7 +17,7 @@ export class ProductImage extends Document {
   })
   @Prop({ type: Types.ObjectId, ref: 'products' })
   @IsString()
-  productId: string;
+  productId: Types.ObjectId;
 
   @ApiProperty({
     example: '상품 이미지 경로',

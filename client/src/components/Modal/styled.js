@@ -33,4 +33,5 @@ export const CloseButton = styled.button`
   color: gray;
   top: 8px;
   right: 12px;
+  z-index: 5010;
 `;

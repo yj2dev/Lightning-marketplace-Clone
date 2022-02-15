@@ -57,20 +57,13 @@ const ProductNewPage = ({ history }) => {
   const [selectCategoryError, setSelectCategoryError] = useState({
     required: false,
   });
-
   const [address, setAddress] = useState("지역설정안함");
   const [showPostcodeModal, setShowPostcodeModal] = useState(false);
-
-  const [status, setStatus] = useState("중고상품");
-
-  const [exchange, setExchange] = useState("교환불가");
-
+  const [newProduct, setNewProduct] = useState(false);
+  const [enableExchange, setEnableExchange] = useState(false);
   const [price, setPrice] = useState("");
-  const [priceError, setPriceError] = useState({
-    minPrice: false,
-  });
-  const [checkedDeliveryCharge, setCheckedDeliveryCharge] = useState(false);
-
+  const [priceError, setPriceError] = useState({ minPrice: false });
+  const [containDeliveryCharge, setContainDeliveryCharge] = useState(false);
   const [description, setDescription] = useState("");
   const [descriptionError, setDescriptionError] = useState({
     minLength: false,
@@ -155,6 +148,9 @@ const ProductNewPage = ({ history }) => {
     }
     return validateResult;
   };
+  const currencyOfInt = (value) => {
+    return parseInt(value.replaceAll(",", ""));
+  };
 
   const onSubmitNewProduct = () => {
     // 수량란에 잘못된 값이 들어있으면 변환
@@ -178,19 +174,20 @@ const ProductNewPage = ({ history }) => {
       mediumCategory: selectCategory.medium,
       smallCategory: selectCategory.small,
       address,
-      status,
-      exchange,
-      price,
-      checkedDeliveryCharge,
+      newProduct,
+      enableExchange,
+      price: currencyOfInt(price),
+      containDeliveryCharge,
       description,
       tag,
       quantity,
     };
 
-    console.log("submit payload >> ", payload);
     const stringPayload = JSON.stringify(payload);
+
+    console.log("submit payload >> ", payload);
     console.log("submit stringPayload >> ", stringPayload);
-    console.log();
+
     // 전송할 데이터 폼에 등록
     formData.append("data", stringPayload);
 
@@ -243,24 +240,10 @@ const ProductNewPage = ({ history }) => {
 
     setDescription(value);
   };
-  const onClickDeliveryCharge = () => {
-    // true(배송비 포함), false(배송비 미포함)
-    setCheckedDeliveryCharge((prev) => !prev);
-    console.log(checkedDeliveryCharge);
-  };
-
-  const onClickStatus = (e) => {
-    setStatus(e.target.value);
-  };
-  const onClickExchange = (e) => {
-    setExchange(e.target.value);
-  };
 
   const onChangePrice = (e) => {
     const value = e.target.value.replaceAll(",", "");
 
-    console.log("e.target.value >> ", e.target.value);
-    console.log("value >> ", value);
     const regex = /^[0-9]+$/;
     if (value !== "" && !regex.test(value)) {
       alert("숫자만 입력해 주세요.");
@@ -315,23 +298,6 @@ const ProductNewPage = ({ history }) => {
       medium: selectCategory.medium,
       small: value,
     });
-  };
-
-  const imageUpload = () => {
-    const formData = new FormData();
-
-    for (let i = 0; i < productImage.length; i++) {
-      formData.append("image", productImage[i]);
-    }
-
-    axios
-      .post("http://localhost:8000/user/upload/product", formData)
-      .then(({ data }) => {
-        console.log("succeed >> ", data);
-      })
-      .catch(({ data }) => {
-        console.log("failed >> ", data);
-      });
   };
 
   const onChangeImage = (e) => {
@@ -397,7 +363,7 @@ const ProductNewPage = ({ history }) => {
   const imageList = useRef();
 
   useEffect(() => {
-    console.log(" image list :::", imageList);
+    //  버그 개선
   }, [productImage, productImageURL]);
 
   const onDeleteTitleValue = () => {
@@ -666,19 +632,19 @@ const ProductNewPage = ({ history }) => {
             <input
               type="radio"
               id="used_product"
-              name="product_status"
-              onClick={onClickStatus}
+              name="newProduct"
+              onClick={() => setNewProduct((prev) => !prev)}
               value="중고상품"
-              checked={status === "중고상품" && true}
+              checked={!newProduct}
             />
             <label htmlFor="used_product">중고상품</label>
             <input
               type="radio"
               id="new_product"
-              name="product_status"
-              onClick={onClickStatus}
+              name="newProduct"
+              onClick={() => setNewProduct((prev) => !prev)}
               value="새상품"
-              checked={status === "새상품" && true}
+              checked={newProduct}
             />
             <label htmlFor="new_product">새상품</label>
           </Status>
@@ -693,22 +659,22 @@ const ProductNewPage = ({ history }) => {
           <Exchange>
             <input
               type="radio"
-              id="exchange_disable"
-              name="product_exchange"
-              onClick={onClickExchange}
+              id="enableExchange_disable"
+              name="product_enableExchange"
+              onClick={() => setEnableExchange((prev) => !prev)}
               value="교환불가"
-              checked={exchange === "교환불가" && true}
+              checked={!enableExchange}
             />
-            <label htmlFor="exchange_disable">교환불가</label>
+            <label htmlFor="enableExchange_disable">교환불가</label>
             <input
               type="radio"
-              id="exchange_enable"
-              name="product_exchange"
-              onClick={onClickExchange}
+              id="enableExchange_enable"
+              name="product_enableExchange"
+              onClick={() => setEnableExchange((prev) => !prev)}
               value="교환가능"
-              checked={exchange === "교환가능" && true}
+              checked={enableExchange}
             />
-            <label htmlFor="exchange_enable">교환가능</label>
+            <label htmlFor="enableExchange_enable">교환가능</label>
           </Exchange>
         </tr>
 
@@ -738,8 +704,8 @@ const ProductNewPage = ({ history }) => {
               <input
                 type="checkbox"
                 id="delivery_charge_include"
-                checked={checkedDeliveryCharge}
-                onClick={onClickDeliveryCharge}
+                checked={containDeliveryCharge}
+                onClick={() => setContainDeliveryCharge((prev) => !prev)}
               />
               <label htmlFor="delivery_charge_include">배송비 포함</label>
             </div>
@@ -802,7 +768,7 @@ const ProductNewPage = ({ history }) => {
                 />
               )}
             </div>
-            <ul>
+            <ul className="cursor_none">
               <li>
                 - 태그는 띄어쓰기로 구분되며 최대 9자까지 입력할 수 있습니다.
               </li>

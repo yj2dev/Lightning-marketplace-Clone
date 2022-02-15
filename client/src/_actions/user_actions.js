@@ -14,12 +14,9 @@ export function authUser() {
   const request = axios
     .get("/user/auth", { withCredentials: true })
     .then(({ data }) => {
-      // console.log("authUser data >> ", data);
       return data;
     })
-    .catch((err) => {
-      // console.log("authUser err >> ", err);
-    });
+    .catch((err) => {});
 
   return {
     type: AUTH_USER,

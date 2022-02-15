@@ -6,13 +6,12 @@ const initialState = {
   },
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialState, action) {
   switch (action.type) {
     case SIGNUP_PROCESS_USER:
       return { phoneNumber: action.payload };
     case AUTH_USER:
-      return { isSignin: action.payload };
+      return { ...state, isSignin: action.payload };
     default:
       return state;
   }

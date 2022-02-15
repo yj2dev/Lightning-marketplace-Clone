@@ -63,7 +63,7 @@ const SignupPage = ({ history }) => {
     setLoading(true);
 
     axios
-      .post("http://localhost:8000/sms/code/send", { phoneNumber })
+      .post("/sms/code/send", { phoneNumber })
       .then((res) => {
         setLoading(false);
         console.log("res >> ", res);
@@ -104,13 +104,13 @@ const SignupPage = ({ history }) => {
             </label>
           </InputWrapper>
           <AgreeMyPhoneSection>
-            <input type="checkbox" id="AgreeMyPhone" checked={agreeMyPhone} />
-            <label
-              for="AgreeMyPhone"
+            <input
+              type="checkbox"
+              id="AgreeMyPhone"
+              checked={agreeMyPhone}
               onClick={() => setAgreeMyPhone((prev) => !prev)}
-            >
-              내 휴대번호가 맞습니다.
-            </label>
+            />
+            <label for="AgreeMyPhone">내 휴대번호가 맞습니다.</label>
           </AgreeMyPhoneSection>
           <button
             type="submit"

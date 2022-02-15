@@ -88,8 +88,8 @@ export class UserService {
     return 'signOut: The client processes it';
   }
 
-  async uploadImg(user: User, files: Express.Multer.File[]) {
-    const fileName = `user.profile/${files[0].filename}`;
+  async uploadImg(user: User, file: Express.Multer.File) {
+    const fileName = `user.profile/${file.filename}`;
     // example URL: http://localhost:8000/static/user.profile/ad061644514995652.png
 
     console.log(fileName);
@@ -99,11 +99,5 @@ export class UserService {
     );
     console.log(newUser);
     return newUser.readonlyData;
-  }
-
-  async uploadImgNoUser(files: Express.Multer.File[]) {
-    const fileName = `user.profile/${files[0].filename}`;
-
-    return fileName;
   }
 }

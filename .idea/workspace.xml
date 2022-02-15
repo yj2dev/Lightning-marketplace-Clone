@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="소셜 로그인 passport 전략으로 변경(미구현)">
-      <change afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-image/model/product-image.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-image/product-image.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product/dto/create.product.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product/product.repository.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 이미지 저장">
+      <change afterPath="$PROJECT_DIR$/server/src/hashtag/hashtag.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/hashtag/model/hashtag.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plan.text" beforeDir="false" afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/_actions/user_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/AuthNumberPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate/localhost-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate/localhost.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate2/rootca.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate2/rootca.csr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/certificate2/rootca.key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-image/model/product-image.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-image/model/product-image.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/dto/create.product.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/dto/create.product.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/auth/guard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist/common/uploads/user_profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -69,11 +73,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\user_profile" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\auth\guard" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\_actions" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\_reducers" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\certificate2" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\auth\certificate" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\auth\guard" />
@@ -128,7 +132,7 @@
       <workItem from="1644756159904" duration="1545000" />
       <workItem from="1644757734985" duration="2996000" />
       <workItem from="1644775313461" duration="24860000" />
-      <workItem from="1644833092516" duration="27745000" />
+      <workItem from="1644833092516" duration="43066000" />
     </task>
     <task id="LOCAL-00001" summary="front(client) setting using react">
       <created>1643038386148</created>
@@ -445,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644856055972</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="상품 이미지 저장">
+      <created>1644870762245</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1644870762245</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="memory-cache sample" />
     <MESSAGE value="Naver SMS API connection success" />
     <MESSAGE value="Successfully saved to Redis local memory." />
     <MESSAGE value="add checkAuthenticationCode Router" />
@@ -489,7 +499,8 @@
     <MESSAGE value="유저 로그인, 로그아웃 구현" />
     <MESSAGE value="페이지 권한 분기처리(로그인 여부)" />
     <MESSAGE value="소셜 로그인 passport 전략으로 변경(미구현)" />
-    <option name="LAST_COMMIT_MESSAGE" value="소셜 로그인 passport 전략으로 변경(미구현)" />
+    <MESSAGE value="상품 이미지 저장" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품 이미지 저장" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -48,7 +48,7 @@ export class User extends Document {
   })
   @Prop({
     default:
-      'http://localhost:8000/static/user.profile/__default_store_profile__.png',
+      'https://localhost:8000/static/user_profile/__default_store_profile__.png',
   })
   @IsString()
   profileURL: string;

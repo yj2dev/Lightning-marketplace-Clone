@@ -116,7 +116,7 @@ const UserPasswordPage = () => {
 
     console.log(payload);
     axios
-      .post("http://localhost:8000/user/signup", payload)
+      .post("/user/signup", payload)
       .then((res) => {
         setLoading(false);
         if (res.data.success && res.data.data) {

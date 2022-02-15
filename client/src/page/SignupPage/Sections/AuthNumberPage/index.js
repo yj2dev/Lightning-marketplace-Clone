@@ -98,7 +98,7 @@ const AuthNumberPage = ({ phoneNumber, history }) => {
     console.log("payload >> ", payload);
     setLoading(true);
     axios
-      .post("http://localhost:8000/sms/code/check", payload)
+      .post("/sms/code/check", payload)
       .then((res) => {
         setLoading(false);
         console.log("res >> ", res);
@@ -127,7 +127,7 @@ const AuthNumberPage = ({ phoneNumber, history }) => {
     console.log("payload >> ", payload);
 
     axios
-      .post("http://localhost:8000/sms/code/send", payload)
+      .post("/sms/code/send", payload)
       .then(({ data }) => {
         if (data.success) {
           setLoading(false);

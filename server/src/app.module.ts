@@ -16,6 +16,7 @@ import { OauthModule } from './oauth/oauth.module';
 import { SmsModule } from './sms/sms.module';
 import { RedisCacheModule } from './redis-cache/redis-cache.module';
 import { ProductImageModule } from './product-image/product-image.module';
+import { HashtagModule } from './hashtag/hashtag.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { ProductImageModule } from './product-image/product-image.module';
     SmsModule,
     RedisCacheModule,
     ProductImageModule,
+    HashtagModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

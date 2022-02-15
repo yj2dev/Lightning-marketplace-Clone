@@ -55,7 +55,7 @@ export class UserRepository {
     fileName: string,
   ): Promise<User | null> {
     const user = await this.user.findById(userId);
-    user.profileURL = `http://localhost:8000/static/${fileName}`;
+    user.profileURL = `${process.env.MEDIA_URL}/user_profile/${fileName}`;
     const newUser = await user.save();
     console.log('newUser >> ', newUser);
     return newUser;

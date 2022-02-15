@@ -3,16 +3,15 @@ import { Product } from '../model/product.model';
 
 export class CreateProductDto extends PickType(Product, [
   'address',
-  'deliveryCharge',
+  'containDeliveryCharge',
   'description',
-  'exchange',
+  'enableExchange',
+  'largeCateogry',
+  'mediumCategory',
+  'newProduct',
   'price',
-  'productImgURL',
   'quantity',
-  'status',
+  'smallCategory',
   'tag',
   'title',
-  // 'largeCateogry',
-  // 'mediumCategory',
-  // 'smallCategory',
 ] as const) {}
