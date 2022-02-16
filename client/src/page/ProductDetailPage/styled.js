@@ -1,34 +1,77 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border: 1px solid black;
+  //border: 1px solid black;
 `;
 
 export const ProductContainer = styled.div`
-  border: 1px solid black;
+  border-top: 1px solid black;
+  padding: 32px 0 0 0;
   height: 500px;
 `;
 export const ProductImgs = styled.div`
-  border: 1px solid black;
+  border: 1px solid #eeeeee;
   width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
 
-  & .test {
-    width: 400vw;
+  & button {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    margin: 0 16px;
+    border: none;
+    width: 44px;
+    height: 44px;
+    color: #ffffff;
+    cursor: pointer;
   }
-  & .img_wrapper {
-    float: left;
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-    margin: 0 auto;
+
+  & .prev-btn {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+  }
+
+  & .prev-btn::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    border: 1px solid #ffffff;
+    border-width: 3px 3px 0 0;
+    transform: rotate(225deg);
+  }
+
+  & .next-btn {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+  }
+
+  & .next-btn::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    border: 1px solid #ffffff;
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
+  }
+
+  & .slidebox {
+    display: flex;
   }
 
   & img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `;
+
 export const ProductInfo = styled.div`
   position: relative;
   border: 3px solid green;

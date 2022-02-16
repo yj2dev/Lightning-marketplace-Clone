@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 정보 받아온 후 정보 배치">
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/almond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/lightning_market_banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/mushroom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/pear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/tomato.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/vegetable.jpg" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="슬라이더 구현 실패">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/_static/__default_store_profile__.png" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/_static/user_profile/__default_store_profile__.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/user_profile/__default_store_profile__.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,14 +115,8 @@
       <workItem from="1644775313461" duration="24860000" />
       <workItem from="1644833092516" duration="46911000" />
       <workItem from="1644916143658" duration="24063000" />
-      <workItem from="1644969348004" duration="10720000" />
-    </task>
-    <task id="LOCAL-00002" summary="login/signup model design(css)">
-      <created>1643045973476</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1643045973476</updated>
+      <workItem from="1644969348004" duration="10787000" />
+      <workItem from="1645026806679" duration="6855000" />
     </task>
     <task id="LOCAL-00003" summary="topNav design">
       <created>1643055854697</created>
@@ -470,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644956287776</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="슬라이더 구현 실패">
+      <created>1644991031173</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1644991031173</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="signup page design" />
     <MESSAGE value="signup page design and validation" />
     <MESSAGE value="Add AuthNumberPage design and verification, Timer applied" />
     <MESSAGE value="휴대폰 인증 로직 구현" />
@@ -514,7 +504,8 @@
     <MESSAGE value="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용" />
     <MESSAGE value="상품과 상품이미지 populate 성공" />
     <MESSAGE value="상품 정보 받아온 후 정보 배치" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품 정보 받아온 후 정보 배치" />
+    <MESSAGE value="슬라이더 구현 실패" />
+    <option name="LAST_COMMIT_MESSAGE" value="슬라이더 구현 실패" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

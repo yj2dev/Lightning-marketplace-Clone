@@ -4,7 +4,7 @@ import {
   ProductImgs,
   ProductInfo,
 } from "./styled";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { daysFormat } from "../../utils/Time";
@@ -14,6 +14,7 @@ import { intOfKr } from "../../utils/Currency";
 export const ProductDetailPage = () => {
   const location = useLocation();
   const [product, setProduct] = useState({});
+  const [productImgs, setProductImgs] = useState([]);
   const [user, setUser] = useState({});
 
   function getProductId() {
@@ -30,6 +31,7 @@ export const ProductDetailPage = () => {
       .then((res) => {
         setProduct(res.data);
         setUser(res.data.userInfo[0]);
+        setProductImgs(res.data.productImgURLs);
         console.log(res);
       })
       .catch((err) => {
@@ -41,22 +43,37 @@ export const ProductDetailPage = () => {
     console.log(product.userInfo[0].storeName);
   }
 
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [totalImgIndex, setTotalImgIndex] = useState(5);
+  const productImg = useRef();
+
+  useEffect(() => {
+    productImg.current.style.transition = "all 0.2s ease-in-out";
+    productImg.current.style.transform = `translateX(-${currentImgIndex}00%)`;
+  }, [currentImgIndex]);
+
+  const onClickNextImage = () => {
+    // slideImgRef.current.style.transform = "translateX(-200%)";
+    console.log("NEXT");
+    if (currentImgIndex >= totalImgIndex - 1) setCurrentImgIndex(0);
+    else setCurrentImgIndex(currentImgIndex + 1);
+  };
+
+  const onClickPreviewImage = () => {
+    console.log("PREVIEW");
+    if (currentImgIndex === 0) setCurrentImgIndex(totalImgIndex - 1);
+    else setCurrentImgIndex(currentImgIndex - 1);
+  };
   return (
     <Container>
-      <button onClick={onTest}>test</button>
       <ProductContainer>
         <ProductImgs>
-          {user && user.storeName}
-          {user && user.profileURL}
-
-          {/*{product &&*/}
-          {/*  product.productImgURLs.map((product) => (*/}
-          {/*    <div className="test">*/}
-          {/*      <div className="img_wrapper">*/}
-          {/*        <img src={product.productImgURL} />*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*  ))}*/}
+          <div className="slidebox" ref={productImg}>
+            {productImgs &&
+              productImgs.map((product) => <img src={product.productImgURL} />)}
+          </div>
+          <button className="prev-btn" onClick={onClickPreviewImage}></button>
+          <button className="next-btn" onClick={onClickNextImage}></button>
         </ProductImgs>
         <ProductInfo>
           <h3>{product.title}</h3>
@@ -105,6 +122,8 @@ export const ProductDetailPage = () => {
           {product.description}
         </ProductInfo>
       </ProductContainer>
+      {user && user.storeName}
+      {user && user.profileURL}
     </Container>
   );
 };

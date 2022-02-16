@@ -2,45 +2,49 @@ import { SlideContainer, StaticContainer } from "./styled";
 import { useEffect, useRef, useState } from "react";
 
 const Banner = () => {
-  const imageRef = useRef();
+  const slideImgRef = useRef();
 
-  const [imageStyle, setImageStyle] = useState({});
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [totalImgIndex, setTotalImgIndex] = useState(5);
+
+  useEffect(() => {
+    // slideImgRef.current.style.transition = "all 0.5s ease-in-out";
+    slideImgRef.current.style.transform = `translateX(-${currentImgIndex}00%)`;
+  }, [currentImgIndex]);
 
   const onClickNextImage = () => {
-    setImageStyle({
-      transform: "translateX(-200%)",
-      border: "5px solid red",
-    });
+    // slideImgRef.current.style.transform = "translateX(-200%)";
+    console.log("NEXT");
+    if (currentImgIndex >= totalImgIndex - 1) setCurrentImgIndex(0);
+    else setCurrentImgIndex(currentImgIndex + 1);
+  };
+
+  const onClickPreviewImage = () => {
+    console.log("PREVIEW");
+    if (currentImgIndex === 0) setCurrentImgIndex(totalImgIndex - 1);
+    else setCurrentImgIndex(currentImgIndex - 1);
   };
 
   return (
     <>
-      <button onClick={onClickNextImage}> NEXT </button>
       {/*  Slide Container Section */}
       <SlideContainer>
-        <div className="slidebox">
+        <button onClick={onClickPreviewImage}>Preview</button>
+        <button onClick={onClickNextImage}>Next</button>
+        <div className="slidebox" ref={slideImgRef}>
           <img
-            ref={imageRef}
-            style={imageStyle}
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/almond.jpg`}
           />
           <img
-            style={imageStyle}
-            ref={imageRef}
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/mushroom.jpg`}
           />
           <img
-            style={{ transform: "translateX(-400%)" }}
-            ref={imageRef}
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/pear.jpg`}
           />
           <img
-            style={imageStyle}
-            ref={imageRef}
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/tomato.jpg`}
           />
           <img
-            ref={imageRef}
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/vegetable.jpg`}
           />
         </div>
