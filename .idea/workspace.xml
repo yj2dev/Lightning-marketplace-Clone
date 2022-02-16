@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품과 상품이미지 populate 성공">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 정보 받아온 후 정보 배치">
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/almond.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/lightning_market_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/mushroom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/pear.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/tomato.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/_static/banner_image/vegetable.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/_static/__default_store_profile__.png" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/_static/user_profile/__default_store_profile__.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/user_profile/__default_store_profile__.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/_static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,18 +64,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\banner_image" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static\banner_image" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\LandingPage\Section\UploadProductImage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\LandingPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\user_profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\controller" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\services" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\repository" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\auth\guard" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -114,14 +124,8 @@
       <workItem from="1644757734985" duration="2996000" />
       <workItem from="1644775313461" duration="24860000" />
       <workItem from="1644833092516" duration="46911000" />
-      <workItem from="1644916143658" duration="24004000" />
-    </task>
-    <task id="LOCAL-00001" summary="front(client) setting using react">
-      <created>1643038386148</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1643038386148</updated>
+      <workItem from="1644916143658" duration="24063000" />
+      <workItem from="1644969348004" duration="10720000" />
     </task>
     <task id="LOCAL-00002" summary="login/signup model design(css)">
       <created>1643045973476</created>
@@ -459,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644950846609</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="상품 정보 받아온 후 정보 배치">
+      <created>1644956287776</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1644956287776</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +489,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="RedisLabs Conntection, add logic to verify your phone number" />
     <MESSAGE value="signup page design" />
     <MESSAGE value="signup page design and validation" />
     <MESSAGE value="Add AuthNumberPage design and verification, Timer applied" />
@@ -503,7 +513,8 @@
     <MESSAGE value="상품 등록, 상품 이미지 등록, 해시태그 미완성" />
     <MESSAGE value="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용" />
     <MESSAGE value="상품과 상품이미지 populate 성공" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품과 상품이미지 populate 성공" />
+    <MESSAGE value="상품 정보 받아온 후 정보 배치" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품 정보 받아온 후 정보 배치" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
