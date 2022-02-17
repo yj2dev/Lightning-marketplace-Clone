@@ -1,7 +1,7 @@
 import { Container } from "./styled.js";
 
 const ShopProductsPage = () => {
-  return <Container>ShopProductsPage</Container>;
+  return <Container></Container>;
 };
 
 export default ShopProductsPage;

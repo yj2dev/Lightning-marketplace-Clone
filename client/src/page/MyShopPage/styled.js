@@ -6,13 +6,95 @@ export const Container = styled.div`
 export const UserStore = styled.div`
   border: 1px solid black;
   margin-bottom: 30px;
+  display: flex;
 
   & .imgWrapper {
     border: 1px solid black;
     width: 305px;
     height: 305px;
+    position: relative;
+  }
+
+  & .background_img {
+    -webkit-filter: blur(12px);
+  }
+  & .background_img_wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+  & .profile_img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+  }
+  & .store_name {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+  }
+  & .store_management {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 13px;
+    border: 1px solid #ffffff;
+    padding: 10px 16px;
+    cursor: pointer;
   }
 `;
+export const UserStoreContents = styled.div`
+  width: 100%;
+  padding: 24px 30px;
+  color: #000000;
+  position: relative;
+
+  & .contents_store_name {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 32px;
+  }
+  button {
+    font-size: 11px;
+    color: #999999;
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  & .badge {
+    margin-bottom: 24px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: #999999;
+  }
+  & .badge .icon {
+    color: #f6995b;
+    font-size: 18px;
+  }
+  & .badge span {
+    color: #000000;
+  }
+  & .contents_store_desc {
+    border: 1px solid red;
+    widht: 100%;
+    height: 120px;
+  }
+`;
+
 export const TabMenu = styled.div`
   //border: 1px solid black;
   width: 1020px;
@@ -45,5 +127,14 @@ export const TabMenu = styled.div`
   }
 `;
 export const TabContent = styled.div`
-  //border: 1px solid black;
+  margin-top: 64px;
+
+  & h3 {
+    font-weight: 400;
+    padding: 0;
+  }
+  & hr {
+    border: 1px solid #eeeeee;
+    margin: 24px 0 24px 0;
+  }
 `;

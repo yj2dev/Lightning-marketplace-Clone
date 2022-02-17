@@ -66,11 +66,7 @@ function Layout({ history }) {
             path="/product/:productId"
             component={Auth(ProductDetailPage, 3)}
           />
-          {/*<Route*/}
-          {/*  exact*/}
-          {/*  path="/shop/:shopId/:menu"*/}
-          {/*  component={Auth(MyShopPage, 1)}*/}
-          {/*/>*/}
+
           <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 1)} />
           <Route exact path="/talk" component={Auth(TalkPage, 1)} />
           <Route exact path="/" component={Auth(LandingPage, 3)} />

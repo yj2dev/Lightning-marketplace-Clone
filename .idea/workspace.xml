@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="배너 오토 캐루셀 추가">
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리">
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/Time.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/Time.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/MyShopPage/Section" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -61,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\ProductDetailPage\Section" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common\uploads\banner_image" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopCommentsPage" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFavoritesPage" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFollowersPage" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFollowingsPage" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopReviewsPage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -125,14 +129,7 @@
       <workItem from="1644969348004" duration="10787000" />
       <workItem from="1645026806679" duration="6914000" />
       <workItem from="1645052408558" duration="18272000" />
-      <workItem from="1645111523903" duration="13123000" />
-    </task>
-    <task id="LOCAL-00006" summary="Uploading multiple images successfully/backend (server)">
-      <created>1643450226312</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1643450226312</updated>
+      <workItem from="1645111523903" duration="19439000" />
     </task>
     <task id="LOCAL-00007" summary="Save a single image file from the client to the server successfully.">
       <created>1643452088030</created>
@@ -470,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645114567479</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리">
+      <created>1645126053171</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1645126053172</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +493,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="휴대폰 기반 시스템 DB 설계" />
     <MESSAGE value="신규 유저 가입 정보 DB 저장" />
     <MESSAGE value="passport 기존에 휴대전화로만 인증했던 로직 비밀번호 추가" />
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
@@ -514,7 +517,8 @@
     <MESSAGE value="이미지 캐러셀 일부 구현" />
     <MESSAGE value="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리" />
     <MESSAGE value="배너 오토 캐루셀 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="배너 오토 캐루셀 추가" />
+    <MESSAGE value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
