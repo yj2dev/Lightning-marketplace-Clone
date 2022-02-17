@@ -1,5 +1,6 @@
 import { SlideContainer, StaticContainer } from "./styled";
 import { useEffect, useRef, useState } from "react";
+import useInterval from "../../../../hooks/useInterval";
 
 const Banner = () => {
   const slideImgRef = useRef();
@@ -12,15 +13,17 @@ const Banner = () => {
     slideImgRef.current.style.transform = `translateX(-${currentImgIndex}00%)`;
   }, [currentImgIndex]);
 
+  useInterval(() => {
+    onClickNextImage();
+    console.log("next >> ");
+  }, 5000);
+
   const onClickNextImage = () => {
-    // slideImgRef.current.style.transform = "translateX(-200%)";
-    console.log("NEXT");
     if (currentImgIndex >= totalImgIndex - 1) setCurrentImgIndex(0);
     else setCurrentImgIndex(currentImgIndex + 1);
   };
 
   const onClickPreviewImage = () => {
-    console.log("PREVIEW");
     if (currentImgIndex === 0) setCurrentImgIndex(totalImgIndex - 1);
     else setCurrentImgIndex(currentImgIndex - 1);
   };
@@ -29,8 +32,6 @@ const Banner = () => {
     <>
       {/*  Slide Container Section */}
       <SlideContainer>
-        <button onClick={onClickPreviewImage}>Preview</button>
-        <button onClick={onClickNextImage}>Next</button>
         <div className="slidebox" ref={slideImgRef}>
           <img
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/almond.jpg`}
@@ -48,6 +49,8 @@ const Banner = () => {
             src={`${process.env.REACT_APP_MEDIA_URL}/static/banner_image/vegetable.jpg`}
           />
         </div>
+        <button onClick={onClickPreviewImage} className="prev-btn"></button>
+        <button onClick={onClickNextImage} className="next-btn"></button>
       </SlideContainer>
 
       {/* End  Slide Container Section */}

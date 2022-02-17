@@ -54,7 +54,7 @@ export const ProductImgs = styled.div`
     right: 0px;
   }
 
-  & .next-btn::before {
+  & .next-btn::after {
     content: "";
     width: 15px;
     height: 15px;
@@ -72,6 +72,7 @@ export const ProductImgs = styled.div`
 
   & img {
     width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -143,8 +144,8 @@ export const ProductContent = styled.div`
 `;
 export const ProductDescriptionContainer = styled.div`
   width: 1020px;
-  //border: 2px solid yellow;
   position: relative;
+  font-size: 14px;
 `;
 
 export const ProductInfoContainer = styled.div`
@@ -153,7 +154,6 @@ export const ProductInfoContainer = styled.div`
 
   & ul {
     height: 50px;
-    //border-bottom: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -170,6 +170,7 @@ export const ProductInfoContainer = styled.div`
     border-width: 2px 1px 1px 1px;
     border-bottom: 1px solid black;
     color: #999999;
+    cursor: pointer;
   }
   & .active {
     color: #000000;
@@ -190,13 +191,6 @@ export const ProductInfoContent = styled.div`
   & hr {
     border: none;
     border-bottom: 2px solid #eeeeee;
+    margin-bottom: 32px;
   }
-`;
-
-export const StoreInfoContainer = styled.div`
-  height: 300px;
-  width: 200px;
-  border: 1px solid blue;
-  position: absolute;
-  right: 0;
 `;

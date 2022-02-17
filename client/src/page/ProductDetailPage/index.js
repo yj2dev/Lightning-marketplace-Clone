@@ -4,7 +4,6 @@ import {
   ProductImgs,
   ProductContent,
   ProductInfoContainer,
-  StoreInfoContainer,
   ProductDescriptionContainer,
   ProductInfoContent,
 } from "./styled";
@@ -16,7 +15,7 @@ import { intOfKr } from "../../utils/Currency";
 import { AiFillHeart, AiFillEye, AiFillClockCircle } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import ProductAskSection from "./Section/ProductAskSection";
-import { textWrap } from "../../utils/Text";
+import StoreInfoSection from "./Section/StoreInfoSection";
 
 // 새로운 페이지 생성시 기본 구조
 export const ProductDetailPage = () => {
@@ -178,19 +177,16 @@ export const ProductDetailPage = () => {
           <ProductInfoContent>
             <h3>상품정보</h3>
             <hr />
-            {product.description.split("\n").map((line) => (
-              <>
-                {line} <br />
-              </>
-            ))}
+            {product.description &&
+              product.description.split("\n").map((line) => (
+                <>
+                  {line} <br />
+                </>
+              ))}
             <h3>상품문의</h3>
             <ProductAskSection />
           </ProductInfoContent>
-          <StoreInfoContainer>
-            <h3>상점 정보</h3>
-            {user && user.storeName}
-            <img src={`${user.profileURL}`} />
-          </StoreInfoContainer>
+          <StoreInfoSection user={user} />
         </ProductInfoContainer>
       </ProductDescriptionContainer>
     </Container>
