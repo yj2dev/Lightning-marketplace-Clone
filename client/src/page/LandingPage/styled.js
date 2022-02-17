@@ -6,7 +6,9 @@ export const SectionTitle = styled.h2`
 `;
 
 export const ProductSection = styled.div`
+  width: 1020px;
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
 `;
 
