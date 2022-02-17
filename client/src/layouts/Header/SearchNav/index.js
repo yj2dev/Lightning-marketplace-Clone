@@ -20,10 +20,12 @@ import { useState } from "react";
 import CategoryMenu from "../../../components/CategoryMenu";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import ProductNewPage from "../../../page/ProductNewPage";
+import { useSelector } from "react-redux";
 
 const SearchNav = ({ history }) => {
   const [searchValue, setSearchValue] = useState("");
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
+  const user = useSelector((state) => state.user);
 
   const onChangeSearchValue = (e) => {
     if (e.target.value !== "") setShowDeleteSearch(true);
@@ -36,16 +38,25 @@ const SearchNav = ({ history }) => {
     setShowDeleteSearch(false);
   };
 
+  // 로그인이 안되있으면 모달창 띄우기
+  const isLoginAndShowSigninModal = () => {};
+
   const onClickHome = (e) => {
     history.push("/");
   };
   const onClickSell = (e) => {
+    if (!user.isSignin) return;
     history.push("/product/new");
   };
   const onClickShop = (e) => {
-    history.push("/shop");
+    console.log(user.isSignin);
+    if (!user.isSignin) return;
+    const shopId = user.isSignin.data._id;
+    history.push(`/shop/${shopId}`);
   };
   const onClickTalk = (e) => {
+    console.log(user);
+    if (!user.isSignin) return;
     history.push("/talk");
   };
 

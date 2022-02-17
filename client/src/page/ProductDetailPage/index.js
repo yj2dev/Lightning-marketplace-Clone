@@ -30,7 +30,7 @@ export const ProductDetailPage = () => {
   const productImg = useRef();
 
   // 활성화된 탭 메뉴
-  const [tapMenu, setTabMenu] = useState(0);
+  const [tabMenu, setTabMenu] = useState(0);
 
   function getProductId() {
     const path = location.pathname.split("/");
@@ -160,13 +160,13 @@ export const ProductDetailPage = () => {
         <ProductInfoContainer>
           <ul>
             <li
-              className={tapMenu === 0 && "active"}
+              className={tabMenu === 0 && "active"}
               onClick={() => setTabMenu(0)}
             >
               상품정보
             </li>
             <li
-              className={tapMenu === 1 && "active"}
+              className={tabMenu === 1 && "active"}
               onClick={() => setTabMenu(1)}
             >
               상품문의

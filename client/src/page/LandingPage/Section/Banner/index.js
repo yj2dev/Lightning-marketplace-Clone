@@ -15,7 +15,6 @@ const Banner = () => {
 
   useInterval(() => {
     onClickNextImage();
-    console.log("next >> ");
   }, 5000);
 
   const onClickNextImage = () => {

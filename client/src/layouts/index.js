@@ -33,20 +33,26 @@ function Layout({ history }) {
   ) {
     return (
       <>
-        <Route
-          exact
-          path="/oauth/kakao/callback"
-          component={Auth(KakaoOAuthPage, 2)}
-        />
-        <Route
-          exact
-          path="/oauth/facebook"
-          component={Auth(FacebookOAuthPage, 2)}
-        />
-        <Route exact path="/oauth/naver" component={Auth(NaverOAuthPage, 2)} />
-        <Route exact path="/auth" component={Auth(PhoneNumberAuthPage, 2)} />
-        <Route exact path="/signin" component={Auth(SigninPage, 2)} />
-        <Route exact path="/signup" component={Auth(SignupPage, 2)} />
+        <Switch>
+          <Route
+            exact
+            path="/oauth/kakao/callback"
+            component={Auth(KakaoOAuthPage, 2)}
+          />
+          <Route
+            exact
+            path="/oauth/facebook"
+            component={Auth(FacebookOAuthPage, 2)}
+          />
+          <Route
+            exact
+            path="/oauth/naver"
+            component={Auth(NaverOAuthPage, 2)}
+          />
+          <Route exact path="/auth" component={Auth(PhoneNumberAuthPage, 2)} />
+          <Route exact path="/signin" component={Auth(SigninPage, 2)} />
+          <Route exact path="/signup" component={Auth(SignupPage, 2)} />
+        </Switch>
       </>
     );
   } else {
@@ -60,8 +66,13 @@ function Layout({ history }) {
             path="/product/:productId"
             component={Auth(ProductDetailPage, 3)}
           />
-          <Route path="/shop" component={Auth(MyShopPage, 1)} />
-          <Route path="/talk" component={Auth(TalkPage, 1)} />
+          {/*<Route*/}
+          {/*  exact*/}
+          {/*  path="/shop/:shopId/:menu"*/}
+          {/*  component={Auth(MyShopPage, 1)}*/}
+          {/*/>*/}
+          <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 1)} />
+          <Route exact path="/talk" component={Auth(TalkPage, 1)} />
           <Route exact path="/" component={Auth(LandingPage, 3)} />
         </Switch>
         <Footer></Footer>
