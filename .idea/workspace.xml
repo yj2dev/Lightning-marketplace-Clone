@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리">
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="내상점 페이지 디자인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/Time.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/Time.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +120,7 @@
       <workItem from="1644969348004" duration="10787000" />
       <workItem from="1645026806679" duration="6914000" />
       <workItem from="1645052408558" duration="18272000" />
-      <workItem from="1645111523903" duration="19439000" />
-    </task>
-    <task id="LOCAL-00007" summary="Save a single image file from the client to the server successfully.">
-      <created>1643452088030</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1643452088030</updated>
+      <workItem from="1645111523903" duration="26440000" />
     </task>
     <task id="LOCAL-00008" summary="Image preview removal implementation.">
       <created>1643472401048</created>
@@ -474,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645126053172</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="내상점 페이지 디자인">
+      <created>1645132629879</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1645132629879</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="신규 유저 가입 정보 DB 저장" />
     <MESSAGE value="passport 기존에 휴대전화로만 인증했던 로직 비밀번호 추가" />
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
     <MESSAGE value="휴대번호 리덕스 저장" />
@@ -518,7 +508,8 @@
     <MESSAGE value="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리" />
     <MESSAGE value="배너 오토 캐루셀 추가" />
     <MESSAGE value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
-    <option name="LAST_COMMIT_MESSAGE" value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
+    <MESSAGE value="내상점 페이지 디자인" />
+    <option name="LAST_COMMIT_MESSAGE" value="내상점 페이지 디자인" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -34,6 +34,9 @@ const MyShopPage = ({ history }) => {
   const user = useSelector((state) => state.user);
   const [store, setStore] = useState({});
 
+  const [storeName, setStoreName] = useState("");
+  const [storeDescription, setStoreDescription] = useState("상점 설명입니다.");
+
   const [editStoreName, setEditStoreName] = useState(false);
   const [editStoreDescription, setEditStoreDescription] = useState(false);
 
@@ -43,10 +46,18 @@ const MyShopPage = ({ history }) => {
     setTabMenuName(tabMenuList[parseInt(tabIndex)]);
   };
 
+  const onChangeStoreName = (e) => {
+    if (e.target.value.length < 16) setStoreName(e.target.value);
+  };
+  const onChangeStoreDescription = (e) => {
+    if (e.target.value.length < 16) setStoreDescription(e.target.value);
+  };
+
   useEffect(() => {
     console.log("user >> ", user);
     setStore(user.isSignin.data);
-
+    setStoreName(user.isSignin.data.storeName);
+    // setStoreDescription(user.isSignin.data.description);
     //   axios
     //     .post("/product/upload")
     //     .then((res) => {
@@ -57,6 +68,13 @@ const MyShopPage = ({ history }) => {
     //       console.log("product err >> ", err);
     //     });
   }, []);
+  const onSubmitStoreName = () => {
+    if (storeName === "") return;
+    setEditStoreName(false);
+  };
+  const onSubmitStoreDescription = () => {
+    if (storeDescription === "") return;
+  };
 
   return (
     <Container>
@@ -70,7 +88,28 @@ const MyShopPage = ({ history }) => {
         </div>
         <UserStoreContents>
           <div className="contents_store_name">
-            {store.storeName}&nbsp;&nbsp;<button>상점명 수정</button>
+            {!editStoreName ? (
+              <>
+                {store.storeName}&nbsp;&nbsp;
+                <button onClick={(e) => setEditStoreName((prev) => !prev)}>
+                  상점명 수정
+                </button>
+              </>
+            ) : (
+              <>
+                <input
+                  type="text"
+                  value={storeName}
+                  onChange={onChangeStoreName}
+                />
+                <button
+                  className="store_name_submit_btn"
+                  onClick={onSubmitStoreName}
+                >
+                  확인
+                </button>
+              </>
+            )}
           </div>
           <div className="badge">
             <span className="icon">
@@ -80,8 +119,29 @@ const MyShopPage = ({ history }) => {
             상점오픈일&nbsp;
             <span>{oneDaysFormat(store.createdAt)}</span>
           </div>
-          <div className="contents_store_desc"></div>
-          <button>소개글 수정</button>
+          <div className="contents_store_desc">
+            {!editStoreDescription ? (
+              <>설명예시</>
+            ) : (
+              <>
+                <textarea
+                  value={storeDescription}
+                  onChange={onChangeStoreDescription}
+                ></textarea>
+                <button
+                  className="store_desc_submit_btn"
+                  onClick={() => setEditStoreDescription((prev) => !prev)}
+                >
+                  확인
+                </button>
+              </>
+            )}
+          </div>
+          {!editStoreDescription && (
+            <button onClick={() => setEditStoreDescription((prev) => !prev)}>
+              소개글 수정
+            </button>
+          )}
         </UserStoreContents>
       </UserStore>
       <TabMenu>

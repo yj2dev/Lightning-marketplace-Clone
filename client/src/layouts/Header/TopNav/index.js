@@ -33,7 +33,9 @@ function TopNav({ history }) {
   };
 
   const onToggleSignin = () => {
-    setShowSigninModal((prev) => !prev);
+    //로그인이 되어 있지 않으면 로그인 모달 띄우기
+    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push(`/shop/${user.isSignin.data._id}`);
   };
 
   const onClickAppDownload = () => {

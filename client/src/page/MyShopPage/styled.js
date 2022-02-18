@@ -4,12 +4,11 @@ export const Container = styled.div`
   margin: 30px 0 50px 0;
 `;
 export const UserStore = styled.div`
-  border: 1px solid black;
+  border: 1px solid #eeeeee;
   margin-bottom: 30px;
   display: flex;
 
   & .imgWrapper {
-    border: 1px solid black;
     width: 305px;
     height: 305px;
     position: relative;
@@ -67,6 +66,18 @@ export const UserStoreContents = styled.div`
     font-weight: 800;
     margin-bottom: 32px;
   }
+  & .contents_store_name input {
+    width: 210px;
+    padding: 4px 8px;
+    border: 1px solid #eeeeee;
+    font-size: 14px;
+  }
+  & .contents_store_name store_name_submit_btn {
+    font-size: 14px;
+    padding: 4px 12px;
+    border: 1px solid #eeeeee;
+    border-width: 1px 1px 1px 0;
+  }
   button {
     font-size: 11px;
     color: #999999;
@@ -89,9 +100,27 @@ export const UserStoreContents = styled.div`
     color: #000000;
   }
   & .contents_store_desc {
-    border: 1px solid red;
     widht: 100%;
     height: 120px;
+    position: relative;
+    font-size: 14px;
+  }
+  & .contents_store_desc textarea {
+    resize: none;
+    width: 540px;
+    float: left;
+    border: 1px solid #eeeeee;
+    outline: none;
+    height: 114px;
+  }
+  & .contents_store_desc .store_desc_submit_btn {
+    height: 100%;
+    border: 1px solid #eeeeee;
+    border-width: 1px 1px 1px 0;
+    font-size: 15px;
+    float: left;
+    display: inline-block;
+    width: 100px;
   }
 `;
 

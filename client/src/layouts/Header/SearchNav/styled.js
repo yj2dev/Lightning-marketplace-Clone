@@ -39,6 +39,7 @@ export const SearchInput = styled.input`
   color: #787878;
 `;
 export const Sell = styled.div`
+  padding: 0 0 0 24px;
   & span {
     font-size: 24px;
     position: absolute;
@@ -62,6 +63,7 @@ export const Sell = styled.div`
   }
 `;
 export const MyShop = styled.div`
+  padding: 0 0 0 24px;
   & span {
     font-size: 20px;
     position: absolute;
@@ -84,6 +86,7 @@ export const MyShop = styled.div`
   }
 `;
 export const LighteningTalk = styled.div`
+  padding: 0 0 0 24px;
   & span {
     font-size: 24px;
     position: absolute;

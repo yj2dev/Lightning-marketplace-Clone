@@ -16,16 +16,21 @@ import { BiSearch } from "react-icons/bi";
 import { MdOutlineSell } from "react-icons/md";
 import { BsShop } from "react-icons/bs";
 import { RiMessage3Line } from "react-icons/ri";
-import { useState } from "react";
+import React, { useState } from "react";
 import CategoryMenu from "../../../components/CategoryMenu";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import ProductNewPage from "../../../page/ProductNewPage";
 import { useSelector } from "react-redux";
+import SigninModal from "../../../components/SigninModal";
 
 const SearchNav = ({ history }) => {
+  const [showSigninModal, setShowSigninModal] = useState(false);
+
   const [searchValue, setSearchValue] = useState("");
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
   const user = useSelector((state) => state.user);
+
+  const onCloseSigninModal = () => {};
 
   const onChangeSearchValue = (e) => {
     if (e.target.value !== "") setShowDeleteSearch(true);
@@ -38,26 +43,21 @@ const SearchNav = ({ history }) => {
     setShowDeleteSearch(false);
   };
 
-  // 로그인이 안되있으면 모달창 띄우기
-  const isLoginAndShowSigninModal = () => {};
-
-  const onClickHome = (e) => {
+  const onClickHome = () => {
     history.push("/");
   };
-  const onClickSell = (e) => {
-    if (!user.isSignin) return;
-    history.push("/product/new");
+  const onClickSell = () => {
+    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push("/product/new");
   };
-  const onClickShop = (e) => {
+  const onClickShop = () => {
     console.log(user.isSignin);
-    if (!user.isSignin) return;
-    const shopId = user.isSignin.data._id;
-    history.push(`/shop/${shopId}`);
+    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push(`/shop/${user.isSignin.data._id}`);
   };
-  const onClickTalk = (e) => {
-    console.log(user);
-    if (!user.isSignin) return;
-    history.push("/talk");
+  const onClickTalk = () => {
+    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push("/talk");
   };
 
   return (
@@ -127,10 +127,14 @@ const SearchNav = ({ history }) => {
         {/* End Right Nav Section */}
         <CategoryMenu />
         <SellerCenter>
-          번개장터 판매자센터
+          벼락장터 판매자센터
           <IoIosArrowForward style={{ position: "absolute", top: "4px" }} />
         </SellerCenter>
       </Content>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </Container>
   );
 };
