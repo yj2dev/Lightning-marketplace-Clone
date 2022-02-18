@@ -33,6 +33,7 @@ import {
 import DaumPostcode from "react-daum-postcode";
 import Postcode from "../../components/Postcode";
 import Modal from "../../components/Modal";
+import { useSelector } from "react-redux";
 
 const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
@@ -358,14 +359,20 @@ const ProductNewPage = ({ history }) => {
     console.log(productImage);
     console.log(productImageURL);
     console.log("del ... ");
+    history.push("/product/new");
     // imageList.current.v;
   };
 
   const imageList = useRef();
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    //  버그 개선
-  }, [productImage, productImageURL]);
+    console.log("product new user >> ", user);
+    // 보완 예정
+    if (!user.isSignin) {
+      history.push("/");
+    }
+  }, []);
 
   const onDeleteTitleValue = () => {
     setTitle("");

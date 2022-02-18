@@ -21,13 +21,13 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: Payload) {
-    console.log('validate payload >> ', payload);
     const user =
       await this.userRepository.findUserByIdWithoutPasswordAndPhoneNumber(
         payload.sub,
       );
 
-    console.log('validate user >> ', user);
+    // console.log('validate payload >> ', payload);
+    // console.log('validate user >> ', user);
 
     if (user) {
       return user;

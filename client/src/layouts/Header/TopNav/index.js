@@ -22,6 +22,7 @@ function TopNav({ history }) {
         if (data.success) {
           dispatch(authUser());
         }
+        history.push("/");
       })
       .catch((err) => {
         console.error("err >> ", err);

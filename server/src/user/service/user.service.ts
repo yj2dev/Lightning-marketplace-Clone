@@ -17,6 +17,25 @@ export class UserService {
 
   private logger = new Logger('user');
 
+  // 상점명 변경
+  async updateStoreName(id: string, storeName: string): Promise<User> {
+    const isStoreName = await this.userRepository.existsByStoreName(storeName);
+
+    console.log('isStoreName >> ', isStoreName);
+
+    // 중복된 상점명이 있으면 변경 불가능
+    // "409 Conflict" 는 리소스의 충돌을 의미하는 상태코드입니다
+    if (isStoreName)
+      throw new HttpException('동일한 상점명이 등록되어 있습니다.', 409);
+
+    return await this.userRepository.updateStoreNameById(id, storeName);
+  }
+
+  // 상점 소개글 변경
+  async updateDescription(id: string, description: string): Promise<User> {
+    return this.userRepository.updateDescriptionById(id, description);
+  }
+
   // 상점명 무작위 생성
   async createStoreName(): Promise<string> {
     let storeName;

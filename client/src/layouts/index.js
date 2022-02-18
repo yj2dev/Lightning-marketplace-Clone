@@ -61,7 +61,8 @@ function Layout({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
-          <Route path="/product/new" component={Auth(ProductNewPage, 1)} />
+          {/*<Route path="/product/new" component={Auth(ProductNewPage, 1)} />*/}
+          <Route path="/product/new" component={ProductNewPage} />
           <Route
             path="/product/:productId"
             component={Auth(ProductDetailPage, 3)}

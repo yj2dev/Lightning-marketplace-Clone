@@ -50,30 +50,67 @@ const MyShopPage = ({ history }) => {
     if (e.target.value.length < 16) setStoreName(e.target.value);
   };
   const onChangeStoreDescription = (e) => {
-    if (e.target.value.length < 16) setStoreDescription(e.target.value);
+    if (e.target.value.length < 250) setStoreDescription(e.target.value);
   };
 
-  useEffect(() => {
-    console.log("user >> ", user);
+  // 첫 랜더링시 상태 업데이트
+  function setState(user) {
     setStore(user.isSignin.data);
-    setStoreName(user.isSignin.data.storeName);
-    // setStoreDescription(user.isSignin.data.description);
-    //   axios
-    //     .post("/product/upload")
-    //     .then((res) => {
-    //       console.log("product res >> ", res);
-    //       history.push("/");
-    //     })
-    //     .catch((err) => {
-    //       console.log("product err >> ", err);
-    //     });
+  }
+
+  // 응답 후 상태 업데이트
+  function setResState({ data }) {
+    // setStore(data.data);
+    // setStoreName(data.data.storeName);
+    // setStoreDescription(data.data.description);
+    // 위에 코드 3줄이면 변경사항이 적용될 줄 알았지만 되지안아서 페이지 전체를 재랜더링 한다.
+    history.push(`/shop/${user.isSignin.data._id}`);
+  }
+
+  useEffect(() => {
+    setState(user);
   }, []);
+
+  // 상점명 변경
   const onSubmitStoreName = () => {
+    // 변경할 상점명을 입력하지 않았을 때
     if (storeName === "") return;
-    setEditStoreName(false);
+
+    // 변경할 상점명이 기존의 상점명과 동일할 때
+    if (storeName === user.isSignin.data.storeName)
+      axios
+        .patch("/user/nickname", { storeName })
+        .then((res) => {
+          console.log("res >> ", res);
+
+          // 상점명 변경 성공
+          setEditStoreName(false);
+          setResState(res);
+        })
+        .catch((err) => {
+          console.log("err >> ", err);
+        });
   };
+
   const onSubmitStoreDescription = () => {
     if (storeDescription === "") return;
+
+    axios
+      .patch("/user/description", { description: storeDescription })
+      .then((res) => {
+        console.log("res >> ", res);
+        // 상점 소개글 변경 성공
+        setResState(res);
+        setEditStoreDescription(false);
+      })
+      .catch((err) => {
+        console.log("err >> ", err);
+      });
+  };
+
+  const onClickEditStoreName = () => {
+    setStoreName(user.isSignin.data.storeName);
+    setEditStoreName((prev) => !prev);
   };
 
   return (
@@ -83,17 +120,17 @@ const MyShopPage = ({ history }) => {
           <img className="background_img" src={`${store.profileURL}`} />
           <div className="background_img_wrapper"></div>
           <img className="profile_img" src={`${store.profileURL}`} />
-          <div className="store_name">{store.storeName}</div>
+          <div className="store_name">
+            {user.isSignin && user.isSignin.data.storeName}
+          </div>
           <div className="store_management">내 상점 관리</div>
         </div>
         <UserStoreContents>
           <div className="contents_store_name">
             {!editStoreName ? (
               <>
-                {store.storeName}&nbsp;&nbsp;
-                <button onClick={(e) => setEditStoreName((prev) => !prev)}>
-                  상점명 수정
-                </button>
+                {user.isSignin && user.isSignin.data.storeName}&nbsp;&nbsp;
+                <button onClick={onClickEditStoreName}>상점명 수정</button>
               </>
             ) : (
               <>
@@ -121,7 +158,7 @@ const MyShopPage = ({ history }) => {
           </div>
           <div className="contents_store_desc">
             {!editStoreDescription ? (
-              <>설명예시</>
+              <>{user.isSignin && user.isSignin.data.description}</>
             ) : (
               <>
                 <textarea
@@ -130,7 +167,7 @@ const MyShopPage = ({ history }) => {
                 ></textarea>
                 <button
                   className="store_desc_submit_btn"
-                  onClick={() => setEditStoreDescription((prev) => !prev)}
+                  onClick={onSubmitStoreDescription}
                 >
                   확인
                 </button>

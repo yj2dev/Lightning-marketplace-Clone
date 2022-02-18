@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="내상점 페이지 디자인">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그인 안된 유저 로그인 모달 띄우기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plan.text" beforeDir="false" afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -120,14 +125,8 @@
       <workItem from="1644969348004" duration="10787000" />
       <workItem from="1645026806679" duration="6914000" />
       <workItem from="1645052408558" duration="18272000" />
-      <workItem from="1645111523903" duration="26440000" />
-    </task>
-    <task id="LOCAL-00008" summary="Image preview removal implementation.">
-      <created>1643472401048</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1643472401048</updated>
+      <workItem from="1645111523903" duration="36207000" />
+      <workItem from="1645214849155" duration="4602000" />
     </task>
     <task id="LOCAL-00009" summary="Daum Road Name API Demo Applied">
       <created>1643483514620</created>
@@ -465,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645132629879</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="로그인 안된 유저 로그인 모달 띄우기">
+      <created>1645162670688</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1645162670688</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +490,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="passport 기존에 휴대전화로만 인증했던 로직 비밀번호 추가" />
     <MESSAGE value="로그인 UI/UX 구조 변경전 저장" />
     <MESSAGE value="휴대번호 리덕스 저장" />
     <MESSAGE value="비밀번호 생성규칙 적용" />
@@ -509,7 +514,8 @@
     <MESSAGE value="배너 오토 캐루셀 추가" />
     <MESSAGE value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
     <MESSAGE value="내상점 페이지 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="내상점 페이지 디자인" />
+    <MESSAGE value="로그인 안된 유저 로그인 모달 띄우기" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인 안된 유저 로그인 모달 띄우기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

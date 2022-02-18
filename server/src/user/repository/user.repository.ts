@@ -9,6 +9,28 @@ import { UserCreateDto } from '../dto/user.create.dto';
 export class UserRepository {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
 
+  // 해당하는 아이디의 닉네임(상점명) 컬럼(필드) 업데이트
+  async updateStoreNameById(id: string, storeName: string): Promise<User> {
+    const result = await this.user.findByIdAndUpdate(
+      id,
+      { storeName },
+      { new: true },
+    );
+    console.log('updateStoreNameById result >> ', result);
+    return result;
+  }
+
+  // 해당하는 아이디의 상점 소개글 컬럼(필드) 업데이트
+  async updateDescriptionById(id: string, description: string): Promise<User> {
+    const result = await this.user.findByIdAndUpdate(
+      id,
+      { description },
+      { new: true },
+    );
+    console.log('updateStoreNameById result >> ', result);
+    return result;
+  }
+
   // 중복된 휴대번호인지 확인
   async existsByPhoneNumber(phoneNumber: string): Promise<boolean> {
     const result = await this.user.exists({ phoneNumber });
@@ -31,12 +53,6 @@ export class UserRepository {
     const user = await this.user.findOne({ phoneNumber });
     return user;
   }
-
-  // 이메일로 유저 찾기
-  // async findUserByEmail(email: string): Promise<User | null> {
-  //   const user = await this.user.findOne({ email });
-  //   return user;
-  // }
 
   // 유저 아이디로 유저찾기 (비밀번호, 휴대번호 제외)
   async findUserByIdWithoutPasswordAndPhoneNumber(

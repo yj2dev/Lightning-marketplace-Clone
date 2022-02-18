@@ -72,18 +72,18 @@ export const UserStoreContents = styled.div`
     border: 1px solid #eeeeee;
     font-size: 14px;
   }
-  & .contents_store_name store_name_submit_btn {
-    font-size: 14px;
-    padding: 4px 12px;
-    border: 1px solid #eeeeee;
-    border-width: 1px 1px 1px 0;
-  }
   button {
     font-size: 11px;
     color: #999999;
     border: 1px solid #eeeeee;
     background-color: #ffffff;
     cursor: pointer;
+  }
+  & .contents_store_name .store_name_submit_btn {
+    font-size: 14px;
+    padding: 4px 12px;
+    border: 1px solid #eeeeee;
+    border-width: 1px 1px 1px 0;
   }
   & .badge {
     margin-bottom: 24px;
@@ -100,7 +100,7 @@ export const UserStoreContents = styled.div`
     color: #000000;
   }
   & .contents_store_desc {
-    widht: 100%;
+    width: 650px;
     height: 120px;
     position: relative;
     font-size: 14px;

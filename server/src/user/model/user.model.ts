@@ -1,7 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, SchemaOptions, Types } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  IsString,
+  MaxLength,
+  MinLength,
+} from 'class-validator';
 import { timestamp } from 'rxjs';
 
 const options: SchemaOptions = {
@@ -40,6 +46,17 @@ export class User extends Document {
   @IsString()
   @IsNotEmpty()
   storeName: string;
+
+  @ApiProperty({
+    example: '정직하고 품질좋은 물품만을 판매합니다.',
+    description: '상점 소개글 길이제한(0~400)자',
+    required: false,
+  })
+  @Prop({ required: false, minlength: 0, maxlength: 400, default: '' })
+  @IsString()
+  @MinLength(0)
+  @MaxLength(400)
+  description: string;
 
   @ApiProperty({
     example: '이미지 파일',

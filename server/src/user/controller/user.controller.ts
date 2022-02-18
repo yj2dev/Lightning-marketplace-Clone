@@ -11,6 +11,8 @@ import {
   UseInterceptors,
   Res,
   Req,
+  Put,
+  Patch,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from '../service/user.service';
@@ -35,6 +37,31 @@ export class UserController {
     private readonly userService: UserService,
     private readonly authService: AuthService,
   ) {}
+
+  @ApiOperation({ summary: '유저(상점) 자기소개(상점설명) 변경' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Patch('description')
+  async updateDescription(
+    @CurrentUser() currentUser,
+    @Body('description') description: string,
+  ): Promise<User> {
+    return this.userService.updateDescription(currentUser._id, description);
+  }
+
+  @ApiOperation({ summary: '유저(상점) 닉네임(상점명) 변경' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Patch('nickname')
+  async updateNickname(
+    @CurrentUser() currentUser,
+    @Body('storeName') storeName: string,
+  ) {
+    console.log('curr user >> ', currentUser, storeName);
+    return this.userService.updateStoreName(currentUser._id, storeName);
+  }
 
   @ApiOperation({ summary: '유저인증' })
   @ApiResponse({ status: 200, description: '성공', type: UserReadonlyDto })
