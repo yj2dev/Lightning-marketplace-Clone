@@ -1,67 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점명 변경 중복확인, 내상점 페이지 버그 보완">
-      <change afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.create.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.readonly.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/service/user.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가">
+      <change afterPath="$PROJECT_DIR$/server/src/pollow/model/pollow.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/store-contact/model/store-contact.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hoc/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hoc/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/dto/user.signin.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/user.signin.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/guard/jwt.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/guard/jwt.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/kakao.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/kakao.strategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/exception/http-exception.filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/exception/http-exception.filter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/interceptor/success.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/interceptor/success.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/controller/store.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/controller/store.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.create.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.readonly.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.request.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/model/user.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/repository/user.repository.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/service/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/service/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store/user.module.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/pollow" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -109,11 +67,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopCommentsPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFavoritesPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFollowersPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopFollowingsPage" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\MyShopPage\Section\ShopReviewsPage" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-contact" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-review" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -175,13 +133,6 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-    </task>
-    <task id="LOCAL-00010" summary="You can limit the number of images and add more images.">
-      <created>1643484799486</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1643484799486</updated>
     </task>
     <task id="LOCAL-00011" summary="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design.">
       <created>1643524313856</created>
@@ -519,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645227935884</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가">
+      <created>1645248523344</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1645248523344</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +496,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="휴대번호 리덕스 저장" />
     <MESSAGE value="비밀번호 생성규칙 적용" />
     <MESSAGE value="휴대폰 회원가입 로직 구현" />
     <MESSAGE value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
@@ -563,7 +520,8 @@
     <MESSAGE value="내상점 페이지 디자인" />
     <MESSAGE value="로그인 안된 유저 로그인 모달 띄우기" />
     <MESSAGE value="상점명 변경 중복확인, 내상점 페이지 버그 보완" />
-    <option name="LAST_COMMIT_MESSAGE" value="상점명 변경 중복확인, 내상점 페이지 버그 보완" />
+    <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
