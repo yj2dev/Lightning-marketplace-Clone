@@ -10,12 +10,12 @@ import { useHistory, withRouter } from "react-router-dom";
 
 const UserPasswordPage = () => {
   const history = useHistory();
-  const store = useSelector((state) => state.store);
+  const user = useSelector((state) => state.user);
 
   const passwordInput = useRef();
   const passwordCheckInput = useRef();
 
-  const [phoneNumber, setPhoneNumber] = useState(store.phoneNumber);
+  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState({ validate: false });
@@ -33,7 +33,7 @@ const UserPasswordPage = () => {
 
   useEffect(() => {
     // 유저 정보(휴대번호)가 없으면 해당페이지 접근 불가능
-    if (!store.phoneNumber) {
+    if (!user.phoneNumber) {
       alert("접근 불가능");
       history.push("/");
     }
@@ -108,7 +108,7 @@ const UserPasswordPage = () => {
     if (!totalValidate()) return;
 
     const payload = {
-      phoneNumber: store.phoneNumber,
+      phoneNumber: user.phoneNumber,
       password,
     };
 
@@ -116,7 +116,7 @@ const UserPasswordPage = () => {
 
     console.log(payload);
     axios
-      .post("/store/signup", payload)
+      .post("/user/signup", payload)
       .then((res) => {
         setLoading(false);
         if (res.data.success && res.data.data) {

@@ -4,7 +4,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt/jwt.strategy';
 import { ConfigModule } from '@nestjs/config';
-import { UserModule } from '../store/user.module';
+import { UserModule } from '../user/user.module';
 import { NaverStrategy } from './jwt/naver.strategy';
 import { KakaoStrategy } from './jwt/kakao.strategy';
 

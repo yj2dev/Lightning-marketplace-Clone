@@ -2,43 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점명 변경 중복확인, 내상점 페이지 버그 보완">
-      <change afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_actions/user_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.create.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.readonly.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/service/user.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/_actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_actions/user_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_actions/store_actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/_reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_reducers/user_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_reducers/store_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CategoryMenu/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hoc/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hoc/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/PhoneNumberAuthPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/Sections/UserPasswordPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SignupPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/dto/user.signin.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/user.signin.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/guard/jwt.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/guard/jwt.guard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/jwt.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/jwt/kakao.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/jwt/kakao.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/decorators/user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/exception/http-exception.filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/exception/http-exception.filter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/interceptor/success.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/interceptor/success.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/middleware/logger.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/oauth/oauth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/sms/sms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/sms/sms.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/controller/user.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.create.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/dto/user.create.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.readonly.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/dto/user.readonly.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/dto/user.request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/dto/user.request.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/model/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/service/user.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

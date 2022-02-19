@@ -1,7 +1,7 @@
 import { withRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { authUser } from "../_actions/store_actions";
+import { authUser } from "../_actions/user_actions";
 import SigninModal from "../components/SigninModal";
 
 // option: 로그인 여부 상관없음 (0) - 기본값

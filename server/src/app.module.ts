@@ -2,14 +2,14 @@ import { ConfigModule } from '@nestjs/config';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { StoreController } from './store/controller/store.controller';
-import { UserService } from './store/service/user.service';
+import { UserController } from './user/controller/user.controller';
+import { UserService } from './user/service/user.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
-import { UserModule } from './store/user.module';
+import { UserModule } from './user/user.module';
 import * as mongoose from 'mongoose';
-import { User, UserSchema } from './store/model/user.model';
-import { UserRepository } from './store/repository/user.repository';
+import { User, UserSchema } from './user/model/user.model';
+import { UserRepository } from './user/repository/user.repository';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { OauthModule } from './oauth/oauth.module';
@@ -17,7 +17,11 @@ import { SmsModule } from './sms/sms.module';
 import { RedisCacheModule } from './redis-cache/redis-cache.module';
 import { ProductImageModule } from './product-image/product-image.module';
 import { HashtagModule } from './hashtag/hashtag.module';
-import { StoreContactModule } from './store-contact/store-contact.module';
+import { ProductContactModule } from './product-contact/product-contact.module';
+import { ProductFavoriteModule } from './product-favorite/product-favorite.module';
+import { StoreReviewModule } from './store-review/store-review.module';
+import { TagModule } from './tag/tag.module';
+import { PollowModule } from './pollow/pollow.module';
 
 @Module({
   imports: [
@@ -40,12 +44,15 @@ import { StoreContactModule } from './store-contact/store-contact.module';
     OauthModule,
     SmsModule,
     RedisCacheModule,
-
     ProductImageModule,
     HashtagModule,
-    StoreContactModule,
+    ProductContactModule,
+    ProductFavoriteModule,
+    StoreReviewModule,
+    TagModule,
+    PollowModule,
   ],
-  controllers: [AppController, StoreController],
+  controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
 })
 export class AppModule implements NestModule {

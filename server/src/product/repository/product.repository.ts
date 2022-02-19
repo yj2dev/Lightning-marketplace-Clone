@@ -8,7 +8,7 @@ import {
 } from '../../product-image/model/product-image.model';
 import { CreateProductDto } from '../dto/create.product.dto';
 import * as mongoose from 'mongoose';
-import { UserSchema } from '../../store/model/user.model';
+import { UserSchema } from '../../user/model/user.model';
 
 @Injectable()
 export class ProductRepository {

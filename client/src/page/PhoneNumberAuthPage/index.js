@@ -5,7 +5,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import BeatLoader from "react-spinners/BeatLoader";
 import { useDispatch } from "react-redux";
-import { signupProcessUser } from "../../_actions/store_actions";
+import { signupProcessUser } from "../../_actions/user_actions";
 
 // 휴대폰 번호가 존재하면 로그인 페이지로 이동하거나
 // 휴대본 번호가 존재하지 않으면 회원가입 페이지로 분기처리하는 페이지입니다.
@@ -63,7 +63,7 @@ const PhoneNumberAuthPage = ({ history }) => {
     dispatch(signupProcessUser(phoneNumber));
 
     axios
-      .get(`/store/check?phoneNumber=${phoneNumber}`)
+      .get(`/user/check?phoneNumber=${phoneNumber}`)
       .then(({ data }) => {
         setLoading(false);
 

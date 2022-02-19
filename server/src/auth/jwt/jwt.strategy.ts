@@ -7,7 +7,7 @@ import {
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Payload } from './jwt.payload';
-import { UserRepository } from '../../store/repository/user.repository';
+import { UserRepository } from '../../user/repository/user.repository';
 import { jwtExtractorFromCookies } from '../../common/utils/jwtExtractorFromCookies';
 
 @Injectable()

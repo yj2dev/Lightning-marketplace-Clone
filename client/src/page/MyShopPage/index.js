@@ -31,7 +31,7 @@ const MyShopPage = ({ history }) => {
   const [tabMenu, setTabMenu] = useState(0);
   const [tabMenuName, setTabMenuName] = useState("상품");
 
-  const store = useSelector((state) => state.store);
+  const user = useSelector((state) => state.user);
 
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
@@ -56,12 +56,12 @@ const MyShopPage = ({ history }) => {
 
   // 응답 후 상태 업데이트
   function setResState() {
-    history.push(`/shop/${store.isSignin.data._id}`);
+    history.push(`/shop/${user.isSignin.data._id}`);
   }
 
   useEffect(() => {
     axios
-      .get("/store/detail")
+      .get("/user/detail")
       .then((res) => {
         console.log("res detail >> ", res);
         console.log("data >> ", res.data.data.products);
@@ -78,13 +78,13 @@ const MyShopPage = ({ history }) => {
     if (storeName.trim() === "") return;
 
     // 변경할 상점명이 기존의 상점명과 동일할 때
-    if (storeName === store.isSignin.data.storeName) {
+    if (storeName === user.isSignin.data.storeName) {
       setEditStoreName(false);
       return;
     }
 
     axios
-      .patch("/store/name", { storeName })
+      .patch("/user/nickname", { storeName })
       .then((res) => {
         console.log("res >> ", res);
 
@@ -101,7 +101,7 @@ const MyShopPage = ({ history }) => {
     if (storeDescription === "") return;
 
     axios
-      .patch("/store/description", { description: storeDescription })
+      .patch("/user/description", { description: storeDescription })
       .then((res) => {
         console.log("res >> ", res);
         // 상점 소개글 변경 성공
@@ -114,12 +114,12 @@ const MyShopPage = ({ history }) => {
   };
 
   const onClickEditStoreName = () => {
-    setStoreName(store.isSignin.data.storeName);
+    setStoreName(user.isSignin.data.storeName);
     setEditStoreName((prev) => !prev);
   };
 
   const onClickEditStoreDescription = () => {
-    setStoreDescription(store.isSignin.data.description);
+    setStoreDescription(user.isSignin.data.description);
     setEditStoreDescription((prev) => !prev);
   };
 
@@ -129,15 +129,15 @@ const MyShopPage = ({ history }) => {
         <div className="imgWrapper">
           <img
             className="background_img"
-            src={`${store.isSignin.data.profileURL}`}
+            src={`${user.isSignin.data.profileURL}`}
           />
           <div className="background_img_wrapper"></div>
           <img
             className="profile_img"
-            src={`${store.isSignin.data.profileURL}`}
+            src={`${user.isSignin.data.profileURL}`}
           />
           <div className="store_name">
-            {store.isSignin && store.isSignin.data.storeName}
+            {user.isSignin && user.isSignin.data.storeName}
           </div>
           <div className="store_management">내 상점 관리</div>
         </div>
@@ -145,7 +145,7 @@ const MyShopPage = ({ history }) => {
           <div className="contents_store_name">
             {!editStoreName ? (
               <>
-                {store.isSignin && store.isSignin.data.storeName}&nbsp;&nbsp;
+                {user.isSignin && user.isSignin.data.storeName}&nbsp;&nbsp;
                 <button onClick={onClickEditStoreName}>상점명 수정</button>
               </>
             ) : (
@@ -170,11 +170,11 @@ const MyShopPage = ({ history }) => {
               &nbsp;&nbsp;
             </span>
             상점오픈일&nbsp;
-            <span>{oneDaysFormat(store.isSignin.data.createdAt)}</span>
+            <span>{oneDaysFormat(user.isSignin.data.createdAt)}</span>
           </div>
           <div className="contents_store_desc">
             {!editStoreDescription ? (
-              <>{store.isSignin && store.isSignin.data.description}</>
+              <>{user.isSignin && user.isSignin.data.description}</>
             ) : (
               <>
                 <textarea

@@ -1,6 +1,6 @@
 // user
-export const SIGNUP_PROCESS_STORE = "signup_process_store";
-export const AUTH_STORE = "auth_store";
+export const SIGNUP_PROCESS_USER = "signup_process_user";
+export const AUTH_USER = "auth_user";
 
 // signin_modal
 export const SHOW_SIGNIN_MODAL = "show_signin_modal";

@@ -5,9 +5,11 @@ const ShopProductsPage = ({ products }) => {
     <Container>
       {products &&
         products.map((product) => (
-          <>
-            {product.thumbnailImgURL} <br />
-          </>
+          <div>
+            <div>{product.thumbnailImgURL}</div>
+            <img width="200px" src={product.thumbnailImgURL} />
+            {/*<br />*/}
+          </div>
         ))}
     </Container>
   );
