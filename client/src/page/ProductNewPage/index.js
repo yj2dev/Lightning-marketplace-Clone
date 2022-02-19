@@ -24,7 +24,7 @@ import { BsCheck } from "react-icons/bs";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import UploadProductImage from "./Section/UploadProductImage";
-import { withRouter } from "react-router-dom";
+import { Route, Switch, useLocation, withRouter } from "react-router-dom";
 import {
   ProductLargeCategory,
   ProductMediumCategory,
@@ -34,6 +34,7 @@ import DaumPostcode from "react-daum-postcode";
 import Modal from "../../components/Modal";
 import { useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
+import { ProductManagePage } from "../ProductManagePage";
 
 const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
@@ -374,8 +375,7 @@ const ProductNewPage = ({ history }) => {
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    console.log("product new user >> ", user);
-    // 보완 예정
+    // 로그인이 안된 유저가 해당 페이지 접근시 랜딩페이지로 이동
     if (!user.isSignin) {
       history.push("/");
     }
@@ -422,7 +422,12 @@ const ProductNewPage = ({ history }) => {
   return (
     <Container>
       <ul>
-        <li onClick={() => history.push("/product/new")}>상품등록</li>
+        <li
+          onClick={() => history.push("/product/new")}
+          className="active_menu"
+        >
+          상품등록
+        </li>
         <li onClick={() => history.push("/product/manage")}>상품관리</li>
         {/*<li>구매/판매 내역</li>*/}
       </ul>

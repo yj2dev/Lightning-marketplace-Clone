@@ -25,7 +25,12 @@ export const ProductManagePage = ({ history }) => {
     <Container>
       <ul>
         <li onClick={() => history.push("/product/new")}>상품등록</li>
-        <li onClick={() => history.push("/product/manage")}>상품관리</li>
+        <li
+          onClick={() => history.push("/product/manage")}
+          className="active_menu"
+        >
+          상품관리
+        </li>
         {/*<li>구매/판매 내역</li>*/}
       </ul>
 
@@ -48,10 +53,19 @@ export const ProductManagePage = ({ history }) => {
                 <td>
                   <img width="200px" src={product.thumbnailImgURL} />
                 </td>
-                <td>null</td>
+                <td>
+                  <select name="sell_state" id="">
+                    <option value="selling">판매중</option>
+                    <option value="reserving">예약중</option>
+                    <option value="soldout">판매완료</option>
+                    <option value="delete">삭제</option>
+                  </select>
+                </td>
                 <td>{product.title}</td>
                 <td>{intOfKr(product.price)}원</td>
-                <td>null</td>
+                <td>
+                  {0}/{0}
+                </td>
                 <td>{timeFormat(product.updatedAt)}</td>
               </tr>
             ))}

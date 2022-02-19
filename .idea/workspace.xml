@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="tag 중간테이블 제거">
-      <change afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품관리 페이지 설계">
+      <change afterPath="$PROJECT_DIR$/client/public/img/arrow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/public/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -60,11 +56,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\public\img" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-contact" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -126,13 +122,7 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-    </task>
-    <task id="LOCAL-00013" summary="Apply validation to all items except tags.">
-      <created>1643535637462</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1643535637462</updated>
+      <workItem from="1645297911484" duration="6618000" />
     </task>
     <task id="LOCAL-00014" summary="Duplicate value check (find application failed),&#10;For applied.">
       <created>1643559755655</created>
@@ -470,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645268945159</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="상품관리 페이지 설계">
+      <created>1645277941725</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1645277941725</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +486,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
     <MESSAGE value="로그인, 로그아웃(쿠키 생성 및 제거)" />
     <MESSAGE value="쿠키는 생성되나 CORS 에러 미해결" />
     <MESSAGE value="SSL(HTTPS) 적용" />
@@ -514,7 +510,8 @@
     <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
     <MESSAGE value="DB설계" />
     <MESSAGE value="tag 중간테이블 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="tag 중간테이블 제거" />
+    <MESSAGE value="상품관리 페이지 설계" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품관리 페이지 설계" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -62,7 +62,7 @@ function Layout({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
-          {/*<Route path="/product/new" component={Auth(ProductNewPage, 1)} />*/}
+          {/*  상품 페이지들은 로그인 안한 유저 접근불가 따로 적용함 */}
           <Route path="/product/new" component={ProductNewPage} />
           <Route path="/product/manage" component={ProductManagePage} />
           <Route

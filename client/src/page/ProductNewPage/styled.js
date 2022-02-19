@@ -7,6 +7,10 @@ export const Container = styled.div`
   .error {
     border: 1px solid orange;
   }
+  & .active_menu {
+    color: red;
+    font-weight: 800;
+  }
   & input[type="text"]:hover {
     border: 1px solid black;
   }
