@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="DB설계">
-      <change afterPath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/tag/tag.service.spec.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="tag 중간테이블 제거">
+      <change afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/hashtag/hashtag.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/category/category.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/hashtag/model/hashtag.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/pollow/model/pollow.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/pollow/model/follow.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/tag/tag.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/pollow" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -62,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-contact" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-review" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -128,13 +126,6 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-    </task>
-    <task id="LOCAL-00012" summary="checkbox design">
-      <created>1643531415616</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1643531415616</updated>
     </task>
     <task id="LOCAL-00013" summary="Apply validation to all items except tags.">
       <created>1643535637462</created>
@@ -472,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645261615994</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="tag 중간테이블 제거">
+      <created>1645268945159</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1645268945159</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +489,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="휴대폰 회원가입 로직 구현" />
     <MESSAGE value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
     <MESSAGE value="로그인, 로그아웃(쿠키 생성 및 제거)" />
     <MESSAGE value="쿠키는 생성되나 CORS 에러 미해결" />
@@ -516,7 +513,8 @@
     <MESSAGE value="상점명 변경 중복확인, 내상점 페이지 버그 보완" />
     <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
     <MESSAGE value="DB설계" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB설계" />
+    <MESSAGE value="tag 중간테이블 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="tag 중간테이블 제거" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

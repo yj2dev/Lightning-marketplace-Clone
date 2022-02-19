@@ -39,7 +39,7 @@ export class ProductController {
     @CurrentUser() currentUser: User,
     @UploadedFiles() files: Array<Express.Multer.File>,
     @Body() productInfo,
-  ) {
+  ): Promise<boolean> {
     return await this.productService.uploadProduct(
       currentUser,
       files,

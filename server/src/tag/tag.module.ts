@@ -1,7 +1,11 @@
 import { Module } from '@nestjs/common';
-import { TagReposigory } from './tag.reposigory';
+import { TagRepository } from './tag.reposigory';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Tag, TagSchema } from './model/tag.model';
 
 @Module({
-  providers: [TagReposigory],
+  imports: [MongooseModule.forFeature([{ name: Tag.name, schema: TagSchema }])],
+  providers: [TagRepository],
+  exports: [TagRepository],
 })
 export class TagModule {}

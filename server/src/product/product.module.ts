@@ -10,6 +10,8 @@ import {
   ProductImageSchema,
 } from '../product-image/model/product-image.model';
 import { Tag, TagSchema } from '../tag/model/tag.model';
+import { TagRepository } from '../tag/tag.reposigory';
+import { TagModule } from '../tag/tag.module';
 
 @Module({
   imports: [
@@ -19,6 +21,7 @@ import { Tag, TagSchema } from '../tag/model/tag.model';
       { name: ProductImage.name, schema: ProductImageSchema },
       { name: Tag.name, schema: TagSchema },
     ]),
+    TagModule,
   ],
   controllers: [ProductController],
   providers: [ProductService, ProductRepository],

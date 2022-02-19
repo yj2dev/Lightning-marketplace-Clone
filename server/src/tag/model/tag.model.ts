@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
 
 const options: SchemaOptions = {
-  timestamps: true,
+  timestamps: false,
   versionKey: false,
 };
 

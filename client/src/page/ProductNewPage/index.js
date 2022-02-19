@@ -21,7 +21,7 @@ import { AiFillCamera } from "react-icons/ai";
 import { HiOutlineBan } from "react-icons/hi";
 import { IoMdCloseCircle } from "react-icons/io";
 import { BsCheck } from "react-icons/bs";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import UploadProductImage from "./Section/UploadProductImage";
 import { withRouter } from "react-router-dom";
@@ -31,9 +31,9 @@ import {
   ProductSmallCategory,
 } from "../../data/ProductCategory";
 import DaumPostcode from "react-daum-postcode";
-import Postcode from "../../components/Postcode";
 import Modal from "../../components/Modal";
 import { useSelector } from "react-redux";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
@@ -72,6 +72,8 @@ const ProductNewPage = ({ history }) => {
   const [tagValue, setTagValue] = useState("");
   const [tag, setTag] = useState([]);
   const [quantity, setQuantity] = useState(1);
+
+  const [loading, setLoading] = useState(false);
 
   const onClickDeleteTag = (e) => {
     const tagList = tag;
@@ -160,6 +162,8 @@ const ProductNewPage = ({ history }) => {
     // 공란 체크 (에러 발생시 true 반환)
     if (onValidateTotal()) return;
 
+    setLoading(true);
+
     // 이미지 전송 폼
     const formData = new FormData();
 
@@ -186,7 +190,7 @@ const ProductNewPage = ({ history }) => {
 
     const stringPayload = JSON.stringify(payload);
 
-    console.log("submit payload >> ", payload);
+    // console.log("submit payload >> ", payload);
     // console.log("submit stringPayload >> ", stringPayload);
     // return;
 
@@ -197,9 +201,11 @@ const ProductNewPage = ({ history }) => {
       .post("/product/upload", formData)
       .then((res) => {
         console.log("product res >> ", res);
+        setLoading(false);
         history.push("/");
       })
       .catch((err) => {
+        setLoading(false);
         console.log("product err >> ", err);
       });
   };
@@ -416,9 +422,9 @@ const ProductNewPage = ({ history }) => {
   return (
     <Container>
       <ul>
-        <li>상품등록</li>
-        <li>상품관리</li>
-        <li>구매/판매 내역</li>
+        <li onClick={() => history.push("/product/new")}>상품등록</li>
+        <li onClick={() => history.push("/product/manage")}>상품관리</li>
+        {/*<li>구매/판매 내역</li>*/}
       </ul>
 
       <h1>
@@ -812,7 +818,10 @@ const ProductNewPage = ({ history }) => {
       </InputSection>
 
       <SubmitSection>
-        <button onClick={onSubmitNewProduct}>등록하기</button>
+        <button disabled={loading} onClick={onSubmitNewProduct}>
+          {!loading && "등록하기"}
+          <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
+        </button>
       </SubmitSection>
     </Container>
   );
