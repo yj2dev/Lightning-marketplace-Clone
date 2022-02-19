@@ -77,7 +77,7 @@ export class User extends Document {
   })
   @Prop({ type: Types.ObjectId, ref: 'products' })
   @IsString()
-  product: string;
+  product: Types.ObjectId;
 
   @ApiProperty({
     example: '카카오 아이디',
@@ -113,6 +113,16 @@ export class User extends Document {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+// populate로 스키마끼리 합처주는 가상 필드
+UserSchema.virtual('products', {
+  ref: 'products',
+  localField: '_id',
+  foreignField: 'userId',
+});
+
+UserSchema.set('toObject', { virtuals: true });
+UserSchema.set('toJSON', { virtuals: true });
 
 // virtual field 실제로 DB에 저장되는 필드는 아니지만 비지니스 로직에 사용가능한 필드
 UserSchema.virtual('readonlyData').get(function (this: User) {

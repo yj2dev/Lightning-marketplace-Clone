@@ -13,7 +13,7 @@ import { CurrentUser } from '../../common/decorators/user.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { ProductService } from '../service/product.service';
-import { User } from '../../user/model/user.model';
+import { User } from '../../store/model/user.model';
 import { Product } from '../model/product.model';
 
 @Controller('product')

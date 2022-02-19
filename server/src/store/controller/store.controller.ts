@@ -29,14 +29,23 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { User } from '../model/user.model';
 
-@Controller('user')
+@Controller('store')
 @UseInterceptors(SuccessInterceptor)
 @UseFilters(HttpExceptionFilter)
-export class UserController {
+export class StoreController {
   constructor(
     private readonly userService: UserService,
     private readonly authService: AuthService,
   ) {}
+
+  @ApiOperation({ summary: '유저와 연관된 모든 정보 요청' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Get('detail')
+  async getDetailUser(@CurrentUser() currentUser): Promise<User> {
+    return await this.userService.getDetailUser(currentUser._id);
+  }
 
   @ApiOperation({ summary: '유저(상점) 자기소개(상점설명) 변경' })
   @ApiResponse({ status: 200, description: '성공' })
@@ -54,7 +63,7 @@ export class UserController {
   @ApiResponse({ status: 200, description: '성공' })
   @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
-  @Patch('nickname')
+  @Patch('name')
   async updateNickname(
     @CurrentUser() currentUser,
     @Body('storeName') storeName: string,
@@ -106,7 +115,7 @@ export class UserController {
     type: UserReadonlyDto,
   })
   @ApiResponse({ status: 409, description: '유저가 존재하지 않음' })
-  @Get('/check')
+  @Get('check')
   async isUser(@Query('phoneNumber') phoneNumber: string) {
     return await this.userService.isPhoneNumber(phoneNumber);
   }

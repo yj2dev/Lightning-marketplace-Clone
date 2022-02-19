@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { UserRepository } from '../../user/repository/user.repository';
+import { UserRepository } from '../../store/repository/user.repository';
 import { Strategy } from 'passport-kakao';
 
 @Injectable()

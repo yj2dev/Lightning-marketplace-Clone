@@ -4,10 +4,27 @@ import { User } from '../model/user.model';
 import { Model } from 'mongoose';
 import { UserRequestDto } from '../dto/user.request.dto';
 import { UserCreateDto } from '../dto/user.create.dto';
+import * as mongoose from 'mongoose';
+import { ProductSchema } from '../../product/model/product.model';
 
 @Injectable()
 export class UserRepository {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
+
+  // 유저 아이디로 필요한 모든 스키마 항목 병합(populate OR join)하기
+  async findUserByIdAndPopulate(id: string): Promise<User | null> {
+    const ProductModel = mongoose.model('products', ProductSchema);
+
+    const result = await this.user
+      .findById(id)
+      .populate('products', ProductModel)
+      .select('-password')
+      .select('-phoneNumber');
+
+    console.log('result populate >> ', result);
+
+    return result;
+  }
 
   // 해당하는 아이디의 닉네임(상점명) 컬럼(필드) 업데이트
   async updateStoreNameById(id: string, storeName: string): Promise<User> {
@@ -16,7 +33,6 @@ export class UserRepository {
       { storeName },
       { new: true },
     );
-    console.log('updateStoreNameById result >> ', result);
     return result;
   }
 
@@ -27,7 +43,6 @@ export class UserRepository {
       { description },
       { new: true },
     );
-    console.log('updateStoreNameById result >> ', result);
     return result;
   }
 
@@ -62,6 +77,7 @@ export class UserRepository {
       .findById(userId)
       .select('-password')
       .select('-phoneNumber');
+
     return user;
   }
 

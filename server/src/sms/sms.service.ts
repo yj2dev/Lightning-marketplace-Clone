@@ -13,7 +13,7 @@ import {
 import axios from 'axios';
 import * as CryptoJS from 'crypto-js';
 import { RedisCacheService } from '../redis-cache/redis-cache.service';
-import { UserRepository } from '../user/repository/user.repository';
+import { UserRepository } from '../store/repository/user.repository';
 import { SuccessInterceptor } from '../common/interceptor/success.interceptor';
 import { HttpExceptionFilter } from '../common/exception/http-exception.filter';
 

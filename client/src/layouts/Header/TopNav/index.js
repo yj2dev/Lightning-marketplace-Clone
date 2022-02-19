@@ -7,17 +7,17 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { authUser } from "../../../_actions/user_actions";
+import { authUser } from "../../../_actions/store_actions";
 
 function TopNav({ history }) {
   const [showSigninModal, setShowSigninModal] = useState(false);
-  const user = useSelector((state) => state.user);
+  const store = useSelector((state) => state.store);
   const dispatch = useDispatch();
 
   // 로그아웃
   const onClickSignout = () => {
     axios
-      .get("/user/signout", { withCredentials: true })
+      .get("/store/signout", { withCredentials: true })
       .then(({ data }) => {
         if (data.success) {
           dispatch(authUser());
@@ -35,8 +35,8 @@ function TopNav({ history }) {
 
   const onToggleSignin = () => {
     //로그인이 되어 있지 않으면 로그인 모달 띄우기
-    if (!user.isSignin) setShowSigninModal((prev) => !prev);
-    else history.push(`/shop/${user.isSignin.data._id}`);
+    if (!store.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push(`/shop/${store.isSignin.data._id}`);
   };
 
   const onClickAppDownload = () => {
@@ -73,7 +73,7 @@ function TopNav({ history }) {
           </button>
         </div>
         <div className="right">
-          {user.isSignin ? (
+          {store.isSignin ? (
             <button onClick={onClickSignout} style={{ marginRight: "16px" }}>
               로그아웃
             </button>

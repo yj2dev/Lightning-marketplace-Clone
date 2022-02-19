@@ -31,14 +31,15 @@ const MyShopPage = ({ history }) => {
   const [tabMenu, setTabMenu] = useState(0);
   const [tabMenuName, setTabMenuName] = useState("상품");
 
-  const user = useSelector((state) => state.user);
-  const [store, setStore] = useState({});
+  const store = useSelector((state) => state.store);
 
   const [storeName, setStoreName] = useState("");
-  const [storeDescription, setStoreDescription] = useState("상점 설명입니다.");
+  const [storeDescription, setStoreDescription] = useState("");
 
   const [editStoreName, setEditStoreName] = useState(false);
   const [editStoreDescription, setEditStoreDescription] = useState(false);
+
+  const [products, setProducts] = useState([]);
 
   const onClickTabMenu = (e) => {
     const tabIndex = e.target.value;
@@ -53,50 +54,54 @@ const MyShopPage = ({ history }) => {
     if (e.target.value.length < 250) setStoreDescription(e.target.value);
   };
 
-  // 첫 랜더링시 상태 업데이트
-  function setState(user) {
-    setStore(user.isSignin.data);
-  }
-
   // 응답 후 상태 업데이트
-  function setResState({ data }) {
-    // setStore(data.data);
-    // setStoreName(data.data.storeName);
-    // setStoreDescription(data.data.description);
-    // 위에 코드 3줄이면 변경사항이 적용될 줄 알았지만 되지안아서 페이지 전체를 재랜더링 한다.
-    history.push(`/shop/${user.isSignin.data._id}`);
+  function setResState() {
+    history.push(`/shop/${store.isSignin.data._id}`);
   }
 
   useEffect(() => {
-    setState(user);
+    axios
+      .get("/store/detail")
+      .then((res) => {
+        console.log("res detail >> ", res);
+        console.log("data >> ", res.data.data.products);
+        setProducts(res.data.data.products);
+      })
+      .catch((err) => {
+        console.log("err detail >> ", err);
+      });
   }, []);
 
   // 상점명 변경
   const onSubmitStoreName = () => {
-    // 변경할 상점명을 입력하지 않았을 때
-    if (storeName === "") return;
+    // 변경할 상점명을 입력하지 않았을 때(공백 제거 후)
+    if (storeName.trim() === "") return;
 
     // 변경할 상점명이 기존의 상점명과 동일할 때
-    if (storeName === user.isSignin.data.storeName)
-      axios
-        .patch("/user/nickname", { storeName })
-        .then((res) => {
-          console.log("res >> ", res);
+    if (storeName === store.isSignin.data.storeName) {
+      setEditStoreName(false);
+      return;
+    }
 
-          // 상점명 변경 성공
-          setEditStoreName(false);
-          setResState(res);
-        })
-        .catch((err) => {
-          console.log("err >> ", err);
-        });
+    axios
+      .patch("/store/name", { storeName })
+      .then((res) => {
+        console.log("res >> ", res);
+
+        // 상점명 변경 성공
+        setEditStoreName(false);
+        setResState(res);
+      })
+      .catch((err) => {
+        console.log("err >> ", err);
+      });
   };
 
   const onSubmitStoreDescription = () => {
     if (storeDescription === "") return;
 
     axios
-      .patch("/user/description", { description: storeDescription })
+      .patch("/store/description", { description: storeDescription })
       .then((res) => {
         console.log("res >> ", res);
         // 상점 소개글 변경 성공
@@ -109,19 +114,30 @@ const MyShopPage = ({ history }) => {
   };
 
   const onClickEditStoreName = () => {
-    setStoreName(user.isSignin.data.storeName);
+    setStoreName(store.isSignin.data.storeName);
     setEditStoreName((prev) => !prev);
+  };
+
+  const onClickEditStoreDescription = () => {
+    setStoreDescription(store.isSignin.data.description);
+    setEditStoreDescription((prev) => !prev);
   };
 
   return (
     <Container>
       <UserStore>
         <div className="imgWrapper">
-          <img className="background_img" src={`${store.profileURL}`} />
+          <img
+            className="background_img"
+            src={`${store.isSignin.data.profileURL}`}
+          />
           <div className="background_img_wrapper"></div>
-          <img className="profile_img" src={`${store.profileURL}`} />
+          <img
+            className="profile_img"
+            src={`${store.isSignin.data.profileURL}`}
+          />
           <div className="store_name">
-            {user.isSignin && user.isSignin.data.storeName}
+            {store.isSignin && store.isSignin.data.storeName}
           </div>
           <div className="store_management">내 상점 관리</div>
         </div>
@@ -129,7 +145,7 @@ const MyShopPage = ({ history }) => {
           <div className="contents_store_name">
             {!editStoreName ? (
               <>
-                {user.isSignin && user.isSignin.data.storeName}&nbsp;&nbsp;
+                {store.isSignin && store.isSignin.data.storeName}&nbsp;&nbsp;
                 <button onClick={onClickEditStoreName}>상점명 수정</button>
               </>
             ) : (
@@ -154,11 +170,11 @@ const MyShopPage = ({ history }) => {
               &nbsp;&nbsp;
             </span>
             상점오픈일&nbsp;
-            <span>{oneDaysFormat(store.createdAt)}</span>
+            <span>{oneDaysFormat(store.isSignin.data.createdAt)}</span>
           </div>
           <div className="contents_store_desc">
             {!editStoreDescription ? (
-              <>{user.isSignin && user.isSignin.data.description}</>
+              <>{store.isSignin && store.isSignin.data.description}</>
             ) : (
               <>
                 <textarea
@@ -175,9 +191,7 @@ const MyShopPage = ({ history }) => {
             )}
           </div>
           {!editStoreDescription && (
-            <button onClick={() => setEditStoreDescription((prev) => !prev)}>
-              소개글 수정
-            </button>
+            <button onClick={onClickEditStoreDescription}>소개글 수정</button>
           )}
         </UserStoreContents>
       </UserStore>
@@ -198,7 +212,7 @@ const MyShopPage = ({ history }) => {
       <TabContent>
         <h3>{tabMenuName}</h3>
         <hr />
-        {tabMenu === 0 && <ShopProductsPage />}
+        {tabMenu === 0 && <ShopProductsPage products={products} />}
         {tabMenu === 1 && <ShopCommentsPage />}
         {tabMenu === 2 && <ShopFavoritesPage />}
         {tabMenu === 3 && <ShopReviewsPage />}

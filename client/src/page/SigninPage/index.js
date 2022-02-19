@@ -9,14 +9,14 @@ import { useCookies } from "react-cookie";
 import Cookies from "universal-cookie";
 
 const SigninPage = ({ history }) => {
-  const user = useSelector((state) => state.user);
+  const store = useSelector((state) => state.store);
 
   const passwordInput = useRef();
   const phoneNumberInput = useRef();
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState({ validate: false });
-  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
+  const [phoneNumber, setPhoneNumber] = useState(store.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
   const [showPassword, setShowPassword] = useState(false);
 
@@ -79,7 +79,7 @@ const SigninPage = ({ history }) => {
     setLoading(true);
 
     axios
-      .post("/user/signin", payload, {
+      .post("/store/signin", payload, {
         withCredentials: true,
       })
       .then((res) => {

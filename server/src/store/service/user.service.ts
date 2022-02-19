@@ -5,9 +5,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { UserRequestDto } from '../dto/user.request.dto';
-import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../model/user.model';
-import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { UserRepository } from '../repository/user.repository';
 
@@ -16,6 +14,10 @@ export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   private logger = new Logger('user');
+
+  async getDetailUser(id: string): Promise<User> {
+    return await this.userRepository.findUserByIdAndPopulate(id);
+  }
 
   // 상점명 변경
   async updateStoreName(id: string, storeName: string): Promise<User> {

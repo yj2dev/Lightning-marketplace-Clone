@@ -2,14 +2,14 @@ import { ConfigModule } from '@nestjs/config';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserController } from './user/controller/user.controller';
-import { UserService } from './user/service/user.service';
+import { StoreController } from './store/controller/store.controller';
+import { UserService } from './store/service/user.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
-import { UserModule } from './user/user.module';
+import { UserModule } from './store/user.module';
 import * as mongoose from 'mongoose';
-import { User, UserSchema } from './user/model/user.model';
-import { UserRepository } from './user/repository/user.repository';
+import { User, UserSchema } from './store/model/user.model';
+import { UserRepository } from './store/repository/user.repository';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { OauthModule } from './oauth/oauth.module';
@@ -17,6 +17,7 @@ import { SmsModule } from './sms/sms.module';
 import { RedisCacheModule } from './redis-cache/redis-cache.module';
 import { ProductImageModule } from './product-image/product-image.module';
 import { HashtagModule } from './hashtag/hashtag.module';
+import { StoreContactModule } from './store-contact/store-contact.module';
 
 @Module({
   imports: [
@@ -39,10 +40,12 @@ import { HashtagModule } from './hashtag/hashtag.module';
     OauthModule,
     SmsModule,
     RedisCacheModule,
+
     ProductImageModule,
     HashtagModule,
+    StoreContactModule,
   ],
-  controllers: [AppController, UserController],
+  controllers: [AppController, StoreController],
   providers: [AppService, UserService, UserRepository],
 })
 export class AppModule implements NestModule {

@@ -364,12 +364,12 @@ const ProductNewPage = ({ history }) => {
   };
 
   const imageList = useRef();
-  const user = useSelector((state) => state.user);
+  const store = useSelector((state) => state.store);
 
   useEffect(() => {
-    console.log("product new user >> ", user);
+    console.log("product new store >> ", store);
     // 보완 예정
-    if (!user.isSignin) {
+    if (!store.isSignin) {
       history.push("/");
     }
   }, []);

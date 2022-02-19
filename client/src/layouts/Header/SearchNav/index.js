@@ -28,7 +28,7 @@ const SearchNav = ({ history }) => {
 
   const [searchValue, setSearchValue] = useState("");
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
-  const user = useSelector((state) => state.user);
+  const store = useSelector((state) => state.store);
 
   const onCloseSigninModal = () => {};
 
@@ -47,16 +47,16 @@ const SearchNav = ({ history }) => {
     history.push("/");
   };
   const onClickSell = () => {
-    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    if (!store.isSignin) setShowSigninModal((prev) => !prev);
     else history.push("/product/new");
   };
   const onClickShop = () => {
-    console.log(user.isSignin);
-    if (!user.isSignin) setShowSigninModal((prev) => !prev);
-    else history.push(`/shop/${user.isSignin.data._id}`);
+    console.log(store.isSignin);
+    if (!store.isSignin) setShowSigninModal((prev) => !prev);
+    else history.push(`/shop/${store.isSignin.data._id}`);
   };
   const onClickTalk = () => {
-    if (!user.isSignin) setShowSigninModal((prev) => !prev);
+    if (!store.isSignin) setShowSigninModal((prev) => !prev);
     else history.push("/talk");
   };
 

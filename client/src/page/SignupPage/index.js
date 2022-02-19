@@ -8,13 +8,13 @@ import AuthNumberPage from "./Sections/AuthNumberPage";
 import { useSelector } from "react-redux";
 
 const SignupPage = ({ history }) => {
-  const user = useSelector((state) => state.user);
+  const store = useSelector((state) => state.store);
 
   const phoneNumberInput = useRef();
 
   const [authNumberPage, setAuthNumberPage] = useState(false);
 
-  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
+  const [phoneNumber, setPhoneNumber] = useState(store.phoneNumber);
   const [phoneNumberError, setPhoneNumberError] = useState({ validate: false });
 
   const [agreeMyPhone, setAgreeMyPhone] = useState(false);
