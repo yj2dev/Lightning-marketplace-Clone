@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { TagReposigory } from './tag.reposigory';
 
-@Module({})
+@Module({
+  providers: [TagReposigory],
+})
 export class TagModule {}

@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가">
-      <change afterPath="$PROJECT_DIR$/server/src/pollow/model/pollow.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/store-contact/model/store-contact.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="DB설계">
+      <change afterPath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/tag/tag.service.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/controller/store.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/controller/store.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.create.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.readonly.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/dto/user.request.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/model/user.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/repository/user.repository.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/service/user.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/service/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store/user.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/hashtag/hashtag.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/category/category.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/hashtag/model/hashtag.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/model/pollow.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/pollow/model/follow.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/model/tag-to-user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/model/tag.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,13 +128,6 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-    </task>
-    <task id="LOCAL-00011" summary="Interworking with the API of the transaction area foam &quot;Daum Road Name Address&quot;,&#10;Radio button design.">
-      <created>1643524313856</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1643524313856</updated>
     </task>
     <task id="LOCAL-00012" summary="checkbox design">
       <created>1643531415616</created>
@@ -477,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645248523344</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="DB설계">
+      <created>1645261615994</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1645261615994</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +491,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="비밀번호 생성규칙 적용" />
     <MESSAGE value="휴대폰 회원가입 로직 구현" />
     <MESSAGE value="휴대폰 회원가입 문자인증 사용자 동의버튼 추가" />
     <MESSAGE value="로그인, 로그아웃(쿠키 생성 및 제거)" />
@@ -521,7 +515,8 @@
     <MESSAGE value="로그인 안된 유저 로그인 모달 띄우기" />
     <MESSAGE value="상점명 변경 중복확인, 내상점 페이지 버그 보완" />
     <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
+    <MESSAGE value="DB설계" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB설계" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

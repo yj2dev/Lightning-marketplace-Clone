@@ -11,31 +11,22 @@ const options: SchemaOptions = {
 @Schema(options)
 export class Tag extends Document {
   @ApiProperty({
-    example: '620b828e1f6b15237478a8f9',
-    description: '상점문의 게시글이 작성되는 상점 아이디',
+    example: '#오렌지',
+    description: '태그명(중복가능)',
     required: true,
   })
-  @Prop({ type: Types.ObjectId, ref: 'users' })
+  @Prop({})
   @IsString()
   name: string;
 
   @ApiProperty({
     example: '620afacc4b13710ca520168e',
-    description: '상점문의 게시글 작성자',
+    description: '해당 태그를 사용한 상품게시글 아이디',
     required: true,
   })
-  @Prop({ type: Types.ObjectId, ref: 'users' })
+  @Prop({ type: Types.ObjectId, ref: 'products' })
   @IsString()
-  fromWriterId: Types.ObjectId;
-
-  @ApiProperty({
-    example: '상품이 정말 다양하네요',
-    description: '상점문의 게시글 내용',
-    required: true,
-  })
-  @Prop()
-  @IsString()
-  content: string;
+  toProductId: Types.ObjectId;
 }
 
 export const TagSchema = SchemaFactory.createForClass(Tag);

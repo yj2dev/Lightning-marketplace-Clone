@@ -9,24 +9,23 @@ const options: SchemaOptions = {
 };
 
 @Schema(options)
-export class TagToUser extends Document {
-  @ApiProperty({
-    example: '620b828e1f6b15237478a8f9',
-    description: '태그 아이디',
-    required: true,
-  })
-  @Prop({ type: Types.ObjectId, ref: 'users' })
-  @IsString()
-  tagId: string;
-
+export class Follow extends Document {
   @ApiProperty({
     example: '620afacc4b13710ca520168e',
-    description: '유저(상점) 아이디',
+    description: '팔로우 한 사람(팔로우 버튼을 누른사람)',
     required: true,
   })
   @Prop({ type: Types.ObjectId, ref: 'users' })
   @IsString()
-  userId: Types.ObjectId;
-}
+  fromUserId: Types.ObjectId;
 
-export const TagToUserSchema = SchemaFactory.createForClass(TagToUser);
+  @ApiProperty({
+    example: '620b828e1f6b15237478a8f9',
+    description: '팔로우 대상',
+    required: true,
+  })
+  @Prop({ type: Types.ObjectId, ref: 'users' })
+  @IsString()
+  toUserId: Types.ObjectId;
+}
+export const FollowSchema = SchemaFactory.createForClass(Follow);

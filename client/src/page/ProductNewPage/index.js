@@ -186,8 +186,9 @@ const ProductNewPage = ({ history }) => {
 
     const stringPayload = JSON.stringify(payload);
 
-    // console.log("submit payload >> ", payload);
+    console.log("submit payload >> ", payload);
     // console.log("submit stringPayload >> ", stringPayload);
+    // return;
 
     // 전송할 데이터 폼에 등록
     formData.append("data", stringPayload);

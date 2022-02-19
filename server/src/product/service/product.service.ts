@@ -18,6 +18,9 @@ export class ProductService {
     // 태그만 따로 추출 후 DB 저장
     const tags = productInfo.tag;
 
+    console.log(tags);
+    console.log(tags[0]);
+    console.log(tags[2]);
     delete productInfo['tag'];
 
     // 상품정보 저장 후 상품아이디를 받아온다.

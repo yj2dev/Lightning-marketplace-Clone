@@ -16,12 +16,12 @@ import { OauthModule } from './oauth/oauth.module';
 import { SmsModule } from './sms/sms.module';
 import { RedisCacheModule } from './redis-cache/redis-cache.module';
 import { ProductImageModule } from './product-image/product-image.module';
-import { HashtagModule } from './hashtag/hashtag.module';
 import { ProductContactModule } from './product-contact/product-contact.module';
 import { ProductFavoriteModule } from './product-favorite/product-favorite.module';
 import { StoreReviewModule } from './store-review/store-review.module';
 import { TagModule } from './tag/tag.module';
 import { PollowModule } from './pollow/pollow.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -45,12 +45,12 @@ import { PollowModule } from './pollow/pollow.module';
     SmsModule,
     RedisCacheModule,
     ProductImageModule,
-    HashtagModule,
     ProductContactModule,
     ProductFavoriteModule,
     StoreReviewModule,
     TagModule,
     PollowModule,
+    CategoryModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
