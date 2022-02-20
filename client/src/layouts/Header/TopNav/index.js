@@ -8,25 +8,22 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authUser } from "../../../_actions/user_actions";
+import AlertModal from "../../../components/AlertModal";
+import Modal from "../../../components/Modal";
+import { Space } from "../SearchNav/styled";
+import SignoutModal from "../../../components/SignoutModal";
 
 function TopNav({ history }) {
   const [showSigninModal, setShowSigninModal] = useState(false);
   const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
 
-  // 로그아웃
-  const onClickSignout = () => {
-    axios
-      .get("/user/signout", { withCredentials: true })
-      .then(({ data }) => {
-        if (data.success) {
-          dispatch(authUser());
-        }
-        history.push("/");
-      })
-      .catch((err) => {
-        console.error("err >> ", err);
-      });
+  const [showSignoutModal, setShowSignoutModal] = useState(false);
+
+  const onShowSignoutModal = () => {
+    setShowSignoutModal((prev) => !prev);
+  };
+  const onCloseSignoutModal = () => {
+    setShowSignoutModal(false);
   };
 
   const onCloseSigninModal = () => {
@@ -74,7 +71,10 @@ function TopNav({ history }) {
         </div>
         <div className="right">
           {user.isSignin ? (
-            <button onClick={onClickSignout} style={{ marginRight: "16px" }}>
+            <button
+              onClick={onShowSignoutModal}
+              style={{ marginRight: "16px" }}
+            >
               로그아웃
             </button>
           ) : (
@@ -85,6 +85,10 @@ function TopNav({ history }) {
           <button onClick={onToggleSignin}>내상점</button>
         </div>
       </Container>
+      <SignoutModal
+        show={showSignoutModal}
+        close={onCloseSignoutModal}
+      ></SignoutModal>
       <SigninModal
         show={showSigninModal}
         close={onCloseSigninModal}

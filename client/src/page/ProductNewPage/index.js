@@ -35,6 +35,7 @@ import Modal from "../../components/Modal";
 import { useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
 import { ProductManagePage } from "../ProductManagePage";
+import AlertModal from "../../components/AlertModal";
 
 const ProductNewPage = ({ history }) => {
   const MAX_IMAGE = 12;
@@ -632,13 +633,16 @@ const ProductNewPage = ({ history }) => {
               지역설정안함
             </button>
             <input type="text" disabled={true} value={address} />
-            <Modal
+            <AlertModal
               show={showPostcodeModal}
               close={onClosePostcodeModal}
+              useCancelButton={false}
+              useSubmitButton={false}
+              useCloseButton={false}
               style={{ width: "450px" }}
             >
               <DaumPostcode onComplete={handleComplete} />
-            </Modal>
+            </AlertModal>
           </TrandingArea>
         </tr>
 

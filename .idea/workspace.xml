@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품관리 페이지 테이블 디자인">
-      <change afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품제거, 상품 상태변경 로직 추가">
+      <change afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tag/tag.reposigory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -58,11 +57,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\public\img" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-contact" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -124,14 +123,7 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-      <workItem from="1645297911484" duration="16161000" />
-    </task>
-    <task id="LOCAL-00015" summary="Tag duplicate check bug fix (remove tag blanks), Sales amount applied in Korean currency.">
-      <created>1643566185000</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1643566185000</updated>
+      <workItem from="1645297911484" duration="21353000" />
     </task>
     <task id="LOCAL-00016" summary="NewProductPage validate Completion">
       <created>1643570747124</created>
@@ -469,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645306879640</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="상품제거, 상품 상태변경 로직 추가">
+      <created>1645319595676</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1645319595676</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="쿠키는 생성되나 CORS 에러 미해결" />
     <MESSAGE value="SSL(HTTPS) 적용" />
     <MESSAGE value="client도 SSL(HTTPS) 적용" />
     <MESSAGE value="백엔드서버 인증서 변경" />
@@ -513,7 +511,8 @@
     <MESSAGE value="tag 중간테이블 제거" />
     <MESSAGE value="상품관리 페이지 설계" />
     <MESSAGE value="상품관리 페이지 테이블 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품관리 페이지 테이블 디자인" />
+    <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품제거, 상품 상태변경 로직 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

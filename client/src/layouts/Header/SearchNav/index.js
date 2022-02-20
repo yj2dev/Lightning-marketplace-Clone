@@ -30,8 +30,6 @@ const SearchNav = ({ history }) => {
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
   const user = useSelector((state) => state.user);
 
-  const onCloseSigninModal = () => {};
-
   const onChangeSearchValue = (e) => {
     if (e.target.value !== "") setShowDeleteSearch(true);
     else setShowDeleteSearch(false);

@@ -10,20 +10,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
   cursor: default;
 `;
 
 export const ModalContainer = styled.div`
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   color: #000;
-  border: 1px solid #808e9b;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  box-shadow: 0px 0px 5px 1px #7f8fa6;
-  min-width: 400px;
-  max-width: 600px;
+  border-radius: 4px;
+  background-color: #fbfbfb;
+  box-shadow: 0px 0px 5px 1px #a1a6ab;
+  padding: 16px;
+  min-width: 260px;
+  max-width: 360px;
 `;
 
 export const CloseButton = styled.button`
@@ -37,104 +36,51 @@ export const CloseButton = styled.button`
   padding: 0 8px;
   color: #9b9c9c;
   height: 32px;
-  /* transition-property: background-color;
-  transition-duration: 0.2s; */
   overflow: hidden;
-
-  &:hover {
-    color: #fff;
-    background-color: #e81123;
-    border-radius: 0 5px 0 0;
-  }
-
-  &:active {
-    color: #fff;
-    background-color: #f1707a;
-    border-radius: 0 5px 0 0;
-  }
 `;
 
-export const ModalHeader = styled.div`
-  color: #000;
-  background-color: #fff;
-  width: 100%;
-  height: 32px;
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  font-size: 16px;
-  align-items: center;
-`;
-
-export const ModalNotice = styled.div`
-  border: 1px solid red;
-  border-width: 1px 0 1px 0;
-  background-color: #ffe7e5;
-  color: #dd5b63;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+export const TitleContainer = styled.div`
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
 `;
 
 export const ContentContainer = styled.div`
-  border: 1px solid #e7e7e7;
-  padding: 24px;
-  margin: 5px;
-  border-radius: 5px;
-  background-color: #fff;
-`;
-
-export const ModalTitle = styled.div`
-  color: #000;
-  font-weight: 800;
-  font-size: 24px;
-  margin-bottom: 4px;
-`;
-
-export const ModalContent = styled.div`
-  color: #000;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
 `;
 
 export const ButtonContainer = styled.div`
-  margin: 5px;
+  margin-top: 16px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  gap: 16px;
+  & button {
+    border: none;
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 `;
 
 export const SubmitButton = styled.button`
+  background-color: #ff5058;
+  color: #ffffff;
   font-weight: 800;
-  width: 80px;
-  height: 30px;
-  border-radius: 3px;
-  background: #cce6ff;
-  border: 1px solid #c3cfe0;
-  transition: 0.1s;
+
   &:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 5px 1px #73b7fa inset;
-  }
-  &:active {
-    background: #73b7fa;
-    color: #fff;
+    background-color: #ff3039;
   }
 `;
 
 export const CancelButton = styled.button`
-  font-weight: 800;
-  width: 80px;
-  height: 30px;
-  border-radius: 3px;
-  background: #ffe3de;
-  border: 1px solid #c3cfe0;
-  transition: 0.1s;
-  margin-right: 10px;
+  background-color: #f4f4fa;
+  color: #72707f;
+
   &:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 5px 1px #ff9785 inset;
-  }
-  &:active {
-    background: #ff9785;
-    color: #fff;
+    background-color: #eeeeee;
+    color: #000000;
   }
 `;
