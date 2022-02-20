@@ -40,9 +40,10 @@ export const CloseButton = styled.button`
 `;
 
 export const TitleContainer = styled.div`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   text-align: center;
+  margin-bottom: 16px;
 `;
 
 export const ContentContainer = styled.div`

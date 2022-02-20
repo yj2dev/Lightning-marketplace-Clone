@@ -27,8 +27,14 @@ function SignoutModal({ show, close, history }) {
 
   return (
     <Container>
-      <AlertModal show={show} close={close}>
-        asdasd
+      <AlertModal
+        show={show}
+        close={close}
+        title="로그아웃"
+        useCloseButton={false}
+        confirm={signout}
+      >
+        계정을 로그아웃 하시겠습니까?
       </AlertModal>
     </Container>
   );

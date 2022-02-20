@@ -4,13 +4,9 @@ import SigninModal from "../../../components/SigninModal";
 import { Container, MarketIcon, AppDownloadButton } from "./styled";
 import { AiFillStar } from "react-icons/ai";
 import { BsFillLightningChargeFill } from "react-icons/bs";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { authUser } from "../../../_actions/user_actions";
-import AlertModal from "../../../components/AlertModal";
-import Modal from "../../../components/Modal";
-import { Space } from "../SearchNav/styled";
+import { useSelector } from "react-redux";
+
 import SignoutModal from "../../../components/SignoutModal";
 
 function TopNav({ history }) {

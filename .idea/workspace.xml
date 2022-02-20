@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품제거, 상품 상태변경 로직 추가">
-      <change afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="알림, 확인창 모달 디자인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductNewPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +120,7 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-      <workItem from="1645297911484" duration="21353000" />
-    </task>
-    <task id="LOCAL-00016" summary="NewProductPage validate Completion">
-      <created>1643570747124</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1643570747124</updated>
+      <workItem from="1645297911484" duration="21561000" />
     </task>
     <task id="LOCAL-00017" summary="Waiting for the mobile phone identification code to connect to the merchant identification code.">
       <created>1643649012075</created>
@@ -468,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645319595676</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="알림, 확인창 모달 디자인">
+      <created>1645332811017</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1645332811017</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="SSL(HTTPS) 적용" />
     <MESSAGE value="client도 SSL(HTTPS) 적용" />
     <MESSAGE value="백엔드서버 인증서 변경" />
     <MESSAGE value="유저 로그인, 로그아웃 구현" />
@@ -512,7 +508,8 @@
     <MESSAGE value="상품관리 페이지 설계" />
     <MESSAGE value="상품관리 페이지 테이블 디자인" />
     <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품제거, 상품 상태변경 로직 추가" />
+    <MESSAGE value="알림, 확인창 모달 디자인" />
+    <option name="LAST_COMMIT_MESSAGE" value="알림, 확인창 모달 디자인" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
