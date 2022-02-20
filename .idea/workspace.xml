@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="알림, 확인창 모달 디자인">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그아웃 확인 모달창 적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignoutModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/Time.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/Time.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.service.spec.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +120,7 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-      <workItem from="1645297911484" duration="21561000" />
-    </task>
-    <task id="LOCAL-00017" summary="Waiting for the mobile phone identification code to connect to the merchant identification code.">
-      <created>1643649012075</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1643649012075</updated>
+      <workItem from="1645297911484" duration="26295000" />
     </task>
     <task id="LOCAL-00018" summary="Kakao OAuth failed to get the token.">
       <created>1643684393462</created>
@@ -465,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645332811017</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="로그아웃 확인 모달창 적용">
+      <created>1645333021990</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1645333021990</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="client도 SSL(HTTPS) 적용" />
     <MESSAGE value="백엔드서버 인증서 변경" />
     <MESSAGE value="유저 로그인, 로그아웃 구현" />
     <MESSAGE value="페이지 권한 분기처리(로그인 여부)" />
@@ -509,7 +508,8 @@
     <MESSAGE value="상품관리 페이지 테이블 디자인" />
     <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
     <MESSAGE value="알림, 확인창 모달 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="알림, 확인창 모달 디자인" />
+    <MESSAGE value="로그아웃 확인 모달창 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그아웃 확인 모달창 적용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

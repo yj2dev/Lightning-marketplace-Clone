@@ -2,12 +2,25 @@ import { Container, ProductTable } from "./styled";
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import { timeFormat } from "../../utils/Time";
+import { timeFormat, timeKrFormat } from "../../utils/Time";
 import { intOfKr } from "../../utils/Currency";
-import { logDOM } from "@testing-library/react";
+import AlertModal from "../../components/AlertModal";
 
 export const ProductManagePage = ({ history }) => {
   const [products, setProducts] = useState();
+
+  const [showAlertModal, setShowAlertModal] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+
+  const onCloseAlertModal = () => {
+    setShowAlertModal(false);
+  };
+
+  // 알림 모달창 띄우는 함수
+  const onShowAlertModal = (message) => {
+    setAlertMessage(message);
+    setShowAlertModal(true);
+  };
 
   useEffect(() => {
     axios
@@ -23,19 +36,13 @@ export const ProductManagePage = ({ history }) => {
   }, []);
 
   function deleteProduct(productId, state) {
-    // if (confirm("해당 상품을 정말 삭제하시겠습니까?")) {
-    //   console.log("Yes");
-    // } else {
-    //   console.log("noooo..");
-    // }
-    console.log("삭제 시도");
-
     axios
       .delete(`/product?productId=${productId}&state=${state}`)
       .then((res) => {
         console.log("res >> ", res);
         history.push("/product/new");
         history.push("/product/manage");
+
         alert("상품이 제거되었습니다.");
       })
       .catch((err) => {
@@ -58,7 +65,9 @@ export const ProductManagePage = ({ history }) => {
       .patch("/product/state", { productId, state })
       .then((res) => {
         console.log("res >> ", res);
-        alert("판매상태가 변경되었습니다.");
+        history.push("/product/manage");
+
+        onShowAlertModal("판매상태가 변경되었습니다.");
       })
       .catch((err) => {
         console.log("err >> ", err);
@@ -98,7 +107,6 @@ export const ProductManagePage = ({ history }) => {
                   <img width="200px" src={product.thumbnailImgURL} />
                 </td>
                 <td>
-                  {product.state}
                   <select name="sell_state" onChange={onChangeSellState}>
                     <option
                       value={`${product._id}/selling`}
@@ -131,11 +139,20 @@ export const ProductManagePage = ({ history }) => {
                 <td>
                   {0}/{0}
                 </td>
-                <td>{timeFormat(product.updatedAt)}</td>
+                <td>{timeKrFormat(product.updatedAt)}</td>
               </tr>
             ))}
         </tbody>
       </ProductTable>
+      <AlertModal
+        show={showAlertModal}
+        close={onCloseAlertModal}
+        useCloseButton={false}
+        useCancelButton={false}
+        useSubmitButton={false}
+      >
+        {alertMessage}
+      </AlertModal>
     </Container>
   );
 };

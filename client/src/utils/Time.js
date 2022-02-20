@@ -34,8 +34,26 @@ export function oneDaysFormat(getDate) {
   return `${Math.floor(days)}일 전`;
 }
 
+// 날짜를 보기 좋은 형태로 변환
+// EX) 2022-02-20 05:17:43
 export function timeFormat(getDate) {
+  console.log("get data >> ", getDate);
   return getDate.replace("T", " ").substring(0, 19);
+}
+
+// 날짜를 보기 좋은 형태로 변환 (한국 시간으로 표기), 9시간 추가
+// 1000(1초), 1000 * 60(1분), 1000 * 60 * 60(1시간), 1000 * 60 * 60 * 24(1일/24시간)
+export function timeKrFormat(getDate) {
+  // 9시간
+  const ADD_TIME = 1000 * 60 * 60 * 9;
+
+  let parseTime = Date.parse(getDate);
+  parseTime += ADD_TIME;
+
+  const newDate = new Date(parseTime);
+  const ISODate = newDate.toISOString();
+
+  return ISODate.replace("T", " ").substring(0, 19);
 }
 
 export function changeTime(getDate) {

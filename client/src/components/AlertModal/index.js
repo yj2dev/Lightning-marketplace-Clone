@@ -17,7 +17,7 @@ function AlertModal({
   close,
   style,
   title,
-  useOutside,
+  useOutsideClose,
   useCloseButton,
   useSubmitButton,
   useCancelButton,
@@ -33,7 +33,7 @@ function AlertModal({
   }
 
   return (
-    <Container onClick={useOutside ? close : null}>
+    <Container onClick={useOutsideClose ? close : null}>
       <ModalContainer onClick={stopPropagation} style={style}>
         {useCloseButton && <CloseButton onClick={close}>&times;</CloseButton>}
         <TitleContainer>{title}</TitleContainer>
@@ -50,7 +50,7 @@ function AlertModal({
 }
 
 AlertModal.defaultProps = {
-  useOutside: true,
+  useOutsideClose: true,
   useCloseButton: true,
   useSubmitButton: true,
   useCancelButton: true,
@@ -63,7 +63,7 @@ AlertModal.propTypes = {
   close: PropTypes.func,
   style: PropTypes.any,
   title: PropTypes.string,
-  useOutside: PropTypes.bool,
+  useOutsideClose: PropTypes.bool,
   useCloseButton: PropTypes.bool,
   useSubmitButton: PropTypes.bool,
   useCancelButton: PropTypes.bool,
