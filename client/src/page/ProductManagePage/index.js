@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { timeFormat } from "../../utils/Time";
 import { intOfKr } from "../../utils/Currency";
+import { logDOM } from "@testing-library/react";
 
 export const ProductManagePage = ({ history }) => {
   const [products, setProducts] = useState();
@@ -20,6 +21,49 @@ export const ProductManagePage = ({ history }) => {
         console.log("err >> ", err);
       });
   }, []);
+
+  function deleteProduct(productId, state) {
+    // if (confirm("해당 상품을 정말 삭제하시겠습니까?")) {
+    //   console.log("Yes");
+    // } else {
+    //   console.log("noooo..");
+    // }
+    console.log("삭제 시도");
+
+    axios
+      .delete(`/product?productId=${productId}&state=${state}`)
+      .then((res) => {
+        console.log("res >> ", res);
+        history.push("/product/new");
+        history.push("/product/manage");
+        alert("상품이 제거되었습니다.");
+      })
+      .catch((err) => {
+        console.log("err >> ", err);
+      });
+  }
+
+  // 판매상태 변경시 서버에 변경 요청
+  const onChangeSellState = (e) => {
+    const [productId, state] = e.target.value.split("/");
+
+    console.log(productId, state);
+
+    if (state === "delete") {
+      deleteProduct(productId, state);
+      return;
+    }
+
+    axios
+      .patch("/product/state", { productId, state })
+      .then((res) => {
+        console.log("res >> ", res);
+        alert("판매상태가 변경되었습니다.");
+      })
+      .catch((err) => {
+        console.log("err >> ", err);
+      });
+  };
 
   return (
     <Container>
@@ -49,16 +93,37 @@ export const ProductManagePage = ({ history }) => {
         <tbody>
           {products &&
             products.map((product) => (
-              <tr>
+              <tr key={product._id}>
                 <td>
                   <img width="200px" src={product.thumbnailImgURL} />
                 </td>
                 <td>
-                  <select name="sell_state" id="">
-                    <option value="selling">판매중</option>
-                    <option value="reserving">예약중</option>
-                    <option value="soldout">판매완료</option>
-                    <option value="delete">삭제</option>
+                  {product.state}
+                  <select name="sell_state" onChange={onChangeSellState}>
+                    <option
+                      value={`${product._id}/selling`}
+                      selected={product.state === "selling" ? true : false}
+                    >
+                      판매중
+                    </option>
+                    <option
+                      value={`${product._id}/reserving`}
+                      selected={product.state === "reserving" ? true : false}
+                    >
+                      예약중
+                    </option>
+                    <option
+                      value={`${product._id}/soldout`}
+                      selected={product.state === "soldout" ? true : false}
+                    >
+                      판매완료
+                    </option>
+                    <option
+                      value={`${product._id}/delete`}
+                      selected={product.state === "delete" ? true : false}
+                    >
+                      삭제
+                    </option>
                   </select>
                 </td>
                 <td>{product.title}</td>

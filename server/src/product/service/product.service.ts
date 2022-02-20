@@ -10,10 +10,38 @@ export class ProductService {
     private readonly tagRepository: TagRepository,
   ) {}
 
+  // 상품 물리적 제거(Hard Delete), 연결된 태그도 제거
+  async deleteHardProduct(productId: string): Promise<boolean> {
+    const deleteProductResult = await this.productRepository.deleteHardProduct(
+      productId,
+    );
+
+    // 삭제가 잘 되지 않았으면 에러 발생
+    if (!deleteProductResult)
+      throw new HttpException('상품 제거에 실패했습니다.', 409);
+
+    const deleteTagsResult = await this.tagRepository.deleteTagsByProductId(
+      productId,
+    );
+
+    // 태그가 제거되지 않았으면 애러 발생
+    if (!deleteTagsResult)
+      throw new HttpException('상품에 등록된 태그 제거에 실패했습니다.', 409);
+
+    return true;
+  }
+
+  // 상품의 상태필드 수정하기
+  async updateProductState(productId: string, state: string): Promise<Product> {
+    return await this.productRepository.updateProduct(productId, { state });
+  }
+
+  // 하나의 상품만 가져오기
   async getOneProduct(productId: string): Promise<Product> {
     return await this.productRepository.findByIdAndPopulate(productId);
   }
 
+  // 모든 상품 가져오기
   async getAllProduct() {
     return await this.productRepository.getAllProduct();
   }

@@ -1,12 +1,15 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
+  Patch,
   Post,
   UploadedFiles,
   UseGuards,
   UseInterceptors,
+  Query,
 } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/guard/jwt.guard';
 import { CurrentUser } from '../../common/decorators/user.decorator';
@@ -19,18 +22,38 @@ import { Product } from '../model/product.model';
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
-  @Get('/all')
+
+  @Delete('')
+  @UseGuards(JwtAuthGuard)
+  async deleteProduct(
+    @Query('productId') productId: string,
+    @Query('state') state: string,
+  ): Promise<boolean> {
+    return await this.productService.deleteHardProduct(productId);
+  }
+
+  @Patch('state')
+  @UseGuards(JwtAuthGuard)
+  async updateProductState(
+    @Body('productId') productId: string,
+    @Body('state') state: string,
+  ): Promise<Product> {
+    console.log(productId, state);
+    return await this.productService.updateProductState(productId, state);
+  }
+
+  @Get('all')
   async getAllProduct() {
     return this.productService.getAllProduct();
   }
 
-  @Get('/detail/:productId')
+  @Get('detail/:productId')
   async getOneProduct(@Param('productId') productId: string): Promise<Product> {
     console.log('productId >> ', productId);
     return await this.productService.getOneProduct(productId);
   }
 
-  @Post('/upload')
+  @Post('upload')
   @UseGuards(JwtAuthGuard)
   @UseInterceptors(
     FilesInterceptor('image', 12, multerOptions('product_image')),

@@ -20,4 +20,16 @@ export class TagRepository {
       return false;
     }
   }
+
+  // 상점아이디로 태그 제거
+  async deleteTagsByProductId(productId: string): Promise<boolean> {
+    try {
+      const result = await this.tag.deleteMany({ toProductId: productId });
+      console.log('[delete tags] result >> ', result);
+
+      return true;
+    } catch {
+      return false;
+    }
+  }
 }

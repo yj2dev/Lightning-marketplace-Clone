@@ -10,6 +10,22 @@ const options: SchemaOptions = {
 
 @Schema(options)
 export class Product extends Document {
+  // enum의 delete는 논리삭제시 사용할 생각이지만 현재는 물리삭제로 구현되어 있다.
+  @ApiProperty({
+    example: 'selling',
+    description:
+      '판매상태: selling(판매중), reserving(예약중), soldout(판매완료) 3가지 타입의 문자열만 입력가능 ',
+    required: true,
+  })
+  @Prop({
+    required: true,
+    enum: ['selling', 'reserving', 'soldout', 'delete'],
+    default: 'selling',
+  })
+  @IsString()
+  @IsNotEmpty()
+  state: string;
+
   @ApiProperty({
     example: 'new ObjectId("62081b8ef29f8da07a084ad1")',
     description: '상품을 등록한 유저 아이디(상점 아이디)',

@@ -18,6 +18,29 @@ export class ProductRepository {
     private readonly productImage: Model<ProductImage>,
   ) {}
 
+  // 상품 제거(물리적 제거
+  async deleteHardProduct(productId): Promise<any> {
+    const result = await this.product.deleteOne({ _id: productId });
+    console.log('result >> ', result);
+
+    return result;
+  }
+
+  // 상품 필드 부분 수정
+  async updateProduct(productId, field: object): Promise<Product> {
+    console.log('repo');
+    console.log(productId, field);
+    const result = await this.product.findOneAndUpdate(
+      { _id: productId },
+      { ...field },
+      { new: true },
+    );
+    console.log('result >> ', result);
+
+    return result;
+  }
+
+  // 상품과 관련된 모든 스키마 조인하기
   async findByIdAndPopulate(id: string): Promise<Product> {
     const ProductImageModel = mongoose.model(
       'productimages',
@@ -35,6 +58,7 @@ export class ProductRepository {
     return result;
   }
 
+  // 전체 상품 목록 조회
   async getAllProduct() {
     return this.product.find();
   }
