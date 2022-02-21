@@ -60,6 +60,7 @@ const UserPasswordPage = () => {
   };
 
   const onChangePassword = (e) => {
+    // 영어 알파벳, 숫자, 특수기호 반드시 1개 이상 입력
     const regex =
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*()+|=])[A-Za-z\d~!@#$%^&*()+|=]{8,16}$/;
 

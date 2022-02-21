@@ -13,7 +13,6 @@ import {
   ProductQuantity,
   ErrorMessage,
   ProductImgSection,
-  DaumPostcodeWrapper,
   SubmitSection,
 } from "./styled";
 
@@ -23,7 +22,6 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { BsCheck } from "react-icons/bs";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import UploadProductImage from "./Section/UploadProductImage";
 import { Route, Switch, useLocation, withRouter } from "react-router-dom";
 import {
   ProductLargeCategory,
@@ -31,10 +29,8 @@ import {
   ProductSmallCategory,
 } from "../../data/ProductCategory";
 import DaumPostcode from "react-daum-postcode";
-import Modal from "../../components/Modal";
 import { useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
-import { ProductManagePage } from "../ProductManagePage";
 import AlertModal from "../../components/AlertModal";
 
 const ProductNewPage = ({ history }) => {

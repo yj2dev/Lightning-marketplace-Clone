@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 export const SettingTabMenu = styled.div`
   color: #000000;
@@ -24,5 +27,45 @@ export const SettingTabMenu = styled.div`
   }
   & li:last-child {
     border: none;
+  }
+`;
+
+export const SettingCommonSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 32px 0;
+
+  & label {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  & input {
+    width: 365px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #a4a4a4;
+    margin-bottom: 16px;
+  }
+
+  & button {
+    width: 400px;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    background-color: #ff5058;
+  }
+
+  & button:hover {
+    cursor: pointer;
+    background-color: #ff3039;
   }
 `;

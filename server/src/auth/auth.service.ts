@@ -15,6 +15,10 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  // 계정 확인(비밀번호 변경시 사용)
+  async jwtCheckAccount(userSigninDto: UserSigninDto) {}
+
+  // 로그인
   async jwtSignin(userSigninDto: UserSigninDto) {
     const { phoneNumber, password } = userSigninDto;
 

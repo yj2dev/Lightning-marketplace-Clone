@@ -18,6 +18,7 @@ function SignoutModal({ show, close, history }) {
         if (data.success) {
           dispatch(authUser());
         }
+        close();
         history.push("/");
       })
       .catch((err) => {

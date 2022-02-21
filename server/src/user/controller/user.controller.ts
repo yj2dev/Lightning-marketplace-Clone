@@ -13,6 +13,7 @@ import {
   Req,
   Put,
   Patch,
+  Delete,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from '../service/user.service';
@@ -37,6 +38,24 @@ export class UserController {
     private readonly userService: UserService,
     private readonly authService: AuthService,
   ) {}
+
+  @ApiOperation({ summary: '회원탈퇴' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Delete('account')
+  async deleteAccount(@CurrentUser() currentUser): Promise<User> {
+    return await this.userService.getDetailUser(currentUser._id);
+  }
+
+  @ApiOperation({ summary: '유저 비밀번호 변경' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Patch('password')
+  async updatePassword(@CurrentUser() currentUser): Promise<User> {
+    return await this.userService.getDetailUser(currentUser._id);
+  }
 
   @ApiOperation({ summary: '유저와 연관된 모든 정보 요청' })
   @ApiResponse({ status: 200, description: '성공' })

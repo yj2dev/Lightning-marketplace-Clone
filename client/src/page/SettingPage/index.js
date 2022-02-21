@@ -5,33 +5,32 @@ import SignoutPage from "./Section/SignoutPage";
 import UpdatePasswordPage from "./Section/UpdatePasswordPage";
 import DeleteMyAccountPage from "./Section/DeleteMyAccountPage";
 
-export const SettingPage = ({ history }) => {
-  const TAB_MENU = ["로그아웃", "비밀번호 변경", "회원탈퇴"];
+export const SettingPage = () => {
   const [tabIndex, setTabIndex] = useState(0);
-
-  useEffect(() => {
-    TAB_MENU.forEach((v, i) => {
-      console.log(v, i);
-    });
-  }, []);
 
   return (
     <Container>
       <SettingTabMenu>
         <ul>
-          {TAB_MENU &&
-            TAB_MENU.forEach((menu, index) => (
-              <div>
-                asdsafffaesdf
-                <li>{menu}</li>
-              </div>
-            ))}
+          <li
+            onClick={() => setTabIndex(0)}
+            className={tabIndex === 0 && "active"}
+          >
+            로그아웃
+          </li>
+          <li
+            onClick={() => setTabIndex(1)}
+            className={tabIndex === 1 && "active"}
+          >
+            비밀번호 변경
+          </li>
+          <li
+            onClick={() => setTabIndex(2)}
+            className={tabIndex === 2 && "active"}
+          >
+            회원탈퇴
+          </li>
         </ul>
-        {/*<li onClick={() => setTabIndex(0)} className={tabIndex === }>*/}
-        {/*  로그아웃*/}
-        {/*</li>*/}
-        {/*<li onClick={() => setTabIndex(1)}>비밀번호 변경</li>*/}
-        {/*<li onClick={() => setTabIndex(2)}>회원탈퇴</li>*/}
       </SettingTabMenu>
       {tabIndex === 0 && <SignoutPage />}
       {tabIndex === 1 && <UpdatePasswordPage />}
@@ -40,4 +39,4 @@ export const SettingPage = ({ history }) => {
   );
 };
 
-export default withRouter(SettingPage);
+export default SettingPage;

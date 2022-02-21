@@ -91,6 +91,7 @@ const SigninPage = ({ history }) => {
       })
       .catch((err) => {
         setLoading(false);
+        setPasswordError({ validate: true });
         console.error("err >> ", err);
       });
   };

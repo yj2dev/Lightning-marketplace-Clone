@@ -101,10 +101,7 @@ function TopNav({ history }) {
           )}
           {user.isSignin ? (
             <>
-              <button
-                onClick={onToggleSignin}
-                onMouseEnter={() => console.log("enter...")}
-              >
+              <button onClick={onToggleSignin}>
                 <AlignCenter>
                   내상점&nbsp;
                   <AiFillCaretDown />
