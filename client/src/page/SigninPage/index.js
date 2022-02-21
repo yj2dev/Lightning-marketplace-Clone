@@ -5,8 +5,6 @@ import axios from "axios";
 import BeatLoader from "react-spinners/BeatLoader";
 import { useSelector } from "react-redux";
 import { BiHide, BiShow } from "react-icons/bi";
-import { useCookies } from "react-cookie";
-import Cookies from "universal-cookie";
 
 const SigninPage = ({ history }) => {
   const user = useSelector((state) => state.user);

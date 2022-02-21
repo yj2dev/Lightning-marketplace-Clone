@@ -48,7 +48,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 `;
 

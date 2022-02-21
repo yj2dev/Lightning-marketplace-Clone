@@ -15,12 +15,11 @@ export const UpdatePasswordPage = ({ history }) => {
   const [passwordError, setPasswordError] = useState({ validate: false });
   const [passwordCheck, setPasswordCheck] = useState("");
   const [passwordCheckError, setPasswordCheckError] = useState({
-    wrong: false,
+    incorrect: false,
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordCheck, setShowPasswordCheck] = useState(false);
 
-  const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -76,10 +75,10 @@ export const UpdatePasswordPage = ({ history }) => {
     if (password !== passwordCheck) {
       // 일치하지 않으면
       result = false;
-      setPasswordCheckError({ wrong: true });
+      setPasswordCheckError({ incorrect: true });
     } else {
       // 일치하면
-      setPasswordCheckError({ wrong: false });
+      setPasswordCheckError({ incorrect: false });
     }
 
     return result;
@@ -144,6 +143,7 @@ export const UpdatePasswordPage = ({ history }) => {
         <input
           type="password"
           value={currentPassword}
+          placeholder="현재 비밀번호를 입력해주세요."
           onChange={(e) => setCurrentPassword(e.target.value)}
         />
         {passwordError.validate ? (
@@ -153,8 +153,13 @@ export const UpdatePasswordPage = ({ history }) => {
         ) : (
           <label>변경할 비밀번호</label>
         )}
-        <input type="password" value={password} onChange={onChangePassword} />
-        {passwordCheckError.wrong ? (
+        <input
+          type="password"
+          value={password}
+          onChange={onChangePassword}
+          placeholder="변경할 비밀번호를 입력해주세요."
+        />
+        {passwordCheckError.incorrect ? (
           <label style={{ color: "red" }}>
             변경할 비밀번호가 일치하지 않습니다.
           </label>
@@ -164,13 +169,10 @@ export const UpdatePasswordPage = ({ history }) => {
         <input
           type="password"
           value={passwordCheck}
+          placeholder="변경할 비밀번호를 한번 더 입력해주세요."
           onChange={onChangePasswordCheck}
         />
-        <button
-          onClick={onSubmitUpdatePassword}
-          id={submitButton && "active"}
-          disabled={loading && true}
-        >
+        <button onClick={onSubmitUpdatePassword} disabled={loading}>
           {!loading && "비밀번호 변경"}
           <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
         </button>

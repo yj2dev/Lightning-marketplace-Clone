@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그인 페이지 수정, 설정페이지 컴포넌트 생성">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="비밀번호 변경 로직 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SettingPage/Section/DeleteMyAccountPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/DeleteMyAccountPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/SettingPage/Section/UpdatePasswordPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/UpdatePasswordPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SigninPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
@@ -122,14 +124,7 @@
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
       <workItem from="1645297911484" duration="37393000" />
-      <workItem from="1645393628648" duration="26817000" />
-    </task>
-    <task id="LOCAL-00022" summary="memory-cache sample">
-      <created>1643981697565</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1643981697565</updated>
+      <workItem from="1645393628648" duration="33989000" />
     </task>
     <task id="LOCAL-00023" summary="Naver SMS API connection success">
       <created>1644027445995</created>
@@ -467,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645421203549</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="비밀번호 변경 로직 구현">
+      <created>1645430423221</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1645430423221</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +488,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품 이미지 저장" />
     <MESSAGE value="상품 등록, 상품 이미지 등록, 해시태그 미완성" />
     <MESSAGE value="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용" />
     <MESSAGE value="상품과 상품이미지 populate 성공" />
@@ -511,7 +512,8 @@
     <MESSAGE value="컴포넌트간에 z-index 값 재정리" />
     <MESSAGE value="동작안하는 랜더링 코드 예제1" />
     <MESSAGE value="로그인 페이지 수정, 설정페이지 컴포넌트 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인 페이지 수정, 설정페이지 컴포넌트 생성" />
+    <MESSAGE value="비밀번호 변경 로직 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 변경 로직 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

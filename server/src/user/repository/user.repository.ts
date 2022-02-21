@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../model/user.model';
 import { Model } from 'mongoose';
-import { UserRequestDto } from '../dto/user.request.dto';
 import { UserCreateDto } from '../dto/user.create.dto';
 import { ProductSchema } from '../../product/model/product.model';
 import * as mongoose from 'mongoose';
@@ -11,7 +10,13 @@ import * as mongoose from 'mongoose';
 export class UserRepository {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
 
-  // 유저 아이디로 필요한 모든 스키마 항목 병합(populate OR join)하기
+  // 유저 제거(게시물은 남겨두고 유저만 회원탈퇴 진행)
+  async deleteUser(id: string) {
+    const result = await this.user.deleteOne({ _id: id });
+    return result;
+  }
+
+  // 유저 아이디로 필요한 모든 스키마 항목 병합(populate == join)하기
   async findUserByIdAndPopulate(id: string): Promise<User | null> {
     const ProductModel = mongoose.model('products', ProductSchema);
 

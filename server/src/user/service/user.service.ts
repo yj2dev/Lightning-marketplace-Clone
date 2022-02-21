@@ -15,6 +15,47 @@ export class UserService {
 
   private logger = new Logger('user');
 
+  // 회원탈퇴
+  async deleteAccount(
+    userId: string,
+    phoneNumber: string,
+    password: string,
+  ): Promise<boolean> {
+    // 유저 아이디로 유저 정보가 있는지 확인
+    const isUser = await this.userRepository.findUserById(userId);
+
+    console.log('isUser >> ', isUser);
+
+    if (!isUser) throw new UnauthorizedException('유저가 존재하지 않습니다.');
+
+    // 불러온 유저 정보와 탈퇴를 희망하는 휴대번호가 일치하는지 확인
+    console.log(isUser.phoneNumber === phoneNumber);
+    console.log(typeof isUser.phoneNumber, typeof phoneNumber);
+    if (isUser.phoneNumber !== phoneNumber)
+      throw new UnauthorizedException(
+        '현재 사용자와 휴대번호가 일치하지 않습니다.',
+      );
+
+    // 암호화된 비밀번호 확인
+    const isPassword: boolean = await bcrypt.compare(password, isUser.password);
+
+    console.log('isPassword >> ', isPassword);
+
+    // 비밀번호가 일치하지 않다면 오류 발생
+    if (!isPassword)
+      throw new UnauthorizedException('비밀번호가 일치하지 않습니다.');
+
+    // 회원탈퇴
+    const deleteAccountResult = await this.userRepository.deleteUser(
+      isUser._id,
+    );
+    console.log('deleteAccountResult >> ', deleteAccountResult);
+    if (!deleteAccountResult)
+      throw new UnauthorizedException('회원탈퇴에 실패했습니다.');
+
+    return true;
+  }
+
   // 상점 전체정보 조회
   async getDetailUser(id: string): Promise<User> {
     return await this.userRepository.findUserByIdAndPopulate(id);

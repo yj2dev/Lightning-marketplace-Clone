@@ -45,8 +45,16 @@ export class UserController {
   @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
   @Delete('account')
-  async deleteAccount(@CurrentUser() currentUser): Promise<User> {
-    return await this.userService.getDetailUser(currentUser._id);
+  async deleteAccount(
+    @CurrentUser() currentUser,
+    @Body('phoneNumber') phoneNumber: string,
+    @Body('password') password: string,
+  ): Promise<boolean> {
+    return await this.userService.deleteAccount(
+      currentUser._id,
+      phoneNumber,
+      password,
+    );
   }
 
   @ApiOperation({ summary: '유저 비밀번호 변경' })
