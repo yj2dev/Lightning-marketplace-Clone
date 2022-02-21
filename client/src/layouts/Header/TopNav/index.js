@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from "react";
 
 import SigninModal from "../../../components/SigninModal";
-import { Container, MarketIcon, AppDownloadButton } from "./styled";
-import { AiFillStar } from "react-icons/ai";
+import {
+  Container,
+  MarketIcon,
+  AppDownloadButton,
+  AlignCenter,
+  ButtonWrapper,
+  MyShopMenu,
+} from "./styled";
+import { AiFillStar, AiFillCaretDown } from "react-icons/ai";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import SignoutModal from "../../../components/SignoutModal";
+import useInterval from "../../../hooks/useInterval";
 
 function TopNav({ history }) {
   const [showSigninModal, setShowSigninModal] = useState(false);
   const user = useSelector((state) => state.user);
 
   const [showSignoutModal, setShowSignoutModal] = useState(false);
+
+  const [showMyShopMenu, setShowMyShopMenu] = useState(false);
 
   const onShowSignoutModal = () => {
     setShowSignoutModal((prev) => !prev);
@@ -38,6 +48,13 @@ function TopNav({ history }) {
   const onClickAddFavorite = () => {
     alert("Ctrl + D 키를 누르면 즐겨찾기에 추가하실 수 있습니다.");
   };
+
+  function onShowMyShopMenu() {
+    setShowMyShopMenu(true);
+    // useInterval(() => {
+    //   setShowMyShopMenu(false);
+    // }, 2000);
+  }
 
   return (
     <>
@@ -78,8 +95,27 @@ function TopNav({ history }) {
               로그인/회원가입
             </button>
           )}
-          <button onClick={onToggleSignin}>내상점</button>
+          {user.isSignin ? (
+            <button
+              onClick={onToggleSignin}
+              onMouseEnter={() => console.log("enter...")}
+            >
+              <AlignCenter>
+                내상점&nbsp;
+                <AiFillCaretDown />
+              </AlignCenter>
+            </button>
+          ) : (
+            <button onClick={onToggleSignin}>내상점 </button>
+          )}
         </div>
+        <MyShopMenu>
+          <ul>
+            <li>내상품</li>
+            <li>찜한상품</li>
+            <li>계정설정</li>
+          </ul>
+        </MyShopMenu>
       </Container>
       <SignoutModal
         show={showSignoutModal}

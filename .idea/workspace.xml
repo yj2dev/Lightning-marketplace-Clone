@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그아웃 확인 모달창 적용">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Client 측에서 한국시간으로 변환 후 날짜 표기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plan.text" beforeDir="false" afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useInterval.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useInterval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/Time.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/Time.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tag/tag.service.spec.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +125,8 @@
       <workItem from="1645052408558" duration="18272000" />
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
-      <workItem from="1645297911484" duration="26295000" />
-    </task>
-    <task id="LOCAL-00018" summary="Kakao OAuth failed to get the token.">
-      <created>1643684393462</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1643684393462</updated>
+      <workItem from="1645297911484" duration="37393000" />
+      <workItem from="1645393628648" duration="5864000" />
     </task>
     <task id="LOCAL-00019" summary="Successfully received Kakao Token.">
       <created>1643741359989</created>
@@ -465,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645333021990</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Client 측에서 한국시간으로 변환 후 날짜 표기">
+      <created>1645339820349</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1645339820349</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +490,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="백엔드서버 인증서 변경" />
     <MESSAGE value="유저 로그인, 로그아웃 구현" />
     <MESSAGE value="페이지 권한 분기처리(로그인 여부)" />
     <MESSAGE value="소셜 로그인 passport 전략으로 변경(미구현)" />
@@ -509,14 +514,15 @@
     <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
     <MESSAGE value="알림, 확인창 모달 디자인" />
     <MESSAGE value="로그아웃 확인 모달창 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그아웃 확인 모달창 적용" />
+    <MESSAGE value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
+    <option name="LAST_COMMIT_MESSAGE" value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js</url>
-          <line>21</line>
+          <line>22</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

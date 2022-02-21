@@ -123,6 +123,10 @@ const MyShopPage = ({ history }) => {
     setEditStoreDescription((prev) => !prev);
   };
 
+  const onClickMyStoreManagement = () => {
+    history.push("/product/manage");
+  };
+
   return (
     <Container>
       <UserStore>
@@ -139,7 +143,9 @@ const MyShopPage = ({ history }) => {
           <div className="store_name">
             {user.isSignin && user.isSignin.data.storeName}
           </div>
-          <div className="store_management">내 상점 관리</div>
+          <div className="store_management" onClick={onClickMyStoreManagement}>
+            내 상점 관리
+          </div>
         </div>
         <UserStoreContents>
           <div className="contents_store_name">

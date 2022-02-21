@@ -1,16 +1,27 @@
 import { Container, ProductTable } from "./styled";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { timeFormat, timeKrFormat } from "../../utils/Time";
 import { intOfKr } from "../../utils/Currency";
 import AlertModal from "../../components/AlertModal";
+import { logDOM } from "@testing-library/react";
 
 export const ProductManagePage = ({ history }) => {
   const [products, setProducts] = useState();
 
   const [showAlertModal, setShowAlertModal] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [targetProduct, setTargetProduct] = useState({
+    productId: null,
+    state: null,
+  });
+
+  const onCloseDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
 
   const onCloseAlertModal = () => {
     setShowAlertModal(false);
@@ -22,28 +33,36 @@ export const ProductManagePage = ({ history }) => {
     setShowAlertModal(true);
   };
 
-  useEffect(() => {
+  function getMyProducts() {
     axios
       .get("/user/detail")
       .then((res) => {
         console.log("res >> ", res);
         console.log("data >> ", res.data.data.products);
         setProducts(res.data.data.products);
+        history.push("/product/manage");
       })
       .catch((err) => {
         console.log("err >> ", err);
       });
+  }
+
+  useEffect(() => {
+    // 내 상품목록 전체 가져오기
+    getMyProducts();
   }, []);
 
-  function deleteProduct(productId, state) {
+  function deleteProduct() {
     axios
-      .delete(`/product?productId=${productId}&state=${state}`)
+      .delete(
+        `/product?productId=${targetProduct.productId}&state=${targetProduct.state}`
+      )
       .then((res) => {
         console.log("res >> ", res);
         history.push("/product/new");
         history.push("/product/manage");
-
-        alert("상품이 제거되었습니다.");
+        onCloseDeleteModal();
+        onShowAlertModal("상품이 삭제되었습니다.");
       })
       .catch((err) => {
         console.log("err >> ", err);
@@ -53,11 +72,16 @@ export const ProductManagePage = ({ history }) => {
   // 판매상태 변경시 서버에 변경 요청
   const onChangeSellState = (e) => {
     const [productId, state] = e.target.value.split("/");
+    setTargetProduct({
+      productId,
+      state,
+    });
 
     console.log(productId, state);
 
     if (state === "delete") {
-      deleteProduct(productId, state);
+      setShowDeleteModal(true);
+      // deleteProduct(productId, state);
       return;
     }
 
@@ -128,6 +152,7 @@ export const ProductManagePage = ({ history }) => {
                     </option>
                     <option
                       value={`${product._id}/delete`}
+                      onClick={() => console.log("sf")}
                       selected={product.state === "delete" ? true : false}
                     >
                       삭제
@@ -144,14 +169,26 @@ export const ProductManagePage = ({ history }) => {
             ))}
         </tbody>
       </ProductTable>
+      {/* 변경 또는 삭제 결과 알림 모달창 */}
       <AlertModal
         show={showAlertModal}
         close={onCloseAlertModal}
         useCloseButton={false}
         useCancelButton={false}
-        useSubmitButton={false}
+        confirm={onCloseAlertModal}
       >
         {alertMessage}
+      </AlertModal>
+
+      {/* 삭제 확인 모달창 */}
+      <AlertModal
+        show={showDeleteModal}
+        close={onCloseDeleteModal}
+        title={"상품삭제"}
+        useCloseButton={false}
+        confirm={deleteProduct}
+      >
+        해당 상품을 삭제하시겠습니까?
       </AlertModal>
     </Container>
   );

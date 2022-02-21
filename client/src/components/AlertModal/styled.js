@@ -6,11 +6,12 @@ export const Container = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 4096;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
+  background-color: rgba(0, 0, 0, 0.3);
 `;
 
 export const ModalContainer = styled.div`
@@ -59,7 +60,9 @@ export const ButtonContainer = styled.div`
   gap: 16px;
   & button {
     border: none;
-    width: 120px;
+    border-radius: 4px;
+    //width: 120px;
+    width: 100%;
     height: 50px;
     font-size: 16px;
     cursor: pointer;

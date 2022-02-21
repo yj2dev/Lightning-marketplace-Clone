@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  z-index: 1000;
+  z-index: 11;
   border-bottom: 1px solid #eeeeee;
   padding: 0 10px 0 32px;
+  position: relative;
 
   & .left {
     float: left;
@@ -30,6 +31,16 @@ export const AppDownloadButton = styled.button`
   position: relative;
 `;
 
+export const MyShopMenu = styled.div`
+  position: absolute;
+  //z-index: ;
+  background-color: #ffffff;
+  //width: 60px;
+  border: 5px solid red;
+  top: 20px;
+  right: 10px;
+`;
+
 export const MarketIcon = styled.div`
   top: 3px;
   left: -16px;
@@ -44,4 +55,10 @@ export const MarketIcon = styled.div`
   border: none;
   background-color: #d80c18;
   color: #ffffff;
+`;
+
+export const AlignCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
