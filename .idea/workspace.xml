@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="Client 측에서 한국시간으로 변환 후 날짜 표기">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="컴포넌트간에 z-index 값 재정리">
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/DeleteMyAccountPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/DeleteMyAccountPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/UpdatePasswordPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/UpdatePasswordPage/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/SettingPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/plan.text" beforeDir="false" afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useInterval.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useInterval.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/SettingPage/Section" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -59,11 +61,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\SettingPage\Section" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\public\img" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
@@ -126,14 +128,7 @@
       <workItem from="1645111523903" duration="36207000" />
       <workItem from="1645214849155" duration="14411000" />
       <workItem from="1645297911484" duration="37393000" />
-      <workItem from="1645393628648" duration="5864000" />
-    </task>
-    <task id="LOCAL-00019" summary="Successfully received Kakao Token.">
-      <created>1643741359989</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1643741359989</updated>
+      <workItem from="1645393628648" duration="10799000" />
     </task>
     <task id="LOCAL-00020" summary="Example of create Cookie and remove Cookie">
       <created>1643947168487</created>
@@ -471,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645339820349</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="컴포넌트간에 z-index 값 재정리">
+      <created>1645402135895</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1645402135895</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="유저 로그인, 로그아웃 구현" />
     <MESSAGE value="페이지 권한 분기처리(로그인 여부)" />
     <MESSAGE value="소셜 로그인 passport 전략으로 변경(미구현)" />
     <MESSAGE value="상품 이미지 저장" />
@@ -515,7 +516,8 @@
     <MESSAGE value="알림, 확인창 모달 디자인" />
     <MESSAGE value="로그아웃 확인 모달창 적용" />
     <MESSAGE value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
+    <MESSAGE value="컴포넌트간에 z-index 값 재정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="컴포넌트간에 z-index 값 재정리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

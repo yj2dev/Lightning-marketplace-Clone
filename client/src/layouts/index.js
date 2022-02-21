@@ -17,6 +17,7 @@ import Auth from "../hoc/Auth";
 import LandingPage from "../page/LandingPage";
 import ProductDetailPage from "../page/ProductDetailPage";
 import ProductManagePage from "../page/ProductManagePage";
+import SettingPage from "../page/SettingPage";
 
 // Auth(Component, option)
 // - option: (0)로그인 여부 상관없음 - 기본값
@@ -62,6 +63,8 @@ function Layout({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
+          <Route path="/setting" component={Auth(SettingPage, 1)} />
+
           {/*  상품 페이지들은 로그인 안한 유저 접근불가 따로 적용함 */}
           <Route path="/product/new" component={ProductNewPage} />
           <Route path="/product/manage" component={ProductManagePage} />

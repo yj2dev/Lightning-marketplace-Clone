@@ -37,9 +37,13 @@ function TopNav({ history }) {
   };
 
   const onToggleSignin = () => {
-    //로그인이 되어 있지 않으면 로그인 모달 띄우기
+    // 로그인이 되어 있지 않으면 로그인 모달 띄우기
+    // 로그인이 되어 있으면 내상점 메뉴 모달 띄우기
     if (!user.isSignin) setShowSigninModal((prev) => !prev);
-    else history.push(`/shop/${user.isSignin.data._id}`);
+    else setShowMyShopMenu((prev) => !prev);
+
+    // 내 상점으로 이동(사용안함)
+    // else history.push(`/shop/${user.isSignin.data._id}`);
   };
 
   const onClickAppDownload = () => {
@@ -96,26 +100,52 @@ function TopNav({ history }) {
             </button>
           )}
           {user.isSignin ? (
-            <button
-              onClick={onToggleSignin}
-              onMouseEnter={() => console.log("enter...")}
-            >
-              <AlignCenter>
-                내상점&nbsp;
-                <AiFillCaretDown />
-              </AlignCenter>
-            </button>
+            <>
+              <button
+                onClick={onToggleSignin}
+                onMouseEnter={() => console.log("enter...")}
+              >
+                <AlignCenter>
+                  내상점&nbsp;
+                  <AiFillCaretDown />
+                </AlignCenter>
+              </button>
+              {showMyShopMenu && (
+                <MyShopMenu>
+                  <ul>
+                    <li
+                      onClick={() => {
+                        setShowMyShopMenu(false);
+                        history.push(`/shop/${user.isSignin.data._id}`);
+                      }}
+                    >
+                      내상품
+                    </li>
+                    <li
+                      onClick={() => {
+                        setShowMyShopMenu(false);
+
+                        history.push(`/shop/${user.isSignin.data._id}`);
+                      }}
+                    >
+                      찜한상품
+                    </li>
+                    <li
+                      onClick={() => {
+                        setShowMyShopMenu(false);
+                        history.push("/setting");
+                      }}
+                    >
+                      계정설정
+                    </li>
+                  </ul>
+                </MyShopMenu>
+              )}
+            </>
           ) : (
             <button onClick={onToggleSignin}>내상점 </button>
           )}
         </div>
-        <MyShopMenu>
-          <ul>
-            <li>내상품</li>
-            <li>찜한상품</li>
-            <li>계정설정</li>
-          </ul>
-        </MyShopMenu>
       </Container>
       <SignoutModal
         show={showSignoutModal}

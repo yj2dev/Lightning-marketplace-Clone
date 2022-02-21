@@ -32,13 +32,29 @@ export const AppDownloadButton = styled.button`
 `;
 
 export const MyShopMenu = styled.div`
-  position: absolute;
-  //z-index: ;
   background-color: #ffffff;
-  //width: 60px;
-  border: 5px solid red;
-  top: 20px;
-  right: 10px;
+  position: absolute;
+  border: 1px solid #eeeeee;
+  right: 8px;
+
+  & ul {
+  }
+  & li {
+    text-align: center;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #999999;
+  }
+  & li:hover {
+    color: #000000;
+    cursor: pointer;
+  }
+  & li:first-child {
+    padding-top: 12px;
+  }
+  & li:last-child {
+    padding-bottom: 12px;
+  }
 `;
 
 export const MarketIcon = styled.div`
