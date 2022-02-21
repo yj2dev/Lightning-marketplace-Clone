@@ -14,6 +14,7 @@ import {
   Put,
   Patch,
   Delete,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from '../service/user.service';
@@ -53,8 +54,25 @@ export class UserController {
   @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
   @Patch('password')
-  async updatePassword(@CurrentUser() currentUser): Promise<User> {
-    return await this.userService.getDetailUser(currentUser._id);
+  async updatePassword(
+    @CurrentUser() currentUser,
+    @Body('currentPassword') currentPassword: string,
+    @Body('password') password: string,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<any> {
+    const result = await this.authService.jwtCheckAccount(
+      currentUser._id,
+      currentPassword,
+      password,
+    );
+
+    console.log('result >>', result);
+    // 비밀번호 변경 결과가 없다면 에러 반환
+    if (!result)
+      throw new UnauthorizedException('비밀번호 변경에 실패했습니다.');
+
+    // 변경을 성공했다면 추가로 쿠키를 제거해 재로그인을 유도한다.
+    res.clearCookie('jwt');
   }
 
   @ApiOperation({ summary: '유저와 연관된 모든 정보 요청' })
@@ -121,6 +139,8 @@ export class UserController {
     return user.readonlyData;
   }
 
+  // passthrough: true 에 관한 도움 블로그
+  // https://min-ki.github.io/TIL/nestjs-controllers
   @ApiOperation({ summary: '로그아웃' })
   @Get('signout')
   async signout(@Res({ passthrough: true }) res: Response) {
@@ -146,10 +166,6 @@ export class UserController {
     @CurrentUser() currentUser: User,
     @UploadedFiles() file: Express.Multer.File,
   ) {
-    console.log('profile');
-    console.log('currentUser >> ', currentUser);
-    console.log('file >> ', file);
-    // const imgURI = `http://localhost:8000/static/user_profile/${file.filename}`;
     return this.userService.uploadImg(currentUser, file);
   }
 }

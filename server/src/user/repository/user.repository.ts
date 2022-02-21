@@ -48,6 +48,17 @@ export class UserRepository {
     return result;
   }
 
+  // 해당하는 아이디의 비밀번호 업데이트
+  async updatePasswordById(id: string, password: string): Promise<User | null> {
+    const result = await this.user.findByIdAndUpdate(
+      id,
+      { password },
+      { new: true },
+    );
+
+    return result;
+  }
+
   // 중복된 휴대번호인지 확인
   async existsByPhoneNumber(phoneNumber: string): Promise<boolean> {
     const result = await this.user.exists({ phoneNumber });
@@ -79,6 +90,12 @@ export class UserRepository {
       .findById(userId)
       .select('-password')
       .select('-phoneNumber');
+    return user;
+  }
+
+  // 유저 아이디로 유저찾기
+  async findUserById(userId: string): Promise<User | null> {
+    const user = await this.user.findById(userId);
     return user;
   }
 

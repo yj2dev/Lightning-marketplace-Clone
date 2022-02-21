@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  HttpException,
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
@@ -16,7 +17,45 @@ export class AuthService {
   ) {}
 
   // 계정 확인(비밀번호 변경시 사용)
-  async jwtCheckAccount(userSigninDto: UserSigninDto) {}
+  // userId: 변경 대상, currentPassword: 현재 비밀번호, password: 변경할 비밀번호
+  async jwtCheckAccount(
+    userId: string,
+    currentPassword: string,
+    password: string,
+  ) {
+    console.log('userId >> ', userId);
+    console.log('currentPassword >> ', currentPassword);
+    console.log('password >> ', password);
+
+    const isUser = await this.userRepository.findUserById(userId);
+    console.log('isUser >> ', isUser);
+
+    // 유저가 존재하지 않다면 오류 발생
+    if (!isUser) throw new UnauthorizedException('유저가 존재하지 않습니다.');
+
+    const isPassword: boolean = await bcrypt.compare(
+      currentPassword,
+      isUser.password,
+    );
+
+    console.log('isPassword >> ', isPassword);
+
+    // 현재 비밀번호 확인
+    if (!isPassword)
+      throw new UnauthorizedException('비밀번호가 일치하지 않습니다.');
+
+    // 변경할 비밀번호 암호화
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // 비밀번호 저장
+    const passwordSaveResult = await this.userRepository.updatePasswordById(
+      isUser._id,
+      hashedPassword,
+    );
+
+    console.log('passwordSaveResult >> ', passwordSaveResult);
+    return true;
+  }
 
   // 로그인
   async jwtSignin(userSigninDto: UserSigninDto) {

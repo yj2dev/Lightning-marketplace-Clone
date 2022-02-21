@@ -106,10 +106,6 @@ export class UserService {
     return isUser;
   }
 
-  async signout() {
-    return 'signOut: The client processes it';
-  }
-
   async uploadImg(user: User, file: Express.Multer.File) {
     const fileName = `user.profile/${file.filename}`;
     // example URL: http://localhost:8000/static/user.profile/ad061644514995652.png

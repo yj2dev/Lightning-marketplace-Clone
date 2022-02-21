@@ -1,9 +1,16 @@
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Container, SettingCommonSection } from "../../styled";
-import { useState } from "react";
+import React, { useState } from "react";
+import BeatLoader from "react-spinners/BeatLoader";
+import AlertModal from "../../../../components/AlertModal";
 
 export const UpdatePasswordPage = ({ history }) => {
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [currentPasswordError, setCurrentPasswordError] = useState({
+    validate: false,
+  });
+
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState({ validate: false });
   const [passwordCheck, setPasswordCheck] = useState("");
@@ -15,6 +22,13 @@ export const UpdatePasswordPage = ({ history }) => {
 
   const [submitButton, setSubmitButton] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  const onCloseSuccessModal = () => {
+    setShowSuccessModal(false);
+    history.push("/");
+  };
 
   const onShowPassword = () => {
     setShowPassword((prev) => !prev);
@@ -77,15 +91,27 @@ export const UpdatePasswordPage = ({ history }) => {
 
     setLoading(true);
 
+    console.log("currentPassword >> ", currentPassword);
+    console.log("password >> ", password);
+
     axios
-      .patch("/user/password", { password })
+      .patch("/user/password", { currentPassword, password })
       .then((res) => {
         console.log("res >> ", res);
         setLoading(false);
+
+        // 비밀번호 변경 성공
+        if (res.data.success) {
+          setCurrentPassword("");
+          setPassword("");
+          setPasswordCheck("");
+          setShowSuccessModal(true);
+        }
       })
       .catch((err) => {
         console.log("err >> ", err);
         setLoading(false);
+        setCurrentPasswordError({ validate: true });
       });
   };
 
@@ -107,14 +133,57 @@ export const UpdatePasswordPage = ({ history }) => {
         </p>
       </div>
       <SettingCommonSection>
-        <label>현재 비밀번호</label>
-        <input type="password" />
-        <label>변경할 비밀번호</label>
-        <input type="password" />
-        <label>변경할 비밀번호 확인</label>
-        <input type="password" />
-        <button>비밀번호 변경</button>
+        {currentPasswordError.validate ? (
+          <label style={{ color: "red" }}>
+            현재 비밀번호가 일치하지 않습니다.
+          </label>
+        ) : (
+          <label>현재 비밀번호</label>
+        )}
+
+        <input
+          type="password"
+          value={currentPassword}
+          onChange={(e) => setCurrentPassword(e.target.value)}
+        />
+        {passwordError.validate ? (
+          <label style={{ color: "red" }}>
+            비밀번호 생성규칙과 일치하지 않습니다.
+          </label>
+        ) : (
+          <label>변경할 비밀번호</label>
+        )}
+        <input type="password" value={password} onChange={onChangePassword} />
+        {passwordCheckError.wrong ? (
+          <label style={{ color: "red" }}>
+            변경할 비밀번호가 일치하지 않습니다.
+          </label>
+        ) : (
+          <label>변경할 비밀번호 확인</label>
+        )}
+        <input
+          type="password"
+          value={passwordCheck}
+          onChange={onChangePasswordCheck}
+        />
+        <button
+          onClick={onSubmitUpdatePassword}
+          id={submitButton && "active"}
+          disabled={loading && true}
+        >
+          {!loading && "비밀번호 변경"}
+          <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />
+        </button>
       </SettingCommonSection>
+      <AlertModal
+        show={showSuccessModal}
+        close={onCloseSuccessModal}
+        confirm={onCloseSuccessModal}
+        useCancelButton={false}
+      >
+        비밀번호 변경에 성공했습니다. <br /> 비밀번호 확인을 위해 재로그인
+        해주세요.
+      </AlertModal>
     </Container>
   );
 };
