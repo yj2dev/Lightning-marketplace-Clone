@@ -110,13 +110,8 @@ export class UserRepository {
     file: Express.Multer.File,
   ): Promise<User | null> {
     const user = await this.user.findById(userId);
-
-    console.log('file user >> ', user);
-    console.log('filename >> ', file.filename);
-
-    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/${file.filename}`;
+    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/${file[0].filename}`;
     const result = await user.save();
-    console.log('result >> ', result);
     return result;
   }
 
@@ -124,7 +119,6 @@ export class UserRepository {
     const user = await this.user.findById({ _id: userId });
     user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/__default_store_profile__.png`;
     const result = await user.save();
-    console.log('result >> ', result);
     return result;
   }
 }

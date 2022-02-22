@@ -85,10 +85,11 @@ function ImageCrop({ history, show, close }) {
         formData.append("image", file, user.isSignin.data.storeName);
 
         axios
-          .post("/user/profile/upload", formData)
+          .patch("/user/profile/upload", formData)
           .then((res) => {
             console.log("res >> ", res);
             close();
+            history.push(`/shop/${user.isSignin.data._id}`);
           })
           .catch((err) => {
             alert("프로필 변경에 실패했습니다.");

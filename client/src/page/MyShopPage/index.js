@@ -129,12 +129,14 @@ const MyShopPage = ({ history }) => {
 
   const resetProfileImage = () => {
     axios
-      .patch("/user/profile/reset", { description: storeDescription })
+      .patch("/user/profile/reset")
       .then((res) => {
         console.log("res >> ", res);
-        // 상점 소개글 변경 성공
-        setResState(res);
-        setEditStoreDescription(false);
+
+        // 프로필 이미지 초기화 성공
+        if (res.data.success) {
+          history.push(`/shop/${user.isSignin.data._id}`);
+        }
       })
       .catch((err) => {
         console.log("err >> ", err);
@@ -159,11 +161,25 @@ const MyShopPage = ({ history }) => {
     <Container>
       <UserStore>
         <div className="imgWrapper">
-          <img
-            className="background_img"
-            src={`${user.isSignin.data.profileURL}`}
-          />
-          <div className="background_img_wrapper"></div>
+          <div className="background_img_wrapper">
+            <img
+              className="background_img"
+              src={`${user.isSignin.data.profileURL}`}
+            />
+            <Menu show={showEditMenu} close={onCloseEditMenu}>
+              <EditProfileMenu>
+                <ul>
+                  <li onClick={() => setShowResetModal(true)}>
+                    기본 이미지로 초기화
+                  </li>
+                  <li onClick={() => setShowCropImageModal(true)}>
+                    프로필 이미지 변경
+                  </li>
+                </ul>
+              </EditProfileMenu>
+            </Menu>
+          </div>
+          <div className="background_img_cover"></div>
           <img
             className="profile_img"
             src={`${user.isSignin.data.profileURL}`}
@@ -181,18 +197,7 @@ const MyShopPage = ({ history }) => {
             />
             수정
           </span>
-          <Menu show={showEditMenu} close={onCloseEditMenu}>
-            <EditProfileMenu>
-              <ul>
-                <li onClick={() => setShowResetModal(true)}>
-                  기본 이미지로 초기화
-                </li>
-                <li onClick={() => setShowCropImageModal(true)}>
-                  프로필 이미지 변경
-                </li>
-              </ul>
-            </EditProfileMenu>
-          </Menu>
+
           <div className="store_management" onClick={onClickMyStoreManagement}>
             내 상점 관리
           </div>

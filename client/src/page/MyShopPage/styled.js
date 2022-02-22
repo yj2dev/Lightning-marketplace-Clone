@@ -31,10 +31,18 @@ export const UserStore = styled.div`
   }
 
   & .background_img {
-    -webkit-filter: blur(12px);
+    //-webkit-filter: blur(1px);
+    filter: blur(10px);
+    width: 305px;
+    height: 305px;
+  }
+  & .background_img_wrapper {
+    width: 305px;
+    height: 305px;
+    overflow: hidden;
   }
 
-  & .background_img_wrapper {
+  & .background_img_cover {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -76,8 +84,8 @@ export const UserStore = styled.div`
 `;
 export const EditProfileMenu = styled.div`
   position: absolute;
-  top: -124px;
-  left: -150px;
+  top: -128px;
+  left: -152px;
   background-color: #ffffff;
   box-shadow: 0px 0px 5px 1px #000000;
   border-radius: 5px;
