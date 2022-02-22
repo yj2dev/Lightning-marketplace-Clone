@@ -42,7 +42,6 @@ export const SettingCommonSection = styled.div`
     font-weight: 800;
     margin-bottom: 8px;
   }
-
   & input {
     width: 365px;
     border-radius: 4px;
@@ -52,7 +51,6 @@ export const SettingCommonSection = styled.div`
     border: 1px solid #a4a4a4;
     margin-bottom: 16px;
   }
-
   & button {
     width: 400px;
     margin-top: 16px;
@@ -63,9 +61,19 @@ export const SettingCommonSection = styled.div`
     height: 50px;
     background-color: #ff5058;
   }
-
   & button:hover {
     cursor: pointer;
     background-color: #ff3039;
+  }
+  & .input_wrapper {
+    position: relative;
+  }
+  & .toggle_hidden_and_show {
+    cursor: pointer;
+    font-size: 28px;
+    color: #999999;
+    position: absolute;
+    top: 5px;
+    right: 10px;
   }
 `;

@@ -8,6 +8,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import { AiFillShop } from "react-icons/ai";
+import { FiEdit3 } from "react-icons/fi";
 
 import { useSelector } from "react-redux";
 import ShopProductsPage from "./Section/ShopProductsPage";
@@ -143,6 +144,9 @@ const MyShopPage = ({ history }) => {
           <div className="store_name">
             {user.isSignin && user.isSignin.data.storeName}
           </div>
+          <span className="edit_profile_img">
+            <FiEdit3 size={32} style={{ color: "red" }} />
+          </span>
           <div className="store_management" onClick={onClickMyStoreManagement}>
             내 상점 관리
           </div>

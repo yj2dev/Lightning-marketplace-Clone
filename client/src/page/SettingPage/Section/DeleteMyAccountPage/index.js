@@ -17,6 +17,8 @@ export const DeleteMyAccountPage = ({ history }) => {
     validate: false,
     incorrect: false,
   });
+
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -141,12 +143,20 @@ export const DeleteMyAccountPage = ({ history }) => {
             )}
           </>
         )}
-        <input
-          type="password"
-          value={password}
-          onChange={onChangePassword}
-          placeholder="비밀번호를 입력해주세요."
-        />
+        <div className="input_wrapper">
+          <input
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={onChangePassword}
+            placeholder="비밀번호를 입력해주세요."
+          />
+          <span
+            className="toggle_hidden_and_show"
+            onClick={() => setShowPassword((prev) => !prev)}
+          >
+            {showPassword ? <BiHide /> : <BiShow />}
+          </span>
+        </div>
         {/* End Password Input Section*/}
         <button onClick={onSubmitDeleteMyAccount} disabled={loading}>
           {!loading && "회원탈퇴"}

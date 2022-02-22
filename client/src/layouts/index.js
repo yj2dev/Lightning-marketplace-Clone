@@ -1,4 +1,4 @@
-import { Route, Switch, withRouter, useLocation } from "react-router-dom";
+import { Route, Switch, withRouter, useLocation, Link } from "react-router-dom";
 import React from "react";
 import { Container } from "./styled";
 import TopNav from "./Header/TopNav";
@@ -18,6 +18,7 @@ import LandingPage from "../page/LandingPage";
 import ProductDetailPage from "../page/ProductDetailPage";
 import ProductManagePage from "../page/ProductManagePage";
 import SettingPage from "../page/SettingPage";
+import DevPage from "../page/DevPage";
 
 // Auth(Component, option)
 // - option: (0)로그인 여부 상관없음 - 기본값
@@ -31,11 +32,15 @@ function Layout({ history }) {
     pathname.includes("/oauth") ||
     pathname.includes("/auth") ||
     pathname.includes("/signin") ||
-    pathname.includes("/signup")
+    pathname.includes("/signup") ||
+    pathname.includes("/dev")
   ) {
     return (
       <>
         <Switch>
+          {/* 개발용  페이지*/}
+          <Route exact path="/dev" component={Auth(DevPage, 0)} />
+
           <Route
             exact
             path="/oauth/kakao/callback"
@@ -63,19 +68,20 @@ function Layout({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
+          {/* 유저 설정 */}
           <Route path="/setting" component={Auth(SettingPage, 1)} />
 
-          {/*  상품 페이지들은 로그인 안한 유저 접근불가 따로 적용함 */}
+          {/* 상품 페이지들은 로그인 안한 유저 접근불가 따로 적용함 */}
           <Route path="/product/new" component={ProductNewPage} />
           <Route path="/product/manage" component={ProductManagePage} />
           <Route
             path="/product/:productId"
-            component={Auth(ProductDetailPage, 3)}
+            component={Auth(ProductDetailPage, 0)}
           />
 
           <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 1)} />
           <Route exact path="/talk" component={Auth(TalkPage, 1)} />
-          <Route exact path="/" component={Auth(LandingPage, 3)} />
+          <Route exact path="/" component={Auth(LandingPage, 0)} />
         </Switch>
         <Footer></Footer>
       </Container>

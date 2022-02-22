@@ -4,6 +4,7 @@ import { Container, SettingCommonSection } from "../../styled";
 import React, { useState } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
 import AlertModal from "../../../../components/AlertModal";
+import { BiHide, BiShow } from "react-icons/bi";
 
 export const UpdatePasswordPage = ({ history }) => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -17,6 +18,8 @@ export const UpdatePasswordPage = ({ history }) => {
   const [passwordCheckError, setPasswordCheckError] = useState({
     incorrect: false,
   });
+
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordCheck, setShowPasswordCheck] = useState(false);
 
@@ -29,13 +32,6 @@ export const UpdatePasswordPage = ({ history }) => {
     history.push("/");
   };
 
-  const onShowPassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
-  const onShowPasswordCheck = () => {
-    setShowPasswordCheck((prev) => !prev);
-  };
   const onChangePasswordCheck = (e) => {
     // 비밀번호가 16자리를 넘어가면 입력 불가능
     if (e.target.value.length > 16) return;
@@ -132,20 +128,30 @@ export const UpdatePasswordPage = ({ history }) => {
         </p>
       </div>
       <SettingCommonSection>
+        {/* Current Password Input Section */}
         {currentPasswordError.validate ? (
           <label style={{ color: "red" }}>
             현재 비밀번호가 일치하지 않습니다.
           </label>
         ) : (
           <label>현재 비밀번호</label>
-        )}
-
-        <input
-          type="password"
-          value={currentPassword}
-          placeholder="현재 비밀번호를 입력해주세요."
-          onChange={(e) => setCurrentPassword(e.target.value)}
-        />
+        )}{" "}
+        <div className="input_wrapper">
+          <input
+            type={showCurrentPassword ? "text" : "password"}
+            value={currentPassword}
+            placeholder="현재 비밀번호를 입력해주세요."
+            onChange={(e) => setCurrentPassword(e.target.value)}
+          />{" "}
+          <span
+            className="toggle_hidden_and_show"
+            onClick={() => setShowCurrentPassword((prev) => !prev)}
+          >
+            {showCurrentPassword ? <BiHide /> : <BiShow />}
+          </span>
+        </div>
+        {/* End Current Password Input Section */}
+        {/* Password Input Section */}
         {passwordError.validate ? (
           <label style={{ color: "red" }}>
             비밀번호 생성규칙과 일치하지 않습니다.
@@ -153,12 +159,22 @@ export const UpdatePasswordPage = ({ history }) => {
         ) : (
           <label>변경할 비밀번호</label>
         )}
-        <input
-          type="password"
-          value={password}
-          onChange={onChangePassword}
-          placeholder="변경할 비밀번호를 입력해주세요."
-        />
+        <div className="input_wrapper">
+          <input
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={onChangePassword}
+            placeholder="변경할 비밀번호를 입력해주세요."
+          />
+          <span
+            className="toggle_hidden_and_show"
+            onClick={() => setShowPassword((prev) => !prev)}
+          >
+            {showPassword ? <BiHide /> : <BiShow />}
+          </span>
+        </div>
+        {/* End Password Input Section */}
+        {/* Check Password Input Section */}
         {passwordCheckError.incorrect ? (
           <label style={{ color: "red" }}>
             변경할 비밀번호가 일치하지 않습니다.
@@ -166,12 +182,21 @@ export const UpdatePasswordPage = ({ history }) => {
         ) : (
           <label>변경할 비밀번호 확인</label>
         )}
-        <input
-          type="password"
-          value={passwordCheck}
-          placeholder="변경할 비밀번호를 한번 더 입력해주세요."
-          onChange={onChangePasswordCheck}
-        />
+        <div className="input_wrapper">
+          <input
+            type={showPasswordCheck ? "text" : "password"}
+            value={passwordCheck}
+            placeholder="변경할 비밀번호를 한번 더 입력해주세요."
+            onChange={onChangePasswordCheck}
+          />
+          <span
+            className="toggle_hidden_and_show"
+            onClick={() => setShowPasswordCheck((prev) => !prev)}
+          >
+            {showPasswordCheck ? <BiHide /> : <BiShow />}
+          </span>
+        </div>
+        {/* End Check Password Input Section */}
         <button onClick={onSubmitUpdatePassword} disabled={loading}>
           {!loading && "비밀번호 변경"}
           <BeatLoader color="#ffffff" size={10} margin={5} loading={loading} />

@@ -101,7 +101,7 @@ const UserPasswordPage = () => {
     return result;
   };
 
-  // 휴대폰번호로 인증코드를 보내는 로직
+  // 휴대폰번호로 회원가입 시도
   const onSubmitSendCode = (e) => {
     e.preventDefault();
 

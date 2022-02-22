@@ -28,6 +28,7 @@ const PhoneNumberAuthPage = ({ history }) => {
   const onChangePhone = (e) => {
     const regex = /[^0-9]/g;
     const value = e.target.value.replace(regex, "");
+    // 최대 11자리까지 입력가능
     if (value.length < 12) setPhoneNumber(value);
   };
 

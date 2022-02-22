@@ -60,6 +60,10 @@ export const UserStoreContents = styled.div`
   color: #000000;
   position: relative;
 
+  & .edit_profile_img {
+    font-size: 16px;
+    color: red;
+  }
   & .contents_store_name {
     color: #000000;
     font-size: 18px;

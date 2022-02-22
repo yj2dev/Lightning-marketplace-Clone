@@ -108,6 +108,7 @@ export class UserService {
     return storeName;
   }
 
+  // 회원가입
   async signup(userRequestDto: UserRequestDto) {
     console.log('userRequestDto >> ', userRequestDto);
 
@@ -127,14 +128,19 @@ export class UserService {
     // 신규 상점명 생성
     const storeName = await this.createStoreName();
 
+    console.log('return storeName >> ', storeName);
+
     // 비밀번호 암호화
     const hashedPassword = await bcrypt.hash(userRequestDto.password, 10);
+    console.log('hashedPassword >> ', hashedPassword);
 
     const user = await this.userRepository.createUser({
       phoneNumber: userRequestDto.phoneNumber,
       password: hashedPassword,
       storeName,
     });
+
+    console.log('user >> ', user);
 
     return user.readonlyData;
   }

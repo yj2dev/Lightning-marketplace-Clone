@@ -73,7 +73,6 @@ export class User extends Document {
   @ApiProperty({
     example: '상품',
     description: '유저가 등록한 상품들',
-    required: true,
   })
   @Prop({ type: Types.ObjectId, ref: 'products' })
   @IsString()
@@ -82,27 +81,24 @@ export class User extends Document {
   @ApiProperty({
     example: '카카오 아이디',
     description: '소셜 로그인 계정 통합',
-    required: true,
   })
-  @Prop({ unique: true })
+  @Prop({})
   @IsString()
   kakaoId: string;
 
   @ApiProperty({
     example: '페이스북 아이디',
     description: '소셜 로그인 계정 통합',
-    required: true,
   })
-  @Prop({ unique: true })
+  @Prop({})
   @IsString()
   facebookId: string;
 
   @ApiProperty({
     example: '네이버 아이디',
     description: '소셜 로그인 계정 통합',
-    required: true,
   })
-  @Prop({ unique: true })
+  @Prop({})
   @IsString()
   naverId: string;
 
