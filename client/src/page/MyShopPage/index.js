@@ -2,13 +2,14 @@ import {
   Container,
   TabContent,
   TabMenu,
+  EditProfileMenu,
   UserStore,
   UserStoreContents,
 } from "./styled";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 import { AiFillShop } from "react-icons/ai";
-import { FiEdit3 } from "react-icons/fi";
+import { GrEdit } from "react-icons/gr";
 
 import { useSelector } from "react-redux";
 import ShopProductsPage from "./Section/ShopProductsPage";
@@ -19,6 +20,9 @@ import ShopFollowingsPage from "./Section/ShopFollowingsPage";
 import ShopFollowersPage from "./Section/ShopFollowersPage";
 import axios from "axios";
 import { oneDaysFormat } from "../../utils/Time";
+import Menu from "../../components/Menu";
+import AlertModal from "../../components/AlertModal";
+import ImageCrop from "../../components/ImageCrop";
 
 const MyShopPage = ({ history }) => {
   const tabMenuList = [
@@ -41,6 +45,15 @@ const MyShopPage = ({ history }) => {
   const [editStoreDescription, setEditStoreDescription] = useState(false);
 
   const [products, setProducts] = useState([]);
+
+  const [showEditMenu, setShowEditMenu] = useState(false);
+
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [showCropImageModal, setShowCropImageModal] = useState(false);
+
+  const onCloseEditMenu = () => {
+    setShowEditMenu(false);
+  };
 
   const onClickTabMenu = (e) => {
     const tabIndex = e.target.value;
@@ -114,6 +127,20 @@ const MyShopPage = ({ history }) => {
       });
   };
 
+  const resetProfileImage = () => {
+    axios
+      .patch("/user/profile/reset", { description: storeDescription })
+      .then((res) => {
+        console.log("res >> ", res);
+        // 상점 소개글 변경 성공
+        setResState(res);
+        setEditStoreDescription(false);
+      })
+      .catch((err) => {
+        console.log("err >> ", err);
+      });
+  };
+
   const onClickEditStoreName = () => {
     setStoreName(user.isSignin.data.storeName);
     setEditStoreName((prev) => !prev);
@@ -144,9 +171,28 @@ const MyShopPage = ({ history }) => {
           <div className="store_name">
             {user.isSignin && user.isSignin.data.storeName}
           </div>
-          <span className="edit_profile_img">
-            <FiEdit3 size={32} style={{ color: "red" }} />
+          <span
+            className="edit_profile_img"
+            onClick={() => setShowEditMenu((prev) => !prev)}
+          >
+            <GrEdit
+              size={16}
+              style={{ color: "#000000", marginRight: "4px" }}
+            />
+            수정
           </span>
+          <Menu show={showEditMenu} close={onCloseEditMenu}>
+            <EditProfileMenu>
+              <ul>
+                <li onClick={() => setShowResetModal(true)}>
+                  기본 이미지로 초기화
+                </li>
+                <li onClick={() => setShowCropImageModal(true)}>
+                  프로필 이미지 변경
+                </li>
+              </ul>
+            </EditProfileMenu>
+          </Menu>
           <div className="store_management" onClick={onClickMyStoreManagement}>
             내 상점 관리
           </div>
@@ -184,7 +230,14 @@ const MyShopPage = ({ history }) => {
           </div>
           <div className="contents_store_desc">
             {!editStoreDescription ? (
-              <>{user.isSignin && user.isSignin.data.description}</>
+              <>
+                {user.isSignin &&
+                  user.isSignin.data.description.split("\n").map((line) => (
+                    <>
+                      {line} <br />
+                    </>
+                  ))}
+              </>
             ) : (
               <>
                 <textarea
@@ -229,6 +282,18 @@ const MyShopPage = ({ history }) => {
         {tabMenu === 4 && <ShopFollowingsPage />}
         {tabMenu === 5 && <ShopFollowersPage />}
       </TabContent>
+      <AlertModal
+        useCloseButton={false}
+        show={showResetModal}
+        close={() => setShowResetModal(false)}
+        confirm={resetProfileImage}
+      >
+        프로필 이미지를 초기화 하시겠습니까?
+      </AlertModal>
+      <ImageCrop
+        show={showCropImageModal}
+        close={() => setShowCropImageModal(false)}
+      ></ImageCrop>
     </Container>
   );
 };

@@ -162,18 +162,24 @@ export class UserController {
     type: UserReadonlyDto,
   })
   @ApiResponse({ status: 409, description: '유저가 존재하지 않음' })
-  @Get('/check')
+  @Get('check')
   async isUser(@Query('phoneNumber') phoneNumber: string) {
     return await this.userService.isPhoneNumber(phoneNumber);
   }
 
-  @Post('upload/profile')
+  @Patch('profile/upload')
   @UseGuards(JwtAuthGuard)
   @UseInterceptors(FilesInterceptor('image', 1, multerOptions('user_profile')))
-  uploadFile(
+  uploadProfileImg(
     @CurrentUser() currentUser: User,
     @UploadedFiles() file: Express.Multer.File,
   ) {
-    return this.userService.uploadImg(currentUser, file);
+    return this.userService.uploadImg(currentUser._id, file);
+  }
+
+  @Patch('profile/reset')
+  @UseGuards(JwtAuthGuard)
+  resetProfileImg(@CurrentUser() currentUser: User) {
+    return this.userService.resetImg(currentUser._id);
   }
 }

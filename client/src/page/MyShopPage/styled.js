@@ -14,9 +14,26 @@ export const UserStore = styled.div`
     position: relative;
   }
 
+  & .edit_profile_img {
+    cursor: pointer;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px #000000;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   & .background_img {
     -webkit-filter: blur(12px);
   }
+
   & .background_img_wrapper {
     position: absolute;
     width: 100%;
@@ -26,6 +43,7 @@ export const UserStore = styled.div`
     background-color: #000000;
     opacity: 0.5;
   }
+
   & .profile_img {
     position: absolute;
     top: 35%;
@@ -35,6 +53,7 @@ export const UserStore = styled.div`
     height: 110px;
     border-radius: 50%;
   }
+
   & .store_name {
     position: absolute;
     top: 62%;
@@ -42,6 +61,7 @@ export const UserStore = styled.div`
     transform: translate(-50%, -50%);
     color: #ffffff;
   }
+
   & .store_management {
     position: absolute;
     top: 82%;
@@ -54,16 +74,34 @@ export const UserStore = styled.div`
     cursor: pointer;
   }
 `;
+export const EditProfileMenu = styled.div`
+  position: absolute;
+  top: -124px;
+  left: -150px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 1px #000000;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #000000;
+  padding: 4px 0;
+
+  & li {
+    padding: 4px 12px;
+  }
+
+  & li:hover {
+    background-color: #0969da;
+    color: #ffffff;
+    cursor: pointer;
+  }
+`;
+
 export const UserStoreContents = styled.div`
   width: 100%;
   padding: 24px 30px;
   color: #000000;
   position: relative;
 
-  & .edit_profile_img {
-    font-size: 16px;
-    color: red;
-  }
   & .contents_store_name {
     color: #000000;
     font-size: 18px;
@@ -108,6 +146,7 @@ export const UserStoreContents = styled.div`
     height: 120px;
     position: relative;
     font-size: 14px;
+    overflow: scroll;
   }
   & .contents_store_desc textarea {
     resize: none;

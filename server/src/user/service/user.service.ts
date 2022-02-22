@@ -153,16 +153,21 @@ export class UserService {
     return isUser;
   }
 
-  async uploadImg(user: User, file: Express.Multer.File) {
-    const fileName = `user.profile/${file.filename}`;
-    // example URL: http://localhost:8000/static/user.profile/ad061644514995652.png
-
-    console.log(fileName);
-    const newUser = await this.userRepository.findByIdAndUpdateImg1(
-      user.id,
-      fileName,
+  async uploadImg(userId: string, file: Express.Multer.File) {
+    // example URL: https://localhost:8000/static/user.profile/ad061644514995652.png
+    const imgSaveResult = await this.userRepository.findByIdAndUpdateImg(
+      userId,
+      file,
     );
-    console.log(newUser);
-    return newUser.readonlyData;
+    console.log('imgSaveResult >> ', imgSaveResult);
+    return true;
+  }
+
+  async resetImg(userId: string) {
+    const imgResetResult = await this.userRepository.findByIdAndResetImg(
+      userId,
+    );
+    console.log('imgResetResult >> ', imgResetResult);
+    return true;
   }
 }

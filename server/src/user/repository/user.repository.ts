@@ -105,14 +105,26 @@ export class UserRepository {
   }
 
   // 해당하는 아이디에 이미지 URI 업데이트
-  async findByIdAndUpdateImg1(
+  async findByIdAndUpdateImg(
     userId: string,
-    fileName: string,
+    file: Express.Multer.File,
   ): Promise<User | null> {
     const user = await this.user.findById(userId);
-    user.profileURL = `${process.env.MEDIA_URL}/user_profile/${fileName}`;
-    const newUser = await user.save();
-    console.log('newUser >> ', newUser);
-    return newUser;
+
+    console.log('file user >> ', user);
+    console.log('filename >> ', file.filename);
+
+    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/${file.filename}`;
+    const result = await user.save();
+    console.log('result >> ', result);
+    return result;
+  }
+
+  async findByIdAndResetImg(userId: string) {
+    const user = await this.user.findById({ _id: userId });
+    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/__default_store_profile__.png`;
+    const result = await user.save();
+    console.log('result >> ', result);
+    return result;
   }
 }

@@ -80,24 +80,15 @@ function ImageCrop({ history, show, close }) {
     //blob 생성
     canvas.toBlob(
       (file) => {
-        const fd = new FormData();
-        const config = {
-          header: {
-            processData: false,
-            "Content-Type": "multipart/form-data",
-          },
-        };
+        const formData = new FormData();
 
-        fd.append("image", file, user.authStatus._id);
-        fd.append("_id", user.authStatus._id);
-        fd.append("currentPath", user.authStatus.imagePath);
+        formData.append("image", file, user.isSignin.data.storeName);
 
         axios
-          .post("/api/users/update/image", fd, config)
-          .then(({ data }) => {
-            console.log("data >> ", data);
+          .post("/user/profile/upload", formData)
+          .then((res) => {
+            console.log("res >> ", res);
             close();
-            history.push("/setting/profile");
           })
           .catch((err) => {
             alert("프로필 변경에 실패했습니다.");
@@ -114,6 +105,7 @@ function ImageCrop({ history, show, close }) {
       close={close}
       modalHeader="프로필 사진 업로드"
       submitButtonName="업로드"
+      useCloseButton={false}
       confirm={() =>
         onClickUploadImage(previewCanvasRef.current, completedCrop)
       }
