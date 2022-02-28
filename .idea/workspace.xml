@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="프로필 이미지 초기화 구현">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-    </list>
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="프로필 이미지 변경 구현" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,14 +117,7 @@
       <workItem from="1645297911484" duration="37393000" />
       <workItem from="1645393628648" duration="36415000" />
       <workItem from="1645447580096" duration="9000" />
-      <workItem from="1645482177969" duration="21163000" />
-    </task>
-    <task id="LOCAL-00026" summary="RedisLabs Conntection, add logic to verify your phone number">
-      <created>1644074173356</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1644074173356</updated>
+      <workItem from="1645482177969" duration="21225000" />
     </task>
     <task id="LOCAL-00027" summary="signup page design and validation">
       <created>1644083774958</created>
@@ -468,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645542675140</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="프로필 이미지 변경 구현">
+      <created>1645544005292</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1645544005292</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +481,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품 정보 받아온 후 정보 배치" />
     <MESSAGE value="슬라이더 구현 실패" />
     <MESSAGE value="이미지 캐러셀 일부 구현" />
     <MESSAGE value="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리" />
@@ -512,7 +505,8 @@
     <MESSAGE value="회원탈퇴 로직 구현" />
     <MESSAGE value="다수의 유저 가입 성공" />
     <MESSAGE value="프로필 이미지 초기화 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로필 이미지 초기화 구현" />
+    <MESSAGE value="프로필 이미지 변경 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="프로필 이미지 변경 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
