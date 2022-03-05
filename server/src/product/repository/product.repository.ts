@@ -9,6 +9,7 @@ import {
 import { CreateProductDto } from '../dto/create.product.dto';
 import * as mongoose from 'mongoose';
 import { UserSchema } from '../../user/model/user.model';
+import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
 
 @Injectable()
 export class ProductRepository {
@@ -16,7 +17,36 @@ export class ProductRepository {
     @InjectModel(Product.name) private readonly product: Model<Product>,
     @InjectModel(ProductImage.name)
     private readonly productImage: Model<ProductImage>,
+    @InjectModel(ProductFavorite.name)
+    private readonly productFavorite: Model<ProductFavorite>,
   ) {}
+
+  // 상품 즐겨찾기 추가
+  async createFavoriteProduct(userId: string, productId: string) {
+    const result = await this.productFavorite.create({
+      toStoreId: userId,
+      fromProductId: productId,
+    });
+    return result;
+  }
+
+  // 상품 즐겨찾기 제거
+  async deleteFavoriteProduct(userId: string, productId: string) {
+    const result = await this.productFavorite.deleteOne({
+      toStoreId: userId,
+      fromProductId: productId,
+    });
+    return result;
+  }
+
+  // 이미 즐겨찾기한 상품인지 확인
+  async findByIdFavoriteProduct(userId: string, productId: string) {
+    const result = await this.productFavorite.findOne({
+      toStoreId: userId,
+      fromProductId: productId,
+    });
+    return result;
+  }
 
   // 상품 제거(물리적 제거
   async deleteHardProduct(productId): Promise<any> {

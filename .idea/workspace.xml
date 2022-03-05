@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="server ssl 인증서 업로드">
-      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 즐겨찾기(찜) API 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/pollow/pollow.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,14 +127,8 @@
       <workItem from="1645482177969" duration="21225000" />
       <workItem from="1646056136140" duration="164000" />
       <workItem from="1646471227317" duration="87000" />
-      <workItem from="1646482240110" duration="4501000" />
-    </task>
-    <task id="LOCAL-00028" summary="Add AuthNumberPage design and verification, Timer applied">
-      <created>1644132432676</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1644132432676</updated>
+      <workItem from="1646482240110" duration="6691000" />
+      <workItem from="1646503709122" duration="1611000" />
     </task>
     <task id="LOCAL-00029" summary="휴대폰 인증 로직 구현">
       <created>1644451690006</created>
@@ -487,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646056295148</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="상품 즐겨찾기(찜) API 추가">
+      <created>1646487808815</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1646487808815</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,8 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="이미지 캐러셀 일부 구현" />
-    <MESSAGE value="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리" />
     <MESSAGE value="배너 오토 캐루셀 추가" />
     <MESSAGE value="MyShopPage 내의 탭 항목 라우터로 분기처리 -&gt; 라우터 제거 후 컴포넌트로 분기처리" />
     <MESSAGE value="내상점 페이지 디자인" />
@@ -531,7 +515,9 @@
     <MESSAGE value="프로필 이미지 초기화 구현" />
     <MESSAGE value="프로필 이미지 변경 구현" />
     <MESSAGE value="server ssl 인증서 업로드" />
-    <option name="LAST_COMMIT_MESSAGE" value="server ssl 인증서 업로드" />
+    <MESSAGE value="상품 즐겨찾기 API 추가" />
+    <MESSAGE value="상품 즐겨찾기(찜) API 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품 즐겨찾기(찜) API 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

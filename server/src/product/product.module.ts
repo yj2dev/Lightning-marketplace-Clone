@@ -10,8 +10,11 @@ import {
   ProductImageSchema,
 } from '../product-image/model/product-image.model';
 import { Tag, TagSchema } from '../tag/model/tag.model';
-import { TagRepository } from '../tag/tag.reposigory';
 import { TagModule } from '../tag/tag.module';
+import {
+  ProductFavorite,
+  ProductFavoriteSchema,
+} from '../product-favorite/model/product-favorite.model';
 
 @Module({
   imports: [
@@ -19,6 +22,7 @@ import { TagModule } from '../tag/tag.module';
       { name: User.name, schema: UserSchema },
       { name: Product.name, schema: ProductSchema },
       { name: ProductImage.name, schema: ProductImageSchema },
+      { name: ProductFavorite.name, schema: ProductFavoriteSchema },
       { name: Tag.name, schema: TagSchema },
     ]),
     TagModule,

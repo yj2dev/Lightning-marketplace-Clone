@@ -77,7 +77,14 @@ export const ProductDetailPage = () => {
 
   const onClickFavoriteProduct = () => {
     const productId = getProductId();
-    console.log(productId);
+    axios
+      .get(`/product/${productId}/favorite`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

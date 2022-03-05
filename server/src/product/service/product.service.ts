@@ -10,6 +10,30 @@ export class ProductService {
     private readonly tagRepository: TagRepository,
   ) {}
 
+  // 상품 즐겨찾기 추가
+  async addFavoriteProduct(
+    userId: string,
+    productId: string,
+  ): Promise<boolean> {
+    const isFavoriteProduct =
+      await this.productRepository.findByIdFavoriteProduct(userId, productId);
+
+    console.log('isFavoriteProduct >> ', isFavoriteProduct);
+
+    // 즐겨찾기 여부 확인
+    if (isFavoriteProduct) {
+      // 정보가 있다면 즐겨찾기 해제
+      await this.productRepository.deleteFavoriteProduct(userId, productId);
+      console.log('즐겨찾기 해제');
+    } else {
+      // 정보가 없다면 즐겨찾기 추가
+      await this.productRepository.createFavoriteProduct(userId, productId);
+      console.log('즐겨찾기 추가');
+    }
+
+    return true;
+  }
+
   // 상품 물리적 제거(Hard Delete), 연결된 태그도 제거
   async deleteHardProduct(productId: string): Promise<boolean> {
     const deleteProductResult = await this.productRepository.deleteHardProduct(

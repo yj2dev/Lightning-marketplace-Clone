@@ -28,8 +28,10 @@ export class ProductController {
   addFavoriteProduct(
     @CurrentUser() currentUser: User,
     @Param('productId') productId: string,
-  ) {
+  ): Promise<boolean> {
+    console.log('currentUser >> ', currentUser);
     console.log('productId >> ', productId);
+    return this.productService.addFavoriteProduct(currentUser._id, productId);
   }
 
   @Delete('')
