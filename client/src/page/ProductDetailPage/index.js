@@ -74,6 +74,12 @@ export const ProductDetailPage = () => {
     if (currentImgIndex === 0) setCurrentImgIndex(totalImgIndex - 1);
     else setCurrentImgIndex(currentImgIndex - 1);
   };
+
+  const onClickFavoriteProduct = () => {
+    const productId = getProductId();
+    console.log(productId);
+  };
+
   return (
     <Container>
       <ProductContainer>
@@ -147,7 +153,10 @@ export const ProductDetailPage = () => {
             </div>
           </table>
           <div className="product_btn">
-            <button style={{ background: "#cccccc" }}>
+            <button
+              style={{ background: "#cccccc" }}
+              onClick={onClickFavoriteProduct}
+            >
               <AiFillHeart />
               &nbsp;찜&nbsp;<span>0</span>
             </button>

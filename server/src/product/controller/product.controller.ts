@@ -23,6 +23,15 @@ import { Product } from '../model/product.model';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  @Get('/:productId/favorite')
+  @UseGuards(JwtAuthGuard)
+  addFavoriteProduct(
+    @CurrentUser() currentUser: User,
+    @Param('productId') productId: string,
+  ) {
+    console.log('productId >> ', productId);
+  }
+
   @Delete('')
   @UseGuards(JwtAuthGuard)
   async deleteProduct(

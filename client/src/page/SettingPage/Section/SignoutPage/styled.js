@@ -9,8 +9,7 @@ export const User = styled.div`
     font-weight: 800;
   }
   & img {
-    //border: 1px solid #eeeeee;
-    border-right: 50%;
+    border-radius: 50%;
     width: 100px;
     height: 100px;
     object-fit: cover;

@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="프로필 이미지 변경 구현" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="server ssl 인증서 업로드">
+      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/pollow/pollow.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/SettingPage/Section/SignoutPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/pollow/pollow.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/tag" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,18 +70,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\SettingPage\Section" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\components" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\public\img" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\pollow" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-review" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-contact" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\service" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\controller" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\controller" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\services" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\repository" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -118,13 +140,9 @@
       <workItem from="1645393628648" duration="36415000" />
       <workItem from="1645447580096" duration="9000" />
       <workItem from="1645482177969" duration="21225000" />
-    </task>
-    <task id="LOCAL-00027" summary="signup page design and validation">
-      <created>1644083774958</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1644083774958</updated>
+      <workItem from="1646056136140" duration="164000" />
+      <workItem from="1646471227317" duration="87000" />
+      <workItem from="1646482240110" duration="4501000" />
     </task>
     <task id="LOCAL-00028" summary="Add AuthNumberPage design and verification, Timer applied">
       <created>1644132432676</created>
@@ -462,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645544005292</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="server ssl 인증서 업로드">
+      <created>1646056295148</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1646056295148</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +506,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="슬라이더 구현 실패" />
     <MESSAGE value="이미지 캐러셀 일부 구현" />
     <MESSAGE value="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리" />
     <MESSAGE value="배너 오토 캐루셀 추가" />
@@ -506,7 +530,8 @@
     <MESSAGE value="다수의 유저 가입 성공" />
     <MESSAGE value="프로필 이미지 초기화 구현" />
     <MESSAGE value="프로필 이미지 변경 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로필 이미지 변경 구현" />
+    <MESSAGE value="server ssl 인증서 업로드" />
+    <option name="LAST_COMMIT_MESSAGE" value="server ssl 인증서 업로드" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -519,7 +544,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/src/user/model/user.model.ts</url>
           <line>77</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
