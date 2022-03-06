@@ -163,16 +163,28 @@ export class Product extends Document {
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
 
+ProductSchema.virtual('userInfo', {
+  ref: 'users',
+  localField: 'userId',
+  foreignField: '_id',
+});
+
 ProductSchema.virtual('productImgURLs', {
   ref: 'productimages',
   localField: '_id',
   foreignField: 'productId',
 });
 
-ProductSchema.virtual('userInfo', {
-  ref: 'users',
-  localField: 'userId',
-  foreignField: '_id',
+ProductSchema.virtual('productFavoriteCount', {
+  ref: 'productfavorites',
+  localField: '_id',
+  foreignField: 'fromProductId',
+});
+
+ProductSchema.virtual('productContacts', {
+  ref: 'productcontacts',
+  localField: '_id',
+  foreignField: 'toStoreId',
 });
 
 ProductSchema.set('toObject', { virtuals: true });

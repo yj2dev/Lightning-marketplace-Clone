@@ -27,6 +27,7 @@ const ProductAskSection = () => {
       .post(`/product/${productId}/contact`, { content: ask })
       .then((res) => {
         console.log(res);
+        setAsk("");
       })
       .catch((err) => {
         console.log(err);
@@ -55,6 +56,7 @@ const ProductAskSection = () => {
       .patch(`/product/${productId}/contact`, { content: ask })
       .then((res) => {
         console.log(res);
+        setAsk("");
       })
       .catch((err) => {
         console.log(err);

@@ -9,8 +9,14 @@ import {
 import { CreateProductDto } from '../dto/create.product.dto';
 import * as mongoose from 'mongoose';
 import { UserSchema } from '../../user/model/user.model';
-import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
-import { ProductContact } from '../../product-contact/model/product-contact.model';
+import {
+  ProductFavorite,
+  ProductFavoriteSchema,
+} from '../../product-favorite/model/product-favorite.model';
+import {
+  ProductContact,
+  ProductContactSchema,
+} from '../../product-contact/model/product-contact.model';
 
 @Injectable()
 export class ProductRepository {
@@ -31,8 +37,8 @@ export class ProductRepository {
     content: string,
   ): Promise<any> {
     const result = await this.productContact.create({
-      toStoreId: productId,
-      fromWriterId: userId,
+      toStoreId: mongoose.Types.ObjectId(productId),
+      fromWriterId: mongoose.Types.ObjectId(userId),
       content,
     });
     return result;
@@ -41,8 +47,8 @@ export class ProductRepository {
   // 상품 문의 제거
   async deleteProductContact(userId: string, productId: string): Promise<any> {
     const result = await this.productContact.deleteOne({
-      toStoreId: productId,
-      fromWriterId: userId,
+      toStoreId: mongoose.Types.ObjectId(productId),
+      fromWriterId: mongoose.Types.ObjectId(userId),
     });
     return result;
   }
@@ -55,8 +61,8 @@ export class ProductRepository {
   ): Promise<any> {
     const result = await this.productContact.findOneAndUpdate(
       {
-        toStoreId: productId,
-        fromWriterId: userId,
+        toStoreId: mongoose.Types.ObjectId(productId),
+        fromWriterId: mongoose.Types.ObjectId(userId),
       },
       { content },
       { new: true },
@@ -66,9 +72,12 @@ export class ProductRepository {
 
   // 상품 즐겨찾기 추가
   async createProductFavorite(userId: string, productId: string) {
+    // 변경 내역: userId를 string 형태로 저장하니까 populate 할 때
+    // 아이디가 읽히지 않아서 몽구스에서 지원하는 ID 형태로 변환 후 저장
+    // mongoose.Types.ObjectId()
     const result = await this.productFavorite.create({
-      toStoreId: userId,
-      fromProductId: productId,
+      toStoreId: mongoose.Types.ObjectId(userId),
+      fromProductId: mongoose.Types.ObjectId(productId),
     });
     return result;
   }
@@ -76,8 +85,8 @@ export class ProductRepository {
   // 상품 즐겨찾기 제거
   async deleteProductFavorite(userId: string, productId: string) {
     const result = await this.productFavorite.deleteOne({
-      toStoreId: userId,
-      fromProductId: productId,
+      toStoreId: mongoose.Types.ObjectId(userId),
+      fromProductId: mongoose.Types.ObjectId(productId),
     });
     return result;
   }
@@ -85,8 +94,8 @@ export class ProductRepository {
   // 이미 즐겨찾기한 상품인지 확인
   async findByIdProductFavorite(userId: string, productId: string) {
     const result = await this.productFavorite.findOne({
-      toStoreId: userId,
-      fromProductId: productId,
+      toStoreId: mongoose.Types.ObjectId(userId),
+      fromProductId: mongoose.Types.ObjectId(productId),
     });
     return result;
   }
@@ -101,8 +110,6 @@ export class ProductRepository {
 
   // 상품 필드 부분 수정
   async updateProduct(productId, field: object): Promise<Product> {
-    console.log('repo');
-    console.log(productId, field);
     const result = await this.product.findOneAndUpdate(
       { _id: productId },
       { ...field },
@@ -115,17 +122,26 @@ export class ProductRepository {
 
   // 상품과 관련된 모든 스키마 조인하기
   async findByIdAndPopulate(id: string): Promise<Product> {
+    const UserModel = mongoose.model('users', UserSchema);
     const ProductImageModel = mongoose.model(
       'productimages',
       ProductImageSchema,
     );
-
-    const UserModel = mongoose.model('users', UserSchema);
+    const ProductContactModel = mongoose.model(
+      'productcontacts',
+      ProductContactSchema,
+    );
+    const ProductFavoriteModel = mongoose.model(
+      'productfavorites',
+      ProductFavoriteSchema,
+    );
 
     const result = await this.product
       .findById(id)
       .populate('productImgURLs', ProductImageModel)
-      .populate('userInfo', UserModel);
+      .populate('userInfo', UserModel)
+      .populate('productFavoriteCount', ProductFavoriteModel)
+      .populate('productContacts', ProductContactModel);
 
     console.log('result >> ', result);
     return result;

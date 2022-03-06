@@ -44,11 +44,10 @@ export const ProductDetailPage = () => {
     axios
       .get(`/product/detail/${productId}`)
       .then((res) => {
+        console.log(res);
         setProduct(res.data);
         setUser(res.data.userInfo[0]);
         setProductImgs(res.data.productImgURLs);
-        console.log(res);
-        console.log("cnt >> ");
         setTotalImgIndex(res.data.productImgURLs.length);
       })
       .catch((err) => {
