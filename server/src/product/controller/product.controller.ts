@@ -23,15 +23,55 @@ import { Product } from '../model/product.model';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  @Post('/:productId/contact')
+  @UseGuards(JwtAuthGuard)
+  async createProductContact(
+    @Param('productId') productId: string,
+    @Body('content') content: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.productService.createProductContact(
+      currentUser._id,
+      productId,
+      content,
+    );
+  }
+
+  @Delete('/:productId/contact')
+  @UseGuards(JwtAuthGuard)
+  async deleteProductContact(
+    @Param('productId') productId: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.productService.deleteProductContact(
+      currentUser._id,
+      productId,
+    );
+  }
+
+  @Patch('/:productId/contact')
+  @UseGuards(JwtAuthGuard)
+  async updateProductContact(
+    @Param('productId') productId: string,
+    @Body('content') content: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.productService.updateProductContact(
+      currentUser._id,
+      productId,
+      content,
+    );
+  }
+
   @Get('/:productId/favorite')
   @UseGuards(JwtAuthGuard)
-  addFavoriteProduct(
+  async addFavoriteProduct(
     @CurrentUser() currentUser: User,
     @Param('productId') productId: string,
   ): Promise<boolean> {
     console.log('currentUser >> ', currentUser);
     console.log('productId >> ', productId);
-    return this.productService.addFavoriteProduct(currentUser._id, productId);
+    return this.productService.addProductFavorite(currentUser._id, productId);
   }
 
   @Delete('')

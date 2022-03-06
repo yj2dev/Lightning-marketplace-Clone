@@ -10,25 +10,52 @@ export class ProductService {
     private readonly tagRepository: TagRepository,
   ) {}
 
-  // 상품 즐겨찾기 추가
-  async addFavoriteProduct(
+  // 상품 문의 작성
+  async createProductContact(
+    userId: string,
+    productId: string,
+    content: string,
+  ): Promise<any> {
+    return await this.productRepository.createProductContact(
+      userId,
+      productId,
+      content,
+    );
+  }
+
+  // 상품 문의 제거
+  async deleteProductContact(userId: string, productId: string): Promise<any> {
+    return await this.productRepository.deleteProductContact(userId, productId);
+  }
+
+  // 상품 문의 수정
+  async updateProductContact(
+    userId: string,
+    productId: string,
+    content: string,
+  ): Promise<any> {
+    return await this.productRepository.updateProductContact(
+      userId,
+      productId,
+      content,
+    );
+  }
+
+  // 상품 즐겨찾기(찜) 추가 또는 제거
+  async addProductFavorite(
     userId: string,
     productId: string,
   ): Promise<boolean> {
-    const isFavoriteProduct =
-      await this.productRepository.findByIdFavoriteProduct(userId, productId);
-
-    console.log('isFavoriteProduct >> ', isFavoriteProduct);
+    const isProductFavorite =
+      await this.productRepository.findByIdProductFavorite(userId, productId);
 
     // 즐겨찾기 여부 확인
-    if (isFavoriteProduct) {
+    if (isProductFavorite) {
       // 정보가 있다면 즐겨찾기 해제
-      await this.productRepository.deleteFavoriteProduct(userId, productId);
-      console.log('즐겨찾기 해제');
+      await this.productRepository.deleteProductFavorite(userId, productId);
     } else {
       // 정보가 없다면 즐겨찾기 추가
-      await this.productRepository.createFavoriteProduct(userId, productId);
-      console.log('즐겨찾기 추가');
+      await this.productRepository.createProductFavorite(userId, productId);
     }
 
     return true;

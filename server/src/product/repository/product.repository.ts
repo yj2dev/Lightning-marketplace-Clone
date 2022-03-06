@@ -10,6 +10,7 @@ import { CreateProductDto } from '../dto/create.product.dto';
 import * as mongoose from 'mongoose';
 import { UserSchema } from '../../user/model/user.model';
 import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
+import { ProductContact } from '../../product-contact/model/product-contact.model';
 
 @Injectable()
 export class ProductRepository {
@@ -19,10 +20,52 @@ export class ProductRepository {
     private readonly productImage: Model<ProductImage>,
     @InjectModel(ProductFavorite.name)
     private readonly productFavorite: Model<ProductFavorite>,
+    @InjectModel(ProductContact.name)
+    private readonly productContact: Model<ProductFavorite>,
   ) {}
 
+  // 상품 문의 작성
+  async createProductContact(
+    userId: string,
+    productId: string,
+    content: string,
+  ): Promise<any> {
+    const result = await this.productContact.create({
+      toStoreId: productId,
+      fromWriterId: userId,
+      content,
+    });
+    return result;
+  }
+
+  // 상품 문의 제거
+  async deleteProductContact(userId: string, productId: string): Promise<any> {
+    const result = await this.productContact.deleteOne({
+      toStoreId: productId,
+      fromWriterId: userId,
+    });
+    return result;
+  }
+
+  // 상품 문의 수정
+  async updateProductContact(
+    userId: string,
+    productId: string,
+    content: string,
+  ): Promise<any> {
+    const result = await this.productContact.findOneAndUpdate(
+      {
+        toStoreId: productId,
+        fromWriterId: userId,
+      },
+      { content },
+      { new: true },
+    );
+    return result;
+  }
+
   // 상품 즐겨찾기 추가
-  async createFavoriteProduct(userId: string, productId: string) {
+  async createProductFavorite(userId: string, productId: string) {
     const result = await this.productFavorite.create({
       toStoreId: userId,
       fromProductId: productId,
@@ -31,7 +74,7 @@ export class ProductRepository {
   }
 
   // 상품 즐겨찾기 제거
-  async deleteFavoriteProduct(userId: string, productId: string) {
+  async deleteProductFavorite(userId: string, productId: string) {
     const result = await this.productFavorite.deleteOne({
       toStoreId: userId,
       fromProductId: productId,
@@ -40,7 +83,7 @@ export class ProductRepository {
   }
 
   // 이미 즐겨찾기한 상품인지 확인
-  async findByIdFavoriteProduct(userId: string, productId: string) {
+  async findByIdProductFavorite(userId: string, productId: string) {
     const result = await this.productFavorite.findOne({
       toStoreId: userId,
       fromProductId: productId,

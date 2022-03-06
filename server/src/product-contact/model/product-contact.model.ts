@@ -12,7 +12,7 @@ const options: SchemaOptions = {
 export class ProductContact extends Document {
   @ApiProperty({
     example: '620b828e1f6b15237478a8f9',
-    description: '상점문의 게시글이 작성되는 상점 아이디',
+    description: '상품문의 게시글이 작성되는 상점 아이디',
     required: true,
   })
   @Prop({ type: Types.ObjectId, ref: 'users' })
@@ -21,7 +21,7 @@ export class ProductContact extends Document {
 
   @ApiProperty({
     example: '620afacc4b13710ca520168e',
-    description: '상점문의 게시글 작성자',
+    description: '상품문의 게시글 작성자',
     required: true,
   })
   @Prop({ type: Types.ObjectId, ref: 'users' })
@@ -29,7 +29,7 @@ export class ProductContact extends Document {
   fromWriterId: Types.ObjectId;
 
   @ApiProperty({
-    example: '상품이 정말 다양하네요',
+    example: '두번째 사진 잘 안보여요',
     description: '상점문의 게시글 내용',
     required: true,
   })

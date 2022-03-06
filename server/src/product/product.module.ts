@@ -15,6 +15,10 @@ import {
   ProductFavorite,
   ProductFavoriteSchema,
 } from '../product-favorite/model/product-favorite.model';
+import {
+  ProductContact,
+  ProductContactSchema,
+} from '../product-contact/model/product-contact.model';
 
 @Module({
   imports: [
@@ -23,6 +27,7 @@ import {
       { name: Product.name, schema: ProductSchema },
       { name: ProductImage.name, schema: ProductImageSchema },
       { name: ProductFavorite.name, schema: ProductFavoriteSchema },
+      { name: ProductContact.name, schema: ProductContactSchema },
       { name: Tag.name, schema: TagSchema },
     ]),
     TagModule,
