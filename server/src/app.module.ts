@@ -22,6 +22,7 @@ import { StoreReviewModule } from './store-review/store-review.module';
 import { TagModule } from './tag/tag.module';
 import { PollowModule } from './pollow/pollow.module';
 import { CategoryModule } from './category/category.module';
+import { TalkModule } from './talk/talk.module';
 
 @Module({
   imports: [
@@ -51,6 +52,7 @@ import { CategoryModule } from './category/category.module';
     TagModule,
     PollowModule,
     CategoryModule,
+    TalkModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

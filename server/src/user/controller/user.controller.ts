@@ -86,10 +86,9 @@ export class UserController {
   @ApiOperation({ summary: '유저와 연관된 모든 정보 요청' })
   @ApiResponse({ status: 200, description: '성공' })
   @ApiResponse({ status: 500, description: '서버 에러' })
-  @UseGuards(JwtAuthGuard)
-  @Get('detail')
-  async getDetailUser(@CurrentUser() currentUser): Promise<User> {
-    return await this.userService.getDetailUser(currentUser._id);
+  @Get('detail/:userId')
+  async getDetailUser(@Param('userId') userId: string): Promise<User> {
+    return await this.userService.getDetailUser(userId);
   }
 
   @ApiOperation({ summary: '유저(상점) 자기소개(상점설명) 변경' })

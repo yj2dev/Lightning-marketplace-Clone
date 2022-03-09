@@ -18,6 +18,7 @@ import ProductAskSection from "./Section/ProductAskSection";
 import StoreInfoSection from "./Section/StoreInfoSection";
 import { useSelector } from "react-redux";
 import ProductFavoriteSection from "./Section/ProductFavoriteSection";
+import ProductTalkSection from "./Section/ProductTalkSection";
 
 // 새로운 페이지 생성시 기본 구조
 export const ProductDetailPage = ({ history }) => {
@@ -149,9 +150,9 @@ export const ProductDetailPage = ({ history }) => {
               favoriteList={product.productFavoriteCount}
               store={store}
             />
+            <ProductTalkSection storeOfProduct={product.userInfo} />
 
-            <button style={{ background: "#ffa425" }}>연락하기</button>
-            <button style={{ background: "#f70000" }}>바로구매</button>
+            {/*<button style={{ background: "#f70000" }}>바로구매</button>*/}
           </div>
         </ProductContent>
       </ProductContainer>

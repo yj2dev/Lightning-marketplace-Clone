@@ -7,7 +7,7 @@ import {
   UserStoreContents,
 } from "./styled";
 import React, { useEffect, useRef, useState } from "react";
-import { Link, Route, Switch, withRouter } from "react-router-dom";
+import { Link, Route, Switch, useLocation, withRouter } from "react-router-dom";
 import { AiFillShop } from "react-icons/ai";
 import { GrEdit } from "react-icons/gr";
 
@@ -25,6 +25,7 @@ import AlertModal from "../../components/AlertModal";
 import ImageCrop from "../../components/ImageCrop";
 
 const MyShopPage = ({ history }) => {
+  const location = useLocation();
   const tabMenuList = [
     "상품",
     "상품문의",
@@ -51,6 +52,9 @@ const MyShopPage = ({ history }) => {
   const [showResetModal, setShowResetModal] = useState(false);
   const [showCropImageModal, setShowCropImageModal] = useState(false);
 
+  const [userInfo, setUserInfo] = useState({});
+  const [isMyStore, setIsMyStore] = useState(false);
+
   const onCloseEditMenu = () => {
     setShowEditMenu(false);
   };
@@ -70,16 +74,27 @@ const MyShopPage = ({ history }) => {
 
   // 응답 후 상태 업데이트
   function setResState() {
-    history.push(`/shop/${user.isSignin.data._id}`);
+    const userId = getUserId();
+    history.push(`/shop/${userId}`);
+  }
+
+  function getUserId() {
+    const path = location.pathname.split("/");
+    return path[2] ? path[2] : null;
   }
 
   useEffect(() => {
+    const userId = getUserId();
+
     axios
-      .get("/user/detail")
+      .get(`/user/detail/${userId}`)
       .then((res) => {
         console.log("res detail >> ", res);
-        console.log("data >> ", res.data.data.products);
+        setUserInfo(res.data.data);
         setProducts(res.data.data.products);
+        const myStore = user.isSignin.data._id === userId ? true : false;
+        setIsMyStore(myStore);
+        console.log("myStore >> ", myStore);
       })
       .catch((err) => {
         console.log("err detail >> ", err);
@@ -104,7 +119,7 @@ const MyShopPage = ({ history }) => {
 
         // 상점명 변경 성공
         setEditStoreName(false);
-        setResState(res);
+        setResState();
       })
       .catch((err) => {
         console.log("err >> ", err);
@@ -119,7 +134,7 @@ const MyShopPage = ({ history }) => {
       .then((res) => {
         console.log("res >> ", res);
         // 상점 소개글 변경 성공
-        setResState(res);
+        setResState();
         setEditStoreDescription(false);
       })
       .catch((err) => {
@@ -144,12 +159,12 @@ const MyShopPage = ({ history }) => {
   };
 
   const onClickEditStoreName = () => {
-    setStoreName(user.isSignin.data.storeName);
+    setStoreName(userInfo.storeName);
     setEditStoreName((prev) => !prev);
   };
 
   const onClickEditStoreDescription = () => {
-    setStoreDescription(user.isSignin.data.description);
+    setStoreDescription(userInfo.description);
     setEditStoreDescription((prev) => !prev);
   };
 
@@ -164,7 +179,7 @@ const MyShopPage = ({ history }) => {
           <div className="background_img_wrapper">
             <img
               className="background_img"
-              src={`${user.isSignin.data.profileURL}`}
+              src={userInfo && `${userInfo.profileURL}`}
             />
             <Menu show={showEditMenu} close={onCloseEditMenu}>
               <EditProfileMenu>
@@ -182,32 +197,42 @@ const MyShopPage = ({ history }) => {
           <div className="background_img_cover"></div>
           <img
             className="profile_img"
-            src={`${user.isSignin.data.profileURL}`}
+            src={userInfo && `${userInfo.profileURL}`}
           />
           <div className="store_name">
-            {user.isSignin && user.isSignin.data.storeName}
+            {userInfo && `${userInfo.storeName}`}
           </div>
-          <span
-            className="edit_profile_img"
-            onClick={() => setShowEditMenu((prev) => !prev)}
-          >
-            <GrEdit
-              size={16}
-              style={{ color: "#000000", marginRight: "4px" }}
-            />
-            수정
-          </span>
+          {isMyStore && (
+            <span
+              className="edit_profile_img"
+              onClick={() => setShowEditMenu((prev) => !prev)}
+            >
+              <GrEdit
+                size={16}
+                style={{ color: "#000000", marginRight: "4px" }}
+              />
+              수정
+            </span>
+          )}
 
-          <div className="store_management" onClick={onClickMyStoreManagement}>
-            내 상점 관리
-          </div>
+          {isMyStore && (
+            <div
+              className="store_management"
+              onClick={onClickMyStoreManagement}
+            >
+              내 상점 관리
+            </div>
+          )}
         </div>
         <UserStoreContents>
           <div className="contents_store_name">
             {!editStoreName ? (
               <>
-                {user.isSignin && user.isSignin.data.storeName}&nbsp;&nbsp;
-                <button onClick={onClickEditStoreName}>상점명 수정</button>
+                {userInfo && `${userInfo.storeName}`}
+                &nbsp;&nbsp;
+                {isMyStore && (
+                  <button onClick={onClickEditStoreName}>상점명 수정</button>
+                )}
               </>
             ) : (
               <>
@@ -231,13 +256,14 @@ const MyShopPage = ({ history }) => {
               &nbsp;&nbsp;
             </span>
             상점오픈일&nbsp;
-            <span>{oneDaysFormat(user.isSignin.data.createdAt)}</span>
+            <span>{userInfo && oneDaysFormat(userInfo.createdAt)}</span>
           </div>
           <div className="contents_store_desc">
             {!editStoreDescription ? (
               <>
-                {user.isSignin &&
-                  user.isSignin.data.description.split("\n").map((line) => (
+                {userInfo &&
+                  userInfo.description &&
+                  userInfo.description.split("\n").map((line) => (
                     <>
                       {line} <br />
                     </>
@@ -258,7 +284,7 @@ const MyShopPage = ({ history }) => {
               </>
             )}
           </div>
-          {!editStoreDescription && (
+          {!editStoreDescription && isMyStore && (
             <button onClick={onClickEditStoreDescription}>소개글 수정</button>
           )}
         </UserStoreContents>
@@ -267,13 +293,27 @@ const MyShopPage = ({ history }) => {
         <ul>
           {tabMenuList &&
             tabMenuList.map((menu, index) => (
-              <li
-                className={tabMenu === index && "active"}
-                onClick={onClickTabMenu}
-                value={index}
-              >
-                {menu}
-              </li>
+              <>
+                {isMyStore ? (
+                  <li
+                    className={tabMenu === index && "active"}
+                    onClick={onClickTabMenu}
+                    value={index}
+                  >
+                    {menu}
+                  </li>
+                ) : (
+                  index !== 2 && (
+                    <li
+                      className={tabMenu === index && "active"}
+                      onClick={onClickTabMenu}
+                      value={index}
+                    >
+                      {menu}
+                    </li>
+                  )
+                )}
+              </>
             ))}
         </ul>
       </TabMenu>

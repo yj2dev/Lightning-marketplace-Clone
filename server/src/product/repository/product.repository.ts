@@ -120,7 +120,7 @@ export class ProductRepository {
     return result;
   }
 
-  // 상품과 관련된 모든 스키마 조인하기
+  // 특정 상품과 관련된 모든 스키마 조인하기
   async findByIdAndPopulate(id: string): Promise<Product> {
     const UserModel = mongoose.model('users', UserSchema);
     const ProductImageModel = mongoose.model(
@@ -154,7 +154,7 @@ export class ProductRepository {
 
   // 전체 상품 목록 조회
   async getAllProduct() {
-    return this.product.find();
+    return this.product.find().sort({ createdAt: -1 });
   }
 
   // 상품 정보 저장

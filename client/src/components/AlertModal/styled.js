@@ -23,17 +23,17 @@ export const ModalContainer = styled.div`
   box-shadow: 0px 0px 5px 1px #a1a6ab;
   padding: 16px;
   min-width: 260px;
-  max-width: 360px;
+  max-width: 400px;
 `;
 
-export const CloseButton = styled.button`
+export const CloseButton = styled.div`
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 4px;
+  right: 4px;
   padding: 0 8px;
   color: #9b9c9c;
   height: 32px;

@@ -23,14 +23,12 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
   }
 
   useEffect(() => {
-    console.log("t >> ", favoriteList, store);
     // undefined 를 무조건 먼저 사용해야 한다.
     // 처음엔 비어있는 값이 들어와 길이를 체크하지 못해 오류를 일으키기 때문
     if (favoriteList === undefined || favoriteList.length === 0) return;
 
     let mySelect = false;
     favoriteList.forEach((favorite) => {
-      console.log("f >> ", favorite);
       mySelect = favorite.toStoreId === store.isSignin.data._id ? true : false;
     });
 
@@ -45,7 +43,6 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
     axios
       .get(`/product/${productId}/favorite`)
       .then((res) => {
-        console.log("fa res >> ", res);
         if (res.data) {
           //    증감
           setFavorite({
@@ -55,19 +52,19 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
           setShowAddFavoriteAlert(true);
           setTimeout(() => {
             setShowAddFavoriteAlert(false);
-          }, 3000);
+          }, 2000);
         } else {
           //    감소
           setFavorite({
             cnt: favorite.cnt - 1,
             mySelect: false,
           });
+          setShowAddFavoriteAlert(false);
         }
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log("ff >> ", favorite);
   };
 
   const activeFavoriteBtn = {
