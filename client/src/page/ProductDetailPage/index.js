@@ -32,14 +32,6 @@ export const ProductDetailPage = ({ history }) => {
   const [totalImgIndex, setTotalImgIndex] = useState(false);
   const productImg = useRef();
 
-  // 찜
-  const [favorite, setFavorite] = useState({
-    // cnt: 찜 개수, mySelect: 내 선택 여부, myProduct: 로그인 한 유저의 상품 여부
-    cnt: 0,
-    mySelect: false,
-    myProduct: false,
-  });
-
   // 활성화된 탭 메뉴
   const [tabMenu, setTabMenu] = useState(0);
 
@@ -51,30 +43,14 @@ export const ProductDetailPage = ({ history }) => {
   useEffect(() => {
     const productId = getProductId();
 
-    console.log(productId);
     axios
       .get(`/product/detail/${productId}`)
       .then((res) => {
-        console.log(res);
+        console.log("res >> ", res);
         setProduct(res.data);
         setUser(res.data.userInfo[0]);
         setProductImgs(res.data.productImgURLs);
         setTotalImgIndex(res.data.productImgURLs.length);
-
-        const myProduct =
-          res.data.userId === store.isSignin.data._id ? true : false;
-        let mySelect = false;
-        res.data.productFavoriteCount.map((favorite) => {
-          mySelect =
-            favorite.toStoreId === store.isSignin.data._id ? true : false;
-        });
-
-        console.log("myProduct >> ", myProduct);
-        setFavorite({
-          cnt: res.data.productFavoriteCount.length,
-          mySelect,
-          myProduct,
-        });
       })
       .catch((err) => {
         console.log(err);
@@ -169,7 +145,11 @@ export const ProductDetailPage = ({ history }) => {
             </div>
           </table>
           <div className="product_btn">
-            <ProductFavoriteSection favorite={favorite} />
+            <ProductFavoriteSection
+              favoriteList={product.productFavoriteCount}
+              store={store}
+            />
+
             <button style={{ background: "#ffa425" }}>연락하기</button>
             <button style={{ background: "#f70000" }}>바로구매</button>
           </div>

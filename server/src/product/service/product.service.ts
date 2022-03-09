@@ -42,6 +42,7 @@ export class ProductService {
   }
 
   // 상품 즐겨찾기(찜) 추가 또는 제거
+  // 추가 했다면 true, 제거했다면 false(기본값) 반환
   async addProductFavorite(
     userId: string,
     productId: string,
@@ -56,9 +57,10 @@ export class ProductService {
     } else {
       // 정보가 없다면 즐겨찾기 추가
       await this.productRepository.createProductFavorite(userId, productId);
+      return true;
     }
 
-    return true;
+    return false;
   }
 
   // 상품 물리적 제거(Hard Delete), 연결된 태그도 제거
