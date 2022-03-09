@@ -81,6 +81,36 @@ export const UserStore = styled.div`
     padding: 10px 16px;
     cursor: pointer;
   }
+  & .store_pollow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 82%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+  }
+  & .store_talk {
+    border: 1px solid #ffffff;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 82%;
+    left: 69%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+  }
 `;
 export const EditProfileMenu = styled.div`
   position: absolute;

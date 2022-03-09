@@ -6,12 +6,13 @@ import { User, UserSchema } from './model/user.model';
 import { UserRepository } from './repository/user.repository';
 import { AuthModule } from '../auth/auth.module';
 import { MulterModule } from '@nestjs/platform-express';
+import { FollowModule } from '../follow/follow.module';
 
 @Module({
   imports: [
     MulterModule.register({ dest: './upload' }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-
+    FollowModule,
     forwardRef(() => AuthModule),
   ],
   controllers: [UserController],

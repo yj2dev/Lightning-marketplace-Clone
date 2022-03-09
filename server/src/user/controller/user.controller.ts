@@ -30,6 +30,7 @@ import { CurrentUser } from '../../common/decorators/user.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { User } from '../model/user.model';
+import { FollowService } from '../../follow/follow.service';
 
 @Controller('user')
 @UseInterceptors(SuccessInterceptor)
@@ -38,7 +39,21 @@ export class UserController {
   constructor(
     private readonly userService: UserService,
     private readonly authService: AuthService,
+    private readonly followService: FollowService,
   ) {}
+
+  @ApiOperation({ summary: '팔로우' })
+  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @UseGuards(JwtAuthGuard)
+  @Post('follow/:toUserId')
+  async createFollow(
+    @CurrentUser() currentUser,
+    @Param('toUserId') toUserId: string,
+  ): Promise<any> {
+    console.log(toUserId, currentUser._id);
+    return await this.followService.createFollow(toUserId, currentUser._id);
+  }
 
   @ApiOperation({ summary: '회원탈퇴' })
   @ApiResponse({ status: 200, description: '성공' })

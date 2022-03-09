@@ -20,7 +20,7 @@ import { ProductContactModule } from './product-contact/product-contact.module';
 import { ProductFavoriteModule } from './product-favorite/product-favorite.module';
 import { StoreReviewModule } from './store-review/store-review.module';
 import { TagModule } from './tag/tag.module';
-import { PollowModule } from './pollow/pollow.module';
+import { FollowModule } from './follow/follow.module';
 import { CategoryModule } from './category/category.module';
 import { TalkModule } from './talk/talk.module';
 
@@ -50,7 +50,7 @@ import { TalkModule } from './talk/talk.module';
     ProductFavoriteModule,
     StoreReviewModule,
     TagModule,
-    PollowModule,
+    FollowModule,
     CategoryModule,
     TalkModule,
   ],

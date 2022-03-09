@@ -11,6 +11,9 @@ import { Link, Route, Switch, useLocation, withRouter } from "react-router-dom";
 import { AiFillShop } from "react-icons/ai";
 import { GrEdit } from "react-icons/gr";
 
+import { RiMessage3Line } from "react-icons/ri";
+import { BsPersonCheckFill, BsPersonPlus } from "react-icons/bs";
+
 import { useSelector } from "react-redux";
 import ShopProductsPage from "./Section/ShopProductsPage";
 import ShopCommentsPage from "./Section/ShopCommentsPage";
@@ -54,6 +57,9 @@ const MyShopPage = ({ history }) => {
 
   const [userInfo, setUserInfo] = useState({});
   const [isMyStore, setIsMyStore] = useState(false);
+
+  // 해당 상점 팔로우 여부
+  const [isPollow, setIsPollow] = useState(false);
 
   const onCloseEditMenu = () => {
     setShowEditMenu(false);
@@ -172,6 +178,23 @@ const MyShopPage = ({ history }) => {
     history.push("/product/manage");
   };
 
+  const onClickStorePollow = () => {
+    const userId = getUserId();
+
+    axios
+      .post(`/user/pollow/${userId}`)
+      .then((res) => {
+        console.log("res >> ", res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const onClickStoreTalk = () => {
+    const userId = getUserId();
+  };
+
   return (
     <Container>
       <UserStore>
@@ -215,13 +238,25 @@ const MyShopPage = ({ history }) => {
             </span>
           )}
 
-          {isMyStore && (
+          {isMyStore ? (
             <div
               className="store_management"
               onClick={onClickMyStoreManagement}
             >
               내 상점 관리
             </div>
+          ) : (
+            <>
+              <div className="store_pollow" onClick={onClickStorePollow}>
+                <BsPersonCheckFill size={18} />
+                <BsPersonPlus size={18} />
+                &nbsp;팔로우
+              </div>
+              <div className="store_talk" onClick={onClickStoreTalk}>
+                <RiMessage3Line size={18} />
+                &nbsp;번개톡
+              </div>
+            </>
           )}
         </div>
         <UserStoreContents>

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 찜 기능 구현완료">
-      <change afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리">
+      <change afterPath="$PROJECT_DIR$/server/src/follow/follow.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/follow/follow.reposigory.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AlertModal/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/StoreInfoSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/StoreInfoSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/model/follow.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/model/follow.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/pollow/pollow.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,14 +140,7 @@
       <workItem from="1646605536013" duration="3358000" />
       <workItem from="1646610821725" duration="974000" />
       <workItem from="1646747628901" duration="5834000" />
-      <workItem from="1646790710456" duration="32392000" />
-    </task>
-    <task id="LOCAL-00033" summary="로그인 UI/UX 구조 변경전 저장">
-      <created>1644677631422</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1644677631422</updated>
+      <workItem from="1646790710456" duration="37598000" />
     </task>
     <task id="LOCAL-00034" summary="휴대번호 리덕스 저장">
       <created>1644684360160</created>
@@ -484,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646806800451</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리">
+      <created>1646835270658</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1646835270658</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
     <MESSAGE value="DB설계" />
     <MESSAGE value="tag 중간테이블 제거" />
     <MESSAGE value="상품관리 페이지 설계" />
@@ -528,7 +528,8 @@
     <MESSAGE value="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패" />
     <MESSAGE value="찜 컨테이너 분리" />
     <MESSAGE value="상품 찜 기능 구현완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품 찜 기능 구현완료" />
+    <MESSAGE value="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
