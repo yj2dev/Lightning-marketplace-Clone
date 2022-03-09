@@ -143,7 +143,12 @@ export class ProductRepository {
       .populate('productFavoriteCount', ProductFavoriteModel)
       .populate('productContacts', ProductContactModel);
 
-    console.log('result >> ', result);
+    console.log('result 1 >> ', result);
+
+    console.log('result 2 >> ', result);
+    console.log('contact state >> ', result.state);
+
+    // console.log('contact >> ', result.productContacts);
     return result;
   }
 

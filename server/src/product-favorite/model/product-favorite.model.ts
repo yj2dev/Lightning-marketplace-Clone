@@ -2,6 +2,7 @@ import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
+import { ProductSchema } from '../../product/model/product.model';
 
 const options: SchemaOptions = {
   timestamps: true,

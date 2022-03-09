@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
-const ProductAskSection = () => {
+const ProductAskSection = ({ askList }) => {
   const location = useLocation();
   const [ask, setAsk] = useState("");
 
@@ -62,22 +62,25 @@ const ProductAskSection = () => {
         console.log(err);
       });
   };
-
   return (
-    <InputContainer>
-      <AskTextarea
-        value={ask}
-        onChange={onChangeAsk}
-        type="text"
-        placeholder="상품문의 입력"
-      />
+    <>
+      <InputContainer>
+        <AskTextarea
+          value={ask}
+          onChange={onChangeAsk}
+          type="text"
+          placeholder="상품문의 입력"
+        />
 
-      <hr />
-      <span>{ask.length} / 100</span>
-      <button onClick={onClickCreateAsk}>
-        <BsPencil /> 등록
-      </button>
-    </InputContainer>
+        <hr />
+        <span>{ask.length} / 100</span>
+        <button onClick={onClickCreateAsk}>
+          <BsPencil /> 등록
+        </button>
+      </InputContainer>
+
+      <div>{askList && askList.map((v) => <div>{v.content}</div>)}</div>
+    </>
   );
 };
 

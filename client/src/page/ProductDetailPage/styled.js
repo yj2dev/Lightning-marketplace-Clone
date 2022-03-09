@@ -18,6 +18,12 @@ export const ProductImgs = styled.div`
   height: 400px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
 
   & button {
     background-color: rgba(0, 0, 0, 0.1);
@@ -68,11 +74,6 @@ export const ProductImgs = styled.div`
 
   & .slidebox {
     display: flex;
-  }
-
-  & img {
-    width: 100%;
-    object-fit: cover;
   }
 `;
 
@@ -128,13 +129,15 @@ export const ProductContent = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 16px;
   }
   & .product_btn button {
+    //width: 185px;
+    width: 100%;
+    height: 58px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 185px;
-    height: 58px;
     border: none;
     color: #ffffff;
     font-size: 20px;

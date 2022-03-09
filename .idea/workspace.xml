@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 문의 (추가, 제거, 변경) API 추가">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/model/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/model/product.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,13 +132,10 @@
       <workItem from="1646471227317" duration="87000" />
       <workItem from="1646482240110" duration="6691000" />
       <workItem from="1646503709122" duration="1611000" />
-    </task>
-    <task id="LOCAL-00030" summary="휴대폰 기반 시스템 DB 설계">
-      <created>1644494263067</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1644494263067</updated>
+      <workItem from="1646605536013" duration="3358000" />
+      <workItem from="1646610821725" duration="974000" />
+      <workItem from="1646747628901" duration="5834000" />
+      <workItem from="1646790710456" duration="8530000" />
     </task>
     <task id="LOCAL-00031" summary="신규 유저 가입 정보 DB 저장">
       <created>1644521072933</created>
@@ -473,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646574668916</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패">
+      <created>1646578912637</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1646578912637</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +499,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="내상점 페이지 디자인" />
     <MESSAGE value="로그인 안된 유저 로그인 모달 띄우기" />
     <MESSAGE value="상점명 변경 중복확인, 내상점 페이지 버그 보완" />
     <MESSAGE value="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가" />
@@ -517,7 +523,8 @@
     <MESSAGE value="상품 즐겨찾기(찜) API 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경 API) 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경) API 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품 문의 (추가, 제거, 변경) API 추가" />
+    <MESSAGE value="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

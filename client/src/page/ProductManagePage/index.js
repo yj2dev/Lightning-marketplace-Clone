@@ -118,7 +118,7 @@ export const ProductManagePage = ({ history }) => {
             <th>판매상태</th>
             <th>상품명</th>
             <th>가격</th>
-            <th>찜/댓글</th>
+            <th>찜/문의</th>
             <th>최근수정일</th>
           </tr>
         </thead>

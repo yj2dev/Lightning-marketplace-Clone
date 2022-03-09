@@ -9,16 +9,19 @@ import {
 } from "./styled";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, withRouter } from "react-router-dom";
 import { daysFormat } from "../../utils/Time";
 import { intOfKr } from "../../utils/Currency";
 import { AiFillHeart, AiFillEye, AiFillClockCircle } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import ProductAskSection from "./Section/ProductAskSection";
 import StoreInfoSection from "./Section/StoreInfoSection";
+import { useSelector } from "react-redux";
+import ProductFavoriteSection from "./Section/ProductFavoriteSection";
 
 // 새로운 페이지 생성시 기본 구조
-export const ProductDetailPage = () => {
+export const ProductDetailPage = ({ history }) => {
+  const store = useSelector((state) => state.user);
   const location = useLocation();
   const [product, setProduct] = useState({});
   const [productImgs, setProductImgs] = useState([]);
@@ -28,6 +31,14 @@ export const ProductDetailPage = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [totalImgIndex, setTotalImgIndex] = useState(false);
   const productImg = useRef();
+
+  // 찜
+  const [favorite, setFavorite] = useState({
+    // cnt: 찜 개수, mySelect: 내 선택 여부, myProduct: 로그인 한 유저의 상품 여부
+    cnt: 0,
+    mySelect: false,
+    myProduct: false,
+  });
 
   // 활성화된 탭 메뉴
   const [tabMenu, setTabMenu] = useState(0);
@@ -49,15 +60,26 @@ export const ProductDetailPage = () => {
         setUser(res.data.userInfo[0]);
         setProductImgs(res.data.productImgURLs);
         setTotalImgIndex(res.data.productImgURLs.length);
+
+        const myProduct =
+          res.data.userId === store.isSignin.data._id ? true : false;
+        let mySelect = false;
+        res.data.productFavoriteCount.map((favorite) => {
+          mySelect =
+            favorite.toStoreId === store.isSignin.data._id ? true : false;
+        });
+
+        console.log("myProduct >> ", myProduct);
+        setFavorite({
+          cnt: res.data.productFavoriteCount.length,
+          mySelect,
+          myProduct,
+        });
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  function onTest() {
-    console.log(product.userInfo[0].profileURL);
-    console.log(product.userInfo[0].storeName);
-  }
 
   useEffect(() => {
     productImg.current.style.transition = "all 0.2s ease-in-out";
@@ -72,18 +94,6 @@ export const ProductDetailPage = () => {
   const onClickPreviewImage = () => {
     if (currentImgIndex === 0) setCurrentImgIndex(totalImgIndex - 1);
     else setCurrentImgIndex(currentImgIndex - 1);
-  };
-
-  const onClickFavoriteProduct = () => {
-    const productId = getProductId();
-    axios
-      .get(`/product/${productId}/favorite`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
 
   return (
@@ -159,13 +169,7 @@ export const ProductDetailPage = () => {
             </div>
           </table>
           <div className="product_btn">
-            <button
-              style={{ background: "#cccccc" }}
-              onClick={onClickFavoriteProduct}
-            >
-              <AiFillHeart />
-              &nbsp;찜&nbsp;<span>0</span>
-            </button>
+            <ProductFavoriteSection favorite={favorite} />
             <button style={{ background: "#ffa425" }}>연락하기</button>
             <button style={{ background: "#f70000" }}>바로구매</button>
           </div>
@@ -199,7 +203,7 @@ export const ProductDetailPage = () => {
                 </>
               ))}
             <h3>상품문의</h3>
-            <ProductAskSection />
+            <ProductAskSection askList={product.productContacts} />
           </ProductInfoContent>
           <StoreInfoSection user={user} />
         </ProductInfoContainer>
@@ -208,4 +212,4 @@ export const ProductDetailPage = () => {
   );
 };
 
-export default ProductDetailPage;
+export default withRouter(ProductDetailPage);

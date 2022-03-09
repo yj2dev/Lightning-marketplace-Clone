@@ -2,6 +2,7 @@ import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
+import { ProductFavoriteSchema } from '../../product-favorite/model/product-favorite.model';
 
 const options: SchemaOptions = {
   timestamps: true,
@@ -40,3 +41,12 @@ export class ProductContact extends Document {
 
 export const ProductContactSchema =
   SchemaFactory.createForClass(ProductContact);
+
+ProductContactSchema.virtual('toStoreInfo', {
+  ref: 'users',
+  localField: 'fromWriterId',
+  foreignField: '_id',
+});
+
+ProductContactSchema.set('toObject', { virtuals: true });
+ProductContactSchema.set('toJSON', { virtuals: true });
