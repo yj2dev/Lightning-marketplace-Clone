@@ -43,7 +43,7 @@ export class UserController {
   ) {}
 
   @ApiOperation({ summary: '팔로우' })
-  @ApiResponse({ status: 200, description: '성공' })
+  @ApiResponse({ status: 201, description: '성공' })
   @ApiResponse({ status: 500, description: '서버 에러' })
   @UseGuards(JwtAuthGuard)
   @Post('follow/:toUserId')
@@ -51,8 +51,7 @@ export class UserController {
     @CurrentUser() currentUser,
     @Param('toUserId') toUserId: string,
   ): Promise<any> {
-    console.log(toUserId, currentUser._id);
-    return await this.followService.createFollow(toUserId, currentUser._id);
+    return await this.followService.followUser(toUserId, currentUser._id);
   }
 
   @ApiOperation({ summary: '회원탈퇴' })

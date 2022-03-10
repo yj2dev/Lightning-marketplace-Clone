@@ -29,3 +29,18 @@ export class Follow extends Document {
   toUserId: Types.ObjectId;
 }
 export const FollowSchema = SchemaFactory.createForClass(Follow);
+
+FollowSchema.set('toObject', { virtuals: true });
+FollowSchema.set('toJSON', { virtuals: true });
+
+FollowSchema.virtual('_toUserId', {
+  ref: 'users',
+  localField: 'toUserId',
+  foreignField: '_id',
+});
+
+FollowSchema.virtual('_fromUserId', {
+  ref: 'users',
+  localField: 'fromUserId',
+  foreignField: '_id',
+});

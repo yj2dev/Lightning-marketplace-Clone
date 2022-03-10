@@ -12,7 +12,7 @@ import { FollowModule } from '../follow/follow.module';
   imports: [
     MulterModule.register({ dest: './upload' }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    FollowModule,
+    forwardRef(() => FollowModule),
     forwardRef(() => AuthModule),
   ],
   controllers: [UserController],

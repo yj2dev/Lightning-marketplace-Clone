@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Product } from '../model/product.model';
+import { Product, ProductSchema } from '../model/product.model';
 import {
   ProductImage,
   ProductImageSchema,
@@ -29,6 +29,14 @@ export class ProductRepository {
     @InjectModel(ProductContact.name)
     private readonly productContact: Model<ProductFavorite>,
   ) {}
+
+  async getProductFavorite(userId: string): Promise<ProductFavorite[]> {
+    const ProductModel = mongoose.model('products', ProductSchema);
+    const result = await this.productFavorite
+      .find({ toStoreId: userId })
+      .populate('_fromProductId', ProductModel);
+    return result;
+  }
 
   // 상품 문의 작성
   async createProductContact(

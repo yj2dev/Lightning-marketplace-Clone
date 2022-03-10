@@ -3,6 +3,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
 import { ProductSchema } from '../../product/model/product.model';
+import { UserSchema } from '../../user/model/user.model';
 
 const options: SchemaOptions = {
   timestamps: true,
@@ -32,3 +33,12 @@ export class ProductFavorite extends Document {
 
 export const ProductFavoriteSchema =
   SchemaFactory.createForClass(ProductFavorite);
+
+ProductFavoriteSchema.set('toObject', { virtuals: true });
+ProductFavoriteSchema.set('toJSON', { virtuals: true });
+
+ProductFavoriteSchema.virtual('_fromProductId', {
+  ref: 'products',
+  localField: 'fromProductId',
+  foreignField: '_id',
+});

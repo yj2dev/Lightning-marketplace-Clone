@@ -8,6 +8,7 @@ import { UserRequestDto } from '../dto/user.request.dto';
 import { User } from '../model/user.model';
 import * as bcrypt from 'bcrypt';
 import { UserRepository } from '../repository/user.repository';
+import { FollowRepository } from '../../follow/follow.repository';
 
 @Injectable()
 export class UserService {
@@ -58,7 +59,8 @@ export class UserService {
 
   // 상점 전체정보 조회
   async getDetailUser(id: string): Promise<User> {
-    return await this.userRepository.findUserByIdAndPopulate(id);
+    const isUser = await this.userRepository.findUserByIdAndPopulate(id);
+    return isUser;
   }
 
   // 상점명 변경

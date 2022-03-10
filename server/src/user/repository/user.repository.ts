@@ -26,7 +26,7 @@ export class UserRepository {
       .select('-password')
       .select('-phoneNumber');
 
-    console.log('result populate >> ', result);
+    // console.log('result populate >> ', result);
 
     return result;
   }

@@ -18,10 +18,19 @@ import { multerOptions } from '../../common/utils/multer.options';
 import { ProductService } from '../service/product.service';
 import { User } from '../../user/model/user.model';
 import { Product } from '../model/product.model';
+import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
+
+  @Get('/favorite')
+  @UseGuards(JwtAuthGuard)
+  async getProductFavorite(
+    @CurrentUser() currentUser: User,
+  ): Promise<ProductFavorite[]> {
+    return await this.productService.getProductFavorite(currentUser._id);
+  }
 
   @Post('/:productId/contact')
   @UseGuards(JwtAuthGuard)

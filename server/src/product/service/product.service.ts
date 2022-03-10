@@ -2,6 +2,7 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { ProductRepository } from '../repository/product.repository';
 import { Product } from '../model/product.model';
 import { TagRepository } from '../../tag/tag.reposigory';
+import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
 
 @Injectable()
 export class ProductService {
@@ -9,6 +10,10 @@ export class ProductService {
     private readonly productRepository: ProductRepository,
     private readonly tagRepository: TagRepository,
   ) {}
+
+  async getProductFavorite(userId: string): Promise<ProductFavorite[]> {
+    return await this.productRepository.getProductFavorite(userId);
+  }
 
   // 상품 문의 작성
   async createProductContact(

@@ -29,6 +29,7 @@ import ImageCrop from "../../components/ImageCrop";
 
 const MyShopPage = ({ history }) => {
   const location = useLocation();
+  const userId = getUserId();
   const tabMenuList = [
     "상품",
     "상품문의",
@@ -38,7 +39,6 @@ const MyShopPage = ({ history }) => {
     "팔로워",
   ];
   const [tabMenu, setTabMenu] = useState(0);
-  const [tabMenuName, setTabMenuName] = useState("상품");
 
   const user = useSelector((state) => state.user);
 
@@ -59,7 +59,7 @@ const MyShopPage = ({ history }) => {
   const [isMyStore, setIsMyStore] = useState(false);
 
   // 해당 상점 팔로우 여부
-  const [isPollow, setIsPollow] = useState(false);
+  const [isFollow, setIsFollow] = useState(false);
 
   const onCloseEditMenu = () => {
     setShowEditMenu(false);
@@ -68,7 +68,6 @@ const MyShopPage = ({ history }) => {
   const onClickTabMenu = (e) => {
     const tabIndex = e.target.value;
     setTabMenu(tabIndex);
-    setTabMenuName(tabMenuList[parseInt(tabIndex)]);
   };
 
   const onChangeStoreName = (e) => {
@@ -89,9 +88,7 @@ const MyShopPage = ({ history }) => {
     return path[2] ? path[2] : null;
   }
 
-  useEffect(() => {
-    const userId = getUserId();
-
+  function getUserDetail(userId) {
     axios
       .get(`/user/detail/${userId}`)
       .then((res) => {
@@ -99,12 +96,32 @@ const MyShopPage = ({ history }) => {
         setUserInfo(res.data.data);
         setProducts(res.data.data.products);
         const myStore = user.isSignin.data._id === userId ? true : false;
+        // console.log("myStore >> ", myStore);
         setIsMyStore(myStore);
-        console.log("myStore >> ", myStore);
       })
       .catch((err) => {
         console.log("err detail >> ", err);
       });
+  }
+
+  function getIsFollow(userId) {
+    axios
+      .get(`/follow/${userId}/exist`)
+      .then((res) => {
+        console.log("res follow >> ", res);
+
+        if (res.data.data) setIsFollow(true);
+        else setIsFollow(false);
+      })
+      .catch((err) => {
+        console.log("err follow >> ", err);
+      });
+  }
+
+  useEffect(() => {
+    const userId = getUserId();
+    getUserDetail(userId);
+    getIsFollow(userId);
   }, []);
 
   // 상점명 변경
@@ -178,13 +195,16 @@ const MyShopPage = ({ history }) => {
     history.push("/product/manage");
   };
 
-  const onClickStorePollow = () => {
+  const onClickStoreFollow = () => {
     const userId = getUserId();
 
     axios
-      .post(`/user/pollow/${userId}`)
+      .post(`/user/follow/${userId}`)
       .then((res) => {
         console.log("res >> ", res);
+
+        if (res.data.data) setIsFollow(true);
+        else setIsFollow(false);
       })
       .catch((err) => {
         console.log(err);
@@ -247,10 +267,23 @@ const MyShopPage = ({ history }) => {
             </div>
           ) : (
             <>
-              <div className="store_pollow" onClick={onClickStorePollow}>
-                <BsPersonCheckFill size={18} />
-                <BsPersonPlus size={18} />
-                &nbsp;팔로우
+              <div
+                className={
+                  isFollow ? "store_follow active_follow" : "store_follow"
+                }
+                onClick={onClickStoreFollow}
+              >
+                {isFollow ? (
+                  <>
+                    <BsPersonCheckFill size={18} />
+                    &nbsp;언팔로우
+                  </>
+                ) : (
+                  <>
+                    <BsPersonPlus size={18} />
+                    &nbsp;팔로우
+                  </>
+                )}
               </div>
               <div className="store_talk" onClick={onClickStoreTalk}>
                 <RiMessage3Line size={18} />
@@ -353,14 +386,12 @@ const MyShopPage = ({ history }) => {
         </ul>
       </TabMenu>
       <TabContent>
-        <h3>{tabMenuName}</h3>
-        <hr />
         {tabMenu === 0 && <ShopProductsPage products={products} />}
         {tabMenu === 1 && <ShopCommentsPage />}
         {tabMenu === 2 && <ShopFavoritesPage />}
         {tabMenu === 3 && <ShopReviewsPage />}
-        {tabMenu === 4 && <ShopFollowingsPage />}
-        {tabMenu === 5 && <ShopFollowersPage />}
+        {tabMenu === 4 && <ShopFollowingsPage userId={userId} />}
+        {tabMenu === 5 && <ShopFollowersPage userId={userId} />}
       </TabContent>
       <AlertModal
         useCloseButton={false}

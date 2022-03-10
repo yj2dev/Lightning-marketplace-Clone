@@ -81,7 +81,7 @@ export const UserStore = styled.div`
     padding: 10px 16px;
     cursor: pointer;
   }
-  & .store_pollow {
+  & .store_follow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,6 +110,9 @@ export const UserStore = styled.div`
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
+  }
+  & .active_follow {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 `;
 export const EditProfileMenu = styled.div`
