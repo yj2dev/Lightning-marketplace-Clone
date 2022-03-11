@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="팔로우 API(생성, 제거, 조회) 추가">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowersPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFollowingsPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopProductsPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/follow/follow.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/follow/follow.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/follow/follow.reposigory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/follow/follow.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/follow.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/follow/model/follow.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/follow/model/follow.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/controller/product-favorite.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-favorite/model/product-favorite.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-favorite/product-favorite.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-favorite/service/product-favorite.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +133,10 @@
       <workItem from="1646863753944" duration="4359000" />
       <workItem from="1646884690130" duration="1171000" />
       <workItem from="1646893946547" duration="8613000" />
-      <workItem from="1646914349998" duration="10097000" />
-    </task>
-    <task id="LOCAL-00035" summary="비밀번호 생성규칙 적용">
-      <created>1644692791057</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1644692791057</updated>
+      <workItem from="1646914349998" duration="10154000" />
+      <workItem from="1646961943512" duration="744000" />
+      <workItem from="1646969147441" duration="3404000" />
+      <workItem from="1646978740071" duration="3868000" />
     </task>
     <task id="LOCAL-00036" summary="휴대폰 회원가입 로직 구현">
       <created>1644698600319</created>
@@ -503,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646840008368</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공">
+      <created>1646925747464</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1646925747464</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +500,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="tag 중간테이블 제거" />
     <MESSAGE value="상품관리 페이지 설계" />
     <MESSAGE value="상품관리 페이지 테이블 디자인" />
     <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
@@ -547,7 +524,8 @@
     <MESSAGE value="상품 찜 기능 구현완료" />
     <MESSAGE value="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리" />
     <MESSAGE value="팔로우 API(생성, 제거, 조회) 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="팔로우 API(생성, 제거, 조회) 추가" />
+    <MESSAGE value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
+    <option name="LAST_COMMIT_MESSAGE" value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
