@@ -47,7 +47,7 @@ export const ProductDetailPage = ({ history }) => {
     axios
       .get(`/product/detail/${productId}`)
       .then((res) => {
-        console.log("res >> ", res);
+        console.log("res detail >> ", res);
         setProduct(res.data);
         setUser(res.data.userInfo[0]);
         setProductImgs(res.data.productImgURLs);
@@ -183,8 +183,7 @@ export const ProductDetailPage = ({ history }) => {
                   {line} <br />
                 </>
               ))}
-            <h3>상품문의</h3>
-            <ProductAskSection askList={product.productContacts} />
+            <ProductAskSection />
           </ProductInfoContent>
           <StoreInfoSection user={user} />
         </ProductInfoContainer>

@@ -33,7 +33,9 @@ const ShopFavoritesPage = () => {
   }, []);
   return (
     <Container>
-      <h3></h3>
+      <h3>
+        찜&nbsp;<span style={{ color: "red" }}>{favorite.length}</span>
+      </h3>
       <hr />
       <FavoritesContainer>
         {favorite &&

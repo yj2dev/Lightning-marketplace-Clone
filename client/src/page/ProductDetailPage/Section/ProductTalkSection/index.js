@@ -11,7 +11,7 @@ const ProductTalkSection = ({ storeOfProduct }) => {
     console.log("TALK");
   };
 
-  console.log(storeOfProduct);
+  // console.log(storeOfProduct);
   useEffect(() => {
     if (storeOfProduct === undefined) return;
     setStore(storeOfProduct[0]);

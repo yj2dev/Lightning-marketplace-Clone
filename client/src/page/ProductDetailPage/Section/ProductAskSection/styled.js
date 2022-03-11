@@ -38,3 +38,40 @@ export const AskTextarea = styled.textarea`
   border: none;
   outline: none;
 `;
+export const AskSection = styled.div`
+  margin: 24px 0;
+  border-bottom: 2px solid #eeeeee;
+  display: flex;
+  position: relative;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  & .content {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  & .name {
+    color: #ab8a88;
+    margin-bottom: 10px;
+  }
+  & .time {
+    position: absolute;
+    color: #999999;
+    font-size: 13px;
+    top: 0;
+    right: 12px;
+  }
+  & .create_ask {
+    color: #ab8a88;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+`;

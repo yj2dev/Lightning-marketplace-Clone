@@ -34,7 +34,20 @@ export class ProductRepository {
     const ProductModel = mongoose.model('products', ProductSchema);
     const result = await this.productFavorite
       .find({ toStoreId: userId })
+      .sort({ createdAt: -1 })
       .populate('_fromProductId', ProductModel);
+    return result;
+  }
+
+  async getProductContactAll(productId: string): Promise<any> {
+    const UserModel = mongoose.model('users', UserSchema);
+
+    const result = await this.productContact
+      .find({ toStoreId: mongoose.Types.ObjectId(productId) })
+      .populate('_fromWriterId', UserModel);
+
+    console.log('result contact >> ', result);
+
     return result;
   }
 
@@ -151,12 +164,6 @@ export class ProductRepository {
       .populate('productFavoriteCount', ProductFavoriteModel)
       .populate('productContacts', ProductContactModel);
 
-    console.log('result 1 >> ', result);
-
-    console.log('result 2 >> ', result);
-    console.log('contact state >> ', result.state);
-
-    // console.log('contact >> ', result.productContacts);
     return result;
   }
 

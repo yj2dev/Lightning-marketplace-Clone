@@ -1,11 +1,15 @@
-import { InputContainer, AskTextarea } from "./styled";
+import { InputContainer, AskTextarea, AskSection } from "./styled";
 import { BsPencil } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { daysFormat } from "../../../../utils/Time";
+import { FaRegCommentDots } from "react-icons/fa";
 
-const ProductAskSection = ({ askList }) => {
+const ProductAskSection = () => {
   const location = useLocation();
+
+  const [askList, setAskList] = useState([]);
   const [ask, setAsk] = useState("");
 
   const onChangeAsk = (e) => {
@@ -17,6 +21,40 @@ const ProductAskSection = ({ askList }) => {
     const path = location.pathname.split("/");
     return path[2] ? path[2] : null;
   }
+
+  function getProductAsk(productId) {
+    axios
+      .get(`/product/${productId}/contact`)
+      .then((res) => {
+        console.log("res contact >> ", res);
+
+        const contactList = [];
+
+        res.data.forEach((contact) => {
+          let data = {};
+          data["content"] = contact.content;
+          data["createdAt"] = contact.createdAt;
+
+          delete contact._fromWriterId[0].createdAt;
+
+          data = {
+            ...data,
+            ...contact._fromWriterId[0],
+          };
+          contactList.push(data);
+        });
+
+        setAskList(contactList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    const productId = getProductId();
+    getProductAsk(productId);
+  }, []);
 
   const onClickCreateAsk = () => {
     if (ask === "") return;
@@ -64,6 +102,11 @@ const ProductAskSection = ({ askList }) => {
   };
   return (
     <>
+      <h3>
+        상품문의&nbsp;
+        <span style={{ color: "red" }}>{askList && askList.length}</span>
+      </h3>
+
       <InputContainer>
         <AskTextarea
           value={ask}
@@ -79,7 +122,28 @@ const ProductAskSection = ({ askList }) => {
         </button>
       </InputContainer>
 
-      <div>{askList && askList.map((v) => <div>{v.content}</div>)}</div>
+      <div>
+        {askList &&
+          askList.map((ask) => (
+            <AskSection>
+              <img src={ask.profileURL} />
+              <div>
+                <div className="name">{ask.storeName}</div>
+                <div className="content">{ask.content}</div>
+                <div className="time">{daysFormat(ask.createdAt)}</div>
+                <button className="create_ask" value={ask._id}>
+                  <span>
+                    <FaRegCommentDots
+                      size={14}
+                      style={{ transform: "scaleX(-1)" }}
+                    />
+                  </span>
+                  &nbsp; 댓글달기
+                </button>
+              </div>
+            </AskSection>
+          ))}
+      </div>
     </>
   );
 };

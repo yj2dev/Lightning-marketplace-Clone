@@ -15,6 +15,11 @@ export class ProductService {
     return await this.productRepository.getProductFavorite(userId);
   }
 
+  // 특정 상품 문의내용 가져오기
+  async getProductContact(productId: string): Promise<any> {
+    return await this.productRepository.getProductContactAll(productId);
+  }
+
   // 상품 문의 작성
   async createProductContact(
     userId: string,

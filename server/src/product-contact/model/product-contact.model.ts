@@ -42,7 +42,7 @@ export class ProductContact extends Document {
 export const ProductContactSchema =
   SchemaFactory.createForClass(ProductContact);
 
-ProductContactSchema.virtual('toStoreInfo', {
+ProductContactSchema.virtual('_fromWriterId', {
   ref: 'users',
   localField: 'fromWriterId',
   foreignField: '_id',

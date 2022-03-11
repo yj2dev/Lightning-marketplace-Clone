@@ -32,7 +32,7 @@ const MyShopPage = ({ history }) => {
   const userId = getUserId();
   const tabMenuList = [
     "상품",
-    "상품문의",
+    "상점문의",
     "찜",
     "상점후기",
     "팔로잉",

@@ -32,6 +32,11 @@ export class ProductController {
     return await this.productService.getProductFavorite(currentUser._id);
   }
 
+  @Get('/:productId/contact')
+  async getProductContact(@Param('productId') productId: string): Promise<any> {
+    return await this.productService.getProductContact(productId);
+  }
+
   @Post('/:productId/contact')
   @UseGuards(JwtAuthGuard)
   async createProductContact(
