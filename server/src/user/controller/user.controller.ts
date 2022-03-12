@@ -31,6 +31,7 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { User } from '../model/user.model';
 import { FollowService } from '../../follow/follow.service';
+import * as mongoose from 'mongoose';
 
 @Controller('user')
 @UseInterceptors(SuccessInterceptor)
@@ -41,6 +42,33 @@ export class UserController {
     private readonly authService: AuthService,
     private readonly followService: FollowService,
   ) {}
+
+  @ApiOperation({ summary: '상점문의 가져오기' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Get('/:storeId/contact')
+  async getProductContact(@Param('storeId') storeId: string): Promise<any> {
+    console.log('storeId >> ', storeId);
+
+    return await this.userService.getStoreContact(storeId);
+  }
+
+  @ApiOperation({ summary: '상점문의 저장' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Post('/:storeId/contact')
+  @UseGuards(JwtAuthGuard)
+  async createProductContact(
+    @Param('storeId') storeId: string,
+    @Body('content') content: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.userService.createStoreContact(
+      currentUser._id,
+      storeId,
+      content,
+    );
+  }
 
   @ApiOperation({ summary: '팔로우' })
   @ApiResponse({ status: 201, description: '성공' })

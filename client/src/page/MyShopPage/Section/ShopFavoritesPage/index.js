@@ -7,7 +7,6 @@ import { daysFormat } from "../../../../utils/Time";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-Favorites.propTypes = { children: PropTypes.node };
 const ShopFavoritesPage = () => {
   const [favorite, setFavorite] = useState([]);
 

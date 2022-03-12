@@ -27,9 +27,10 @@ export class ProductRepository {
     @InjectModel(ProductFavorite.name)
     private readonly productFavorite: Model<ProductFavorite>,
     @InjectModel(ProductContact.name)
-    private readonly productContact: Model<ProductFavorite>,
+    private readonly productContact: Model<ProductContact>,
   ) {}
 
+  // toStoreId => toProductId로 취급
   async getProductFavorite(userId: string): Promise<ProductFavorite[]> {
     const ProductModel = mongoose.model('products', ProductSchema);
     const result = await this.productFavorite

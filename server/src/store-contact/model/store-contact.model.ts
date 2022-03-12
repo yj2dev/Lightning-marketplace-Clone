@@ -39,3 +39,12 @@ export class StoreContact extends Document {
 }
 
 export const StoreContactSchema = SchemaFactory.createForClass(StoreContact);
+
+StoreContactSchema.virtual('_fromWriterId', {
+  ref: 'users',
+  localField: 'fromWriterId',
+  foreignField: '_id',
+});
+
+StoreContactSchema.set('toObject', { virtuals: true });
+StoreContactSchema.set('toJSON', { virtuals: true });

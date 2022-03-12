@@ -2,7 +2,6 @@ import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
-import { ProductFavoriteSchema } from '../../product-favorite/model/product-favorite.model';
 
 const options: SchemaOptions = {
   timestamps: true,

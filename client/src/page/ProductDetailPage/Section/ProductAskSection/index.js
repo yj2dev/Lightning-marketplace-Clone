@@ -2,7 +2,7 @@ import { InputContainer, AskTextarea, AskSection } from "./styled";
 import { BsPencil } from "react-icons/bs";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { useLocation, withRouter } from "react-router-dom";
+import { Link, useLocation, withRouter } from "react-router-dom";
 import { daysFormat } from "../../../../utils/Time";
 import { FaRegCommentDots } from "react-icons/fa";
 
@@ -150,9 +150,13 @@ const ProductAskSection = ({ history }) => {
         {askList &&
           askList.map((ask) => (
             <AskSection>
-              <img src={ask.profileURL} />
+              <Link to={`/shop/${ask._id}`}>
+                <img src={ask.profileURL} />
+              </Link>
               <div>
-                <div className="name">{ask.storeName}</div>
+                <Link to={`/shop/${ask._id}`}>
+                  <div className="name">{ask.storeName}</div>
+                </Link>
                 <div className="content">{isNestedAsk(ask.content)}</div>
                 <div className="time">{daysFormat(ask.createdAt)}</div>
                 <button

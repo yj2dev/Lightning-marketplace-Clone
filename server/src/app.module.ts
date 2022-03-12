@@ -19,17 +19,25 @@ import { ProductImageModule } from './product-image/product-image.module';
 import { ProductContactModule } from './product-contact/product-contact.module';
 import { ProductFavoriteModule } from './product-favorite/product-favorite.module';
 import { StoreReviewModule } from './store-review/store-review.module';
+import { StoreContactModule } from './store-contact/store-contact.module';
 import { TagModule } from './tag/tag.module';
 import { FollowModule } from './follow/follow.module';
 import { CategoryModule } from './category/category.module';
 import { TalkModule } from './talk/talk.module';
+import {
+  StoreContact,
+  StoreContactSchema,
+} from './store-contact/model/store-contact.model';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    MongooseModule.forFeature([
+      { name: User.name, schema: UserSchema },
+      { name: StoreContact.name, schema: StoreContactSchema },
+    ]),
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.DB_MONGO_ID}:${process.env.DB_MONGO_PASSWORD}@table0.zotlh.mongodb.net/${process.env.DB_MONGO_NAME}?retryWrites=true&w=majority`,
       {
@@ -49,6 +57,7 @@ import { TalkModule } from './talk/talk.module';
     ProductContactModule,
     ProductFavoriteModule,
     StoreReviewModule,
+    StoreContactModule,
     TagModule,
     FollowModule,
     CategoryModule,
@@ -56,6 +65,7 @@ import { TalkModule } from './talk/talk.module';
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
+  exports: [StoreContactModule],
 })
 export class AppModule implements NestModule {
   private readonly MODE: boolean =

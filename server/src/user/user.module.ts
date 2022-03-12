@@ -7,11 +7,18 @@ import { UserRepository } from './repository/user.repository';
 import { AuthModule } from '../auth/auth.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { FollowModule } from '../follow/follow.module';
+import {
+  StoreContact,
+  StoreContactSchema,
+} from '../store-contact/model/store-contact.model';
 
 @Module({
   imports: [
     MulterModule.register({ dest: './upload' }),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    MongooseModule.forFeature([
+      { name: User.name, schema: UserSchema },
+      { name: StoreContact.name, schema: StoreContactSchema },
+    ]),
     forwardRef(() => FollowModule),
     forwardRef(() => AuthModule),
   ],

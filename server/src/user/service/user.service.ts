@@ -16,6 +16,24 @@ export class UserService {
 
   private logger = new Logger('user');
 
+  // 상점 문의내용 가져오기
+  async getStoreContact(storeId: string): Promise<any> {
+    return await this.userRepository.getStoreContactAll(storeId);
+  }
+
+  // 상점 문의 저장
+  async createStoreContact(
+    userId: string,
+    storeId: string,
+    content: string,
+  ): Promise<any> {
+    return await this.userRepository.createStoreContact(
+      userId,
+      storeId,
+      content,
+    );
+  }
+
   // 회원탈퇴
   async deleteAccount(
     userId: string,

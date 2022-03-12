@@ -1,7 +1,4 @@
 import { Module } from '@nestjs/common';
-import { StoreContactController } from './store-contact.controller';
 
-@Module({
-  controllers: [StoreContactController]
-})
+@Module({})
 export class StoreContactModule {}

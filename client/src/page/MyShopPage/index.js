@@ -387,7 +387,7 @@ const MyShopPage = ({ history }) => {
       </TabMenu>
       <TabContent>
         {tabMenu === 0 && <ShopProductsPage products={products} />}
-        {tabMenu === 1 && <ShopCommentsPage />}
+        {tabMenu === 1 && <ShopCommentsPage shopId={userId} />}
         {tabMenu === 2 && <ShopFavoritesPage />}
         {tabMenu === 3 && <ShopReviewsPage />}
         {tabMenu === 4 && <ShopFollowingsPage userId={userId} />}

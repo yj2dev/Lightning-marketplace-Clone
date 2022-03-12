@@ -1,14 +1,49 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User } from '../model/user.model';
+import { User, UserSchema } from '../model/user.model';
 import { Model } from 'mongoose';
 import { UserCreateDto } from '../dto/user.create.dto';
 import { ProductSchema } from '../../product/model/product.model';
 import * as mongoose from 'mongoose';
+import { StoreContact } from '../../store-contact/model/store-contact.model';
 
 @Injectable()
 export class UserRepository {
-  constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
+  constructor(
+    @InjectModel(User.name) private readonly user: Model<User>,
+    @InjectModel(StoreContact.name)
+    private readonly storeContact: Model<StoreContact>,
+  ) {}
+
+  // 상점문의 내용 불러오기
+  async getStoreContactAll(storeId: string): Promise<any> {
+    const UserModel = mongoose.model('users', UserSchema);
+
+    console.log('storeId >> ', storeId);
+
+    const result = await this.storeContact
+      .find({ toStoreId: mongoose.Types.ObjectId(storeId) })
+      .sort({ createdAt: -1 })
+      .populate('_fromWriterId', UserModel);
+
+    console.log('result contact >> ', result);
+
+    return result;
+  }
+
+  // 상점 문의 작성
+  async createStoreContact(
+    userId: string,
+    storeId: string,
+    content: string,
+  ): Promise<any> {
+    const result = await this.storeContact.create({
+      toStoreId: mongoose.Types.ObjectId(storeId),
+      fromWriterId: mongoose.Types.ObjectId(userId),
+      content,
+    });
+    return result;
+  }
 
   // 유저 제거(게시물은 남겨두고 유저만 회원탈퇴 진행)
   async deleteUser(id: string) {

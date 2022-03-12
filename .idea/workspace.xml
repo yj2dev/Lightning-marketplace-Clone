@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품문의 불러오기 및 디자인">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품문의 대댓글 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/product-contact.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product-contact/product-contact.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/redis-cache/redis-cache.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-contact/model/store-contact.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-contact/model/store-contact.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-contact/store-contact.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-contact/store-contact.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +160,8 @@
       <workItem from="1646983304332" duration="251000" />
       <workItem from="1646991539069" duration="3279000" />
       <workItem from="1647014160236" duration="5804000" />
-      <workItem from="1647049987021" duration="15010000" />
-    </task>
-    <task id="LOCAL-00038" summary="로그인, 로그아웃(쿠키 생성 및 제거)">
-      <created>1644706706805</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1644706706805</updated>
+      <workItem from="1647049987021" duration="18347000" />
+      <workItem from="1647076632235" duration="6532000" />
     </task>
     <task id="LOCAL-00039" summary="쿠키는 생성되나 CORS 에러 미해결">
       <created>1644712739935</created>
@@ -488,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647020111806</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="상품문의 대댓글 구현">
+      <created>1647073302363</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1647073302363</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
     <MESSAGE value="알림, 확인창 모달 디자인" />
     <MESSAGE value="로그아웃 확인 모달창 적용" />
     <MESSAGE value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
@@ -532,7 +549,8 @@
     <MESSAGE value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
     <MESSAGE value="찜 목록 디자인" />
     <MESSAGE value="상품문의 불러오기 및 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품문의 불러오기 및 디자인" />
+    <MESSAGE value="상품문의 대댓글 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품문의 대댓글 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
