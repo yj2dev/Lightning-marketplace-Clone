@@ -51,30 +51,13 @@ export class ProductController {
     );
   }
 
-  @Delete('/:productId/contact')
+  @Delete('/:askId/contact')
   @UseGuards(JwtAuthGuard)
   async deleteProductContact(
-    @Param('productId') productId: string,
+    @Param('askId') askId: string,
     @CurrentUser() currentUser: User,
   ): Promise<any> {
-    return await this.productService.deleteProductContact(
-      currentUser._id,
-      productId,
-    );
-  }
-
-  @Patch('/:productId/contact')
-  @UseGuards(JwtAuthGuard)
-  async updateProductContact(
-    @Param('productId') productId: string,
-    @Body('content') content: string,
-    @CurrentUser() currentUser: User,
-  ): Promise<any> {
-    return await this.productService.updateProductContact(
-      currentUser._id,
-      productId,
-      content,
-    );
+    return await this.productService.deleteProductContact(askId);
   }
 
   @Get('/:productId/favorite')

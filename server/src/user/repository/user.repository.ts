@@ -15,6 +15,12 @@ export class UserRepository {
     private readonly storeContact: Model<StoreContact>,
   ) {}
 
+  // 상점 문의 제거
+  async deleteStoreContact(commentId: string): Promise<any> {
+    const result = await this.storeContact.findByIdAndDelete(commentId);
+    return result;
+  }
+
   // 상점문의 내용 불러오기
   async getStoreContactAll(storeId: string): Promise<any> {
     const UserModel = mongoose.model('users', UserSchema);

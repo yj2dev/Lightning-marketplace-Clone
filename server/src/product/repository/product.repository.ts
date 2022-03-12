@@ -68,11 +68,8 @@ export class ProductRepository {
   }
 
   // 상품 문의 제거
-  async deleteProductContact(userId: string, productId: string): Promise<any> {
-    const result = await this.productContact.deleteOne({
-      toStoreId: mongoose.Types.ObjectId(productId),
-      fromWriterId: mongoose.Types.ObjectId(userId),
-    });
+  async deleteProductContact(askId: string): Promise<any> {
+    const result = await this.productContact.findByIdAndDelete(askId);
     return result;
   }
 

@@ -37,7 +37,6 @@ const ProductAskSection = ({ history }) => {
 
         res.data.forEach((contact) => {
           let data = {};
-          console.log("contact >> ", contact);
 
           data["content"] = contact.content;
           data["createdAt"] = contact.createdAt;
@@ -54,8 +53,6 @@ const ProductAskSection = ({ history }) => {
           };
           contactList.push(data);
         });
-
-        console.log("contactList >> ", contactList);
 
         setAskList(contactList);
       })
@@ -94,8 +91,6 @@ const ProductAskSection = ({ history }) => {
 
   const onClickDeleteAsk = (e) => {
     const [askId, storeName] = e.target.value.split("/");
-    console.log(askId, storeName);
-
     axios
       .delete(`/product/${askId}/contact`)
       .then((res) => {

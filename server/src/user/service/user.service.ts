@@ -16,6 +16,11 @@ export class UserService {
 
   private logger = new Logger('user');
 
+  // 상점 문의 제거
+  async deleteStoreContact(commentId: string): Promise<any> {
+    return await this.userRepository.deleteStoreContact(commentId);
+  }
+
   // 상점 문의내용 가져오기
   async getStoreContact(storeId: string): Promise<any> {
     return await this.userRepository.getStoreContactAll(storeId);

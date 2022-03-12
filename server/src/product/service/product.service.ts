@@ -34,21 +34,8 @@ export class ProductService {
   }
 
   // 상품 문의 제거
-  async deleteProductContact(userId: string, productId: string): Promise<any> {
-    return await this.productRepository.deleteProductContact(userId, productId);
-  }
-
-  // 상품 문의 수정
-  async updateProductContact(
-    userId: string,
-    productId: string,
-    content: string,
-  ): Promise<any> {
-    return await this.productRepository.updateProductContact(
-      userId,
-      productId,
-      content,
-    );
+  async deleteProductContact(askId: string): Promise<any> {
+    return await this.productRepository.deleteProductContact(askId);
   }
 
   // 상품 즐겨찾기(찜) 추가 또는 제거

@@ -43,6 +43,18 @@ export class UserController {
     private readonly followService: FollowService,
   ) {}
 
+  @ApiOperation({ summary: '상점문의 삭제' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Delete('/:commentId/contact')
+  @UseGuards(JwtAuthGuard)
+  async deleteProductContact(
+    @Param('commentId') commentId: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.userService.deleteStoreContact(commentId);
+  }
+
   @ApiOperation({ summary: '상점문의 가져오기' })
   @ApiResponse({ status: 201, description: '성공' })
   @ApiResponse({ status: 500, description: '서버 에러' })
