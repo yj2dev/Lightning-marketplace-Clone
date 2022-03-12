@@ -4,10 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, withRouter } from "react-router-dom";
 import { daysFormat } from "../../../../utils/Time";
-import { FaRegCommentDots } from "react-icons/fa";
+import { FaRegCommentDots, FaRegTrashAlt } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const ProductAskSection = ({ history }) => {
   const location = useLocation();
+  const productId = getProductId();
+  const user = useSelector((state) => state.user);
 
   const [askList, setAskList] = useState([]);
   const [ask, setAsk] = useState("");
@@ -34,10 +37,16 @@ const ProductAskSection = ({ history }) => {
 
         res.data.forEach((contact) => {
           let data = {};
+          console.log("contact >> ", contact);
+
           data["content"] = contact.content;
           data["createdAt"] = contact.createdAt;
+          data["askId"] = contact.id;
+          data["storeId"] = contact._fromWriterId[0].id;
 
           delete contact._fromWriterId[0].createdAt;
+          delete contact._fromWriterId[0].id;
+          delete contact._fromWriterId[0]._id;
 
           data = {
             ...data,
@@ -45,6 +54,8 @@ const ProductAskSection = ({ history }) => {
           };
           contactList.push(data);
         });
+
+        console.log("contactList >> ", contactList);
 
         setAskList(contactList);
       })
@@ -54,7 +65,6 @@ const ProductAskSection = ({ history }) => {
   }
 
   useEffect(() => {
-    const productId = getProductId();
     getProductAsk(productId);
   }, []);
 
@@ -68,7 +78,7 @@ const ProductAskSection = ({ history }) => {
       .then((res) => {
         console.log(res);
         setAsk("");
-        history.push(`/product/${productId}`);
+        getProductAsk(productId);
       })
       .catch((err) => {
         console.log(err);
@@ -82,29 +92,15 @@ const ProductAskSection = ({ history }) => {
     inputAsk.current.focus();
   };
 
-  const onClickDeleteAsk = () => {
-    const productId = getProductId();
+  const onClickDeleteAsk = (e) => {
+    const [askId, storeName] = e.target.value.split("/");
+    console.log(askId, storeName);
 
     axios
-      .delete(`/product/${productId}/contact`)
+      .delete(`/product/${askId}/contact`)
       .then((res) => {
         console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const onClickUpdateAsk = () => {
-    if (ask === "") return;
-
-    const productId = getProductId();
-
-    axios
-      .patch(`/product/${productId}/contact`, { content: ask })
-      .then((res) => {
-        console.log(res);
-        setAsk("");
+        getProductAsk(productId);
       })
       .catch((err) => {
         console.log(err);
@@ -150,18 +146,18 @@ const ProductAskSection = ({ history }) => {
         {askList &&
           askList.map((ask) => (
             <AskSection>
-              <Link to={`/shop/${ask._id}`}>
+              <Link to={`/shop/${ask.storeId}`}>
                 <img src={ask.profileURL} />
               </Link>
               <div>
-                <Link to={`/shop/${ask._id}`}>
+                <Link to={`/shop/${ask.storeId}`}>
                   <div className="name">{ask.storeName}</div>
                 </Link>
                 <div className="content">{isNestedAsk(ask.content)}</div>
                 <div className="time">{daysFormat(ask.createdAt)}</div>
                 <button
                   className="create_ask cursor_pointer"
-                  value={`${ask._id}/${ask.storeName}`}
+                  value={`${ask.askId}/${ask.storeName}`}
                   onClick={onClickNestedAsk}
                 >
                   <span>
@@ -172,6 +168,18 @@ const ProductAskSection = ({ history }) => {
                   </span>
                   &nbsp; 댓글달기
                 </button>
+                {user.isSignin.data._id === ask.storeId && (
+                  <button
+                    className="delete_ask cursor_pointer"
+                    value={`${ask.askId}/${ask.storeName}`}
+                    onClick={onClickDeleteAsk}
+                  >
+                    <span>
+                      <FaRegTrashAlt size={14} />
+                    </span>
+                    &nbsp; 삭제하기
+                  </button>
+                )}
               </div>
             </AskSection>
           ))}

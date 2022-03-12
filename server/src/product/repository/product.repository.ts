@@ -76,23 +76,6 @@ export class ProductRepository {
     return result;
   }
 
-  // 상품 문의 수정
-  async updateProductContact(
-    userId: string,
-    productId: string,
-    content: string,
-  ): Promise<any> {
-    const result = await this.productContact.findOneAndUpdate(
-      {
-        toStoreId: mongoose.Types.ObjectId(productId),
-        fromWriterId: mongoose.Types.ObjectId(userId),
-      },
-      { content },
-      { new: true },
-    );
-    return result;
-  }
-
   // 상품 즐겨찾기 추가
   async createProductFavorite(userId: string, productId: string) {
     // 변경 내역: userId를 string 형태로 저장하니까 populate 할 때

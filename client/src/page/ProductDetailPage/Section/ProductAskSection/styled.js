@@ -68,13 +68,26 @@ export const AskSection = styled.div`
     right: 12px;
   }
   & .create_ask {
+    float: left;
     color: #ab8a88;
     background-color: transparent;
     border: none;
     outline: none;
     display: flex;
     align-items: center;
-    padding: 0px;
+    margin-bottom: 20px;
+    padding: 0px 12px 0px 0px;
+  }
+  & .delete_ask {
+    border: none;
+    border-left: 1px solid #eeeeee;
+    padding: 0px 0px 0px 12px;
+    float: left;
+    color: #ab8a88;
+    background-color: transparent;
+    outline: none;
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
   }
 `;
