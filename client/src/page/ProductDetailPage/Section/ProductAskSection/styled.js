@@ -53,6 +53,9 @@ export const AskSection = styled.div`
     margin-bottom: 10px;
     font-size: 14px;
   }
+  & .content span {
+    background-color: #fff3d3;
+  }
   & .name {
     color: #ab8a88;
     margin-bottom: 10px;

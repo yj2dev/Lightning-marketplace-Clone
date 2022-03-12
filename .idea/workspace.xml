@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="찜 목록 디자인">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품문의 불러오기 및 디자인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopFavoritesPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product-contact/model/product-contact.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,14 +142,8 @@
       <workItem from="1646978740071" duration="4010000" />
       <workItem from="1646983304332" duration="251000" />
       <workItem from="1646991539069" duration="3279000" />
-      <workItem from="1647014160236" duration="5763000" />
-    </task>
-    <task id="LOCAL-00037" summary="휴대폰 회원가입 문자인증 사용자 동의버튼 추가">
-      <created>1644703023668</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1644703023668</updated>
+      <workItem from="1647014160236" duration="5804000" />
+      <workItem from="1647049987021" duration="15010000" />
     </task>
     <task id="LOCAL-00038" summary="로그인, 로그아웃(쿠키 생성 및 제거)">
       <created>1644706706805</created>
@@ -492,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646983039463</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="상품문의 불러오기 및 디자인">
+      <created>1647020111805</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1647020111806</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +507,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품관리 페이지 테이블 디자인" />
     <MESSAGE value="상품제거, 상품 상태변경 로직 추가" />
     <MESSAGE value="알림, 확인창 모달 디자인" />
     <MESSAGE value="로그아웃 확인 모달창 적용" />
@@ -536,7 +531,8 @@
     <MESSAGE value="팔로우 API(생성, 제거, 조회) 추가" />
     <MESSAGE value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
     <MESSAGE value="찜 목록 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="찜 목록 디자인" />
+    <MESSAGE value="상품문의 불러오기 및 디자인" />
+    <option name="LAST_COMMIT_MESSAGE" value="상품문의 불러오기 및 디자인" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -44,6 +44,7 @@ export class ProductRepository {
 
     const result = await this.productContact
       .find({ toStoreId: mongoose.Types.ObjectId(productId) })
+      .sort({ createdAt: -1 })
       .populate('_fromWriterId', UserModel);
 
     console.log('result contact >> ', result);

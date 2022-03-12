@@ -1,16 +1,18 @@
 import { InputContainer, AskTextarea, AskSection } from "./styled";
 import { BsPencil } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, withRouter } from "react-router-dom";
 import { daysFormat } from "../../../../utils/Time";
 import { FaRegCommentDots } from "react-icons/fa";
 
-const ProductAskSection = () => {
+const ProductAskSection = ({ history }) => {
   const location = useLocation();
 
   const [askList, setAskList] = useState([]);
   const [ask, setAsk] = useState("");
+
+  const inputAsk = useRef();
 
   const onChangeAsk = (e) => {
     if (e.target.value.length > 100) return;
@@ -66,10 +68,18 @@ const ProductAskSection = () => {
       .then((res) => {
         console.log(res);
         setAsk("");
+        history.push(`/product/${productId}`);
       })
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const onClickNestedAsk = (e) => {
+    const [askId, storeName] = e.target.value.split("/");
+    console.log(askId, storeName);
+    setAsk(`@${storeName} : `);
+    inputAsk.current.focus();
   };
 
   const onClickDeleteAsk = () => {
@@ -100,19 +110,33 @@ const ProductAskSection = () => {
         console.log(err);
       });
   };
+
+  const isNestedAsk = (ask) => {
+    if (ask[0] === "@") {
+      const target = ask.split(" ")[0];
+      ask = ask.replace(target, "");
+
+      return (
+        <>
+          <span>{target}</span> {ask}
+        </>
+      );
+    }
+    return ask;
+  };
   return (
     <>
       <h3>
         상품문의&nbsp;
         <span style={{ color: "red" }}>{askList && askList.length}</span>
       </h3>
-
       <InputContainer>
         <AskTextarea
           value={ask}
           onChange={onChangeAsk}
           type="text"
           placeholder="상품문의 입력"
+          ref={inputAsk}
         />
 
         <hr />
@@ -129,9 +153,13 @@ const ProductAskSection = () => {
               <img src={ask.profileURL} />
               <div>
                 <div className="name">{ask.storeName}</div>
-                <div className="content">{ask.content}</div>
+                <div className="content">{isNestedAsk(ask.content)}</div>
                 <div className="time">{daysFormat(ask.createdAt)}</div>
-                <button className="create_ask" value={ask._id}>
+                <button
+                  className="create_ask cursor_pointer"
+                  value={`${ask._id}/${ask.storeName}`}
+                  onClick={onClickNestedAsk}
+                >
                   <span>
                     <FaRegCommentDots
                       size={14}
@@ -148,4 +176,4 @@ const ProductAskSection = () => {
   );
 };
 
-export default ProductAskSection;
+export default withRouter(ProductAskSection);

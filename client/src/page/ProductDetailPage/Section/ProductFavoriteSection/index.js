@@ -29,7 +29,10 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
 
     let mySelect = false;
     favoriteList.forEach((favorite) => {
-      mySelect = favorite.toStoreId === store.isSignin.data._id ? true : false;
+      mySelect =
+        store.isSignin && favorite.toStoreId === store.isSignin.data._id
+          ? true
+          : false;
     });
 
     setFavorite({
