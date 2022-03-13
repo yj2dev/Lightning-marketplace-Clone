@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="제목 검색기능 구현">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="TopNav 메뉴 안보이는 버그 수정">
+      <change afterPath="$PROJECT_DIR$/server/src/talk.gateway.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk.gateway.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +55,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -145,14 +151,8 @@
       <workItem from="1647049987021" duration="18347000" />
       <workItem from="1647076632235" duration="19656000" />
       <workItem from="1647102338355" duration="2284000" />
-      <workItem from="1647137970538" duration="17064000" />
-    </task>
-    <task id="LOCAL-00044" summary="페이지 권한 분기처리(로그인 여부)">
-      <created>1644797031773</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1644797031773</updated>
+      <workItem from="1647137970538" duration="26399000" />
+      <workItem from="1647183868437" duration="3011000" />
     </task>
     <task id="LOCAL-00045" summary="소셜 로그인 passport 전략으로 변경(미구현)">
       <created>1644856055972</created>
@@ -490,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647160764188</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="TopNav 메뉴 안보이는 버그 수정">
+      <created>1647163181698</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1647163181698</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="비밀번호 변경 로직 구현" />
     <MESSAGE value="회원탈퇴 로직 구현" />
     <MESSAGE value="다수의 유저 가입 성공" />
     <MESSAGE value="프로필 이미지 초기화 구현" />
@@ -534,7 +540,8 @@
     <MESSAGE value="로그인 안된유저 버튼마자 예외처리" />
     <MESSAGE value="로그인 안된유저 버튼마다  예외처리" />
     <MESSAGE value="제목 검색기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="제목 검색기능 구현" />
+    <MESSAGE value="TopNav 메뉴 안보이는 버그 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="TopNav 메뉴 안보이는 버그 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -28,6 +28,7 @@ import {
   StoreContact,
   StoreContactSchema,
 } from './store-contact/model/store-contact.model';
+import { TalkGateway } from './talk.gateway';
 
 @Module({
   imports: [
