@@ -83,7 +83,7 @@ export const ProductContent = styled.div`
   width: 578px;
   height: 400px;
   color: #cccccc;
-  & h3 {
+  & .title {
     color: #000000;
     font-size: 24px;
     margin: 0px;
@@ -95,7 +95,6 @@ export const ProductContent = styled.div`
     font-weight: 800;
   }
   & hr {
-    //border: none;
     border: 1px solid #eeeeee;
     background-color: #eeeeee;
   }
@@ -123,16 +122,16 @@ export const ProductContent = styled.div`
   & td:nth-child(2) {
     color: #000000;
   }
-  & .product_btn {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  & .product_btn button {
-    //width: 185px;
+`;
+export const ProductButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  & #btn-product {
     width: 100%;
     height: 58px;
     display: flex;
@@ -145,6 +144,7 @@ export const ProductContent = styled.div`
     cursor: pointer;
   }
 `;
+
 export const ProductDescriptionContainer = styled.div`
   width: 1020px;
   position: relative;

@@ -6,6 +6,7 @@ import {
   ProductInfoContainer,
   ProductDescriptionContainer,
   ProductInfoContent,
+  ProductButton,
 } from "./styled";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
@@ -89,7 +90,7 @@ export const ProductDetailPage = ({ history }) => {
           )}
         </ProductImgs>
         <ProductContent>
-          <h3>{product.title}</h3>
+          <div className="title">{product.title}</div>
           <div className="price">
             {intOfKr(product.price)} <span>원</span>
           </div>
@@ -145,15 +146,18 @@ export const ProductDetailPage = ({ history }) => {
               </tr>
             </div>
           </table>
-          <div className="product_btn">
+          <ProductButton>
             <ProductFavoriteSection
               favoriteList={product.productFavoriteCount}
               store={store}
             />
-            <ProductTalkSection storeOfProduct={product.userInfo} />
+            <ProductTalkSection
+              storeOfProduct={product.userInfo}
+              user={store}
+            />
 
             {/*<button style={{ background: "#f70000" }}>바로구매</button>*/}
-          </div>
+          </ProductButton>
         </ProductContent>
       </ProductContainer>
       <ProductDescriptionContainer>

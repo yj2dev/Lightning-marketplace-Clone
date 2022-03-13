@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="문의 수정 API 제거">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점 문의 제거 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plan.text" beforeDir="false" afterPath="$PROJECT_DIR$/client/plan.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Footer/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Footer/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopCommentsPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductAskSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductFavoriteSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,14 +152,9 @@
       <workItem from="1646991539069" duration="3279000" />
       <workItem from="1647014160236" duration="5804000" />
       <workItem from="1647049987021" duration="18347000" />
-      <workItem from="1647076632235" duration="16005000" />
-    </task>
-    <task id="LOCAL-00041" summary="client도 SSL(HTTPS) 적용">
-      <created>1644757946460</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1644757946460</updated>
+      <workItem from="1647076632235" duration="19656000" />
+      <workItem from="1647102338355" duration="2284000" />
+      <workItem from="1647137970538" duration="5586000" />
     </task>
     <task id="LOCAL-00042" summary="백엔드서버 인증서 변경">
       <created>1644759653864</created>
@@ -493,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647091964799</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="상점 문의 제거 기능 구현">
+      <created>1647098099339</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1647098099340</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Client 측에서 한국시간으로 변환 후 날짜 표기" />
     <MESSAGE value="컴포넌트간에 z-index 값 재정리" />
     <MESSAGE value="동작안하는 랜더링 코드 예제1" />
     <MESSAGE value="로그인 페이지 수정, 설정페이지 컴포넌트 생성" />
@@ -537,7 +542,8 @@
     <MESSAGE value="상품문의 대댓글 구현" />
     <MESSAGE value="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현" />
     <MESSAGE value="문의 수정 API 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="문의 수정 API 제거" />
+    <MESSAGE value="상점 문의 제거 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="상점 문의 제거 기능 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

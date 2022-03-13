@@ -4,10 +4,13 @@ import { useLocation, withRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AddFavoriteAlert } from "./styled";
 import { BiCheck } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import SigninModal from "../../../../components/SigninModal";
 
 const ProductFavoriteSection = ({ favoriteList, store, history }) => {
   const location = useLocation();
 
+  const [showSigninModal, setShowSigninModal] = useState(false);
   const [showAddFavoriteAlert, setShowAddFavoriteAlert] = useState(false);
 
   // 찜
@@ -42,7 +45,13 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
   }, [favoriteList]);
 
   const onClickFavoriteProduct = () => {
+    if (store && !store.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
     const productId = getProductId();
+
     axios
       .get(`/product/${productId}/favorite`)
       .then((res) => {
@@ -80,6 +89,7 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
   return (
     <>
       <button
+        id="btn-product"
         onClick={onClickFavoriteProduct}
         style={favorite.mySelect ? activeFavoriteBtn : defaultFavoriteBtn}
       >
@@ -96,6 +106,10 @@ const ProductFavoriteSection = ({ favoriteList, store, history }) => {
           </AddFavoriteAlert>
         )}
       </button>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </>
   );
 };

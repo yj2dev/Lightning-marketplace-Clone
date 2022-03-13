@@ -12,10 +12,12 @@ import { Link, withRouter } from "react-router-dom";
 import { daysFormat } from "../../../../utils/Time";
 import { FaRegCommentDots, FaRegTrashAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import SigninModal from "../../../../components/SigninModal";
 
 const ShopCommentsPage = ({ shopId, history }) => {
   const user = useSelector((state) => state.user);
 
+  const [showSigninModal, setShowSigninModal] = useState(false);
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
 
@@ -60,6 +62,11 @@ const ShopCommentsPage = ({ shopId, history }) => {
   }, []);
 
   function onClickCreateComment() {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
     if (comment.length === 0) return;
 
     axios
@@ -163,7 +170,7 @@ const ShopCommentsPage = ({ shopId, history }) => {
                   </span>
                   &nbsp; 댓글달기
                 </button>
-                {user.isSignin.data._id === comment.storeId && (
+                {user.isSignin && user.isSignin.data._id === comment.storeId && (
                   <button
                     className="delete_ask cursor_pointer"
                     value={`${comment.commentId}/${comment.storeName}`}
@@ -179,6 +186,10 @@ const ShopCommentsPage = ({ shopId, history }) => {
             </CommentSection>
           ))}
       </div>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </Container>
   );
 };

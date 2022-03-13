@@ -79,7 +79,7 @@ function Layout({ history }) {
             component={Auth(ProductDetailPage, 0)}
           />
 
-          <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 1)} />
+          <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 0)} />
           <Route exact path="/talk" component={Auth(TalkPage, 1)} />
           <Route exact path="/" component={Auth(LandingPage, 0)} />
         </Switch>

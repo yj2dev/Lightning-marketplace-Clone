@@ -26,6 +26,7 @@ import { oneDaysFormat } from "../../utils/Time";
 import Menu from "../../components/Menu";
 import AlertModal from "../../components/AlertModal";
 import ImageCrop from "../../components/ImageCrop";
+import SigninModal from "../../components/SigninModal";
 
 const MyShopPage = ({ history }) => {
   const location = useLocation();
@@ -41,6 +42,8 @@ const MyShopPage = ({ history }) => {
   const [tabMenu, setTabMenu] = useState(0);
 
   const user = useSelector((state) => state.user);
+
+  const [showSigninModal, setShowSigninModal] = useState(false);
 
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
@@ -196,6 +199,11 @@ const MyShopPage = ({ history }) => {
   };
 
   const onClickStoreFollow = () => {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
     const userId = getUserId();
 
     axios
@@ -212,6 +220,11 @@ const MyShopPage = ({ history }) => {
   };
 
   const onClickStoreTalk = () => {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
     const userId = getUserId();
   };
 
@@ -405,6 +418,10 @@ const MyShopPage = ({ history }) => {
         show={showCropImageModal}
         close={() => setShowCropImageModal(false)}
       ></ImageCrop>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </Container>
   );
 };

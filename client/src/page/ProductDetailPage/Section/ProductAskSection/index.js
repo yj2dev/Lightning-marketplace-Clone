@@ -1,17 +1,19 @@
 import { InputContainer, AskTextarea, AskSection } from "./styled";
 import { BsPencil } from "react-icons/bs";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, withRouter } from "react-router-dom";
 import { daysFormat } from "../../../../utils/Time";
 import { FaRegCommentDots, FaRegTrashAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import SigninModal from "../../../../components/SigninModal";
 
 const ProductAskSection = ({ history }) => {
   const location = useLocation();
   const productId = getProductId();
   const user = useSelector((state) => state.user);
 
+  const [showSigninModal, setShowSigninModal] = useState(false);
   const [askList, setAskList] = useState([]);
   const [ask, setAsk] = useState("");
 
@@ -66,6 +68,11 @@ const ProductAskSection = ({ history }) => {
   }, []);
 
   const onClickCreateAsk = () => {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
     if (ask === "") return;
 
     const productId = getProductId();
@@ -163,7 +170,7 @@ const ProductAskSection = ({ history }) => {
                   </span>
                   &nbsp; 댓글달기
                 </button>
-                {user.isSignin.data._id === ask.storeId && (
+                {user.isSignin && user.isSignin.data._id === ask.storeId && (
                   <button
                     className="delete_ask cursor_pointer"
                     value={`${ask.askId}/${ask.storeName}`}
@@ -179,6 +186,10 @@ const ProductAskSection = ({ history }) => {
             </AskSection>
           ))}
       </div>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </>
   );
 };

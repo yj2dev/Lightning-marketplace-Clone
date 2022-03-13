@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import AlertModal from "../../../../components/AlertModal";
 import { RiMessage3Fill } from "react-icons/ri";
 import { StoreProfile, StoreTable, TalkButton } from "./styled";
+import SigninModal from "../../../../components/SigninModal";
 
-const ProductTalkSection = ({ storeOfProduct }) => {
+const ProductTalkSection = ({ storeOfProduct, user }) => {
+  const [showSigninModal, setShowSigninModal] = useState(false);
   const [showTalkModal, setShowTalkModal] = useState(false);
   const [store, setStore] = useState(storeOfProduct);
-
-  const onClickTalk = () => {
-    console.log("TALK");
-  };
 
   // console.log(storeOfProduct);
   useEffect(() => {
@@ -17,11 +15,20 @@ const ProductTalkSection = ({ storeOfProduct }) => {
     setStore(storeOfProduct[0]);
   }, [storeOfProduct]);
 
+  const onClickTalk = () => {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+    setShowTalkModal(true);
+  };
+
   return (
     <>
       <button
+        id="btn-product"
         style={{ background: "#ffa425" }}
-        onClick={() => setShowTalkModal(true)}
+        onClick={onClickTalk}
       >
         연락하기
       </button>
@@ -50,11 +57,15 @@ const ProductTalkSection = ({ storeOfProduct }) => {
             <td>연락처 비공개</td>
           </tr>
         </StoreTable>
-        <TalkButton>
+        <TalkButton id="btn-product">
           <RiMessage3Fill style={{ marginRight: "4px" }} />
           번개톡
         </TalkButton>
       </AlertModal>
+      <SigninModal
+        show={showSigninModal}
+        close={() => setShowSigninModal(false)}
+      ></SigninModal>
     </>
   );
 };
