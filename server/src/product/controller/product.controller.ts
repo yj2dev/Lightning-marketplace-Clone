@@ -24,6 +24,13 @@ import { ProductFavorite } from '../../product-favorite/model/product-favorite.m
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  @Get('/:keyword/search')
+  async searchTitleByKeyword(
+    @Param('keyword') keyword: string,
+  ): Promise<Product[]> {
+    return await this.productService.searchTitleByKeyword(keyword);
+  }
+
   @Get('/favorite')
   @UseGuards(JwtAuthGuard)
   async getProductFavorite(

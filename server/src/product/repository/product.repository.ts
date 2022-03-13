@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Product, ProductSchema } from '../model/product.model';
@@ -29,6 +29,12 @@ export class ProductRepository {
     @InjectModel(ProductContact.name)
     private readonly productContact: Model<ProductContact>,
   ) {}
+
+  // 입력된 단어로 상품제목 찾기
+  async searchTitleByKeyword(keyword: string): Promise<Product[]> {
+    const result = await this.product.find({ title: new RegExp(keyword) });
+    return result;
+  }
 
   // toStoreId => toProductId로 취급
   async getProductFavorite(userId: string): Promise<ProductFavorite[]> {

@@ -10,16 +10,14 @@ import {
   SellerCenter,
 } from "./styled";
 import { BsFillLightningChargeFill } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowForward, IoIosClose } from "react-icons/io";
 import { BiSearch } from "react-icons/bi";
 import { MdOutlineSell } from "react-icons/md";
 import { BsShop } from "react-icons/bs";
 import { RiMessage3Line } from "react-icons/ri";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CategoryMenu from "../../../components/CategoryMenu";
-import { Link, Route, Switch, withRouter } from "react-router-dom";
-import ProductNewPage from "../../../page/ProductNewPage";
+import { Link, Route, Switch, useLocation, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SigninModal from "../../../components/SigninModal";
 
@@ -29,6 +27,22 @@ const SearchNav = ({ history }) => {
   const [searchValue, setSearchValue] = useState("");
   const [showDeleteSearch, setShowDeleteSearch] = useState(false);
   const user = useSelector((state) => state.user);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // 검색 파라미터 분석
+    const [type, keyword] = location.search.replace("?", "").split("=");
+    setSearchValue(keyword);
+  }, []);
+
+  function onSubmitSearch(e) {
+    e.preventDefault();
+
+    if (searchValue === "") return;
+
+    history.push(`/search?q=${searchValue}`);
+  }
 
   const onChangeSearchValue = (e) => {
     if (e.target.value !== "") setShowDeleteSearch(true);
@@ -74,12 +88,16 @@ const SearchNav = ({ history }) => {
           벼락장터
         </Title>
         {/* Search Section */}
-        <SearchInput
-          placeholder="상품명, 지역명, @상점명 입력"
-          onChange={onChangeSearchValue}
-          value={searchValue}
-        ></SearchInput>
+        <form onSubmit={onSubmitSearch}>
+          <SearchInput
+            placeholder="상품명 입력"
+            // placeholder="상품명, @상점명, #태그명 입력"
+            onChange={onChangeSearchValue}
+            value={searchValue}
+          ></SearchInput>
+        </form>
         <BiSearch
+          onClick={onSubmitSearch}
           className="cursor_pointer"
           size={20}
           style={{

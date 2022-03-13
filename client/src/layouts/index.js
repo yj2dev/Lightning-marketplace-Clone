@@ -19,6 +19,7 @@ import ProductDetailPage from "../page/ProductDetailPage";
 import ProductManagePage from "../page/ProductManagePage";
 import SettingPage from "../page/SettingPage";
 import DevPage from "../page/DevPage";
+import SearchPage from "../page/SearchPage";
 
 // Auth(Component, option)
 // - option: (0)로그인 여부 상관없음 - 기본값
@@ -68,6 +69,9 @@ function Layout({ history }) {
         <TopNav></TopNav>
         <SearchNav></SearchNav>
         <Switch>
+          {/* 검색 결과 */}
+          <Route path="/search" component={Auth(SearchPage, 0)} />
+
           {/* 유저 설정 */}
           <Route path="/setting" component={Auth(SettingPage, 1)} />
 

@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { HttpException, Injectable, Param } from '@nestjs/common';
 import { ProductRepository } from '../repository/product.repository';
 import { Product } from '../model/product.model';
 import { TagRepository } from '../../tag/tag.reposigory';
@@ -10,6 +10,10 @@ export class ProductService {
     private readonly productRepository: ProductRepository,
     private readonly tagRepository: TagRepository,
   ) {}
+
+  async searchTitleByKeyword(keyword: string): Promise<Product[]> {
+    return await this.productRepository.searchTitleByKeyword(keyword);
+  }
 
   async getProductFavorite(userId: string): Promise<ProductFavorite[]> {
     return await this.productRepository.getProductFavorite(userId);
