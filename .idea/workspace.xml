@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="로그인 안된유저 버튼마다  예외처리">
-      <change afterPath="$PROJECT_DIR$/client/src/page/SearchPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/SearchPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="제목 검색기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/service/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,14 +145,7 @@
       <workItem from="1647049987021" duration="18347000" />
       <workItem from="1647076632235" duration="19656000" />
       <workItem from="1647102338355" duration="2284000" />
-      <workItem from="1647137970538" duration="14609000" />
-    </task>
-    <task id="LOCAL-00043" summary="유저 로그인, 로그아웃 구현">
-      <created>1644784068575</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1644784068575</updated>
+      <workItem from="1647137970538" duration="17064000" />
     </task>
     <task id="LOCAL-00044" summary="페이지 권한 분기처리(로그인 여부)">
       <created>1644797031773</created>
@@ -495,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647150032018</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="제목 검색기능 구현">
+      <created>1647160764188</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1647160764188</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="로그인 페이지 수정, 설정페이지 컴포넌트 생성" />
     <MESSAGE value="비밀번호 변경 로직 구현" />
     <MESSAGE value="회원탈퇴 로직 구현" />
     <MESSAGE value="다수의 유저 가입 성공" />
@@ -539,14 +533,15 @@
     <MESSAGE value="상점 문의 제거 기능 구현" />
     <MESSAGE value="로그인 안된유저 버튼마자 예외처리" />
     <MESSAGE value="로그인 안된유저 버튼마다  예외처리" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인 안된유저 버튼마다  예외처리" />
+    <MESSAGE value="제목 검색기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="제목 검색기능 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/layouts/Header/TopNav/styled.js</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

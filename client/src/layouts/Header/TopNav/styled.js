@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  z-index: 5;
+  // 아래 z-index 수정 시 메뉴가 나타나지 않을 수 있음
+  z-index: 12;
   border-bottom: 1px solid #eeeeee;
   padding: 0 10px 0 32px;
   position: relative;

@@ -36,14 +36,13 @@ function TopNav({ history }) {
     setShowSigninModal(false);
   };
 
+  // 해당 함수는 로그인/회원가입, 내상점 버튼과 공용으로 사용함
   const onToggleSignin = () => {
+    console.log(showMyShopMenu);
     // 로그인이 되어 있지 않으면 로그인 모달 띄우기
     // 로그인이 되어 있으면 내상점 메뉴 모달 띄우기
     if (!user.isSignin) setShowSigninModal((prev) => !prev);
     else setShowMyShopMenu((prev) => !prev);
-
-    // 내 상점으로 이동(사용안함)
-    // else history.push(`/shop/${user.isSignin.data._id}`);
   };
 
   const onClickAppDownload = () => {
