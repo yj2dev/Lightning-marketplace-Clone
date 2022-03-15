@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { TalkGateway } from '../talk.gateway';
+import { TalkGateway } from './talk.gateway';
 
 @Module({
   providers: [TalkGateway],

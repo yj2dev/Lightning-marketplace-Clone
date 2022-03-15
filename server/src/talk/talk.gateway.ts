@@ -10,7 +10,10 @@ import {
 import { Socket } from 'socket.io';
 import { Logger } from '@nestjs/common';
 
-@WebSocketGateway({ cors: true })
+@WebSocketGateway({
+  namespace: 'good',
+  cors: true,
+})
 export class TalkGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
@@ -33,25 +36,15 @@ export class TalkGateway
     );
   }
 
-  @SubscribeMessage('new_user')
-  handleNewUser(
-    @MessageBody() username: string,
-    @ConnectedSocket() socket: Socket,
-  ) {
-    console.log('socket.id >> ', socket.id);
-    console.log('username >> ', username);
-
-    socket.broadcast.emit('server_res', 'Socket is connected...');
-
-    return 'return Socket...';
-  }
-
-  @SubscribeMessage('submit_talk')
+  @SubscribeMessage('send_talk')
   handleSubmitTalk(
     @MessageBody() talk: string,
     @ConnectedSocket() socket: Socket,
   ) {
     console.log('talk >> ', talk);
-    socket.broadcast.emit('new_talk', { talk, username: socket.id });
+    socket.broadcast.emit('new_talk', { talk, socketId: socket.id });
+    socket.broadcast.emit('tk4w21', { talk, socketId: 'IDID' });
+    // socket.on.emit('tk4w21', { talk, socketId: 'IDID' });
+    return true;
   }
 }

@@ -1,52 +1,60 @@
 import { useEffect, useState } from "react";
-import socketIO from "socket.io-client";
+import { io } from "socket.io-client";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 // 실제 배포시 도메인 지정
-const socket = socketIO.connect("https://localhost:8000");
+const socket = io.connect("https://localhost:8000/good");
+
 const TalkPage = () => {
+  const user = useSelector((state) => state.user);
+  const history = useHistory();
   const [username, setUsername] = useState("");
-  const [talk, setTalk] = useState("");
+
+  const [talk, setTalk] = useState([]);
   const [message, setMessage] = useState("");
 
-  function getUser() {
-    const name = prompt("What is your name?");
-    setUsername(name);
-  }
+  const uId = "tk4w21";
 
-  function onClickName() {
-    console.log("username >> ", username);
-    socket.emit("new_user", username, (data) => {
-      console.log("new_user data >> ", data);
-    });
-
-    socket.on("server_res", (data) => {
-      console.log("server_res data >> ", data);
-    });
-  }
+  console.log("rendering count...");
 
   useEffect(() => {
-    onClickName();
-  }, [username]);
-
-  useEffect(() => {
-    getUser();
+    if (!user.isSignin) history.push("/");
   }, []);
+
+  socket.on(uId, (data) => {
+    console.log(`uid[${uId}] data >> `, data);
+  });
 
   function onSubmitSendMessage(e) {
     e.preventDefault();
 
-    socket.emit("submit_talk", message);
+    socket.emit(
+      "send_talk",
+      { fromUserId: user.isSignin.data._id, message },
+      (data) => {
+        console.log("send_talk data >> ", data);
+        setMessage("");
+      }
+    );
 
     socket.on("new_talk", (data) => {
       console.log("new_talk data >> ", data);
-      setTalk(data.talk);
+      const temp = talk;
+      console.log("temp >> ", temp);
+      // temp.push(data);
+      // setTalk(temp);
+
+      console.log("talk map ");
     });
+  }
+  function test() {
+    console.log(talk);
   }
   return (
     <>
-      TalkPage
-      <button onClick={onClickName}>username</button>
-      username: {username} <br />
+      <button onClick={test}>test</button>
+      username: {user.isSignin && user.isSignin.data.storeName} <br />
       <form onSubmit={onSubmitSendMessage}>
         <input
           type="text"
@@ -56,7 +64,12 @@ const TalkPage = () => {
 
         <button type="submit">전송</button>
       </form>
-      {talk}
+      {talk &&
+        talk.map((v) => (
+          <div>
+            {v.talk} <br />
+          </div>
+        ))}
     </>
   );
 };

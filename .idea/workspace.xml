@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="TopNav 메뉴 안보이는 버그 수정">
-      <change afterPath="$PROJECT_DIR$/server/src/talk.gateway.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/talk.gateway.ts" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="socket.io test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk.gateway.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +63,11 @@
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-contact" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\service" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\controller" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\_static" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product\controller" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -152,14 +148,13 @@
       <workItem from="1647076632235" duration="19656000" />
       <workItem from="1647102338355" duration="2284000" />
       <workItem from="1647137970538" duration="26399000" />
-      <workItem from="1647183868437" duration="3011000" />
-    </task>
-    <task id="LOCAL-00045" summary="소셜 로그인 passport 전략으로 변경(미구현)">
-      <created>1644856055972</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1644856055972</updated>
+      <workItem from="1647183868437" duration="3072000" />
+      <workItem from="1647212122563" duration="2790000" />
+      <workItem from="1647229113259" duration="22000" />
+      <workItem from="1647240735028" duration="2260000" />
+      <workItem from="1647260362012" duration="7221000" />
+      <workItem from="1647330495059" duration="738000" />
+      <workItem from="1647331345691" duration="5721000" />
     </task>
     <task id="LOCAL-00046" summary="상품 이미지 저장">
       <created>1644870762245</created>
@@ -497,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647163181698</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="socket.io test">
+      <created>1647187038580</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1647187038580</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="회원탈퇴 로직 구현" />
     <MESSAGE value="다수의 유저 가입 성공" />
     <MESSAGE value="프로필 이미지 초기화 구현" />
     <MESSAGE value="프로필 이미지 변경 구현" />
@@ -541,7 +542,8 @@
     <MESSAGE value="로그인 안된유저 버튼마다  예외처리" />
     <MESSAGE value="제목 검색기능 구현" />
     <MESSAGE value="TopNav 메뉴 안보이는 버그 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="TopNav 메뉴 안보이는 버그 수정" />
+    <MESSAGE value="socket.io test" />
+    <option name="LAST_COMMIT_MESSAGE" value="socket.io test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

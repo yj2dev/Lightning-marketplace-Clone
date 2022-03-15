@@ -9,7 +9,7 @@ export const ProductSection = styled.div`
   width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 14px;
 `;
 
 export const Product = styled.div`
