@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+// import io from "socket.io-client";
 import { io } from "socket.io-client";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import useSocket from "../../hooks/useSocket";
 
 // 실제 배포시 도메인 지정
-const socket = io.connect("https://localhost:8000/good");
+// const socket = io.connect(`https://localhost:8000/${namspace}`);
+// const socket = io.connect(`https://localhost:8000/ws-330121`);
+const socket = io.connect(`https://localhost:8000/d12`);
 
 const TalkPage = () => {
   const user = useSelector((state) => state.user);
@@ -14,42 +18,24 @@ const TalkPage = () => {
   const [talk, setTalk] = useState([]);
   const [message, setMessage] = useState("");
 
-  const uId = "tk4w21";
-
-  console.log("rendering count...");
+  // const [socket, disconnect] = useSocket();
 
   useEffect(() => {
-    if (!user.isSignin) history.push("/");
-  }, []);
-
-  socket.on(uId, (data) => {
-    console.log(`uid[${uId}] data >> `, data);
+    socket.on("rootClient", (data) => {
+      console.log("rootClient data >> ", data);
+    });
   });
+
+  function test() {
+    console.log("test...");
+    socket.emit("rootServer", { test: "test" }, (data) => {
+      console.log("test data >> ", data);
+    });
+  }
 
   function onSubmitSendMessage(e) {
     e.preventDefault();
-
-    socket.emit(
-      "send_talk",
-      { fromUserId: user.isSignin.data._id, message },
-      (data) => {
-        console.log("send_talk data >> ", data);
-        setMessage("");
-      }
-    );
-
-    socket.on("new_talk", (data) => {
-      console.log("new_talk data >> ", data);
-      const temp = talk;
-      console.log("temp >> ", temp);
-      // temp.push(data);
-      // setTalk(temp);
-
-      console.log("talk map ");
-    });
-  }
-  function test() {
-    console.log(talk);
+    if (message === "") return;
   }
   return (
     <>
