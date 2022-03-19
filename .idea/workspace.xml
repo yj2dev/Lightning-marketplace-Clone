@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="소켓 네임스페이스 사용 실패">
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useSocket.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="소켓 네임스페이스 사용 성공">
+      <change afterPath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk-room/talk-room.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk/model/talk.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk/talk.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk/talk.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/talk-room" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,11 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-room" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\ProductDetailPage\Section" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-review" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\store-contact" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\hooks" />
@@ -156,14 +164,10 @@
       <workItem from="1647331345691" duration="7554000" />
       <workItem from="1647397023745" duration="13776000" />
       <workItem from="1647512593219" duration="1809000" />
-      <workItem from="1647526255118" duration="3189000" />
-    </task>
-    <task id="LOCAL-00047" summary="상품 등록, 상품 이미지 등록, 해시태그 미완성">
-      <created>1644890168844</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1644890168844</updated>
+      <workItem from="1647526255118" duration="3364000" />
+      <workItem from="1647562372830" duration="3691000" />
+      <workItem from="1647615184243" duration="1245000" />
+      <workItem from="1647648945773" duration="20762000" />
     </task>
     <task id="LOCAL-00048" summary="랜딩 페이지 디자인 및 백엔드에서 받은 데이터 적용">
       <created>1644928770235</created>
@@ -501,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647343569483</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="소켓 네임스페이스 사용 성공">
+      <created>1647531412546</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1647531412547</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +531,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="프로필 이미지 초기화 구현" />
     <MESSAGE value="프로필 이미지 변경 구현" />
     <MESSAGE value="server ssl 인증서 업로드" />
     <MESSAGE value="상품 즐겨찾기 API 추가" />
@@ -545,7 +555,8 @@
     <MESSAGE value="TopNav 메뉴 안보이는 버그 수정" />
     <MESSAGE value="socket.io test" />
     <MESSAGE value="소켓 네임스페이스 사용 실패" />
-    <option name="LAST_COMMIT_MESSAGE" value="소켓 네임스페이스 사용 실패" />
+    <MESSAGE value="소켓 네임스페이스 사용 성공" />
+    <option name="LAST_COMMIT_MESSAGE" value="소켓 네임스페이스 사용 성공" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -559,6 +570,12 @@
           <url>file://$PROJECT_DIR$/server/src/user/model/user.model.ts</url>
           <line>77</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/layouts/index.js</url>
+          <line>79</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

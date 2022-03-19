@@ -28,6 +28,7 @@ export const ProductDetailPage = ({ history }) => {
   const [product, setProduct] = useState({});
   const [productImgs, setProductImgs] = useState([]);
   const [user, setUser] = useState({});
+  const [isMyProduct, setIsMyProduct] = useState(false);
 
   // 이미지 슬라이더
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

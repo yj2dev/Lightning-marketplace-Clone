@@ -13,8 +13,8 @@ import { Logger } from '@nestjs/common';
 
 @WebSocketGateway({
   cors: true,
-  // namespace: /\/ws-.+/,
-  namespace: 'd12',
+  namespace: /\/nsp-.+/,
+  // namespace: 'd12',
 })
 export class TalkGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
@@ -52,7 +52,7 @@ export class TalkGateway
     this.server.emit('rootClient', { connect: true });
     this.server.emit('rootClient2', { message: 'happy birth day' });
 
-    return true;
+    return { succeed: true };
   }
 
   @SubscribeMessage('send_talk')
@@ -62,7 +62,7 @@ export class TalkGateway
   ) {
     console.log('talk >> ', talk);
     socket.broadcast.emit('tk4w21', talk);
-    // socket.on.emit('tk4w21', { talk, socketId: 'IDID' });
-    return true;
+
+    // return await this.
   }
 }

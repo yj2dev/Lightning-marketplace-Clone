@@ -75,6 +75,10 @@ function Layout({ history }) {
           {/* 유저 설정 */}
           <Route path="/setting" component={Auth(SettingPage, 1)} />
 
+          {/* 번개톡 */}
+          <Route exact path="/talk" component={Auth(TalkPage, 1)} />
+          <Route path="/talk/:sellerId" component={Auth(TalkPage, 1)} />
+
           {/* 상품 페이지들은 로그인 안한 유저 접근불가 따로 적용함 */}
           <Route path="/product/new" component={ProductNewPage} />
           <Route path="/product/manage" component={ProductManagePage} />
@@ -84,7 +88,6 @@ function Layout({ history }) {
           />
 
           <Route exact path="/shop/:shopId/" component={Auth(MyShopPage, 0)} />
-          <Route exact path="/talk" component={Auth(TalkPage, 1)} />
           <Route exact path="/" component={Auth(LandingPage, 0)} />
         </Switch>
         <Footer></Footer>

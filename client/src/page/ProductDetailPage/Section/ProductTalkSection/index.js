@@ -3,19 +3,44 @@ import AlertModal from "../../../../components/AlertModal";
 import { RiMessage3Fill } from "react-icons/ri";
 import { StoreProfile, StoreTable, TalkButton } from "./styled";
 import SigninModal from "../../../../components/SigninModal";
+import { useLocation, withRouter } from "react-router-dom";
 
-const ProductTalkSection = ({ storeOfProduct, user }) => {
+const ProductTalkSection = ({ storeOfProduct, user, history }) => {
+  const location = useLocation();
   const [showSigninModal, setShowSigninModal] = useState(false);
   const [showTalkModal, setShowTalkModal] = useState(false);
   const [store, setStore] = useState(storeOfProduct);
+  const [isMyProduct, setIsMyProduct] = useState(false);
 
-  // console.log(storeOfProduct);
   useEffect(() => {
     if (storeOfProduct === undefined) return;
     setStore(storeOfProduct[0]);
-  }, [storeOfProduct]);
+
+    console.log("uesr >> ", user);
+    const myProduct =
+      user.isSignin.data.id == storeOfProduct[0].id ? true : false;
+    setIsMyProduct(myProduct);
+    console.log(myProduct);
+  }, [storeOfProduct, user]);
+
+  function getSellerId() {
+    const path = location.pathname.split("/");
+    return path[2] ? path[2] : null;
+  }
 
   const onClickTalk = () => {
+    if (!user.isSignin) {
+      setShowSigninModal(true);
+      return;
+    }
+
+    const sellerId = getSellerId();
+
+    history.push("/");
+    history.push(`talk/${sellerId}`);
+  };
+
+  const onShowTalkModal = () => {
     if (!user.isSignin) {
       setShowSigninModal(true);
       return;
@@ -25,17 +50,19 @@ const ProductTalkSection = ({ storeOfProduct, user }) => {
 
   return (
     <>
-      <button
-        id="btn-product"
-        style={{ background: "#ffa425" }}
-        onClick={onClickTalk}
-      >
-        연락하기
-      </button>
+      {!isMyProduct && (
+        <button
+          id="btn-product"
+          style={{ background: "#ffa425" }}
+          onClick={onShowTalkModal}
+        >
+          연락하기
+        </button>
+      )}
       <AlertModal
         show={showTalkModal}
         close={() => setShowTalkModal((prev) => !prev)}
-        confirm={onClickTalk}
+        confirm={onShowTalkModal}
         useCancelButton={false}
         useSubmitButton={false}
         useCloseButton={true}
@@ -57,7 +84,7 @@ const ProductTalkSection = ({ storeOfProduct, user }) => {
             <td>연락처 비공개</td>
           </tr>
         </StoreTable>
-        <TalkButton id="btn-product">
+        <TalkButton id="btn-product" onClick={onClickTalk}>
           <RiMessage3Fill style={{ marginRight: "4px" }} />
           번개톡
         </TalkButton>
@@ -70,4 +97,4 @@ const ProductTalkSection = ({ storeOfProduct, user }) => {
   );
 };
 
-export default ProductTalkSection;
+export default withRouter(ProductTalkSection);

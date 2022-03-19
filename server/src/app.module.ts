@@ -29,6 +29,7 @@ import {
   StoreContactSchema,
 } from './store-contact/model/store-contact.model';
 import { TalkGateway } from './talk/talk.gateway';
+import { TalkRoomModule } from './talk-room/talk-room.module';
 
 @Module({
   imports: [
@@ -63,6 +64,7 @@ import { TalkGateway } from './talk/talk.gateway';
     FollowModule,
     CategoryModule,
     TalkModule,
+    TalkRoomModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
