@@ -1,7 +1,29 @@
 import { Container, TalkForm, TalkRoomWrapper } from "./styled";
 import { intOfKr } from "../../../../utils/Currency";
+import { useRef, useState } from "react";
 
 export const TalkRoomSection = () => {
+  const talkScrollRef = useRef();
+  const [message, setMessage] = useState("");
+
+  // console.log(talkScrollRef.current.scrollX());
+
+  const scrollToBottom = () => {
+    const { scrollTop, scrollHeight, clientHeight } = talkScrollRef.current;
+    const bottom = scrollHeight - clientHeight;
+    talkScrollRef.current.scrollTo(0, bottom);
+  };
+
+  function onSubmitSendMessage(e) {
+    e.preventDefault();
+
+    // if (message === "") return;
+
+    console.log("메시지 전송");
+    console.log("message >> ", message);
+    setMessage("");
+    scrollToBottom();
+  }
   return (
     <Container>
       <div className="title">닉네임</div>
@@ -16,7 +38,7 @@ export const TalkRoomSection = () => {
           officiis quae!
         </div>
       </div>
-      <TalkRoomWrapper>
+      <TalkRoomWrapper ref={talkScrollRef}>
         <div>
           <div className="sender">
             직거래 가능할까요?
@@ -67,8 +89,13 @@ export const TalkRoomSection = () => {
         </div>
       </TalkRoomWrapper>
 
-      <TalkForm>
-        <input type="text" placeholder="메시지를 입력하세요" />
+      <TalkForm onSubmit={onSubmitSendMessage}>
+        <input
+          type="text"
+          placeholder="메시지를 입력하세요"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
         <button type="submit">전송</button>
       </TalkForm>
     </Container>

@@ -48,9 +48,6 @@ export const TalkRoomWrapper = styled.div`
   height: 530px;
   overflow: scroll;
   overflow-x: hidden;
-  border: 1px solid black;
-  div {
-  }
 
   & .receiver {
     margin: 4px 0;

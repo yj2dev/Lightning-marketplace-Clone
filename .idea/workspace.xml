@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화">
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TalkPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="벼락톡 디자인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/Header/SearchNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,14 +159,7 @@
       <workItem from="1647648945773" duration="23903000" />
       <workItem from="1647701991731" duration="1429000" />
       <workItem from="1647734208578" duration="1990000" />
-      <workItem from="1647736801279" duration="7628000" />
-    </task>
-    <task id="LOCAL-00049" summary="상품과 상품이미지 populate 성공">
-      <created>1644950846609</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1644950846609</updated>
+      <workItem from="1647736801279" duration="10544000" />
     </task>
     <task id="LOCAL-00050" summary="상품 정보 받아온 후 정보 배치">
       <created>1644956287776</created>
@@ -513,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647694440914</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="벼락톡 디자인">
+      <created>1647744521900</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1647744521900</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +523,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="server ssl 인증서 업로드" />
     <MESSAGE value="상품 즐겨찾기 API 추가" />
     <MESSAGE value="상품 즐겨찾기(찜) API 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경 API) 추가" />
@@ -557,7 +547,8 @@
     <MESSAGE value="소켓 네임스페이스 사용 실패" />
     <MESSAGE value="소켓 네임스페이스 사용 성공" />
     <MESSAGE value="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화" />
-    <option name="LAST_COMMIT_MESSAGE" value="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화" />
+    <MESSAGE value="벼락톡 디자인" />
+    <option name="LAST_COMMIT_MESSAGE" value="벼락톡 디자인" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
