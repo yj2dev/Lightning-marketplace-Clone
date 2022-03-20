@@ -14,6 +14,7 @@ export const TalkRoomSection = ({ history, user }) => {
 
   const [talkToProduct, setTalkToProduct] = useState(null);
   const [talkToUser, setTalkToUser] = useState(null);
+
   const [message, setMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -21,7 +22,14 @@ export const TalkRoomSection = ({ history, user }) => {
   const receiverId = getReceiverIdQuery();
 
   useEffect(() => {
-    socket.on(`6236f8ae9f21683878768c72-spread`, (data) => {
+    const toProductId = getProductParam();
+    const receiverId = getReceiverIdQuery();
+    const roomId = getRoomIdQuery();
+
+    // 이전 채팅내역 가져오기
+    getMessageList(roomId);
+
+    socket.on(`${roomId}-receiveMessage`, (data) => {
       console.log("spread data >> ", data);
       console.log(typeof data);
       const _messageList = messageList;
@@ -44,12 +52,14 @@ export const TalkRoomSection = ({ history, user }) => {
     e.preventDefault();
 
     if (message === "") return;
+    const roomId = getRoomIdQuery();
 
     const payload = {
       senderId: user.isSignin.data._id,
       toProductId,
       receiverId,
       message,
+      roomId,
     };
 
     console.log("p >> ", payload);
@@ -63,13 +73,46 @@ export const TalkRoomSection = ({ history, user }) => {
     scrollToBottom();
   }
 
+  function getMessageList(roomId) {
+    axios
+      .get(`/talk/${roomId}/message-list`)
+      .then((res) => {
+        console.log("getMessageList res >> ", res);
+
+        const _messageList = [];
+        for (let i = 0; i < Object.keys(res.data).length; i++) {
+          const _data = {};
+
+          _data["toUserId"] = res.data[i]._toUserId[0]._id;
+          _data["toUserName"] = res.data[i]._toUserId[0].storeName;
+          _data["toUserProfileURL"] = res.data[i]._toUserId[0].profileURL;
+          _data["fromUserId"] = res.data[i]._fromUserId[0]._id;
+          _data["fromUserName"] = res.data[i]._fromUserId[0].storeName;
+          _data["fromUserProfileURL"] = res.data[i]._fromUserId[0].profileURL;
+
+          _data["notRead"] = res.data.notRead;
+          _data["content"] = res.data.content;
+          _data["createdAt"] = res.data[i].createdAt;
+
+          // console.log("_data >> ", _data);
+          _messageList.push(_data);
+        }
+        console.log("_messageList >> ", _messageList);
+        setMessageList(_messageList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function getReceiverInfo() {
     axios
       .get(`/user/detail/${receiverId}`)
       .then((res) => {
         setTalkToUser(res.data.data);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err);
+      });
   }
   function getProductInfo() {
     axios
@@ -77,7 +120,13 @@ export const TalkRoomSection = ({ history, user }) => {
       .then((res) => {
         setTalkToProduct(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  function getRoomIdQuery() {
+    const roomId = new URL(window.location.href).searchParams.get("roomId");
+    return roomId;
   }
   function getReceiverIdQuery() {
     const sellerId = new URL(window.location.href).searchParams.get("sellerId");

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 680px;
+`;
 export const Container = styled.div`
   border-right: 1px solid #dddddd;
   width: 100%;
@@ -16,7 +22,14 @@ export const TalkListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f4f4fa;
-
+  & a {
+    color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   & li:hover {
     background-color: #fafafd;
     cursor: pointer;

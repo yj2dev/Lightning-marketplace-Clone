@@ -5,6 +5,10 @@ import { TalkRepository } from './talk.repository';
 export class TalkService {
   constructor(private readonly talkRepository: TalkRepository) {}
 
+  async getMessageList(roomId: string) {
+    return await this.talkRepository.getMessageList(roomId);
+  }
+
   async getRoomList(userId: string) {
     return await this.talkRepository.getRoomList(userId);
   }
@@ -24,7 +28,14 @@ export class TalkService {
     // console.log(sellerId);
 
     // 방이 만들어져 있는지 확인
-    const isRoom = await this.talkRepository.isRoom(sellerId, buyerId);
+    // 구매자가 판매자에게 채팅을 하는 경우와 판매자가 구매자에게 하는 경우 두가지를 체크함
+    let isRoom = null;
+    isRoom = await this.talkRepository.isRoomBySeller(sellerId, buyerId);
+    // console.log('isRoom >> ', isRoom);
+
+    if (!isRoom) {
+      isRoom = await this.talkRepository.isRoomByBuyer(sellerId, buyerId);
+    }
     // console.log('isRoom >> ', isRoom);
 
     let roomInfo;
@@ -39,15 +50,17 @@ export class TalkService {
     } else {
       roomInfo = isRoom;
     }
-    // console.log('roomInfo >> ', roomInfo);
+    console.log('roomInfo >> ', roomInfo);
 
     const roomId = roomInfo._id;
+
+    console.log('roomId >> ', roomId);
 
     // 메시지 저장
     const saveMessage = await this.talkRepository.saveMessage(
       roomId,
       sellerId,
-      toProductId,
+      buyerId,
       message,
     );
 

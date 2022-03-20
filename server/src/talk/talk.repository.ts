@@ -15,6 +15,18 @@ export class TalkRepository {
     @InjectModel(User.name) private readonly user: Model<User>,
   ) {}
 
+  async getMessageList(roomId: string): Promise<Talk[]> {
+    const userModel = mongoose.model('users', UserSchema);
+
+    const result = await this.talk
+      .find({
+        roomId: mongoose.Types.ObjectId(roomId),
+      })
+      .populate('_toUserId', userModel)
+      .populate('_fromUserId', userModel);
+    return result;
+  }
+
   async getRoomList(userId: string) {
     const userModel = mongoose.model('users', UserSchema);
 
@@ -31,12 +43,12 @@ export class TalkRepository {
       .populate('_sellerId', userModel)
       .populate('_buyerId', userModel);
 
-    console.log('sellerOfResult >> ', sellerOfResult);
-    console.log('buyerOfResult >> ', buyerOfResult);
+    // console.log('sellerOfResult >> ', sellerOfResult);
+    // console.log('buyerOfResult >> ', buyerOfResult);
 
     if (sellerOfResult && buyerOfResult) {
       const result = { ...sellerOfResult, ...buyerOfResult };
-      console.log('getRoomList && >> ', result);
+      // console.log('getRoomList && >> ', result);
       return result;
     }
 
@@ -45,21 +57,27 @@ export class TalkRepository {
     else return null;
   }
 
-  async getPrevMessage(roomId: string) {
-    const result = await this.talk.find({
-      _id: mongoose.Types.ObjectId(roomId),
-    });
-
-    console.log('getPrevMessage result >> ', result);
-  }
-
-  async isRoom(sellerId: string, buyerId: string): Promise<Room> {
+  // 판매자와 구매자를 일치 시킨 후 확인함
+  async isRoomBySeller(sellerId: string, buyerId: string): Promise<Room> {
     console.log('sellerId >> ', sellerId);
     console.log('buyerId >> ', buyerId);
 
     const result = this.room.findOne({
       sellerId: mongoose.Types.ObjectId(sellerId),
       buyerId: mongoose.Types.ObjectId(buyerId),
+    });
+
+    return result;
+  }
+
+  // 판매자와 구매자의 위치를 바꾼 후 확인함
+  async isRoomByBuyer(sellerId: string, buyerId: string): Promise<Room> {
+    console.log('sellerId >> ', sellerId);
+    console.log('buyerId >> ', buyerId);
+
+    const result = this.room.findOne({
+      sellerId: mongoose.Types.ObjectId(buyerId),
+      buyerId: mongoose.Types.ObjectId(sellerId),
     });
 
     return result;

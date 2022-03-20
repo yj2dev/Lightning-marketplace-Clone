@@ -2,6 +2,7 @@ import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
+import { RoomSchema } from '../../talk-room/model/room.model';
 
 const options: SchemaOptions = {
   timestamps: true,
@@ -56,3 +57,18 @@ export class Talk extends Document {
 }
 
 export const TalkSchema = SchemaFactory.createForClass(Talk);
+
+TalkSchema.virtual('_toUserId', {
+  ref: 'users',
+  localField: 'toUserId',
+  foreignField: '_id',
+});
+
+TalkSchema.virtual('_fromUserId', {
+  ref: 'users',
+  localField: 'fromUserId',
+  foreignField: '_id',
+});
+
+TalkSchema.set('toObject', { virtuals: true });
+TalkSchema.set('toJSON', { virtuals: true });
