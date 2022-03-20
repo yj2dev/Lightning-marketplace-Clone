@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
+import { Container } from "./styled";
 import useSocket from "../../hooks/useSocket";
+import TalkListSection from "./Section/TalkListSection";
+import TalkRoomSection from "./Section/TalkRoomSection";
 
 // 실제 배포시 도메인 지정
 // const socket = io.connect(`https://localhost:8000/${namspace}`);
@@ -42,7 +45,7 @@ const TalkPage = () => {
 
   function test2() {
     console.log("test...");
-    socket2.to("firstRoom").emit("rootServer", { test: "test" }, (data) => {
+    socket2.emit("rootServer", { test: "test" }, (data) => {
       console.log("test data >> ", data);
     });
   }
@@ -53,26 +56,29 @@ const TalkPage = () => {
     if (message === "") return;
   }
   return (
-    <>
-      <button onClick={test}>test</button>
-      <button onClick={test2}>test2</button>
-      username: {user.isSignin && user.isSignin.data.storeName} <br />
-      <form onSubmit={onSubmitSendMessage}>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+    <Container>
+      <TalkListSection />
+      <TalkRoomSection />
 
-        <button type="submit">전송</button>
-      </form>
-      {talk &&
-        talk.map((v) => (
-          <div>
-            {v.talk} <br />
-          </div>
-        ))}
-    </>
+      {/*<button onClick={test}>test</button>*/}
+      {/*<button onClick={test2}>test2</button>*/}
+      {/*username: {user.isSignin && user.isSignin.data.storeName} <br />*/}
+      {/*<form onSubmit={onSubmitSendMessage}>*/}
+      {/*  <input*/}
+      {/*    type="text"*/}
+      {/*    value={message}*/}
+      {/*    onChange={(e) => setMessage(e.target.value)}*/}
+      {/*  />*/}
+
+      {/*  <button type="submit">전송</button>*/}
+      {/*</form>*/}
+      {/*{talk &&*/}
+      {/*  talk.map((v) => (*/}
+      {/*    <div>*/}
+      {/*      {v.talk} <br />*/}
+      {/*    </div>*/}
+      {/*  ))}*/}
+    </Container>
   );
 };
 

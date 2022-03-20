@@ -37,6 +37,24 @@ export class Room extends Document {
   @Prop()
   @IsString()
   lastContent: string;
+
+  @ApiProperty({
+    example: 'feforjgm1',
+    description: '상품 판매자 아이디',
+    required: true,
+  })
+  @Prop()
+  @IsString()
+  sellerId: string;
+
+  @ApiProperty({
+    example: 'asopdkg2',
+    description: '상품 구매자 아이디',
+    required: true,
+  })
+  @Prop()
+  @IsString()
+  buyerId: string;
 }
 
 // export const RoomSchema = SchemaFactory.createForClass(Room);

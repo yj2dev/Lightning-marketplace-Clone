@@ -138,7 +138,7 @@ const SearchNav = ({ history }) => {
           <span>
             <RiMessage3Line />
           </span>
-          번개톡
+          벼락톡
         </LighteningTalk>
         {/* End Right Nav Section */}
         <CategoryMenu />

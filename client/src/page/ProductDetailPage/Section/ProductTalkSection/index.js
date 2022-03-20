@@ -86,7 +86,7 @@ const ProductTalkSection = ({ storeOfProduct, user, history }) => {
         </StoreTable>
         <TalkButton id="btn-product" onClick={onClickTalk}>
           <RiMessage3Fill style={{ marginRight: "4px" }} />
-          번개톡
+          벼락톡
         </TalkButton>
       </AlertModal>
       <SigninModal

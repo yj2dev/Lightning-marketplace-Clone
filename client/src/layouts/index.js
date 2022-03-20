@@ -75,7 +75,7 @@ function Layout({ history }) {
           {/* 유저 설정 */}
           <Route path="/setting" component={Auth(SettingPage, 1)} />
 
-          {/* 번개톡 */}
+          {/* 벼락톡 */}
           <Route exact path="/talk" component={Auth(TalkPage, 1)} />
           <Route path="/talk/:sellerId" component={Auth(TalkPage, 1)} />
 

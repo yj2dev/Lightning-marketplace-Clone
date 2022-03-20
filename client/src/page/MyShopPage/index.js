@@ -300,7 +300,7 @@ const MyShopPage = ({ history }) => {
               </div>
               <div className="store_talk" onClick={onClickStoreTalk}>
                 <RiMessage3Line size={18} />
-                &nbsp;번개톡
+                &nbsp;벼락톡
               </div>
             </>
           )}
