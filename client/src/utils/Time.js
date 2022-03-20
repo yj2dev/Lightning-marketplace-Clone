@@ -56,6 +56,22 @@ export function timeKrFormat(getDate) {
   return ISODate.replace("T", " ").substring(0, 19);
 }
 
+export function timeKrFormatAndMMDD(getDate) {
+  // 9시간
+  const ADD_TIME = 1000 * 60 * 60 * 9;
+
+  let parseTime = Date.parse(getDate);
+  parseTime += ADD_TIME;
+
+  const newDate = new Date(parseTime);
+  const ISODate = newDate.toISOString();
+
+  const formatMMDD = ISODate.replace("T", " ")
+    .substring(5, 10)
+    .replace("-", ". ");
+  return formatMMDD;
+}
+
 export function changeTime(getDate) {
   // ====================================================
   // 게시물을 1달 전까진 오늘을 기준으로 시각을 출력하기 위한  함수입니다

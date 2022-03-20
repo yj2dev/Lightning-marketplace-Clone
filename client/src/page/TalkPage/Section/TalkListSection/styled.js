@@ -13,5 +13,49 @@ export const Container = styled.div`
 `;
 
 export const TalkListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #f4f4fa;
+
+  & li:hover {
+    background-color: #fafafd;
+    cursor: pointer;
+  }
+
+  & li {
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 18px 0;
+
+    & img {
+      margin: 0 16px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      float: left;
+    }
+
+    & .name {
+      float: left;
+      font-size: 16px;
+    }
+
+    & .last_message {
+      font-size: 15px;
+      width: 350px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #646464;
+    }
+
+    & .date {
+      font-size: 13px;
+      color: #999999;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+    }
+  }
 `;

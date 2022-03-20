@@ -37,7 +37,6 @@ const ProductTalkSection = ({ storeOfProduct, user, history }) => {
     const productId = getProductId();
 
     history.push("/");
-    // history.push(`talk/${productId}`);
     history.push(`talk/${productId}?sellerId=${storeOfProduct[0].id}`);
   };
 
