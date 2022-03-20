@@ -224,8 +224,6 @@ const MyShopPage = ({ history }) => {
       setShowSigninModal(true);
       return;
     }
-
-    const userId = getUserId();
   };
 
   return (

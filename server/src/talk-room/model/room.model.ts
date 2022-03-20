@@ -57,13 +57,4 @@ export class Room extends Document {
   buyerId: string;
 }
 
-// export const RoomSchema = SchemaFactory.createForClass(Room);
-//
-// // RoomSchema.virtual('_fromWriterId', {
-// //     ref: 'users',
-// //     localField: 'fromWriterId',
-// //     foreignField: '_id',
-// // });
-// //
-// // RoomSchema.set('toObject', { virtuals: true });
-// // RoomSchema.set('toJSON', { virtuals: true });
+export const RoomSchema = SchemaFactory.createForClass(Room);

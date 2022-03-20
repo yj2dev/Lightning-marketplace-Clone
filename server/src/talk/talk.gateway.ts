@@ -10,6 +10,8 @@ import {
 } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 import { Logger } from '@nestjs/common';
+import { Talk } from './model/talk.model';
+import { TalkService } from './talk.service';
 
 @WebSocketGateway({
   cors: true,
@@ -21,7 +23,7 @@ export class TalkGateway
 {
   private logger = new Logger('Talk');
   // 소켓 통신 라이프 사이클: constructor -> init -> connect -> event -> disconnect
-  constructor() {
+  constructor(private readonly talkService: TalkService) {
     this.logger.log('constructor talk...');
   }
   afterInit(): void {
@@ -55,13 +57,25 @@ export class TalkGateway
     return { succeed: true };
   }
 
-  @SubscribeMessage('send_talk')
-  handleSubmitTalk(
-    @MessageBody() talk: string,
+  @SubscribeMessage('sendMessage')
+  async handleSubmitTalk(
+    @MessageBody() talk: any,
     @ConnectedSocket() socket: Socket,
   ) {
     console.log('talk >> ', talk);
-    socket.broadcast.emit('tk4w21', talk);
+    const id = '62277b01ac24763714311d7a';
+    // socket.join('testRoom');
+
+    socket
+      // .to('testRoom')
+      .emit(`${id}-spread`, {
+        userId: 'fucking',
+        message: talk.message,
+        createdAt: new Date(Date.now()).toISOString(),
+      });
+
+    return await this.talkService.sendMessage(talk);
+    // socket.broadcast.emit('tk4w21', talk);
 
     // return await this.
   }

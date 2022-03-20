@@ -31,11 +31,6 @@ const TalkPage = () => {
     });
   });
 
-  function getUserId() {
-    const path = location.pathname.split("/");
-    return path[2] ? path[2] : null;
-  }
-
   function test() {
     console.log("test...");
     socket.emit("rootServer", { test: "test" }, (data) => {
@@ -50,34 +45,10 @@ const TalkPage = () => {
     });
   }
 
-  function onSubmitSendMessage(e) {
-    e.preventDefault();
-
-    if (message === "") return;
-  }
   return (
     <Container>
-      <TalkListSection />
-      <TalkRoomSection />
-
-      {/*<button onClick={test}>test</button>*/}
-      {/*<button onClick={test2}>test2</button>*/}
-      {/*username: {user.isSignin && user.isSignin.data.storeName} <br />*/}
-      {/*<form onSubmit={onSubmitSendMessage}>*/}
-      {/*  <input*/}
-      {/*    type="text"*/}
-      {/*    value={message}*/}
-      {/*    onChange={(e) => setMessage(e.target.value)}*/}
-      {/*  />*/}
-
-      {/*  <button type="submit">전송</button>*/}
-      {/*</form>*/}
-      {/*{talk &&*/}
-      {/*  talk.map((v) => (*/}
-      {/*    <div>*/}
-      {/*      {v.talk} <br />*/}
-      {/*    </div>*/}
-      {/*  ))}*/}
+      <TalkListSection user={user} />
+      <TalkRoomSection user={user} />
     </Container>
   );
 };

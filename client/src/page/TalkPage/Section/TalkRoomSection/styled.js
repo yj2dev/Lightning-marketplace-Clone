@@ -1,5 +1,28 @@
 import styled from "styled-components";
 
+export const NullContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  flex-direction: column;
+
+  & .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e0464d;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  & .content span {
+    background-color: #ffcccf;
+    color: #000000;
+    padding: 2px 10px;
+  }
+`;
 export const Container = styled.div`
   width: 100%;
   position: relative;
@@ -8,12 +31,14 @@ export const Container = styled.div`
     text-align: center;
     padding: 12px 0;
     background-color: #ffffff;
+    cursor: pointer;
   }
 
   & .sub_title {
     background-color: #ffffff;
     border-bottom: 2px solid #ff5058;
     height: 70px;
+    cursor: pointer;
 
     & img {
       width: 40px;
@@ -22,6 +47,7 @@ export const Container = styled.div`
       margin: 16px 8px 0 8px;
     }
     & .price {
+      padding-top: 14px;
       float: left;
       font-size: 15px;
       font-weight: 400;
@@ -37,6 +63,8 @@ export const Container = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       margin-right: 16px;
+      white-space: nowrap;
+      width: 400px;
     }
   }
 `;

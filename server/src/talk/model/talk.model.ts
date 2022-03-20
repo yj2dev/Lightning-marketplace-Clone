@@ -41,19 +41,9 @@ export class Talk extends Document {
   @ApiProperty({
     example: 'true',
     description: '메시지 읽은 여부',
-    required: true,
   })
   @Prop({ default: true })
   notRead: boolean;
 }
 
-// export const TalkSchema = SchemaFactory.createForClass(Talk);
-//
-// // TalkSchema.virtual('_fromWriterId', {
-// //     ref: 'users',
-// //     localField: 'fromWriterId',
-// //     foreignField: '_id',
-// // });
-// //
-// // TalkSchema.set('toObject', { virtuals: true });
-// // TalkSchema.set('toJSON', { virtuals: true });
+export const TalkSchema = SchemaFactory.createForClass(Talk);

@@ -23,7 +23,7 @@ const ProductTalkSection = ({ storeOfProduct, user, history }) => {
     console.log(myProduct);
   }, [storeOfProduct, user]);
 
-  function getSellerId() {
+  function getProductId() {
     const path = location.pathname.split("/");
     return path[2] ? path[2] : null;
   }
@@ -34,10 +34,11 @@ const ProductTalkSection = ({ storeOfProduct, user, history }) => {
       return;
     }
 
-    const sellerId = getSellerId();
+    const productId = getProductId();
 
     history.push("/");
-    history.push(`talk/${sellerId}`);
+    // history.push(`talk/${productId}`);
+    history.push(`talk/${productId}?sellerId=${storeOfProduct[0].id}`);
   };
 
   const onShowTalkModal = () => {

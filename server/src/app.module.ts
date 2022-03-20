@@ -30,6 +30,7 @@ import {
 } from './store-contact/model/store-contact.model';
 import { TalkGateway } from './talk/talk.gateway';
 import { TalkRoomModule } from './talk-room/talk-room.module';
+import { TalkMemberModule } from './talk-member/talk-member.module';
 
 @Module({
   imports: [
@@ -65,6 +66,7 @@ import { TalkRoomModule } from './talk-room/talk-room.module';
     CategoryModule,
     TalkModule,
     TalkRoomModule,
+    TalkMemberModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],

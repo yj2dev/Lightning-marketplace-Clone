@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="벼락톡 디자인">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 입력시 스크롤 하단으로 이동">
+      <change afterPath="$PROJECT_DIR$/server/src/talk-member/model/member.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/talk-member/talk-member.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/model/talk.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/model/talk.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page/TalkPage/Section" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/talk-member" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-member" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\TalkPage\Section" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-room" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\ProductDetailPage\Section" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\tag" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\hooks" />
@@ -159,14 +172,7 @@
       <workItem from="1647648945773" duration="23903000" />
       <workItem from="1647701991731" duration="1429000" />
       <workItem from="1647734208578" duration="1990000" />
-      <workItem from="1647736801279" duration="10544000" />
-    </task>
-    <task id="LOCAL-00050" summary="상품 정보 받아온 후 정보 배치">
-      <created>1644956287776</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1644956287776</updated>
+      <workItem from="1647736801279" duration="23740000" />
     </task>
     <task id="LOCAL-00051" summary="슬라이더 구현 실패">
       <created>1644991031173</created>
@@ -504,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647744521900</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="채팅 입력시 스크롤 하단으로 이동">
+      <created>1647747483840</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1647747483840</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품 즐겨찾기 API 추가" />
     <MESSAGE value="상품 즐겨찾기(찜) API 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경 API) 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경) API 추가" />
@@ -548,7 +560,8 @@
     <MESSAGE value="소켓 네임스페이스 사용 성공" />
     <MESSAGE value="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화" />
     <MESSAGE value="벼락톡 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="벼락톡 디자인" />
+    <MESSAGE value="채팅 입력시 스크롤 하단으로 이동" />
+    <option name="LAST_COMMIT_MESSAGE" value="채팅 입력시 스크롤 하단으로 이동" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

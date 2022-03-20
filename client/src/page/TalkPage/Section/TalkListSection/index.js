@@ -1,6 +1,11 @@
 import { Container } from "./styled";
+import { useState } from "react";
+import { useLocation, withRouter } from "react-router-dom";
 
-export const TalkListSection = () => {
+export const TalkListSection = ({ history, user }) => {
+  const location = useLocation();
+  const [talkList, setTalkList] = useState([]);
+
   return (
     <Container>
       <div className="title">벼락톡</div>
@@ -8,4 +13,4 @@ export const TalkListSection = () => {
   );
 };
 
-export default TalkListSection;
+export default withRouter(TalkListSection);
