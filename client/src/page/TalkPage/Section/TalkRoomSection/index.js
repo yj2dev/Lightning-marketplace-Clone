@@ -21,7 +21,7 @@ export const TalkRoomSection = ({ history, user }) => {
   const receiverId = getReceiverIdQuery();
 
   useEffect(() => {
-    socket.on(`${toProductId}-spread`, (data) => {
+    socket.on(`6236f8ae9f21683878768c72-spread`, (data) => {
       console.log("spread data >> ", data);
       console.log(typeof data);
       const _messageList = messageList;
@@ -36,6 +36,9 @@ export const TalkRoomSection = ({ history, user }) => {
     // 채팅 상대와 상품 가져오기
     getProductInfo();
     getReceiverInfo();
+
+    // 채팅내용 최하단으로 내리기
+    scrollToBottom();
   }, [toProductId, receiverId]);
 
   function onSubmitSendMessage(e) {

@@ -66,15 +66,17 @@ export class TalkGateway
     const id = '62277b01ac24763714311d7a';
     // socket.join('testRoom');
 
+    const roomId = await this.talkService.sendMessage(talk);
+    console.log('roomId >> ', roomId);
+
     socket
       // .to('testRoom')
-      .emit(`${id}-spread`, {
+      .emit(`${roomId}-spread`, {
         userId: 'fucking',
         message: talk.message,
         createdAt: new Date(Date.now()).toISOString(),
       });
 
-    return await this.talkService.sendMessage(talk);
     // socket.broadcast.emit('tk4w21', talk);
 
     // return await this.

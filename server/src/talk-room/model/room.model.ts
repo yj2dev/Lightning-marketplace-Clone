@@ -6,20 +6,10 @@ import { IsString } from 'class-validator';
 const options: SchemaOptions = {
   timestamps: true,
   versionKey: false,
-  id: false,
 };
 
 @Schema(options)
 export class Room extends Document {
-  @ApiProperty({
-    example: '4ijfom21lka2',
-    description: '채팅방 아이디',
-    required: true,
-  })
-  @Prop({})
-  @IsString()
-  roomId: string;
-
   @ApiProperty({
     example: '620b828e1f6b15237478a8f9',
     description: '상품 고유 아이디',
@@ -45,7 +35,7 @@ export class Room extends Document {
   })
   @Prop()
   @IsString()
-  sellerId: string;
+  sellerId: Types.ObjectId;
 
   @ApiProperty({
     example: 'asopdkg2',
@@ -54,7 +44,7 @@ export class Room extends Document {
   })
   @Prop()
   @IsString()
-  buyerId: string;
+  buyerId: Types.ObjectId;
 }
 
 export const RoomSchema = SchemaFactory.createForClass(Room);
