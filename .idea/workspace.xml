@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅방 멤버 모델 추가">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 방 구분 성공">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkListSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk-member/model/member.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk-member/talk-member.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk-room/model/room.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/model/talk.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/model/talk.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" afterDir="false" />
@@ -166,14 +165,7 @@
       <workItem from="1647648945773" duration="23903000" />
       <workItem from="1647701991731" duration="1429000" />
       <workItem from="1647734208578" duration="1990000" />
-      <workItem from="1647736801279" duration="29102000" />
-    </task>
-    <task id="LOCAL-00052" summary="이미지 캐러셀 일부 구현">
-      <created>1645035269056</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1645035269056</updated>
+      <workItem from="1647736801279" duration="34286000" />
     </task>
     <task id="LOCAL-00053" summary="상품 상세페이지 캐러셀 구현, 디자인, 줄바꿈 문자처리">
       <created>1645080813414</created>
@@ -511,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647765172313</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="채팅 방 구분 성공">
+      <created>1647770208738</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1647770208738</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +529,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품 문의 (추가, 제거, 변경 API) 추가" />
     <MESSAGE value="상품 문의 (추가, 제거, 변경) API 추가" />
     <MESSAGE value="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패" />
     <MESSAGE value="찜 컨테이너 분리" />
@@ -555,7 +553,8 @@
     <MESSAGE value="벼락톡 디자인" />
     <MESSAGE value="채팅 입력시 스크롤 하단으로 이동" />
     <MESSAGE value="채팅방 멤버 모델 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="채팅방 멤버 모델 추가" />
+    <MESSAGE value="채팅 방 구분 성공" />
+    <option name="LAST_COMMIT_MESSAGE" value="채팅 방 구분 성공" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

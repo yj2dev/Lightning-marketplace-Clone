@@ -38,7 +38,6 @@ export const TalkRoomSection = ({ history, user }) => {
     getReceiverInfo();
 
     // 채팅내용 최하단으로 내리기
-    scrollToBottom();
   }, [toProductId, receiverId]);
 
   function onSubmitSendMessage(e) {

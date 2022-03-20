@@ -5,6 +5,10 @@ import { TalkRepository } from './talk.repository';
 export class TalkService {
   constructor(private readonly talkRepository: TalkRepository) {}
 
+  async getRoomList(userId: string) {
+    return await this.talkRepository.getRoomList(userId);
+  }
+
   async sendMessage(talk: {
     senderId: string;
     receiverId: string;
@@ -35,8 +39,20 @@ export class TalkService {
     } else {
       roomInfo = isRoom;
     }
-
     // console.log('roomInfo >> ', roomInfo);
-    return roomInfo._id;
+
+    const roomId = roomInfo._id;
+
+    // 메시지 저장
+    const saveMessage = await this.talkRepository.saveMessage(
+      roomId,
+      sellerId,
+      toProductId,
+      message,
+    );
+
+    console.log('saveMessage >> ', saveMessage);
+
+    return roomId;
   }
 }

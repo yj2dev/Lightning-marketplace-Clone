@@ -12,6 +12,15 @@ const options: SchemaOptions = {
 @Schema(options)
 export class Talk extends Document {
   @ApiProperty({
+    example: '6236f8ae9f21683878768c72',
+    description: '포함되어 있는 방 아이디',
+    required: true,
+  })
+  @Prop({ type: Types.ObjectId, ref: 'rooms' })
+  @IsString()
+  roomId: Types.ObjectId;
+
+  @ApiProperty({
     example: '620b828e1f6b15237478a8f9',
     description: '채팅 작성자(본인)',
     required: true,

@@ -2,6 +2,7 @@ import { Document, SchemaOptions, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString } from 'class-validator';
+import { UserSchema } from '../../user/model/user.model';
 
 const options: SchemaOptions = {
   timestamps: true,
@@ -48,3 +49,18 @@ export class Room extends Document {
 }
 
 export const RoomSchema = SchemaFactory.createForClass(Room);
+
+RoomSchema.virtual('_sellerId', {
+  ref: 'users',
+  localField: 'sellerId',
+  foreignField: '_id',
+});
+
+RoomSchema.virtual('_buyerId', {
+  ref: 'users',
+  localField: 'buyerId',
+  foreignField: '_id',
+});
+
+RoomSchema.set('toObject', { virtuals: true });
+RoomSchema.set('toJSON', { virtuals: true });

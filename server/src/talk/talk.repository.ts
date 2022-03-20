@@ -5,13 +5,53 @@ import { Model } from 'mongoose';
 import * as mongoose from 'mongoose';
 
 import { Room } from '../talk-room/model/room.model';
+import { User, UserSchema } from '../user/model/user.model';
 
 @Injectable()
 export class TalkRepository {
   constructor(
     @InjectModel(Talk.name) private readonly talk: Model<Talk>,
     @InjectModel(Room.name) private readonly room: Model<Room>,
+    @InjectModel(User.name) private readonly user: Model<User>,
   ) {}
+
+  async getRoomList(userId: string) {
+    const userModel = mongoose.model('users', UserSchema);
+
+    const sellerOfResult = await this.room
+      .find({
+        sellerId: mongoose.Types.ObjectId(userId),
+      })
+      .populate('_sellerId', userModel)
+      .populate('_buyerId', userModel);
+    const buyerOfResult = await this.room
+      .find({
+        buyerId: mongoose.Types.ObjectId(userId),
+      })
+      .populate('_sellerId', userModel)
+      .populate('_buyerId', userModel);
+
+    console.log('sellerOfResult >> ', sellerOfResult);
+    console.log('buyerOfResult >> ', buyerOfResult);
+
+    if (sellerOfResult && buyerOfResult) {
+      const result = { ...sellerOfResult, ...buyerOfResult };
+      console.log('getRoomList && >> ', result);
+      return result;
+    }
+
+    if (sellerOfResult) return sellerOfResult;
+    else if (buyerOfResult) return buyerOfResult;
+    else return null;
+  }
+
+  async getPrevMessage(roomId: string) {
+    const result = await this.talk.find({
+      _id: mongoose.Types.ObjectId(roomId),
+    });
+
+    console.log('getPrevMessage result >> ', result);
+  }
 
   async isRoom(sellerId: string, buyerId: string): Promise<Room> {
     console.log('sellerId >> ', sellerId);
@@ -43,11 +83,14 @@ export class TalkRepository {
     return result;
   }
 
-  async saveMessage({ toUserId, fromUserId, message }) {
+  async saveMessage(roomId, toUserId, fromUserId, message) {
     const result = this.talk.create({
+      roomId: mongoose.Types.ObjectId(roomId),
       toUserId: mongoose.Types.ObjectId(toUserId),
-      fromUserId: mongoose.Types.ObjectId(toUserId),
-      message,
+      fromUserId: mongoose.Types.ObjectId(fromUserId),
+      content: message,
     });
+
+    return result;
   }
 }
