@@ -15,6 +15,14 @@ export class TalkRepository {
     @InjectModel(User.name) private readonly user: Model<User>,
   ) {}
 
+  async updateLastMessage(roomId: string, message: string): Promise<Room> {
+    const result = await this.room.findOneAndUpdate(
+      { _id: mongoose.Types.ObjectId(roomId) },
+      { lastContent: message },
+    );
+    return result;
+  }
+
   async getMessageList(roomId: string): Promise<Talk[]> {
     const userModel = mongoose.model('users', UserSchema);
 

@@ -42,21 +42,6 @@ export class TalkGateway
 
   @WebSocketServer() public server: Server;
 
-  @SubscribeMessage('rootServer')
-  rootConnect(@MessageBody() body: string, @ConnectedSocket() socket: Socket) {
-    console.log('connect socket...');
-    console.log('socket.id, nsp >> ', socket.id, socket.nsp.name);
-    console.log('body >> ', body);
-
-    // socket.emit('rootClient', { connect: true });
-    // socket.emit('rootClient2', { message: 'happy birth day' });
-
-    this.server.emit('rootClient', { connect: true });
-    this.server.emit('rootClient2', { message: 'happy birth day' });
-
-    return { succeed: true };
-  }
-
   @SubscribeMessage('sendMessage')
   async handleSubmitTalk(
     @MessageBody() talk: any,

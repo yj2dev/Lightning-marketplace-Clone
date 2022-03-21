@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅방 필드 이상한 값 들어가는 것 해결, 1:1 채팅 방 분리되는 버그 해결">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="이전 채팅 불러오기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +161,8 @@
       <workItem from="1647701991731" duration="1429000" />
       <workItem from="1647734208578" duration="1990000" />
       <workItem from="1647736801279" duration="48732000" />
-      <workItem from="1647819010137" duration="1919000" />
-    </task>
-    <task id="LOCAL-00056" summary="내상점 페이지 디자인">
-      <created>1645132629879</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1645132629879</updated>
+      <workItem from="1647819010137" duration="2122000" />
+      <workItem from="1647839297322" duration="1421000" />
     </task>
     <task id="LOCAL-00057" summary="로그인 안된 유저 로그인 모달 띄우기">
       <created>1645162670688</created>
@@ -504,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647791242422</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="이전 채팅 불러오기">
+      <created>1647821117726</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1647821117726</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +526,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품 찜 기능 구현완료" />
     <MESSAGE value="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리" />
     <MESSAGE value="팔로우 API(생성, 제거, 조회) 추가" />
     <MESSAGE value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
@@ -548,7 +550,8 @@
     <MESSAGE value="채팅방 맴버 스키마 제거" />
     <MESSAGE value="채팅방 리스트 구현" />
     <MESSAGE value="채팅방 필드 이상한 값 들어가는 것 해결, 1:1 채팅 방 분리되는 버그 해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="채팅방 필드 이상한 값 들어가는 것 해결, 1:1 채팅 방 분리되는 버그 해결" />
+    <MESSAGE value="이전 채팅 불러오기" />
+    <option name="LAST_COMMIT_MESSAGE" value="이전 채팅 불러오기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

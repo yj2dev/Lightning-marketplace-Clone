@@ -49,12 +49,19 @@ export class TalkService {
       );
     } else {
       roomInfo = isRoom;
+
+      // 방 마지막 메시지 업데이트
+      const updateLastMessage = await this.talkRepository.updateLastMessage(
+        isRoom._id,
+        message,
+      );
+      console.log('updateLastMessage >> ', updateLastMessage);
     }
-    console.log('roomInfo >> ', roomInfo);
+    // console.log('roomInfo >> ', roomInfo);
 
     const roomId = roomInfo._id;
 
-    console.log('roomId >> ', roomId);
+    // console.log('roomId >> ', roomId);
 
     // 메시지 저장
     const saveMessage = await this.talkRepository.saveMessage(
