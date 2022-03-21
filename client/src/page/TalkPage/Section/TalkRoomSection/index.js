@@ -30,14 +30,14 @@ export const TalkRoomSection = ({ history, user }) => {
     // 이전 채팅내역 가져오기
     getMessageList(roomId);
 
+    console.log("roomId >> ", roomId);
+    // 가져왔던 유저정보 그대로 활용예정
     socket.on(`${roomId}-receiveMessage`, (data) => {
-      console.log("spread data >> ", data);
-      console.log(typeof data);
-      const _messageList = messageList;
-      _messageList.push(data);
-      console.log("_messageList >> ", _messageList);
-
-      setMessageList(_messageList);
+      console.log("receiveMessage data >> ", data);
+      // const _messageList = messageList;
+      // _messageList.push(data);
+      // console.log("_messageList >> ", _messageList);
+      // setMessageList(_messageList);
     });
   }, []);
 
@@ -54,7 +54,6 @@ export const TalkRoomSection = ({ history, user }) => {
 
     if (message === "") return;
     const roomId = getRoomIdQuery();
-
     const payload = {
       senderId: user.isSignin.data._id,
       toProductId,
@@ -62,6 +61,21 @@ export const TalkRoomSection = ({ history, user }) => {
       message,
       roomId,
     };
+
+    // const payload = {
+    //   content: "200",
+    //   createdAt: "2022-03-21T06:04:45.711Z",
+    //   fromUserId: user.isSignin.data._id,
+    //   fromUserName: "아나바다",
+    //   fromUserProfileURL:
+    //     "https://localhost:8000/static/user_profile/아나바다1646748000614",
+    //   isMine: true,
+    //   notRead: true,
+    //   toUserId: "62149490b348c807b4337881",
+    //   toUserName: "해적오리",
+    //   toUserProfileURL:
+    //     "https://localhost:8000/static/user_profile/관리자1647094073332",
+    // };
 
     console.log("sendMessage >> ", payload);
     socket.emit("sendMessage", payload, (data) => {
@@ -95,7 +109,7 @@ export const TalkRoomSection = ({ history, user }) => {
           _data["content"] = res.data[i].content;
           _data["createdAt"] = res.data[i].createdAt;
 
-          console.log("_data >> ", _data);
+          // console.log("_data >> ", _data);
           _messageList.push(_data);
         }
         console.log("_messageList >> ", _messageList);
@@ -193,6 +207,13 @@ export const TalkRoomSection = ({ history, user }) => {
         <TalkRoomWrapper ref={talkScrollRef}>
           {messageList?.map((message) => (
             <div>
+              <div
+                className={
+                  message.isMine ? "profile_img hidden" : "profile_img"
+                }
+              >
+                <img src={message.fromUserProfileURL} />
+              </div>
               <div className={message.isMine ? "sender" : "receiver"}>
                 {message.content}
                 <div className="time">

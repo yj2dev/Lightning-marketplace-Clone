@@ -59,13 +59,10 @@ export class TalkService {
     }
     // console.log('roomInfo >> ', roomInfo);
 
-    const roomId = roomInfo._id;
-
-    // console.log('roomId >> ', roomId);
-
     // 메시지 저장
+    // roomInfo._id는 roomId와 동일함
     const saveMessage = await this.talkRepository.saveMessage(
-      roomId,
+      roomInfo._id,
       sellerId,
       buyerId,
       message,
@@ -73,6 +70,6 @@ export class TalkService {
 
     console.log('saveMessage >> ', saveMessage);
 
-    return roomId;
+    return roomInfo;
   }
 }

@@ -56,7 +56,7 @@ export function timeKrFormat(getDate) {
   return ISODate.replace("T", " ").substring(0, 19);
 }
 
-export function timeKrFormatAndMMDD(getDate) {
+export function timeKrFormatAndMMDD(getDate = 0) {
   // 9시간
   const ADD_TIME = 1000 * 60 * 60 * 9;
 
@@ -64,7 +64,9 @@ export function timeKrFormatAndMMDD(getDate) {
   parseTime += ADD_TIME;
 
   const newDate = new Date(parseTime);
+  // console.log("newDate >> ", newDate);
   const ISODate = newDate.toISOString();
+  // console.log("ISODate >> ", ISODate);
 
   const formatMMDD = ISODate.replace("T", " ")
     .substring(5, 10)

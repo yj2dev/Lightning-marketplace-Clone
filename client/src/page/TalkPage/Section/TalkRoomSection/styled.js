@@ -77,6 +77,15 @@ export const TalkRoomWrapper = styled.div`
   overflow: scroll;
   overflow-x: hidden;
 
+  & .profile_img {
+    float: left;
+    & img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+  }
   & .receiver {
     margin: 4px 0;
     border: none;
