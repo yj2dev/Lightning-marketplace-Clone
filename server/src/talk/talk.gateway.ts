@@ -53,5 +53,7 @@ export class TalkGateway
     console.log('roomInfo >> ', roomInfo);
 
     socket.broadcast.emit(`${roomInfo._id}-receiveMessage`, talk.receive);
+
+    return talk.receive;
   }
 }

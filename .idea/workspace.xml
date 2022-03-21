@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅시 상대방 이미지 추가">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 주고 받기 성공 / 이전 채팅과 병합 실패">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
@@ -163,14 +163,7 @@
       <workItem from="1647819010137" duration="2122000" />
       <workItem from="1647839297322" duration="4176000" />
       <workItem from="1647844181678" duration="1021000" />
-      <workItem from="1647861524512" duration="10380000" />
-    </task>
-    <task id="LOCAL-00059" summary="변수명 이전 상태로 복구, tag, pollow, store-review, store-contact, product-contact, product-favorite 모듈 추가">
-      <created>1645248523344</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1645248523344</updated>
+      <workItem from="1647861524512" duration="11476000" />
     </task>
     <task id="LOCAL-00060" summary="DB설계">
       <created>1645261615994</created>
@@ -508,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647871575027</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="채팅 주고 받기 성공 / 이전 채팅과 병합 실패">
+      <created>1647876666013</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1647876666013</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공" />
     <MESSAGE value="찜 목록 디자인" />
     <MESSAGE value="상품문의 불러오기 및 디자인" />
     <MESSAGE value="상품문의 대댓글 구현" />
@@ -552,7 +551,8 @@
     <MESSAGE value="이전 채팅 불러오기" />
     <MESSAGE value="방 마지막 메시지 추가" />
     <MESSAGE value="채팅시 상대방 이미지 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="채팅시 상대방 이미지 추가" />
+    <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
+    <option name="LAST_COMMIT_MESSAGE" value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

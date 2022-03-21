@@ -35,8 +35,12 @@ export const TalkRoomSection = ({ history, user }) => {
     socket.on(`${roomId}-receiveMessage`, (data) => {
       console.log("receiveMessage data >> ", data);
       data["isMine"] = data.fromUserId === user.isSignin.data._id;
+      getMessageList(roomId);
 
       const _messageList = messageList;
+      console.log("------------");
+      console.log(messageList);
+      console.log(_messageList);
       _messageList.push(data);
       console.log("_messageList >> ", _messageList);
       setMessageList(_messageList);
@@ -61,7 +65,7 @@ export const TalkRoomSection = ({ history, user }) => {
         content: message,
         createdAt: new Date().toISOString(),
         fromUserId: user.isSignin.data._id,
-        fromUserName: user.isSignin.storeName,
+        fromUserName: user.isSignin.data.storeName,
         fromUserProfileURL: user.isSignin.data.profileURL,
         notRead: true,
         toUserId: talkToUser._id,
@@ -80,6 +84,12 @@ export const TalkRoomSection = ({ history, user }) => {
     console.log("sendMessage >> ", payload);
     socket.emit("sendMessage", payload, (data) => {
       console.log("sendMessage data >> ", data);
+      data["isMine"] = data.fromUserId === user.isSignin.data._id;
+
+      const _messageList = messageList;
+      _messageList.push(data);
+      console.log("_messageList >> ", _messageList);
+      setMessageList(_messageList);
     });
 
     setMessage("");
