@@ -5,6 +5,7 @@ import { useLocation, withRouter } from "react-router-dom";
 import { io } from "socket.io-client";
 import axios from "axios";
 import { RiMessage3Line } from "react-icons/ri";
+import { timeKrFormatAndMMDD } from "../../../../utils/Time";
 
 const socket = io.connect(`https://localhost:8000/nsp-root`);
 
@@ -62,13 +63,11 @@ export const TalkRoomSection = ({ history, user }) => {
       roomId,
     };
 
-    console.log("p >> ", payload);
+    console.log("sendMessage >> ", payload);
     socket.emit("sendMessage", payload, (data) => {
       console.log("sendMessage data >> ", data);
     });
 
-    console.log("메시지 전송");
-    console.log("message >> ", message);
     setMessage("");
     scrollToBottom();
   }
@@ -83,6 +82,8 @@ export const TalkRoomSection = ({ history, user }) => {
         for (let i = 0; i < Object.keys(res.data).length; i++) {
           const _data = {};
 
+          _data["isMine"] =
+            res.data[i]._toUserId[0]._id !== user.isSignin.data._id;
           _data["toUserId"] = res.data[i]._toUserId[0]._id;
           _data["toUserName"] = res.data[i]._toUserId[0].storeName;
           _data["toUserProfileURL"] = res.data[i]._toUserId[0].profileURL;
@@ -90,11 +91,11 @@ export const TalkRoomSection = ({ history, user }) => {
           _data["fromUserName"] = res.data[i]._fromUserId[0].storeName;
           _data["fromUserProfileURL"] = res.data[i]._fromUserId[0].profileURL;
 
-          _data["notRead"] = res.data.notRead;
-          _data["content"] = res.data.content;
+          _data["notRead"] = res.data[i].notRead;
+          _data["content"] = res.data[i].content;
           _data["createdAt"] = res.data[i].createdAt;
 
-          // console.log("_data >> ", _data);
+          console.log("_data >> ", _data);
           _messageList.push(_data);
         }
         console.log("_messageList >> ", _messageList);
@@ -190,54 +191,16 @@ export const TalkRoomSection = ({ history, user }) => {
           </div>
         )}
         <TalkRoomWrapper ref={talkScrollRef}>
-          <div>
-            <div className="sender">
-              직거래 가능할까요?
-              <div className="time">04:12</div>
+          {messageList?.map((message) => (
+            <div>
+              <div className={message.isMine ? "sender" : "receiver"}>
+                {message.content}
+                <div className="time">
+                  {timeKrFormatAndMMDD(message.createdAt)}
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="receiver">
-              네 가능하죠
-              <div className="time">04:12</div>
-            </div>
-          </div>
-          <div>
-            <div className="receiver">
-              어디서 거래하실건가요?
-              <div className="time">04:12</div>
-            </div>
-          </div>
-          <div>
-            <div className="sender">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-              enim esse et minima odit quae quia reiciendis tempora, veritatis
-              voluptates.
-              <div className="time">04:15</div>
-            </div>
-          </div>
-          <div>
-            <div className="sender">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-              enim esse et minima odit quae quia reiciendis tempora, veritatis
-              voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Aut dolores error est eveniet hic laboriosam laudantium
-              velit vitae. Amet animi, architecto assumenda atque autem
-              consequuntur dolor eaque inventore iste labore laudantium
-              molestiae nemo neque nihil nisi nostrum nulla numquam, obcaecati
-              officiis placeat quae quaerat qui ratione tempora vel velit vitae.
-              <div className="time">04:15</div>
-            </div>
-          </div>
-
-          <div>
-            <div className="receiver">
-              OK bye... Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Corporis delectus dicta expedita ipsum itaque nemo nostrum
-              quidem quod sint voluptate?
-              <div className="time">04:12</div>
-            </div>
-          </div>
+          ))}
         </TalkRoomWrapper>
 
         <TalkForm onSubmit={onSubmitSendMessage}>
