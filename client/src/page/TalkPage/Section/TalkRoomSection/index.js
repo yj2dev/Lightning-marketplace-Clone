@@ -34,10 +34,12 @@ export const TalkRoomSection = ({ history, user }) => {
     // 가져왔던 유저정보 그대로 활용예정
     socket.on(`${roomId}-receiveMessage`, (data) => {
       console.log("receiveMessage data >> ", data);
-      // const _messageList = messageList;
-      // _messageList.push(data);
-      // console.log("_messageList >> ", _messageList);
-      // setMessageList(_messageList);
+      data["isMine"] = data.fromUserId === user.isSignin.data._id;
+
+      const _messageList = messageList;
+      _messageList.push(data);
+      console.log("_messageList >> ", _messageList);
+      setMessageList(_messageList);
     });
   }, []);
 
@@ -55,27 +57,25 @@ export const TalkRoomSection = ({ history, user }) => {
     if (message === "") return;
     const roomId = getRoomIdQuery();
     const payload = {
-      senderId: user.isSignin.data._id,
-      toProductId,
-      receiverId,
-      message,
-      roomId,
+      receive: {
+        content: message,
+        createdAt: new Date().toISOString(),
+        fromUserId: user.isSignin.data._id,
+        fromUserName: user.isSignin.storeName,
+        fromUserProfileURL: user.isSignin.data.profileURL,
+        notRead: true,
+        toUserId: talkToUser._id,
+        toUserName: talkToUser.storeName,
+        toUserProfileURL: talkToUser.profileURL,
+      },
+      save: {
+        senderId: user.isSignin.data._id,
+        toProductId,
+        receiverId,
+        message,
+        roomId,
+      },
     };
-
-    // const payload = {
-    //   content: "200",
-    //   createdAt: "2022-03-21T06:04:45.711Z",
-    //   fromUserId: user.isSignin.data._id,
-    //   fromUserName: "아나바다",
-    //   fromUserProfileURL:
-    //     "https://localhost:8000/static/user_profile/아나바다1646748000614",
-    //   isMine: true,
-    //   notRead: true,
-    //   toUserId: "62149490b348c807b4337881",
-    //   toUserName: "해적오리",
-    //   toUserProfileURL:
-    //     "https://localhost:8000/static/user_profile/관리자1647094073332",
-    // };
 
     console.log("sendMessage >> ", payload);
     socket.emit("sendMessage", payload, (data) => {
