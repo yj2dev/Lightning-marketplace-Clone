@@ -6,6 +6,7 @@ import { UserCreateDto } from '../dto/user.create.dto';
 import { ProductSchema } from '../../product/model/product.model';
 import * as mongoose from 'mongoose';
 import { StoreContact } from '../../store-contact/model/store-contact.model';
+import { StoreReview } from '../../store-review/model/store-review.model';
 
 @Injectable()
 export class UserRepository {
@@ -13,7 +14,45 @@ export class UserRepository {
     @InjectModel(User.name) private readonly user: Model<User>,
     @InjectModel(StoreContact.name)
     private readonly storeContact: Model<StoreContact>,
+    @InjectModel(StoreReview.name)
+    private readonly storeReview: Model<StoreReview>,
   ) {}
+
+  // 상점 후기 제거
+  async deleteStoreReview(commentId: string): Promise<any> {
+    const result = await this.storeReview.findByIdAndDelete(commentId);
+    return result;
+  }
+
+  // 상점후기 내용 불러오기
+  async getStoreReviewAll(storeId: string): Promise<any> {
+    const UserModel = mongoose.model('users', UserSchema);
+
+    // console.log('storeId >> ', storeId);
+
+    const result = await this.storeReview
+      .find({ toStoreId: mongoose.Types.ObjectId(storeId) })
+      .sort({ createdAt: -1 })
+      .populate('_fromWriterId', UserModel);
+
+    // console.log('result contact >> ', result);
+
+    return result;
+  }
+
+  // 상점 후기 작성
+  async createStoreReview(
+    userId: string,
+    storeId: string,
+    content: string,
+  ): Promise<any> {
+    const result = await this.storeReview.create({
+      toStoreId: mongoose.Types.ObjectId(storeId),
+      fromWriterId: mongoose.Types.ObjectId(userId),
+      content,
+    });
+    return result;
+  }
 
   // 상점 문의 제거
   async deleteStoreContact(commentId: string): Promise<any> {
@@ -25,14 +64,14 @@ export class UserRepository {
   async getStoreContactAll(storeId: string): Promise<any> {
     const UserModel = mongoose.model('users', UserSchema);
 
-    console.log('storeId >> ', storeId);
+    // console.log('storeId >> ', storeId);
 
     const result = await this.storeContact
       .find({ toStoreId: mongoose.Types.ObjectId(storeId) })
       .sort({ createdAt: -1 })
       .populate('_fromWriterId', UserModel);
 
-    console.log('result contact >> ', result);
+    // console.log('result contact >> ', result);
 
     return result;
   }

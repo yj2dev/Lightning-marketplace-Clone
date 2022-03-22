@@ -11,6 +11,10 @@ import {
   StoreContact,
   StoreContactSchema,
 } from '../store-contact/model/store-contact.model';
+import {
+  StoreReview,
+  StoreReviewSchema,
+} from '../store-review/model/store-review.model';
 
 @Module({
   imports: [
@@ -18,6 +22,7 @@ import {
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: StoreContact.name, schema: StoreContactSchema },
+      { name: StoreReview.name, schema: StoreReviewSchema },
     ]),
     forwardRef(() => FollowModule),
     forwardRef(() => AuthModule),

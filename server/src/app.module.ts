@@ -29,6 +29,10 @@ import {
   StoreContactSchema,
 } from './store-contact/model/store-contact.model';
 import { TalkRoomModule } from './talk-room/talk-room.module';
+import {
+  StoreReview,
+  StoreReviewSchema,
+} from './store-review/model/store-review.model';
 
 @Module({
   imports: [
@@ -38,6 +42,7 @@ import { TalkRoomModule } from './talk-room/talk-room.module';
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: StoreContact.name, schema: StoreContactSchema },
+      { name: StoreReview.name, schema: StoreReviewSchema },
     ]),
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.DB_MONGO_ID}:${process.env.DB_MONGO_PASSWORD}@table0.zotlh.mongodb.net/${process.env.DB_MONGO_NAME}?retryWrites=true&w=majority`,

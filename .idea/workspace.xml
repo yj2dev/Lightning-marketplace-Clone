@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 주고 받기 성공 / 이전 채팅과 병합 실패">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제">
+      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/MessageSection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/talk-member" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,10 +65,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-member" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\TalkPage\Section" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-room" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\ProductDetailPage\Section" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -163,14 +176,8 @@
       <workItem from="1647819010137" duration="2122000" />
       <workItem from="1647839297322" duration="4176000" />
       <workItem from="1647844181678" duration="1021000" />
-      <workItem from="1647861524512" duration="11476000" />
-    </task>
-    <task id="LOCAL-00060" summary="DB설계">
-      <created>1645261615994</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1645261615994</updated>
+      <workItem from="1647861524512" duration="11556000" />
+      <workItem from="1647900690598" duration="11011000" />
     </task>
     <task id="LOCAL-00061" summary="tag 중간테이블 제거">
       <created>1645268945159</created>
@@ -508,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647876666013</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제">
+      <created>1647877634711</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1647877634711</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="찜 목록 디자인" />
     <MESSAGE value="상품문의 불러오기 및 디자인" />
     <MESSAGE value="상품문의 대댓글 구현" />
     <MESSAGE value="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현" />
@@ -552,7 +565,8 @@
     <MESSAGE value="방 마지막 메시지 추가" />
     <MESSAGE value="채팅시 상대방 이미지 추가" />
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
-    <option name="LAST_COMMIT_MESSAGE" value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
+    <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
+    <option name="LAST_COMMIT_MESSAGE" value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -569,7 +583,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/layouts/index.js</url>
-          <line>79</line>
+          <line>83</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

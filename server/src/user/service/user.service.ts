@@ -8,13 +8,35 @@ import { UserRequestDto } from '../dto/user.request.dto';
 import { User } from '../model/user.model';
 import * as bcrypt from 'bcrypt';
 import { UserRepository } from '../repository/user.repository';
-import { FollowRepository } from '../../follow/follow.repository';
 
 @Injectable()
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   private logger = new Logger('user');
+
+  // 상점 후기 제거
+  async deleteStoreReview(commentId: string): Promise<any> {
+    return await this.userRepository.deleteStoreReview(commentId);
+  }
+
+  // 상점 후기내용 가져오기
+  async getStoreReview(storeId: string): Promise<any> {
+    return await this.userRepository.getStoreReviewAll(storeId);
+  }
+
+  // 상점 후기 저장
+  async createStoreReview(
+    userId: string,
+    storeId: string,
+    content: string,
+  ): Promise<any> {
+    return await this.userRepository.createStoreReview(
+      userId,
+      storeId,
+      content,
+    );
+  }
 
   // 상점 문의 제거
   async deleteStoreContact(commentId: string): Promise<any> {

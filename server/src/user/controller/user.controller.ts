@@ -43,6 +43,45 @@ export class UserController {
     private readonly followService: FollowService,
   ) {}
 
+  @ApiOperation({ summary: '상점후기 삭제' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Delete('/:commentId/review')
+  @UseGuards(JwtAuthGuard)
+  async deleteProductReview(
+    @Param('commentId') commentId: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.userService.deleteStoreReview(commentId);
+  }
+
+  @ApiOperation({ summary: '상점후기 가져오기' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Get('/:storeId/review')
+  async getProductReview(@Param('storeId') storeId: string): Promise<any> {
+    console.log('storeId >> ', storeId);
+
+    return await this.userService.getStoreReview(storeId);
+  }
+
+  @ApiOperation({ summary: '상점후기 저장' })
+  @ApiResponse({ status: 201, description: '성공' })
+  @ApiResponse({ status: 500, description: '서버 에러' })
+  @Post('/:storeId/review')
+  @UseGuards(JwtAuthGuard)
+  async createProductReview(
+    @Param('storeId') storeId: string,
+    @Body('content') content: string,
+    @CurrentUser() currentUser: User,
+  ): Promise<any> {
+    return await this.userService.createStoreReview(
+      currentUser._id,
+      storeId,
+      content,
+    );
+  }
+
   @ApiOperation({ summary: '상점문의 삭제' })
   @ApiResponse({ status: 201, description: '성공' })
   @ApiResponse({ status: 500, description: '서버 에러' })

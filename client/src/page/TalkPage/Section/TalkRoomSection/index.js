@@ -1,7 +1,7 @@
 import { Container, NullContainer, TalkForm, TalkRoomWrapper } from "./styled";
 import { intOfKr } from "../../../../utils/Currency";
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation, withRouter } from "react-router-dom";
+import { Link, useLocation, withRouter } from "react-router-dom";
 import { io } from "socket.io-client";
 import axios from "axios";
 import { RiMessage3Line } from "react-icons/ri";
@@ -124,6 +124,7 @@ export const TalkRoomSection = ({ history, user }) => {
         }
         console.log("_messageList >> ", _messageList);
         setMessageList(_messageList);
+        scrollToBottom();
       })
       .catch((err) => {
         console.log(err);
@@ -198,6 +199,7 @@ export const TalkRoomSection = ({ history, user }) => {
   } else {
     return (
       <Container>
+        <Link to="/test">TEST</Link>
         {talkToUser && (
           <div onClick={onClickTitle} className="title">
             {talkToUser.storeName}

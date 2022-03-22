@@ -56,4 +56,13 @@ export class TalkGateway
 
     return talk.receive;
   }
+
+  @SubscribeMessage('socketTest')
+  async socketTest(
+    @MessageBody() body: any,
+    @ConnectedSocket() socket: Socket,
+  ) {
+    console.log('body >> ', body);
+    socket.broadcast.emit('socketReturn', body);
+  }
 }
