@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="serve, https 적용 해제">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="server, https 재적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,14 +175,7 @@
       <workItem from="1648116678491" duration="596000" />
       <workItem from="1648257525272" duration="3930000" />
       <workItem from="1648343152679" duration="10303000" />
-      <workItem from="1648360572042" duration="7270000" />
-    </task>
-    <task id="LOCAL-00066" summary="로그아웃 확인 모달창 적용">
-      <created>1645333021990</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1645333021990</updated>
+      <workItem from="1648360572042" duration="9989000" />
     </task>
     <task id="LOCAL-00067" summary="Client 측에서 한국시간으로 변환 후 날짜 표기">
       <created>1645339820349</created>
@@ -514,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648368216321</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="server, https 재적용">
+      <created>1648372362631</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1648372362631</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="로그인 안된유저 버튼마다  예외처리" />
     <MESSAGE value="제목 검색기능 구현" />
     <MESSAGE value="TopNav 메뉴 안보이는 버그 수정" />
     <MESSAGE value="socket.io test" />
@@ -558,7 +563,8 @@
     <MESSAGE value="server 배포 명령어 수정" />
     <MESSAGE value="https 적용 해제" />
     <MESSAGE value="serve, https 적용 해제" />
-    <option name="LAST_COMMIT_MESSAGE" value="serve, https 적용 해제" />
+    <MESSAGE value="server, https 재적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="server, https 재적용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
