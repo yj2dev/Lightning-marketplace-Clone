@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점후기 기능 구현">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="server 빌드 -&gt; dist 생성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -171,14 +168,7 @@
       <workItem from="1648083250476" duration="737000" />
       <workItem from="1648116678491" duration="596000" />
       <workItem from="1648257525272" duration="3930000" />
-      <workItem from="1648343152679" duration="5529000" />
-    </task>
-    <task id="LOCAL-00062" summary="상품관리 페이지 설계">
-      <created>1645277941725</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1645277941725</updated>
+      <workItem from="1648343152679" duration="8933000" />
     </task>
     <task id="LOCAL-00063" summary="상품관리 페이지 테이블 디자인">
       <created>1645306879640</created>
@@ -516,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647922763308</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="server 빌드 -&gt; dist 생성">
+      <created>1648354673298</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1648354673298</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품문의 대댓글 구현" />
     <MESSAGE value="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현" />
     <MESSAGE value="문의 수정 API 제거" />
     <MESSAGE value="상점 문의 제거 기능 구현" />
@@ -560,7 +556,8 @@
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
     <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
     <MESSAGE value="상점후기 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="상점후기 기능 구현" />
+    <MESSAGE value="server 빌드 -&gt; dist 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="server 빌드 -&gt; dist 생성" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
