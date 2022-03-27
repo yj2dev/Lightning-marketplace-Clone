@@ -29,7 +29,8 @@ async function bootstrap() {
   });
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({
-    origin: 'https://localhost:3000',
+    origin: '*',
+    // origin: 'https://localhost:3000',
     credentials: true,
   });
   const PORT = process.env.PORT || 8000;
