@@ -30,7 +30,12 @@ async function bootstrap() {
 
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({
-    origin: '*',
+    origin: [
+      'https://54.193.13.132:3000',
+      'http://54.193.13.132:3000',
+      'https://localhost:3000',
+      'http://localhost:3000',
+    ],
     // origin: 'https://localhost:3000',
     credentials: true,
   });

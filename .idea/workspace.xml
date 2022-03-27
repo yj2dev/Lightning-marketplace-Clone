@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="server, https 재적용">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: client에서 요청 주소 변경, pm2 설치, 빌드">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,14 +169,7 @@
       <workItem from="1648116678491" duration="596000" />
       <workItem from="1648257525272" duration="3930000" />
       <workItem from="1648343152679" duration="10303000" />
-      <workItem from="1648360572042" duration="9989000" />
-    </task>
-    <task id="LOCAL-00067" summary="Client 측에서 한국시간으로 변환 후 날짜 표기">
-      <created>1645339820349</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1645339820349</updated>
+      <workItem from="1648360572042" duration="15629000" />
     </task>
     <task id="LOCAL-00068" summary="컴포넌트간에 z-index 값 재정리">
       <created>1645402135895</created>
@@ -520,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648372362631</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="update: client에서 요청 주소 변경, pm2 설치, 빌드">
+      <created>1648378957761</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1648378957762</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,8 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="제목 검색기능 구현" />
-    <MESSAGE value="TopNav 메뉴 안보이는 버그 수정" />
     <MESSAGE value="socket.io test" />
     <MESSAGE value="소켓 네임스페이스 사용 실패" />
     <MESSAGE value="소켓 네임스페이스 사용 성공" />
@@ -564,7 +556,9 @@
     <MESSAGE value="https 적용 해제" />
     <MESSAGE value="serve, https 적용 해제" />
     <MESSAGE value="server, https 재적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="server, https 재적용" />
+    <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치" />
+    <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
