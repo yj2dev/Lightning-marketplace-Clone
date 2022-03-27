@@ -6,3 +6,6 @@ node_modules
 
 # workspace.xml
 workspace.xml
+
+# aws pem
+lightning-market.pem

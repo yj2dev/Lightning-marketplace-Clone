@@ -18,7 +18,7 @@ const ProductTalkSection = ({ storeOfProduct, user, history }) => {
 
     console.log("uesr >> ", user);
     const myProduct =
-      user.isSignin.data.id == storeOfProduct[0].id ? true : false;
+      user.isSignin?.data.id == storeOfProduct[0].id ? true : false;
     setIsMyProduct(myProduct);
     console.log(myProduct);
   }, [storeOfProduct, user]);

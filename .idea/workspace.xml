@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제">
-      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/MessageSection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/page/TestPage/styled.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="상점후기 기능 구현">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/Section/ShopReviewsPage/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/MyShopPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/store-review/model/store-review.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.gateway.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductDetailPage/Section/ProductTalkSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,32 +41,32 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-member" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\TalkPage\Section" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-room" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page\ProductDetailPage\Section" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\hooks" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\service" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\product-favorite\controller" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\common" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -177,14 +167,11 @@
       <workItem from="1647839297322" duration="4176000" />
       <workItem from="1647844181678" duration="1021000" />
       <workItem from="1647861524512" duration="11556000" />
-      <workItem from="1647900690598" duration="11011000" />
-    </task>
-    <task id="LOCAL-00061" summary="tag 중간테이블 제거">
-      <created>1645268945159</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1645268945159</updated>
+      <workItem from="1647900690598" duration="11440000" />
+      <workItem from="1648083250476" duration="737000" />
+      <workItem from="1648116678491" duration="596000" />
+      <workItem from="1648257525272" duration="3930000" />
+      <workItem from="1648343152679" duration="5529000" />
     </task>
     <task id="LOCAL-00062" summary="상품관리 페이지 설계">
       <created>1645277941725</created>
@@ -522,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647877634711</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="상점후기 기능 구현">
+      <created>1647922763308</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1647922763308</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상품문의 불러오기 및 디자인" />
     <MESSAGE value="상품문의 대댓글 구현" />
     <MESSAGE value="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현" />
     <MESSAGE value="문의 수정 API 제거" />
@@ -566,7 +559,8 @@
     <MESSAGE value="채팅시 상대방 이미지 추가" />
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
     <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
-    <option name="LAST_COMMIT_MESSAGE" value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
+    <MESSAGE value="상점후기 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="상점후기 기능 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
