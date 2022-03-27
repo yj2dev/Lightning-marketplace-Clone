@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: client에서 요청 주소 변경, pm2 설치, 빌드">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: server build(update dist)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/almond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/lightning_market_banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/mushroom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/pear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/tomato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/vegetable.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/user_profile/__default_store_profile__.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\src\talk-member" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
@@ -169,14 +179,7 @@
       <workItem from="1648116678491" duration="596000" />
       <workItem from="1648257525272" duration="3930000" />
       <workItem from="1648343152679" duration="10303000" />
-      <workItem from="1648360572042" duration="15629000" />
-    </task>
-    <task id="LOCAL-00068" summary="컴포넌트간에 z-index 값 재정리">
-      <created>1645402135895</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1645402135895</updated>
+      <workItem from="1648360572042" duration="16978000" />
     </task>
     <task id="LOCAL-00069" summary="동작안하는 랜더링 코드 예제1">
       <created>1645407159043</created>
@@ -514,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648378957762</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="update: server build(update dist)">
+      <created>1648386218611</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1648386218611</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,8 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="socket.io test" />
-    <MESSAGE value="소켓 네임스페이스 사용 실패" />
     <MESSAGE value="소켓 네임스페이스 사용 성공" />
     <MESSAGE value="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화" />
     <MESSAGE value="벼락톡 디자인" />
@@ -558,7 +566,9 @@
     <MESSAGE value="server, https 재적용" />
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치" />
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
+    <MESSAGE value="update: server build(dist)" />
+    <MESSAGE value="update: server build(update dist)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: server build(update dist)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

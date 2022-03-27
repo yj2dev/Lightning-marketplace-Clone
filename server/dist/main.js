@@ -21,7 +21,12 @@ async function bootstrap() {
         httpsOptions,
     });
     app.enableCors({
-        origin: '*',
+        origin: [
+            'https://54.193.13.132:3000',
+            'http://54.193.13.132:3000',
+            'https://localhost:3000',
+            'http://localhost:3000',
+        ],
         credentials: true,
     });
     const PORT = process.env.PORT || 8000;

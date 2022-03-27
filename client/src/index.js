@@ -12,7 +12,7 @@ import axios from "axios";
 dotenv.config();
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://13.52.183.213:8000";
+axios.defaults.baseURL = "https://13.52.183.213:8000";
 // axios.defaults.baseURL = "https://localhost:8000";
 
 const createStoreWithMiddleware = applyMiddleware(
