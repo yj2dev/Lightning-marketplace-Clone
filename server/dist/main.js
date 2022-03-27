@@ -17,11 +17,9 @@ async function bootstrap() {
         key: keyFile,
         cert: certFile,
     };
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, {
-        httpsOptions,
-    });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: 'https://localhost:3000',
+        origin: '*',
         credentials: true,
     });
     const PORT = process.env.PORT || 8000;

@@ -24,9 +24,11 @@ async function bootstrap() {
     cert: certFile,
   };
 
-  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    httpsOptions,
-  });
+  // const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+  //   httpsOptions,
+  // });
+  //
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   // origin은 배포시 특정 URL을 사용하길 권장함
   app.enableCors({
     origin: '*',
