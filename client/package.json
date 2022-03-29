@@ -10,6 +10,7 @@
     "antd": "^4.15.4",
     "axios": "^0.25.0",
     "dotenv": "^14.2.0",
+    "env-cmd": "^10.1.0",
     "pm2": "^5.2.0",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
@@ -34,6 +35,7 @@
     "start:prod": "cross-env HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-scripts start",
     "start": "cross-env HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-scripts start",
     "build": "react-scripts build",
+    "build:env": "dotenv -e .env react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -56,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^5.1.0"
   }
 }

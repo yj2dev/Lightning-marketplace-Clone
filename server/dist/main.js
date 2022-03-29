@@ -22,10 +22,10 @@ async function bootstrap() {
     });
     app.enableCors({
         origin: [
-            'https://54.193.13.132:3000',
-            'http://54.193.13.132:3000',
-            'https://localhost:3000',
+            'http://log1999.com',
+            'https://log1999.com',
             'http://localhost:3000',
+            'https://localhost:3000',
         ],
         credentials: true,
     });

@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: server build(update dist)">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: client build2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/img/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.d4c38f71.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.d4c38f71.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/almond.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/lightning_market_banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/mushroom.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/pear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/tomato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/vegetable.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/user_profile/__default_store_profile__.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +38,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/package.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simple-score-board" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -179,21 +190,11 @@
       <workItem from="1648116678491" duration="596000" />
       <workItem from="1648257525272" duration="3930000" />
       <workItem from="1648343152679" duration="10303000" />
-      <workItem from="1648360572042" duration="16978000" />
-    </task>
-    <task id="LOCAL-00069" summary="동작안하는 랜더링 코드 예제1">
-      <created>1645407159043</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1645407159043</updated>
-    </task>
-    <task id="LOCAL-00070" summary="로그인 페이지 수정, 설정페이지 컴포넌트 생성">
-      <created>1645421203549</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1645421203549</updated>
+      <workItem from="1648360572042" duration="20787000" />
+      <workItem from="1648391940628" duration="789000" />
+      <workItem from="1648458895395" duration="836000" />
+      <workItem from="1648459760990" duration="1190000" />
+      <workItem from="1648567952557" duration="213000" />
     </task>
     <task id="LOCAL-00071" summary="비밀번호 변경 로직 구현">
       <created>1645430423221</created>
@@ -524,7 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648386218611</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="update: client build">
+      <created>1648387901997</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1648387901997</updated>
+    </task>
+    <task id="LOCAL-00119" summary="update: client build2">
+      <created>1648387920261</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1648387920261</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,8 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="소켓 네임스페이스 사용 성공" />
-    <MESSAGE value="상품 상세페이지 내 상품일땐 연락하기 버튼 비활성화" />
     <MESSAGE value="벼락톡 디자인" />
     <MESSAGE value="채팅 입력시 스크롤 하단으로 이동" />
     <MESSAGE value="채팅방 멤버 모델 추가" />
@@ -568,7 +581,9 @@
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
     <MESSAGE value="update: server build(dist)" />
     <MESSAGE value="update: server build(update dist)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: server build(update dist)" />
+    <MESSAGE value="update: client build" />
+    <MESSAGE value="update: client build2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: client build2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
