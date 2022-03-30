@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: multer -&gt; multer s3">
-      <change afterPath="$PROJECT_DIR$/bash.exe.stackdump" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="connect AWS S3(multer-s3), update: product image upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/app.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/app.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/product.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/product.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/repository/product.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,13 +196,7 @@
       <workItem from="1648628169036" duration="4055000" />
       <workItem from="1648634415896" duration="6435000" />
       <workItem from="1648645633083" duration="2765000" />
-    </task>
-    <task id="LOCAL-00074" summary="프로필 이미지 초기화 구현">
-      <created>1645542675140</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1645542675140</updated>
+      <workItem from="1648648453012" duration="3688000" />
     </task>
     <task id="LOCAL-00075" summary="프로필 이미지 변경 구현">
       <created>1645544005292</created>
@@ -546,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648617076714</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="connect AWS S3(multer-s3), update: product image upload">
+      <created>1648648537558</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1648648537558</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채팅 방 구분 성공" />
     <MESSAGE value="채팅방 맴버 스키마 제거" />
     <MESSAGE value="채팅방 리스트 구현" />
     <MESSAGE value="채팅방 필드 이상한 값 들어가는 것 해결, 1:1 채팅 방 분리되는 버그 해결" />
@@ -590,7 +584,8 @@
     <MESSAGE value="build: client, server / apply domain" />
     <MESSAGE value="rebuild: server" />
     <MESSAGE value="update: multer -&gt; multer s3" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: multer -&gt; multer s3" />
+    <MESSAGE value="connect AWS S3(multer-s3), update: product image upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="connect AWS S3(multer-s3), update: product image upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

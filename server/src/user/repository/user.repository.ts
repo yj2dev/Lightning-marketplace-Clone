@@ -190,8 +190,11 @@ export class UserRepository {
     file: Express.Multer.File,
   ): Promise<User | null> {
     const user = await this.user.findById(userId);
-    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/${file[0].filename}`;
+    // user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/${file[0].filename}`;
+    user.profileURL = `${file['location']}`;
     const result = await user.save();
+    console.log('file >> ', file);
+    console.log('result >> ', result);
     return result;
   }
 

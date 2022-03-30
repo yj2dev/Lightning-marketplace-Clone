@@ -26,6 +26,9 @@ const s3 = new AWS.S3({
     secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
     region: process.env.AWS_S3_REGION,
 });
+console.log('[ product environment ]');
+console.log(process.env.AWS_S3_BUCKET_NAME);
+console.log(process.env.AWS_S3_REGION);
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
@@ -65,6 +68,8 @@ let ProductController = class ProductController {
         return await this.productService.getOneProduct(productId);
     }
     async uploadProduct(currentUser, files, productInfo) {
+        console.log('files >> ', files);
+        return true;
         return await this.productService.uploadProduct(currentUser, files, JSON.parse(productInfo.data));
     }
 };

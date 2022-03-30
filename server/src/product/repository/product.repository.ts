@@ -180,12 +180,14 @@ export class ProductRepository {
       // 첫번째 상품 이미지는 상품 썸네일 이미지로 지정
       if (files && files[0]) {
         const product = await this.product.findById(productId);
-        product.thumbnailImgURL = `${process.env.MEDIA_URL}/static/product_image/${files[0].filename}`;
+        // product.thumbnailImgURL = `${process.env.MEDIA_URL}/static/product_image/${files[0].filename}`;
+        product.thumbnailImgURL = `${files[0].location}`;
         await product.save();
       }
 
       for (const file of files) {
-        const productImgURL = `${process.env.MEDIA_URL}/static/product_image/${file.filename}`;
+        // const productImgURL = `${process.env.MEDIA_URL}/static/product_image/${file.filename}`;
+        const productImgURL = `${file.location}`;
         await this.productImage.create({
           productId,
           productImgURL,

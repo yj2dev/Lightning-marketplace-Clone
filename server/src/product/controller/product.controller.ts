@@ -29,6 +29,10 @@ const s3 = new AWS.S3({
   region: process.env.AWS_S3_REGION,
 });
 
+console.log('[ product environment ]');
+console.log(process.env.AWS_S3_BUCKET_NAME);
+console.log(process.env.AWS_S3_REGION);
+
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
@@ -137,6 +141,8 @@ export class ProductController {
     @UploadedFiles() files: Express.MulterS3.File[],
     @Body() productInfo,
   ): Promise<boolean> {
+    console.log('files >> ', files);
+    return true;
     return await this.productService.uploadProduct(
       currentUser,
       files,

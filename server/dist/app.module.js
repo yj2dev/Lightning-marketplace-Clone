@@ -81,7 +81,7 @@ AppModule = __decorate([
         ],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UserService, user_repository_1.UserRepository],
-        exports: [store_contact_module_1.StoreContactModule],
+        exports: [store_contact_module_1.StoreContactModule, config_1.ConfigModule],
     })
 ], AppModule);
 exports.AppModule = AppModule;

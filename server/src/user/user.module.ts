@@ -17,11 +17,10 @@ import {
 } from '../store-review/model/store-review.model';
 import { ConfigModule } from '@nestjs/config';
 
+// MulterModule.register({ dest: './upload' }),
 @Module({
   imports: [
     ConfigModule.forRoot(),
-
-    // MulterModule.register({ dest: './upload' }),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: StoreContact.name, schema: StoreContactSchema },

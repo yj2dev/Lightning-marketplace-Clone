@@ -29,6 +29,13 @@ const user_model_1 = require("../model/user.model");
 const follow_service_1 = require("../../follow/follow.service");
 const AWS = require("aws-sdk");
 const multerS3 = require("multer-s3");
+const AWS_S3_ACCESS_KEY_ID = process.env.AWS_S3_ACCESS_KEY_ID;
+const AWS_S3_SECRET_ACCESS_KEY = process.env.AWS_S3_SECRET_ACCESS_KEY;
+const AWS_S3_BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME;
+const AWS_S3_REGION = process.env.AWS_S3_REGION;
+console.log('[ user environment ]');
+console.log(AWS_S3_ACCESS_KEY_ID);
+console.log(AWS_S3_REGION);
 const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
@@ -101,8 +108,11 @@ let UserController = class UserController {
         return await this.userService.isPhoneNumber(phoneNumber);
     }
     async uploadProfileImg(currentUser, file) {
+        console.log('profile ... ');
+        console.log('env33');
         console.log(process.env.AWS_S3_BUCKET_NAME);
-        return this.userService.uploadImg(currentUser._id, file);
+        console.log(process.env.AWS_S3_REGION);
+        return this.userService.uploadImg(currentUser._id, file[0]);
     }
     resetProfileImg(currentUser) {
         return this.userService.resetImg(currentUser._id);
@@ -308,10 +318,10 @@ __decorate([
 __decorate([
     (0, common_1.Patch)('profile/upload'),
     (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 10, {
+    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 1, {
         storage: multerS3({
             s3: s3,
-            bucket: process.env.AWS_S3_BUCKET_NAME,
+            bucket: 'lightningmarket-s3',
             acl: 'public-read',
             key: function (req, file, cb) {
                 cb(null, `profile/${Date.now().toString()}-${file.originalname}`);

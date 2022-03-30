@@ -72,7 +72,7 @@ import {
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService, UserRepository],
-  exports: [StoreContactModule],
+  exports: [StoreContactModule, ConfigModule],
 })
 export class AppModule implements NestModule {
   private readonly MODE: boolean =
