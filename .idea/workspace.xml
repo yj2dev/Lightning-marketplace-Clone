@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: client build2">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/img/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.53e4a437.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.d4c38f71.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.d4c38f71.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simple-score-board" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -74,9 +61,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -194,21 +181,8 @@
       <workItem from="1648391940628" duration="789000" />
       <workItem from="1648458895395" duration="836000" />
       <workItem from="1648459760990" duration="1190000" />
-      <workItem from="1648567952557" duration="213000" />
-    </task>
-    <task id="LOCAL-00071" summary="비밀번호 변경 로직 구현">
-      <created>1645430423221</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1645430423221</updated>
-    </task>
-    <task id="LOCAL-00072" summary="회원탈퇴 로직 구현">
-      <created>1645445443914</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1645445443914</updated>
+      <workItem from="1648567952557" duration="850000" />
+      <workItem from="1648597754884" duration="6949000" />
     </task>
     <task id="LOCAL-00073" summary="다수의 유저 가입 성공">
       <created>1645516455879</created>
@@ -539,7 +513,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648387920261</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="build: client, server / apply domain">
+      <created>1648568257274</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1648568257275</updated>
+    </task>
+    <task id="LOCAL-00121" summary="rebuild: server">
+      <created>1648568529977</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1648568529977</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,8 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="벼락톡 디자인" />
-    <MESSAGE value="채팅 입력시 스크롤 하단으로 이동" />
     <MESSAGE value="채팅방 멤버 모델 추가" />
     <MESSAGE value="채팅 방 구분 성공" />
     <MESSAGE value="채팅방 맴버 스키마 제거" />
@@ -583,7 +569,9 @@
     <MESSAGE value="update: server build(update dist)" />
     <MESSAGE value="update: client build" />
     <MESSAGE value="update: client build2" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: client build2" />
+    <MESSAGE value="build: client, server / apply domain" />
+    <MESSAGE value="rebuild: server" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild: server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
