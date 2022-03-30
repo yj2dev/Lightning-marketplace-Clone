@@ -11,6 +11,7 @@ const fs = require("fs");
 const cookieParser = require("cookie-parser");
 async function bootstrap() {
     const MODE = process.env.NODE_ENV === 'development' ? true : false;
+    console.log('NODE_ENV >> ', process.env.NODE_ENV);
     const keyFile = fs.readFileSync(path.join(__dirname + '/certificate/localhost-key.pem'));
     const certFile = fs.readFileSync(path.join(__dirname + '/certificate/localhost.pem'));
     const httpsOptions = {

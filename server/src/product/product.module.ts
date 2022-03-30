@@ -19,9 +19,11 @@ import {
   ProductContact,
   ProductContactSchema,
 } from '../product-contact/model/product-contact.model';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: Product.name, schema: ProductSchema },

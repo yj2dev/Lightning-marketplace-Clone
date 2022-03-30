@@ -19,11 +19,13 @@ const tag_model_1 = require("../tag/model/tag.model");
 const tag_module_1 = require("../tag/tag.module");
 const product_favorite_model_1 = require("../product-favorite/model/product-favorite.model");
 const product_contact_model_1 = require("../product-contact/model/product-contact.model");
+const config_1 = require("@nestjs/config");
 let ProductModule = class ProductModule {
 };
 ProductModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forFeature([
                 { name: user_model_1.User.name, schema: user_model_1.UserSchema },
                 { name: product_model_1.Product.name, schema: product_model_1.ProductSchema },

@@ -17,9 +17,15 @@ const common_1 = require("@nestjs/common");
 const jwt_guard_1 = require("../../auth/guard/jwt.guard");
 const user_decorator_1 = require("../../common/decorators/user.decorator");
 const platform_express_1 = require("@nestjs/platform-express");
-const multer_options_1 = require("../../common/utils/multer.options");
 const product_service_1 = require("../service/product.service");
 const user_model_1 = require("../../user/model/user.model");
+const AWS = require("aws-sdk");
+const multerS3 = require("multer-s3");
+const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
+    region: process.env.AWS_S3_REGION,
+});
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
@@ -146,13 +152,22 @@ __decorate([
 __decorate([
     (0, common_1.Post)('upload'),
     (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 12, (0, multer_options_1.multerOptions)('product_image'))),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 12, {
+        storage: multerS3({
+            s3: s3,
+            bucket: process.env.AWS_S3_BUCKET_NAME,
+            acl: 'public-read',
+            key: function (req, file, cb) {
+                cb(null, `product/${Date.now().toString()}-${file.originalname}`);
+            },
+        }),
+        limits: {},
+    })),
     __param(0, (0, user_decorator_1.CurrentUser)()),
     __param(1, (0, common_1.UploadedFiles)()),
     __param(2, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_model_1.User,
-        Array, Object]),
+    __metadata("design:paramtypes", [user_model_1.User, Array, Object]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "uploadProduct", null);
 ProductController = __decorate([

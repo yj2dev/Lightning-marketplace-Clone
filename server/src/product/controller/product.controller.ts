@@ -19,6 +19,15 @@ import { ProductService } from '../service/product.service';
 import { User } from '../../user/model/user.model';
 import { Product } from '../model/product.model';
 import { ProductFavorite } from '../../product-favorite/model/product-favorite.model';
+import * as AWS from 'aws-sdk';
+import * as multerS3 from 'multer-s3';
+
+// s3 객체 생성후 AWS.config을 수정하면 에러발생
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
+  region: process.env.AWS_S3_REGION,
+});
 
 @Controller('product')
 export class ProductController {
@@ -111,11 +120,21 @@ export class ProductController {
   @Post('upload')
   @UseGuards(JwtAuthGuard)
   @UseInterceptors(
-    FilesInterceptor('image', 12, multerOptions('product_image')),
+    FilesInterceptor('image', 12, {
+      storage: multerS3({
+        s3: s3,
+        bucket: process.env.AWS_S3_BUCKET_NAME,
+        acl: 'public-read',
+        key: function (req, file, cb) {
+          cb(null, `product/${Date.now().toString()}-${file.originalname}`);
+        },
+      }),
+      limits: {},
+    }),
   )
   async uploadProduct(
     @CurrentUser() currentUser: User,
-    @UploadedFiles() files: Array<Express.Multer.File>,
+    @UploadedFiles() files: Express.MulterS3.File[],
     @Body() productInfo,
   ): Promise<boolean> {
     return await this.productService.uploadProduct(

@@ -1,4 +1,3 @@
-/// <reference types="multer" />
 import { Response } from 'express';
 import { UserService } from '../service/user.service';
 import { UserRequestDto } from '../dto/user.request.dto';
@@ -34,6 +33,6 @@ export declare class UserController {
     }>;
     signout(res: Response): Promise<void>;
     isUser(phoneNumber: string): Promise<User>;
-    uploadProfileImg(currentUser: User, file: Express.Multer.File): Promise<boolean>;
+    uploadProfileImg(currentUser: User, file: any): Promise<boolean>;
     resetProfileImg(currentUser: User): Promise<boolean>;
 }

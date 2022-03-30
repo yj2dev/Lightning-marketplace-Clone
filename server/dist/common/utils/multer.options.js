@@ -5,19 +5,6 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const common_1 = require("@nestjs/common");
-const AWS = require("aws-sdk");
-const multerS3 = require("multer-s3");
-const s3 = new AWS.S3();
-AWS.config.update({
-    accessKeyId: process.env.S3_ACCESS_KEY_ID,
-    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-    region: process.env.AWS_S3_REGION,
-});
-console.log('[ AWS process.env ]');
-console.log(process.env.S3_ACCESS_KEY_ID);
-console.log(process.env.S3_SECRET_ACCESS_KEY);
-console.log(process.env.AWS_S3_REGION);
-console.log(process.env.AWS_S3_BUCKET_NAME);
 const createFolder = (folder) => {
     const logger = new common_1.Logger('Multer');
     try {
@@ -51,14 +38,7 @@ const storage = (folder) => {
 };
 const multerOptions = (folder) => {
     const result = {
-        storage: multerS3({
-            s3: s3,
-            bucket: 'lightningmarket-s3',
-            acl: 'static',
-            key: function (req, file, cb) {
-                cb(null, file.originalname);
-            },
-        }),
+        storage: storage(folder),
     };
     return result;
 };

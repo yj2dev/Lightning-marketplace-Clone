@@ -1,4 +1,4 @@
-/// <reference types="multer" />
+/// <reference types="multer-s3" />
 import { ProductService } from '../service/product.service';
 import { User } from '../../user/model/user.model';
 import { Product } from '../model/product.model';
@@ -16,5 +16,5 @@ export declare class ProductController {
     updateProductState(productId: string, state: string): Promise<Product>;
     getAllProduct(): Promise<Product[]>;
     getOneProduct(productId: string): Promise<Product>;
-    uploadProduct(currentUser: User, files: Array<Express.Multer.File>, productInfo: any): Promise<boolean>;
+    uploadProduct(currentUser: User, files: Express.MulterS3.File[], productInfo: any): Promise<boolean>;
 }

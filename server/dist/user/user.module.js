@@ -14,16 +14,16 @@ const mongoose_1 = require("@nestjs/mongoose");
 const user_model_1 = require("./model/user.model");
 const user_repository_1 = require("./repository/user.repository");
 const auth_module_1 = require("../auth/auth.module");
-const platform_express_1 = require("@nestjs/platform-express");
 const follow_module_1 = require("../follow/follow.module");
 const store_contact_model_1 = require("../store-contact/model/store-contact.model");
 const store_review_model_1 = require("../store-review/model/store-review.model");
+const config_1 = require("@nestjs/config");
 let UserModule = class UserModule {
 };
 UserModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            platform_express_1.MulterModule.register({ dest: './upload' }),
+            config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forFeature([
                 { name: user_model_1.User.name, schema: user_model_1.UserSchema },
                 { name: store_contact_model_1.StoreContact.name, schema: store_contact_model_1.StoreContactSchema },

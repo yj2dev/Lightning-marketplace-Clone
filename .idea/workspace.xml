@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: server">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: multer -&gt; multer s3">
+      <change afterPath="$PROJECT_DIR$/bash.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/product.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/product/product.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/multer.options.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,13 +198,10 @@
       <workItem from="1648459760990" duration="1190000" />
       <workItem from="1648567952557" duration="850000" />
       <workItem from="1648597754884" duration="6949000" />
-    </task>
-    <task id="LOCAL-00073" summary="다수의 유저 가입 성공">
-      <created>1645516455879</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1645516455880</updated>
+      <workItem from="1648617007463" duration="1185000" />
+      <workItem from="1648628169036" duration="4055000" />
+      <workItem from="1648634415896" duration="6435000" />
+      <workItem from="1648645633083" duration="2765000" />
     </task>
     <task id="LOCAL-00074" summary="프로필 이미지 초기화 구현">
       <created>1645542675140</created>
@@ -527,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648568529977</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="update: multer -&gt; multer s3">
+      <created>1648617076714</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1648617076714</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채팅방 멤버 모델 추가" />
     <MESSAGE value="채팅 방 구분 성공" />
     <MESSAGE value="채팅방 맴버 스키마 제거" />
     <MESSAGE value="채팅방 리스트 구현" />
@@ -571,7 +589,8 @@
     <MESSAGE value="update: client build2" />
     <MESSAGE value="build: client, server / apply domain" />
     <MESSAGE value="rebuild: server" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild: server" />
+    <MESSAGE value="update: multer -&gt; multer s3" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: multer -&gt; multer s3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -31,7 +31,15 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '../../common/utils/multer.options';
 import { User } from '../model/user.model';
 import { FollowService } from '../../follow/follow.service';
-import * as mongoose from 'mongoose';
+import * as AWS from 'aws-sdk';
+import * as multerS3 from 'multer-s3';
+
+// s3 객체 생성후 AWS.config을 수정하면 에러발생
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
+  region: process.env.AWS_S3_REGION,
+});
 
 @Controller('user')
 @UseInterceptors(SuccessInterceptor)
@@ -261,11 +269,25 @@ export class UserController {
 
   @Patch('profile/upload')
   @UseGuards(JwtAuthGuard)
-  @UseInterceptors(FilesInterceptor('image', 1, multerOptions('user_profile')))
-  uploadProfileImg(
+  @UseInterceptors(
+    FilesInterceptor('image', 10, {
+      storage: multerS3({
+        s3: s3,
+        bucket: process.env.AWS_S3_BUCKET_NAME,
+        acl: 'public-read',
+        key: function (req, file, cb) {
+          cb(null, `profile/${Date.now().toString()}-${file.originalname}`);
+        },
+      }),
+      limits: {},
+    }),
+  )
+  async uploadProfileImg(
     @CurrentUser() currentUser: User,
-    @UploadedFiles() file: Express.Multer.File,
+    // @UploadedFiles() file: Express.MulterS3.File,
+    @UploadedFiles() file,
   ) {
+    console.log(process.env.AWS_S3_BUCKET_NAME);
     return this.userService.uploadImg(currentUser._id, file);
   }
 
