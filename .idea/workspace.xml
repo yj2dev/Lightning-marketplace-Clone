@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="delete server build" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,14 +184,7 @@
       <workItem from="1648703033075" duration="305000" />
       <workItem from="1648736601009" duration="3693000" />
       <workItem from="1648741359221" duration="287000" />
-      <workItem from="1648742254458" duration="1252000" />
-    </task>
-    <task id="LOCAL-00079" summary="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패">
-      <created>1646578912637</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1646578912637</updated>
+      <workItem from="1648742254458" duration="1708000" />
     </task>
     <task id="LOCAL-00080" summary="찜 컨테이너 분리">
       <created>1646801076063</created>
@@ -529,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648742911803</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="build: server">
+      <created>1648743766193</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1648743766193</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="방 마지막 메시지 추가" />
     <MESSAGE value="채팅시 상대방 이미지 추가" />
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
     <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
@@ -573,7 +572,8 @@
     <MESSAGE value="build: client, server" />
     <MESSAGE value="rebuild: client, server" />
     <MESSAGE value="delete server build" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete server build" />
+    <MESSAGE value="build: server" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
