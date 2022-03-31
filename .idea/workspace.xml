@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: client, server">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
-    </list>
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="delete server build" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,14 +184,7 @@
       <workItem from="1648703033075" duration="305000" />
       <workItem from="1648736601009" duration="3693000" />
       <workItem from="1648741359221" duration="287000" />
-      <workItem from="1648742254458" duration="396000" />
-    </task>
-    <task id="LOCAL-00078" summary="상품 문의 (추가, 제거, 변경) API 추가">
-      <created>1646574668916</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1646574668916</updated>
+      <workItem from="1648742254458" duration="1252000" />
     </task>
     <task id="LOCAL-00079" summary="상품 문의, 상품 찜(즐겨찾기) 병합 성공, 상품 문의한 유저 정보 병합 실패">
       <created>1646578912637</created>
@@ -533,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648739574383</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="delete server build">
+      <created>1648742911803</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1648742911803</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="이전 채팅 불러오기" />
     <MESSAGE value="방 마지막 메시지 추가" />
     <MESSAGE value="채팅시 상대방 이미지 추가" />
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
@@ -577,7 +572,8 @@
     <MESSAGE value="유저 컨트롤러 환경변수 연결 실패" />
     <MESSAGE value="build: client, server" />
     <MESSAGE value="rebuild: client, server" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild: client, server" />
+    <MESSAGE value="delete server build" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete server build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
