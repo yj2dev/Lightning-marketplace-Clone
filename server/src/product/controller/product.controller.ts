@@ -142,7 +142,6 @@ export class ProductController {
     @Body() productInfo,
   ): Promise<boolean> {
     console.log('files >> ', files);
-    return true;
     return await this.productService.uploadProduct(
       currentUser,
       files,

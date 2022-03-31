@@ -12,8 +12,8 @@ import axios from "axios";
 dotenv.config();
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "https://api.log1999.com:8000";
-// axios.defaults.baseURL = "https://localhost:8000";
+// axios.defaults.baseURL = "https://api.log1999.com:8000";
+axios.defaults.baseURL = "https://localhost:8000";
 
 const createStoreWithMiddleware = applyMiddleware(
   promiseMiddleware,

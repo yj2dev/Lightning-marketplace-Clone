@@ -1,237 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="유저 컨트롤러 환경변수 연결 실패">
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: client, server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.00301ac7.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.00301ac7.chunk.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.00301ac7.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.4385219b.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.4385219b.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/LandingPage/Section/Banner/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/app.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/auth.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/dto/user.signin.dto.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/dto/user.signin.dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/dto/user.signin.dto.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/jwt.guard.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/jwt.guard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/jwt.guard.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/kakao-auth.guard.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/kakao-auth.guard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/kakao-auth.guard.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/naver-auth.guard.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/naver-auth.guard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/guard/naver-auth.guard.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.payload.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.payload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.payload.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.strategy.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.strategy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/jwt.strategy.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/kakao.strategy.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/kakao.strategy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/kakao.strategy.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/naver.strategy.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/naver.strategy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/auth/jwt/naver.strategy.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/category/category.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/category/category.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/category/category.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/decorators/user.decorator.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/decorators/user.decorator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/decorators/user.decorator.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/exception/http-exception.filter.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/exception/http-exception.filter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/exception/http-exception.filter.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/interceptor/success.interceptor.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/interceptor/success.interceptor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/interceptor/success.interceptor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/middleware/logger.middleware.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/middleware/logger.middleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/middleware/logger.middleware.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/almond.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/lightning_market_banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/mushroom.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/pear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/tomato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/vegetable.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/user_profile/__default_store_profile__.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/jwtExtractorFromCookies.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/jwtExtractorFromCookies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/jwtExtractorFromCookies.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/utils/multer.options.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.repository.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.repository.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/follow.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/model/follow.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/model/follow.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/follow/model/follow.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/oauth/oauth.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/model/product-contact.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/model/product-contact.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/model/product-contact.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/product-contact.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/product-contact.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-contact/product-contact.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/model/product-favorite.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/model/product-favorite.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/model/product-favorite.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/product-favorite.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/product-favorite.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-favorite/product-favorite.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/model/product-image.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/model/product-image.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/model/product-image.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/product-image.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/product-image.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product-image/product-image.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/controller/product.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/dto/create.product.dto.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/dto/create.product.dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/dto/create.product.dto.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/model/product.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/model/product.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/model/product.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/product.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/repository/product.repository.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/repository/product.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/repository/product.repository.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/service/product.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/service/product.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/product/service/product.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/redis-cache/redis-cache.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/RedisOption.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/RedisOption.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/RedisOption.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/sms/sms.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/model/store-contact.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/model/store-contact.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/model/store-contact.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/store-contact.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/store-contact.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-contact/store-contact.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/model/store-review.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/model/store-review.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/model/store-review.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/store-review.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/store-review.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/store-review/store-review.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/model/tag.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/model/tag.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/model/tag.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.reposigory.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.reposigory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tag/tag.reposigory.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/model/room.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/model/room.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/model/room.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/talk-room.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/talk-room.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk-room/talk-room.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/model/talk.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/model/talk.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/model/talk.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.gateway.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.gateway.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.gateway.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.repository.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.repository.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/talk/talk.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.create.dto.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.create.dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.create.dto.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.readonly.dto.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.readonly.dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.readonly.dto.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.request.dto.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.request.dto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/dto/user.request.dto.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/model/user.model.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/model/user.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/model/user.model.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/repository/user.repository.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/repository/user.repository.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/repository/user.repository.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/service/user.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/service/user.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/service/user.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/repository/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/controller/product.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist/common" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -283,8 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
@@ -413,21 +186,9 @@
       <workItem from="1648648453012" duration="5510000" />
       <workItem from="1648686456475" duration="2615000" />
       <workItem from="1648703033075" duration="305000" />
-      <workItem from="1648736601009" duration="1629000" />
-    </task>
-    <task id="LOCAL-00076" summary="server ssl 인증서 업로드">
-      <created>1646056295148</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1646056295148</updated>
-    </task>
-    <task id="LOCAL-00077" summary="상품 즐겨찾기(찜) API 추가">
-      <created>1646487808815</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1646487808815</updated>
+      <workItem from="1648736601009" duration="3693000" />
+      <workItem from="1648741359221" duration="287000" />
+      <workItem from="1648742254458" duration="396000" />
     </task>
     <task id="LOCAL-00078" summary="상품 문의 (추가, 제거, 변경) API 추가">
       <created>1646574668916</created>
@@ -758,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648652521218</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="build: client, server">
+      <created>1648739440096</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1648739440097</updated>
+    </task>
+    <task id="LOCAL-00126" summary="rebuild: client, server">
+      <created>1648739574383</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1648739574383</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,8 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채팅방 리스트 구현" />
-    <MESSAGE value="채팅방 필드 이상한 값 들어가는 것 해결, 1:1 채팅 방 분리되는 버그 해결" />
     <MESSAGE value="이전 채팅 불러오기" />
     <MESSAGE value="방 마지막 메시지 추가" />
     <MESSAGE value="채팅시 상대방 이미지 추가" />
@@ -802,7 +575,9 @@
     <MESSAGE value="update: multer -&gt; multer s3" />
     <MESSAGE value="connect AWS S3(multer-s3), update: product image upload" />
     <MESSAGE value="유저 컨트롤러 환경변수 연결 실패" />
-    <option name="LAST_COMMIT_MESSAGE" value="유저 컨트롤러 환경변수 연결 실패" />
+    <MESSAGE value="build: client, server" />
+    <MESSAGE value="rebuild: client, server" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild: client, server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
