@@ -1,6 +1,10 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { TalkService } from './talk.service';
 
+console.log('[ talk environment ]');
+console.log(process.env.AWS_S3_BUCKET_NAME);
+console.log(process.env.AWS_S3_REGION);
+
 @Controller('talk')
 export class TalkController {
   constructor(private readonly talkService: TalkService) {}

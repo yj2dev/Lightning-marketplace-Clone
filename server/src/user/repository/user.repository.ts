@@ -200,7 +200,8 @@ export class UserRepository {
 
   async findByIdAndResetImg(userId: string) {
     const user = await this.user.findById({ _id: userId });
-    user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/__default_store_profile__.png`;
+    // user.profileURL = `${process.env.MEDIA_URL}/static/user_profile/__default_store_profile__.png`;
+    user.profileURL = `https://lightningmarket-s3.s3.us-west-1.amazonaws.com/static/user_profile/__default_store_profile__.png`;
     const result = await user.save();
     return result;
   }

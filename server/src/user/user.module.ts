@@ -20,7 +20,6 @@ import { ConfigModule } from '@nestjs/config';
 // MulterModule.register({ dest: './upload' }),
 @Module({
   imports: [
-    ConfigModule.forRoot(),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: StoreContact.name, schema: StoreContactSchema },
