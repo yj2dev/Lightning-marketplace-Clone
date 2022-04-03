@@ -9,10 +9,8 @@ import TalkListSection from "./Section/TalkListSection";
 import TalkRoomSection from "./Section/TalkRoomSection";
 
 // 실제 배포시 도메인 지정
-// const socket = io.connect(`https://localhost:8000/${namspace}`);
-// const socket = io.connect(`https://localhost:8000/ws-330121`);
-const socket = io.connect(`https://localhost:8000/nsp-42143a`);
-const socket2 = io.connect(`https://localhost:8000/nsp-af31oi2kldf`);
+const socket = io.connect(`${process.env.REACT_APP_BASE_URL}/nsp-42143a`);
+const socket2 = io.connect(`${process.env.REACT_APP_BASE_URL}/nsp-af31oi2kldf`);
 
 const TalkPage = () => {
   const user = useSelector((state) => state.user);

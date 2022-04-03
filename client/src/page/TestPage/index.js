@@ -2,7 +2,7 @@ import { Container } from "./styled";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import MessageSection from "./MessageSection";
-const socket = io.connect(`https://localhost:8000/nsp-root`);
+const socket = io.connect(`${process.env.REACT_APP_BASE_URL}/nsp-root`);
 
 export const TestPage = () => {
   const [msg, setMsg] = useState("");
