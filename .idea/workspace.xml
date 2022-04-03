@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: 소켓 요청 경로 수정">
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: socket path">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/localhost-key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/client/localhost-key.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/localhost.pem" beforeDir="false" afterPath="$PROJECT_DIR$/client/localhost.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,14 +200,11 @@
       <workItem from="1648901305302" duration="2839000" />
       <workItem from="1648912135421" duration="8000" />
       <workItem from="1648973076545" duration="1042000" />
-      <workItem from="1648974145580" duration="1855000" />
-    </task>
-    <task id="LOCAL-00083" summary="팔로우 API(생성, 제거, 조회) 추가">
-      <created>1646840008368</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1646840008368</updated>
+      <workItem from="1648974145580" duration="2292000" />
+      <workItem from="1648976829388" duration="221000" />
+      <workItem from="1648977276776" duration="4926000" />
+      <workItem from="1648991727784" duration="1849000" />
+      <workItem from="1648995278981" duration="1123000" />
     </task>
     <task id="LOCAL-00084" summary="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공">
       <created>1646925747464</created>
@@ -541,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648975864776</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="update: socket path">
+      <created>1648976053603</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1648976053603</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="상점후기 기능 구현" />
     <MESSAGE value="server 빌드 -&gt; dist 생성" />
     <MESSAGE value="client 빌드 -&gt; build 생성" />
     <MESSAGE value="server 배포 명령어 수정" />
@@ -585,7 +592,8 @@
     <MESSAGE value="build: client" />
     <MESSAGE value="rebuild: client" />
     <MESSAGE value="build: 소켓 요청 경로 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: 소켓 요청 경로 수정" />
+    <MESSAGE value="update: socket path" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: socket path" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

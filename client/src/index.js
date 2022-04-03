@@ -13,6 +13,7 @@ dotenv.config();
 
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+// console.log("process env >> ", process.env.REACT_APP_BASE_URL);
 // axios.defaults.baseURL = "https://localhost:8000";
 
 const createStoreWithMiddleware = applyMiddleware(
