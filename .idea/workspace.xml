@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: client">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TestPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TestPage/index.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: 소켓 요청 경로 수정">
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +196,7 @@
       <workItem from="1648901305302" duration="2839000" />
       <workItem from="1648912135421" duration="8000" />
       <workItem from="1648973076545" duration="1042000" />
-      <workItem from="1648974145580" duration="1615000" />
-    </task>
-    <task id="LOCAL-00082" summary="상점 페이지 내 페이지와, 다른 유저 페이지로 분기처리">
-      <created>1646835270658</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1646835270658</updated>
+      <workItem from="1648974145580" duration="1855000" />
     </task>
     <task id="LOCAL-00083" summary="팔로우 API(생성, 제거, 조회) 추가">
       <created>1646840008368</created>
@@ -543,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648975484990</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="build: 소켓 요청 경로 수정">
+      <created>1648975864776</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1648975864776</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
     <MESSAGE value="상점후기 기능 구현" />
     <MESSAGE value="server 빌드 -&gt; dist 생성" />
     <MESSAGE value="client 빌드 -&gt; build 생성" />
@@ -587,7 +584,8 @@
     <MESSAGE value="build: server" />
     <MESSAGE value="build: client" />
     <MESSAGE value="rebuild: client" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild: client" />
+    <MESSAGE value="build: 소켓 요청 경로 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: 소켓 요청 경로 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
