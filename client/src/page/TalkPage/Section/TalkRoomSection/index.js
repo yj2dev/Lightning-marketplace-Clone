@@ -199,7 +199,7 @@ export const TalkRoomSection = ({ history, user }) => {
   } else {
     return (
       <Container>
-        <Link to="/test">TEST</Link>
+        {/*<Link to="/test">TEST</Link>*/}
         {talkToUser && (
           <div onClick={onClickTitle} className="title">
             {talkToUser.storeName}

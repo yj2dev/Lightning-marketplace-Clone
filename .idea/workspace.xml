@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,14 +197,7 @@
       <workItem from="1648901305302" duration="2839000" />
       <workItem from="1648912135421" duration="8000" />
       <workItem from="1648973076545" duration="1042000" />
-      <workItem from="1648974145580" duration="781000" />
-    </task>
-    <task id="LOCAL-00080" summary="찜 컨테이너 분리">
-      <created>1646801076063</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1646801076064</updated>
+      <workItem from="1648974145580" duration="1265000" />
     </task>
     <task id="LOCAL-00081" summary="상품 찜 기능 구현완료">
       <created>1646806800451</created>
@@ -566,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648743766193</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="build: client">
+      <created>1648975239522</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1648975239522</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채팅시 상대방 이미지 추가" />
     <MESSAGE value="채팅 주고 받기 성공 / 이전 채팅과 병합 실패" />
     <MESSAGE value="채팅 주고 받기 성공 / 채팅창 통째로 랜더링되는 문제" />
     <MESSAGE value="상점후기 기능 구현" />
@@ -610,7 +585,8 @@
     <MESSAGE value="rebuild: client, server" />
     <MESSAGE value="delete server build" />
     <MESSAGE value="build: server" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: server" />
+    <MESSAGE value="build: client" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
