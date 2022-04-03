@@ -9,3 +9,5 @@ workspace.xml
 
 # aws pem
 lightning-market.pem
+# Local Netlify folder
+.netlify

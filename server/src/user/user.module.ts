@@ -15,7 +15,6 @@ import {
   StoreReview,
   StoreReviewSchema,
 } from '../store-review/model/store-review.model';
-import { ConfigModule } from '@nestjs/config';
 
 // MulterModule.register({ dest: './upload' }),
 @Module({

@@ -7,7 +7,7 @@ import axios from "axios";
 import { RiMessage3Line } from "react-icons/ri";
 import { timeKrFormatAndMMDD } from "../../../../utils/Time";
 
-const socket = io.connect(`https://localhost:8000/nsp-root`);
+const socket = io.connect(`https://${process.env.REACT_APP_BASE_URL}/nsp-root`);
 
 export const TalkRoomSection = ({ history, user }) => {
   const location = useLocation();

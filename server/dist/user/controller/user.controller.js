@@ -29,18 +29,14 @@ const user_model_1 = require("../model/user.model");
 const follow_service_1 = require("../../follow/follow.service");
 const AWS = require("aws-sdk");
 const multerS3 = require("multer-s3");
-const AWS_S3_ACCESS_KEY_ID = process.env.AWS_S3_ACCESS_KEY_ID;
-const AWS_S3_SECRET_ACCESS_KEY = process.env.AWS_S3_SECRET_ACCESS_KEY;
-const AWS_S3_BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME;
-const AWS_S3_REGION = process.env.AWS_S3_REGION;
-console.log('[ user environment ]');
-console.log(AWS_S3_ACCESS_KEY_ID);
-console.log(AWS_S3_REGION);
 const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
     region: process.env.AWS_S3_REGION,
 });
+console.log('[ user environment ]');
+console.log(process.env.AWS_S3_BUCKET_NAME);
+console.log(process.env.AWS_S3_REGION);
 let UserController = class UserController {
     constructor(userService, authService, followService) {
         this.userService = userService;
@@ -97,6 +93,7 @@ let UserController = class UserController {
         return await this.userService.signup(userRequestDto);
     }
     async signin(userSigninDto, res) {
+        console.log(process.env.AWS_S3_REGION);
         const { jwt, user } = await this.authService.jwtSignin(userSigninDto);
         res.cookie('jwt', jwt, { httpOnly: true });
         return user.readonlyData;

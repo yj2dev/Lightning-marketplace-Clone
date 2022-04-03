@@ -85,41 +85,41 @@ function SigninModal({ children, show, close, history }) {
           <h1>벼락장터로 중고거래 시작하기</h1>
           <h2>간편하게 가입하고 상품을 확인하세요</h2>
 
-          <KakaoAuthButton onClick={onSubmitKakaoAuth}>
-            <span>
-              <RiKakaoTalkFill
-                size={18}
-                style={{ position: "absolute", left: "40px", top: "8px" }}
-              />
-            </span>
-            카카오로 이용하기
-          </KakaoAuthButton>
-          <FacebookAuthButton onClick={onSubmitFacebookAuth}>
-            <span>
-              <AiFillFacebook
-                size={17}
-                style={{
-                  position: "absolute",
-                  left: "41px",
-                  top: "9px",
-                }}
-              />
-            </span>
-            페이스북으로 이용하기
-          </FacebookAuthButton>
-          <NaverAuthButton onClick={onSubmitNaverAuth}>
-            <span>
-              <SiNaver
-                size={15}
-                style={{
-                  position: "absolute",
-                  left: "42px",
-                  top: "10px",
-                }}
-              />
-            </span>
-            네이버로 이용하기
-          </NaverAuthButton>
+          {/*<KakaoAuthButton onClick={onSubmitKakaoAuth}>*/}
+          {/*  <span>*/}
+          {/*    <RiKakaoTalkFill*/}
+          {/*      size={18}*/}
+          {/*      style={{ position: "absolute", left: "40px", top: "8px" }}*/}
+          {/*    />*/}
+          {/*  </span>*/}
+          {/*  카카오로 이용하기*/}
+          {/*</KakaoAuthButton>*/}
+          {/*<FacebookAuthButton onClick={onSubmitFacebookAuth}>*/}
+          {/*  <span>*/}
+          {/*    <AiFillFacebook*/}
+          {/*      size={17}*/}
+          {/*      style={{*/}
+          {/*        position: "absolute",*/}
+          {/*        left: "41px",*/}
+          {/*        top: "9px",*/}
+          {/*      }}*/}
+          {/*    />*/}
+          {/*  </span>*/}
+          {/*  페이스북으로 이용하기*/}
+          {/*</FacebookAuthButton>*/}
+          {/*<NaverAuthButton onClick={onSubmitNaverAuth}>*/}
+          {/*  <span>*/}
+          {/*    <SiNaver*/}
+          {/*      size={15}*/}
+          {/*      style={{*/}
+          {/*        position: "absolute",*/}
+          {/*        left: "42px",*/}
+          {/*        top: "10px",*/}
+          {/*      }}*/}
+          {/*    />*/}
+          {/*  </span>*/}
+          {/*  네이버로 이용하기*/}
+          {/*</NaverAuthButton>*/}
 
           <OriginAuthButton onClick={onSubmitPhoneCertification}>
             <span>

@@ -34,20 +34,15 @@ import { FollowService } from '../../follow/follow.service';
 import * as AWS from 'aws-sdk';
 import * as multerS3 from 'multer-s3';
 
-const AWS_S3_ACCESS_KEY_ID = process.env.AWS_S3_ACCESS_KEY_ID;
-const AWS_S3_SECRET_ACCESS_KEY = process.env.AWS_S3_SECRET_ACCESS_KEY;
-const AWS_S3_BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME;
-const AWS_S3_REGION = process.env.AWS_S3_REGION;
-
-console.log('[ user environment ]');
-console.log(AWS_S3_ACCESS_KEY_ID);
-console.log(AWS_S3_REGION);
-
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
   region: process.env.AWS_S3_REGION,
 });
+
+console.log('[ user environment ]');
+console.log(process.env.AWS_S3_BUCKET_NAME);
+console.log(process.env.AWS_S3_REGION);
 
 @Controller('user')
 @UseInterceptors(SuccessInterceptor)
@@ -250,6 +245,7 @@ export class UserController {
     @Body() userSigninDto: UserSigninDto,
     @Res({ passthrough: true }) res: Response,
   ) {
+    console.log(process.env.AWS_S3_REGION);
     const { jwt, user } = await this.authService.jwtSignin(userSigninDto);
     res.cookie('jwt', jwt, { httpOnly: true });
     return user.readonlyData;

@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/css/2.771c6ac7.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/css/main.c8539de9.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.fade40c0.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.50d18506.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/static/js/runtime-main.3e98f239.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/Section/TalkRoomSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/TalkPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/user.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/sms/sms.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/talk/talk.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/talk/talk.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -47,7 +74,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
     <property name="ts.external.directory.path" value="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -185,6 +212,16 @@
       <workItem from="1648736601009" duration="3693000" />
       <workItem from="1648741359221" duration="287000" />
       <workItem from="1648742254458" duration="1708000" />
+      <workItem from="1648815016002" duration="32000" />
+      <workItem from="1648815063001" duration="727000" />
+      <workItem from="1648815984094" duration="60000" />
+      <workItem from="1648816620995" duration="106000" />
+      <workItem from="1648816748600" duration="901000" />
+      <workItem from="1648887054994" duration="6763000" />
+      <workItem from="1648901305302" duration="2839000" />
+      <workItem from="1648912135421" duration="8000" />
+      <workItem from="1648973076545" duration="1042000" />
+      <workItem from="1648974145580" duration="781000" />
     </task>
     <task id="LOCAL-00080" summary="찜 컨테이너 분리">
       <created>1646801076063</created>
