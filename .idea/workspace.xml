@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: socket path">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/localhost-key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/client/localhost-key.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/localhost.pem" beforeDir="false" afterPath="$PROJECT_DIR$/client/localhost.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SigninModal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/almond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/lightning_market_banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/mushroom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/pear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/tomato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/vegetable.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/user_profile/__default_store_profile__.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,21 +215,8 @@
       <workItem from="1648976829388" duration="221000" />
       <workItem from="1648977276776" duration="4926000" />
       <workItem from="1648991727784" duration="1849000" />
-      <workItem from="1648995278981" duration="1123000" />
-    </task>
-    <task id="LOCAL-00084" summary="팔로잉, 팔로워 구현 완료(서버, 클라이언트) / 찜 목록 불러오기 성공">
-      <created>1646925747464</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1646925747464</updated>
-    </task>
-    <task id="LOCAL-00085" summary="찜 목록 디자인">
-      <created>1646983039463</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1646983039463</updated>
+      <workItem from="1648995278981" duration="1925000" />
+      <workItem from="1649026424605" duration="4511000" />
     </task>
     <task id="LOCAL-00086" summary="상품문의 불러오기 및 디자인">
       <created>1647020111805</created>
@@ -549,7 +547,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648976053603</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="update: hide oauth -&gt; show oauth(unimplemented)">
+      <created>1648996930312</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1648996930312</updated>
+    </task>
+    <task id="LOCAL-00134" summary="build: client">
+      <created>1648997012348</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1648997012348</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="server 빌드 -&gt; dist 생성" />
     <MESSAGE value="client 빌드 -&gt; build 생성" />
     <MESSAGE value="server 배포 명령어 수정" />
     <MESSAGE value="https 적용 해제" />
@@ -588,12 +599,13 @@
     <MESSAGE value="build: client, server" />
     <MESSAGE value="rebuild: client, server" />
     <MESSAGE value="delete server build" />
-    <MESSAGE value="build: server" />
-    <MESSAGE value="build: client" />
     <MESSAGE value="rebuild: client" />
     <MESSAGE value="build: 소켓 요청 경로 수정" />
     <MESSAGE value="update: socket path" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: socket path" />
+    <MESSAGE value="update: hide oauth -&gt; show oauth(unimplemented)" />
+    <MESSAGE value="build: client" />
+    <MESSAGE value="build: server" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -612,6 +624,12 @@
           <url>file://$PROJECT_DIR$/client/src/layouts/index.js</url>
           <line>83</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/user/controller/user.controller.ts</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
