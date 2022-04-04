@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server">
+      <change afterPath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ImageCrop/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/almond.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/lightning_market_banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/mushroom.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/pear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/tomato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/banner_image/vegetable.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/common/uploads/user_profile/__default_store_profile__.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/user/controller/user.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -216,14 +203,7 @@
       <workItem from="1648977276776" duration="4926000" />
       <workItem from="1648991727784" duration="1849000" />
       <workItem from="1648995278981" duration="1925000" />
-      <workItem from="1649026424605" duration="4511000" />
-    </task>
-    <task id="LOCAL-00086" summary="상품문의 불러오기 및 디자인">
-      <created>1647020111805</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1647020111806</updated>
+      <workItem from="1649026424605" duration="5464000" />
     </task>
     <task id="LOCAL-00087" summary="상품문의 대댓글 구현">
       <created>1647073302363</created>
@@ -561,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648997012348</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="build: server">
+      <created>1649033966654</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1649033966654</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
