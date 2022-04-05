@@ -65,7 +65,7 @@ export class User extends Document {
   })
   @Prop({
     default:
-      'https://localhost:8000/static/user_profile/__default_store_profile__.png',
+      'https://lightningmarket-s3.s3.us-west-1.amazonaws.com/static/user_profile/__default_store_profile__.png',
   })
   @IsString()
   profileURL: string;

@@ -72,7 +72,7 @@ __decorate([
         required: true,
     }),
     (0, mongoose_1.Prop)({
-        default: 'https://localhost:8000/static/user_profile/__default_store_profile__.png',
+        default: 'https://lightningmarket-s3.s3.us-west-1.amazonaws.com/static/user_profile/__default_store_profile__.png',
     }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
