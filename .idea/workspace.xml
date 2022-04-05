@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build - add: CERTIFICATE(SSL)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="update: getMyProduct API URL&#10;build: client">
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,14 +202,7 @@
       <workItem from="1648991727784" duration="1849000" />
       <workItem from="1648995278981" duration="1925000" />
       <workItem from="1649026424605" duration="6101000" />
-      <workItem from="1649140081775" duration="916000" />
-    </task>
-    <task id="LOCAL-00088" summary="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현">
-      <created>1647088273908</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1647088273908</updated>
+      <workItem from="1649140081775" duration="1241000" />
     </task>
     <task id="LOCAL-00089" summary="문의 수정 API 제거">
       <created>1647091964799</created>
@@ -548,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649034306961</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="update: getMyProduct API URL&#10;build: client">
+      <created>1649141129436</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1649141129437</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,8 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="server 배포 명령어 수정" />
-    <MESSAGE value="https 적용 해제" />
     <MESSAGE value="serve, https 적용 해제" />
     <MESSAGE value="server, https 재적용" />
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치" />
@@ -592,7 +589,9 @@
     <MESSAGE value="build: client" />
     <MESSAGE value="build: server" />
     <MESSAGE value="build - add: CERTIFICATE(SSL)" />
-    <option name="LAST_COMMIT_MESSAGE" value="build - add: CERTIFICATE(SSL)" />
+    <MESSAGE value="update: getMyProduct API&#10;build: client" />
+    <MESSAGE value="update: getMyProduct API URL&#10;build: client" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: getMyProduct API URL&#10;build: client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
