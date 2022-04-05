@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build: server">
-      <change afterPath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="build - add: CERTIFICATE(SSL)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/page/ProductManagePage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +55,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist" />
+      <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server\dist\common" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\server" />
       <recent name="C:\Users\nogo0\#workspace\Lightning-marketplace-Clone\client\src\page" />
@@ -203,14 +202,8 @@
       <workItem from="1648977276776" duration="4926000" />
       <workItem from="1648991727784" duration="1849000" />
       <workItem from="1648995278981" duration="1925000" />
-      <workItem from="1649026424605" duration="5464000" />
-    </task>
-    <task id="LOCAL-00087" summary="상품문의 대댓글 구현">
-      <created>1647073302363</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1647073302363</updated>
+      <workItem from="1649026424605" duration="6101000" />
+      <workItem from="1649140081775" duration="916000" />
     </task>
     <task id="LOCAL-00088" summary="상점문의 작성, 불러오기 구현 / 수정 ,삭제 미구현">
       <created>1647088273908</created>
@@ -548,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649033966654</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="build - add: CERTIFICATE(SSL)">
+      <created>1649034306961</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1649034306961</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="client 빌드 -&gt; build 생성" />
     <MESSAGE value="server 배포 명령어 수정" />
     <MESSAGE value="https 적용 해제" />
     <MESSAGE value="serve, https 적용 해제" />
@@ -592,7 +591,8 @@
     <MESSAGE value="update: hide oauth -&gt; show oauth(unimplemented)" />
     <MESSAGE value="build: client" />
     <MESSAGE value="build: server" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: server" />
+    <MESSAGE value="build - add: CERTIFICATE(SSL)" />
+    <option name="LAST_COMMIT_MESSAGE" value="build - add: CERTIFICATE(SSL)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -615,7 +615,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/src/user/controller/user.controller.ts</url>
           <line>36</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

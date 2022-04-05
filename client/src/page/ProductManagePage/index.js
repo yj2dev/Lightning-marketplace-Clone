@@ -6,8 +6,11 @@ import { timeFormat, timeKrFormat } from "../../utils/Time";
 import { intOfKr } from "../../utils/Currency";
 import AlertModal from "../../components/AlertModal";
 import { logDOM } from "@testing-library/react";
+import { useSelector } from "react-redux";
 
 export const ProductManagePage = ({ history }) => {
+  const user = useSelector((state) => state.user);
+
   const [products, setProducts] = useState();
 
   const [showAlertModal, setShowAlertModal] = useState(false);
@@ -34,8 +37,9 @@ export const ProductManagePage = ({ history }) => {
   };
 
   function getMyProducts() {
+    if (!user.isSignin) return;
     axios
-      .get("/user/detail")
+      .get(`/user/detail/${user.isSignin.data._id}`)
       .then((res) => {
         console.log("res >> ", res);
         console.log("data >> ", res.data.data.products);
