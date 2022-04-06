@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: client">
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/certificate/localhost.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/user/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/model/user.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devBlogProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -207,14 +203,8 @@
       <workItem from="1648995278981" duration="1925000" />
       <workItem from="1649026424605" duration="6101000" />
       <workItem from="1649140081775" duration="1953000" />
-      <workItem from="1649143778809" duration="2433000" />
-    </task>
-    <task id="LOCAL-00090" summary="상점 문의 제거 기능 구현">
-      <created>1647098099339</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1647098099340</updated>
+      <workItem from="1649143778809" duration="3775000" />
+      <workItem from="1649205014484" duration="1323000" />
     </task>
     <task id="LOCAL-00091" summary="로그인 안된유저 버튼마다  예외처리">
       <created>1647150032018</created>
@@ -552,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649141382727</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="rebuild: server">
+      <created>1649148104456</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1649148104457</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +577,6 @@
     <MESSAGE value="update: client build" />
     <MESSAGE value="update: client build2" />
     <MESSAGE value="build: client, server / apply domain" />
-    <MESSAGE value="rebuild: server" />
     <MESSAGE value="update: multer -&gt; multer s3" />
     <MESSAGE value="connect AWS S3(multer-s3), update: product image upload" />
     <MESSAGE value="유저 컨트롤러 환경변수 연결 실패" />
@@ -596,7 +592,8 @@
     <MESSAGE value="update: getMyProduct API&#10;build: client" />
     <MESSAGE value="update: getMyProduct API URL&#10;build: client" />
     <MESSAGE value="rebuild: client" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild: client" />
+    <MESSAGE value="rebuild: server" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild: server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

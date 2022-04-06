@@ -17,6 +17,7 @@ export class Tag extends Document {
   })
   @Prop({})
   @IsString()
+  w;
   name: string;
 
   @ApiProperty({
