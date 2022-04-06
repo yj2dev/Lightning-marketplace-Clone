@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="rebuild: server">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a463f52d-d738-45e4-9d48-37421d172455" name="Changes" comment="delete: AWS accessKey">
+      <change beforePath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/controller/user.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,13 +205,7 @@
       <workItem from="1649140081775" duration="1953000" />
       <workItem from="1649143778809" duration="3775000" />
       <workItem from="1649205014484" duration="1323000" />
-    </task>
-    <task id="LOCAL-00091" summary="로그인 안된유저 버튼마다  예외처리">
-      <created>1647150032018</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1647150032018</updated>
+      <workItem from="1649232145605" duration="109000" />
     </task>
     <task id="LOCAL-00092" summary="제목 검색기능 구현">
       <created>1647160764188</created>
@@ -549,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649148104457</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="delete: AWS accessKey">
+      <created>1649232243993</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1649232243993</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="serve, https 적용 해제" />
     <MESSAGE value="server, https 재적용" />
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치" />
     <MESSAGE value="update: client에서 요청 주소 변경, pm2 설치, 빌드" />
@@ -593,7 +593,8 @@
     <MESSAGE value="update: getMyProduct API URL&#10;build: client" />
     <MESSAGE value="rebuild: client" />
     <MESSAGE value="rebuild: server" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild: server" />
+    <MESSAGE value="delete: AWS accessKey" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete: AWS accessKey" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -612,11 +613,6 @@
           <url>file://$PROJECT_DIR$/client/src/layouts/index.js</url>
           <line>83</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/src/user/controller/user.controller.ts</url>
-          <line>36</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

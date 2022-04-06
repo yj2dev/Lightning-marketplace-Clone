@@ -34,11 +34,11 @@ import { FollowService } from '../../follow/follow.service';
 import * as AWS from 'aws-sdk';
 import * as multerS3 from 'multer-s3';
 
-// const s3 = new AWS.S3({
-//   accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
-//   secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
-//   region: process.env.AWS_S3_REGION,
-// });
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
+  region: process.env.AWS_S3_REGION,
+});
 
 console.log('[ user environment ]');
 console.log(process.env.AWS_S3_BUCKET_NAME);
